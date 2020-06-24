@@ -17,6 +17,7 @@ namespace Marsy
         std::optional<std::string> image = std::nullopt;
         std::optional<std::string> wikipedia = std::nullopt;
         std::vector<std::string> launches;
+        std::optional<std::vector> id;
     };
 }
 #endif

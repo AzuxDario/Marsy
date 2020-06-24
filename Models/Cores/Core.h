@@ -21,6 +21,7 @@ namespace Marsy
         int asdsLandings = 0;
         std::optional<std::string> lastUpdate = std::nullopt;
         std::vector<std::string> launches;
+        std::optional<std::vector> id;
     };
 }
 #endif

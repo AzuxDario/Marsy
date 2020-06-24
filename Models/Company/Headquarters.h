@@ -2,14 +2,15 @@
 #define HEADQUARTERS_H
 
 #include <string>
+#include <optional>
 
 namespace Marsy
 {
     struct Headquarters
     {
-        std::string address;
-        std::string city;
-        std::string state;
+        std::optional<std::string> address;
+        std::optional<std::string> city;
+        std::optional<std::string> state;
     };
 }
 #endif

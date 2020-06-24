@@ -13,12 +13,13 @@ namespace Marsy
     {
         std::string serial;
         CapsuleStatus status;
-        std::string dragon;
+        std::optional<std::string> dragon;
         int reuseCount = 0;
         int waterLandings = 0;
         int landLandings = 0;
         std::optional<std::string> lastUpdate = std::nullopt;
         std::vector<std::string> launches;
+        std::optional<std::vector> id;
     };
 }
 #endif
