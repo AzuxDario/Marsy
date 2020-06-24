@@ -20,7 +20,7 @@ namespace Marsy::Launches
         std::optional<std::string> youtubeId = std::nullopt;
         std::optional<std::string> article = std::nullopt;
         std::optional<std::string> wikipedia = std::nullopt;
-    }
+    };
 }
 
 #endif
