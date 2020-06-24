@@ -1,11 +1,11 @@
-#ifndef CORE_H
-#define CORE_H
+#ifndef MARSY_CORES_CORE_H
+#define MARSY_CORES_CORE_H
 
 #include <string>
 #include <vector>
 #include <optional>
 
-namespace Marsy
+namespace Marsy::Cores
 {
     enum class CoreStatus {active, inactive, unknown, expended, lost, retried}; 
 
@@ -21,7 +21,8 @@ namespace Marsy
         int asdsLandings = 0;
         std::optional<std::string> lastUpdate = std::nullopt;
         std::vector<std::string> launches;
-        std::optional<std::vector> id;
+        std::optional<std::string> id;
     };
 }
+
 #endif

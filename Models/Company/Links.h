@@ -1,10 +1,10 @@
-#ifndef LINKS_H
-#define LINKS_H
+#ifndef MARSY_COMPANY_LINKS_H
+#define MARSY_COMPANY_LINKS_H
 
 #include <string>
 #include <optional>
 
-namespace Marsy
+namespace Marsy::Company
 {
     struct Links
     {
@@ -14,4 +14,5 @@ namespace Marsy
         std::optional<std::string> elonTwitter;
     };
 }
+
 #endif

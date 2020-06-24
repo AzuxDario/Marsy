@@ -1,10 +1,10 @@
-#ifndef HEADQUARTERS_H
-#define HEADQUARTERS_H
+#ifndef MARSY_COMPANY_HEADQUARTERS_H
+#define MARSY_COMPANY_HEADQUARTERS_H
 
 #include <string>
 #include <optional>
 
-namespace Marsy
+namespace Marsy::Company
 {
     struct Headquarters
     {
@@ -13,4 +13,5 @@ namespace Marsy
         std::optional<std::string> state;
     };
 }
+
 #endif

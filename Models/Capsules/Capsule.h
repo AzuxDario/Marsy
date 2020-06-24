@@ -1,11 +1,11 @@
-#ifndef CAPSULE_H
-#define CAPSULE_H
+#ifndef MARSY_CAPSULES_CAPSULE_H
+#define MARSY_CAPSULES_CAPSULE_H
 
 #include <string>
 #include <vector>
 #include <optional>
 
-namespace Marsy
+namespace Marsy::Capsules
 {
     enum class CapsuleStatus {unknown, active, retried, destroyed}; 
 
@@ -19,7 +19,8 @@ namespace Marsy
         int landLandings = 0;
         std::optional<std::string> lastUpdate = std::nullopt;
         std::vector<std::string> launches;
-        std::optional<std::vector> id;
+        std::optional<std::string> id;
     };
 }
+
 #endif
