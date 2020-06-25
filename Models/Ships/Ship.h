@@ -18,7 +18,7 @@ namespace Marsy::Models::Ships
         std::optional<int> imo = std::nullopt;
         std::optional<int> mmsi = std::nullopt;
         std::optional<int> abs = std::nullopt;
-        std::optional<int> class = std::nullopt;
+        std::optional<int> clas = std::nullopt;
         std::optional<float> massKilograms = std::nullopt;
         std::optional<float> massPounds = std::nullopt;
         std::optional<int> yearBuilt = std::nullopt;
