@@ -23,8 +23,8 @@ namespace Marsy::Dragons
         int crewCapacity;
         int sidewallAngleDeg;
         int orbitDurationYear;
-        int dryMassKg;
-        int dryMassLb;
+        int dryMassKilograms;
+        int dryMassPounds;
         std::optional<std::string> firstFlight = std::nullopt;
         std::optional<HeatShield> heatShield;
         std::vector<Thruster> thrusters;
