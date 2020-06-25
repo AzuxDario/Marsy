@@ -13,7 +13,7 @@
 #include "../Common/VolumeInfo.h"
 #include "../Common/SizeInfo.h"
 
-namespace Marsy::Dragons
+namespace Marsy::Models::Dragons
 {
     struct Dragon
     {
@@ -21,7 +21,7 @@ namespace Marsy::Dragons
         std::string type;
         bool active;
         int crewCapacity;
-        int sidewallAngleDeg;
+        int sidewallAngleDegrees;
         int orbitDurationYear;
         int dryMassKilograms;
         int dryMassPounds;

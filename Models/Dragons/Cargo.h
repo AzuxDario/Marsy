@@ -3,7 +3,7 @@
 
 #include <optional>
 
-namespace Marsy::Dragons
+namespace Marsy::Models::Dragons
 {
     struct Cargo
     {

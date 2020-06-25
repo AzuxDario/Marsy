@@ -4,7 +4,7 @@
 #include <string>
 #include <optional>
 
-namespace Marsy::Rockets
+namespace Marsy::Models::Rockets
 {
     struct LandingLegs
     {

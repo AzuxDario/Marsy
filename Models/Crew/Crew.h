@@ -5,7 +5,7 @@
 #include <vector>
 #include <optional>
 
-namespace Marsy::Crew
+namespace Marsy::Models::Crew
 {
     enum class CrewStatus {active, inactive, retried, unknown}; 
 

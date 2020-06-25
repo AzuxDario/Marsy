@@ -7,7 +7,7 @@
 #include "Isp.h"
 #include "../Common/ThrustInfo.h"
 
-namespace Marsy::Rockets
+namespace Marsy::Models::Rockets
 {
     struct Engines
     {

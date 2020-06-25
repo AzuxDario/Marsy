@@ -5,7 +5,7 @@
 #include <vector>
 #include <optional>
 
-namespace Marsy::Launchpads
+namespace Marsy::Models::Launchpads
 {
     enum class Status {active, inactive, unknown, retried, lost, underConstruction};
 

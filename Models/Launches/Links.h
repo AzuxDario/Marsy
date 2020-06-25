@@ -8,7 +8,7 @@
 #include "Reddit.h"
 #include "Flickr.h"
 
-namespace Marsy::Launches
+namespace Marsy::Models::Launches
 {
     struct Links
     {

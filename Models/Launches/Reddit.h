@@ -4,7 +4,7 @@
 #include <string>
 #include <optional>
 
-namespace Marsy::Launches
+namespace Marsy::Models::Launches
 {
     struct Reddit
     {

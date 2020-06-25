@@ -7,7 +7,7 @@
 
 #include "Dragon.h"
 
-namespace Marsy::Payloads
+namespace Marsy::Models::Payloads
 {
     struct Payload
     {
@@ -21,9 +21,9 @@ namespace Marsy::Payloads
         std::vector<std::string> manufacturers;
         std::optional<float> massKilograms = std::nullopt;
         std::optional<float> massPounds = std::nullopt;
-        std::vector<std::string> orbit = std::nullopt;
-        std::vector<std::string> referenceSystem = std::nullopt;
-        std::vector<std::string> regtime = std::nullopt;
+        std::optional<std::string> orbit = std::nullopt;
+        std::optional<std::string> referenceSystem = std::nullopt;
+        std::optional<std::string> regtime = std::nullopt;
         std::optional<float> longitude = std::nullopt;
         std::optional<float> semiMajorAxisKilometers = std::nullopt;
         std::optional<float> eccentricity = std::nullopt;

@@ -7,7 +7,7 @@
 #include "Headquarters.h"
 #include "Links.h"
 
-namespace Marsy::Company
+namespace Marsy::Models::Company
 {
     struct Company
     {

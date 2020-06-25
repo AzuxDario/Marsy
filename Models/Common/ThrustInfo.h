@@ -3,7 +3,7 @@
 
 #include <optional>
 
-namespace Marsy::Common
+namespace Marsy::Models::Common
 {
     struct ThrustInfo
     {

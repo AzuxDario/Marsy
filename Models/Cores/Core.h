@@ -5,7 +5,7 @@
 #include <vector>
 #include <optional>
 
-namespace Marsy::Cores
+namespace Marsy::Models::Cores
 {
     enum class CoreStatus {active, inactive, unknown, expended, lost, retried}; 
 

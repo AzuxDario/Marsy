@@ -5,12 +5,33 @@
 #include <vector>
 #include <optional>
 
-namespace Marsy::Ships
+namespace Marsy::Models::Ships
 {
     struct Ship
     {
         std::string name;
         std::optional<std::string> legacyId = std::nullopt;
+        std::optional<std::string> model = std::nullopt;
+        std::optional<std::string> type = std::nullopt;
+        std::vector<std::string> roles;
+        bool active;
+        std::optional<int> imo = std::nullopt;
+        std::optional<int> mmsi = std::nullopt;
+        std::optional<int> abs = std::nullopt;
+        std::optional<int> class = std::nullopt;
+        std::optional<float> massKilograms = std::nullopt;
+        std::optional<float> massPounds = std::nullopt;
+        std::optional<int> yearBuilt = std::nullopt;
+        std::optional<std::string> homePort = std::nullopt;
+        std::optional<std::string> status = std::nullopt;
+        std::optional<float> speedKnots = std::nullopt;
+        std::optional<float> courseDegrees = std::nullopt;
+        std::optional<float> latitude = std::nullopt;
+        std::optional<float> longitude = std::nullopt;
+        std::optional<std::string> lastAisUpdate = std::nullopt;
+        std::optional<std::string> link = std::nullopt;
+        std::optional<std::string> image = std::nullopt;
+        std::vector<std::string> launches;
         std::optional<std::string> id;
     };
 }

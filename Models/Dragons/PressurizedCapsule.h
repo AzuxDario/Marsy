@@ -5,7 +5,7 @@
 
 #include "../Common/VolumeInfo.h"
 
-namespace Marsy::Dragons
+namespace Marsy::Models::Dragons
 {
     struct PressurizedCapsule
     {
