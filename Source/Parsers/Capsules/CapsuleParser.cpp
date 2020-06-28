@@ -33,17 +33,17 @@ namespace Marsy::Parsers::CapsuleParser
     {
         Capsule capsule;
         // serial is requiser by API
-        capsule.serial = parseStringNullable(input, "serial");
-        capsule.status = parseCapsuleStatus(input, "status");
+        capsule.serial = parseStringNullable(input, strSerial);
+        capsule.status = parseCapsuleStatus(input, strStatus);
         // dragon can be not defined
-        capsule.dragon = parseStringNullable(input, "dragon");
+        capsule.dragon = parseStringNullable(input, strDragon);
         // reuseCount have default value in API
-        capsule.reuseCount = parseIntNullable(input, "reuse_count").value_or(capsule.reuseCount.value());
-        capsule.waterLandings = parseIntNullable(input, "water_landings").value_or(capsule.waterLandings.value());
-        capsule.landLandings = parseIntNullable(input, "land_landings").value_or(capsule.landLandings.value());
-        capsule.lastUpdate = parseStringNullable(input, "last_update" );
-        capsule.launches = parseArrayOfStringNullable(input, "launches");
-        capsule.id = parseStringNullable(input, "id");
+        capsule.reuseCount = parseIntNullable(input, strReuseCount).value_or(capsule.reuseCount.value());
+        capsule.waterLandings = parseIntNullable(input, strWaterLanding).value_or(capsule.waterLandings.value());
+        capsule.landLandings = parseIntNullable(input, strLandLanding).value_or(capsule.landLandings.value());
+        capsule.lastUpdate = parseStringNullable(input, strLastUpdate);
+        capsule.launches = parseArrayOfStringNullable(input, strLaunches);
+        capsule.id = parseStringNullable(input, strId);
 
         return capsule;
     }
@@ -51,19 +51,19 @@ namespace Marsy::Parsers::CapsuleParser
     std::optional<CapsuleStatus> CapsuleParser::parseCapsuleStatus(const json &input, const std::string &name)
     {
         std::string status = parseString(input, name);
-        if(status == "unknown")
+        if(status == strStatusUnknown)
         {
             return CapsuleStatus::unknown;
         }
-        else if(status == "active")
+        else if(status == strStatusActive)
         {
             return CapsuleStatus::active;
         }
-        else if(status == "retried")
+        else if(status == strStatusRetried)
         {
             return CapsuleStatus::retried;
         }
-        else if(status == "destroyed")
+        else if(status == strStatusDestroyed)
         {
             return CapsuleStatus::destroyed;
         }
