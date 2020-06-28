@@ -12,7 +12,7 @@ namespace Marsy::Models::Launches
         std::optional<bool> reused = std::nullopt;
         std::optional<bool> recoveryAttempt = std::nullopt;
         std::optional<bool> recovered = std::nullopt;
-        std::vector<std::string> ships;
+        std::optional<std::vector<std::string>> ships;
     };
 }
 

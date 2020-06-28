@@ -31,7 +31,7 @@ namespace Marsy::Models::Roadster
         std::optional<float> earthDistanceMiles;
         std::optional<float> marsDistanceKilometers;
         std::optional<float> marsDistanceMiles;
-        std::vector<std::string> flickrImages;
+        std::optional<std::vector<std::string>> flickrImages;
         std::optional<std::string> wikipedia;
         std::optional<std::string> video;
         std::optional<std::string> details;

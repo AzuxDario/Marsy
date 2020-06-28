@@ -13,16 +13,16 @@ namespace Marsy::Models::Launchpads
     {
         std::optional<std::string> name = std::nullopt;
         std::optional<std::string> fullName = std::nullopt;
-        Status status;
+        std::optional<Status> status;
         std::optional<std::string> locality = std::nullopt;
         std::optional<std::string> region = std::nullopt;
         std::optional<std::string> timezone = std::nullopt;
         std::optional<float> latitude = std::nullopt;
         std::optional<float> longitude = std::nullopt;
-        int launchAttempts = 0;
-        int launchSuccess = 0;
-        std::vector<std::string> rockets;
-        std::vector<std::string> launches;
+        std::optional<int> launchAttempts = 0;
+        std::optional<int> launchSuccess = 0;
+        std::optional<std::vector<std::string>> rockets;
+        std::optional<std::vector<std::string>> launches;
         std::optional<std::string> id;
     };
 }

@@ -23,7 +23,7 @@ namespace Marsy::Parsers::CapsuleParser
         std::vector<Capsule> parseCapsules(const std::string &input);
     private:
         Capsule parseObject(const json &input);
-        CapsuleStatus parseCapsuleStatus(const json &input, const std::string &name);
+        std::optional<CapsuleStatus> parseCapsuleStatus(const json &input, const std::string &name);
     };
 }
 

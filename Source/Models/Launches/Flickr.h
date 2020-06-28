@@ -3,6 +3,7 @@
 
 #include <string>
 #include <vector>
+#include <optional>
 
 #include "Patch.h"
 #include "Reddit.h"
@@ -11,8 +12,8 @@ namespace Marsy::Models::Launches
 {
     struct Flickr
     {
-        std::vector<std::string> small;
-        std::vector<std::string> original;
+        std::optional<std::vector<std::string>> small;
+        std::optional<std::vector<std::string>> original;
     };
 }
 

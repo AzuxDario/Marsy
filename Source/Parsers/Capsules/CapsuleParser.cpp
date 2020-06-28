@@ -33,22 +33,22 @@ namespace Marsy::Parsers::CapsuleParser
     {
         Capsule capsule;
         // serial is requiser by API
-        capsule.serial = parseString(input, "serial");
+        capsule.serial = parseStringNullable(input, "serial");
         capsule.status = parseCapsuleStatus(input, "status");
         // dragon can be not defined
         capsule.dragon = parseStringNullable(input, "dragon");
         // reuseCount have default value in API
-        capsule.reuseCount = parseIntNullable(input, "reuse_count").value_or(capsule.reuseCount);
-        capsule.waterLandings = parseIntNullable(input, "water_landings").value_or(capsule.waterLandings);
-        capsule.landLandings = parseIntNullable(input, "land_landings").value_or(capsule.landLandings);
+        capsule.reuseCount = parseIntNullable(input, "reuse_count").value_or(capsule.reuseCount.value());
+        capsule.waterLandings = parseIntNullable(input, "water_landings").value_or(capsule.waterLandings.value());
+        capsule.landLandings = parseIntNullable(input, "land_landings").value_or(capsule.landLandings.value());
         capsule.lastUpdate = parseStringNullable(input, "last_update" );
-        capsule.launches = parseArrayOfString(input, "launches");
+        capsule.launches = parseArrayOfStringNullable(input, "launches");
         capsule.id = parseStringNullable(input, "id");
 
         return capsule;
     }
 
-    CapsuleStatus CapsuleParser::parseCapsuleStatus(const json &input, const std::string &name)
+    std::optional<CapsuleStatus> CapsuleParser::parseCapsuleStatus(const json &input, const std::string &name)
     {
         std::string status = parseString(input, name);
         if(status == "unknown")
@@ -69,7 +69,7 @@ namespace Marsy::Parsers::CapsuleParser
         }
         else
         {
-            return CapsuleStatus::unknown;
+            return std::nullopt;
         }
         
     }

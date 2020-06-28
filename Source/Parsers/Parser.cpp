@@ -113,4 +113,16 @@ namespace Marsy::Parsers
             return std::vector<std::string>();
         }
     }
+
+    std::optional<std::vector<std::string>> Parser::parseArrayOfStringNullable(const json &input, const std::string &name)
+    {
+        if(input.contains(name) && !input[name].is_null() && input[name].is_array())
+        {
+            return input[name].get<std::vector<std::string>>();
+        }
+        else
+        {
+            return std::nullopt;
+        }
+    }
 }

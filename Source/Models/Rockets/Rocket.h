@@ -30,12 +30,12 @@ namespace Marsy::Models::Rockets
         std::optional<Common::SizeInfo> height;
         std::optional<Common::SizeInfo> diameter;
         std::optional<Common::MassInfo> mass;
-        std::vector<PayloadWeights> payloadWeights;
+        std::optional<std::vector<PayloadWeights>> payloadWeights;
         std::optional<FirstStage> firstStage;
         std::optional<SecondStage> secondStage;
         std::optional<Engines> engines;
         std::optional<LandingLegs> landingLegs;
-        std::vector<std::string> flickrImages;
+        std::optional<std::vector<std::string>> flickrImages;
         std::optional<std::string> wikipedia;
         std::optional<std::string> description;
         std::optional<std::string> id;

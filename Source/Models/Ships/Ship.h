@@ -9,12 +9,12 @@ namespace Marsy::Models::Ships
 {
     struct Ship
     {
-        std::string name;
+        std::optional<std::string> name;
         std::optional<std::string> legacyId = std::nullopt;
         std::optional<std::string> model = std::nullopt;
         std::optional<std::string> type = std::nullopt;
-        std::vector<std::string> roles;
-        bool active;
+        std::optional<std::vector<std::string>> roles;
+        std::optional<bool> active;
         std::optional<int> imo = std::nullopt;
         std::optional<int> mmsi = std::nullopt;
         std::optional<int> abs = std::nullopt;
@@ -31,7 +31,7 @@ namespace Marsy::Models::Ships
         std::optional<std::string> lastAisUpdate = std::nullopt;
         std::optional<std::string> link = std::nullopt;
         std::optional<std::string> image = std::nullopt;
-        std::vector<std::string> launches;
+        std::optional<std::vector<std::string>> launches;
         std::optional<std::string> id;
     };
 }

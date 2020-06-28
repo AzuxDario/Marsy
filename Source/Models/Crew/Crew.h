@@ -12,11 +12,11 @@ namespace Marsy::Models::Crew
     struct Crew
     {
         std::optional<std::string> name = std::nullopt;
-        CrewStatus status;
+        std::optional<CrewStatus> status;
         std::optional<std::string> agency = std::nullopt;
         std::optional<std::string> image = std::nullopt;
         std::optional<std::string> wikipedia = std::nullopt;
-        std::vector<std::string> launches;
+        std::optional<std::vector<std::string>> launches;
         std::optional<std::string> id;
     };
 }

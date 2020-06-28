@@ -17,11 +17,11 @@ namespace Marsy::Models::Landpads
         std::optional<std::string> region = std::nullopt;
         std::optional<float> latitude = std::nullopt;
         std::optional<float> longitude = std::nullopt;
-        int landingAttempts = 0;
-        int landingSuccess = 0;
+        std::optional<int> landingAttempts = 0;
+        std::optional<int> landingSuccess = 0;
         std::optional<std::string> wikipedia = std::nullopt;
         std::optional<std::string> details = std::nullopt;
-        std::vector<std::string> launches;
+        std::optional<std::vector<std::string>> launches;
         std::optional<std::string> id;
     };
 }

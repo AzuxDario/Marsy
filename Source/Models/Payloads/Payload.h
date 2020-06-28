@@ -13,12 +13,12 @@ namespace Marsy::Models::Payloads
     {
         std::optional<std::string> name = std::nullopt;
         std::optional<std::string> type = std::nullopt;
-        bool reused = false;
+        std::optional<bool> reused = false;
         std::optional<std::string> launch = std::nullopt;
-        std::vector<std::string> customers;
-        std::vector<int> noradIds;
-        std::vector<std::string> nationalities;
-        std::vector<std::string> manufacturers;
+        std::optional<std::vector<std::string>> customers;
+        std::optional<std::vector<int>> noradIds;
+        std::optional<std::vector<std::string>> nationalities;
+        std::optional<std::vector<std::string>> manufacturers;
         std::optional<float> massKilograms = std::nullopt;
         std::optional<float> massPounds = std::nullopt;
         std::optional<std::string> orbit = std::nullopt;
