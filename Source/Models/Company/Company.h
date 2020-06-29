@@ -17,6 +17,7 @@ namespace Marsy::Models::Company
         std::optional<int> employees;
         std::optional<int> vehicles;
         std::optional<int> launchSites;
+        std::optional<int> testSites;
         std::optional<std::string> ceo;
         std::optional<std::string> cto;
         std::optional<std::string> coo;

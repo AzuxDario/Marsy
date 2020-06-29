@@ -31,6 +31,30 @@ namespace Marsy::Parsers
         }
     }
 
+    long long Parser::parseLongLong(const json &input, const std::string &name)
+    {
+        if(input.contains(name) && input[name].is_number())
+        {
+            return input[name].get<long long>();
+        }
+        else
+        {
+            return 0;
+        }
+    }
+
+    std::optional<long long> Parser::parseLongLongNullable(const json &input, const std::string &name)
+    {
+        if(input.contains(name) && !input[name].is_null() && input[name].is_number())
+        {
+            return input[name].get<long long>();
+        }
+        else
+        {
+            return std::nullopt;
+        }
+    }
+
     double Parser::parseDouble(const json &input, const std::string &name)
     {
         if(input.contains(name) && input[name].is_number())
