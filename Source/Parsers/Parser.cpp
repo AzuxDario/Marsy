@@ -31,11 +31,11 @@ namespace Marsy::Parsers
         }
     }
 
-    float Parser::parseFloat(const json &input, const std::string &name)
+    double Parser::parseDouble(const json &input, const std::string &name)
     {
         if(input.contains(name) && input[name].is_number())
         {
-            return input[name].get<float>();
+            return input[name].get<double>();
         }
         else
         {
@@ -43,11 +43,11 @@ namespace Marsy::Parsers
         }
     }
 
-    std::optional<float> Parser::parseFloatNullable(const json &input, const std::string &name)
+    std::optional<double> Parser::parseDoubleNullable(const json &input, const std::string &name)
     {
         if(input.contains(name) && !input[name].is_null() && input[name].is_number())
         {
-            return input[name].get<float>();
+            return input[name].get<double>();
         }
         else
         {

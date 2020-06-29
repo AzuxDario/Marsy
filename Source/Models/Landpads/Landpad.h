@@ -15,8 +15,8 @@ namespace Marsy::Models::Landpads
         std::optional<std::string> type = std::nullopt;
         std::optional<std::string> locality = std::nullopt;
         std::optional<std::string> region = std::nullopt;
-        std::optional<float> latitude = std::nullopt;
-        std::optional<float> longitude = std::nullopt;
+        std::optional<double> latitude = std::nullopt;
+        std::optional<double> longitude = std::nullopt;
         std::optional<int> landingAttempts = 0;
         std::optional<int> landingSuccess = 0;
         std::optional<std::string> wikipedia = std::nullopt;

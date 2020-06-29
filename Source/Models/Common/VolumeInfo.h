@@ -7,8 +7,8 @@ namespace Marsy::Models::Common
 {
     struct VolumeInfo
     {
-        std::optional<float> cubicMeters;
-        std::optional<float> cubicFeet;
+        std::optional<double> cubicMeters;
+        std::optional<double> cubicFeet;
     };
 }
 

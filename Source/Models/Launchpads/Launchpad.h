@@ -17,8 +17,8 @@ namespace Marsy::Models::Launchpads
         std::optional<std::string> locality = std::nullopt;
         std::optional<std::string> region = std::nullopt;
         std::optional<std::string> timezone = std::nullopt;
-        std::optional<float> latitude = std::nullopt;
-        std::optional<float> longitude = std::nullopt;
+        std::optional<double> latitude = std::nullopt;
+        std::optional<double> longitude = std::nullopt;
         std::optional<int> launchAttempts = 0;
         std::optional<int> launchSuccess = 0;
         std::optional<std::vector<std::string>> rockets;

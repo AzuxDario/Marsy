@@ -23,7 +23,7 @@ namespace Marsy::Models::Rockets
         std::optional<int> stages;
         std::optional<int> boosters;
         std::optional<long long> costPerLaunch;
-        std::optional<float> successRatePct;
+        std::optional<double> successRatePct;
         std::optional<std::string> firstFlight;
         std::optional<std::string> country;
         std::optional<std::string> company;

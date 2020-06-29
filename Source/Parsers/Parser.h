@@ -18,8 +18,8 @@ namespace Marsy::Parsers
     protected:
         int parseInt(const json &input, const std::string &name);
         std::optional<int> parseIntNullable(const json &input, const std::string &name);
-        float parseFloat(const json &input, const std::string &name);
-        std::optional<float> parseFloatNullable(const json &input, const std::string &name);
+        double parseDouble(const json &input, const std::string &name);
+        std::optional<double> parseDoubleNullable(const json &input, const std::string &name);
         std::string parseString(const json &input, const std::string &name);
         std::optional<std::string> parseStringNullable(const json &input, const std::string &name);
         bool parseBool(const json &input, const std::string &name);

@@ -7,8 +7,8 @@ namespace Marsy::Models::Common
 {
     struct ThrustInfo
     {
-        std::optional<float> kilonewtons;
-        std::optional<float> poundsforce;
+        std::optional<double> kilonewtons;
+        std::optional<double> poundsforce;
     };
 }
 

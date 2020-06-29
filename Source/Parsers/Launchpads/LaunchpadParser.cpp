@@ -38,8 +38,8 @@ namespace Marsy::Parsers::LaunchpadParser
         launchpad.locality = parseStringNullable(input, strLocality);
         launchpad.region = parseStringNullable(input, strRegion);
         launchpad.timezone = parseStringNullable(input, strTimezone);
-        launchpad.latitude = parseFloatNullable(input, strLatitude);
-        launchpad.longitude = parseFloatNullable(input, strLongitude);
+        launchpad.latitude = parseDoubleNullable(input, strLatitude);
+        launchpad.longitude = parseDoubleNullable(input, strLongitude);
         launchpad.launchAttempts = parseIntNullable(input, strLaunchAttempts).value_or(launchpad.launchAttempts.value());
         launchpad.launchSuccess = parseIntNullable(input, strLaunchSuccesses).value_or(launchpad.launchSuccess.value());
         launchpad.rockets = parseArrayOfStringNullable(input, strRockets);

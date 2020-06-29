@@ -7,8 +7,8 @@ namespace Marsy::Models::Rockets
 {
     struct Isp
     {
-        std::optional<float> seaLevel;
-        std::optional<float> vacuum;
+        std::optional<double> seaLevel;
+        std::optional<double> vacuum;
     };
 }
 

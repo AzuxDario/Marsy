@@ -7,8 +7,8 @@ namespace Marsy::Models::Common
 {
     struct SizeInfo
     {
-        std::optional<float> meters;
-        std::optional<float> feet;
+        std::optional<double> meters;
+        std::optional<double> feet;
     };
 }
 

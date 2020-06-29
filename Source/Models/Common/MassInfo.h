@@ -7,8 +7,8 @@ namespace Marsy::Models::Common
 {
     struct MassInfo
     {
-        std::optional<float> kilograms;
-        std::optional<float> pounds;
+        std::optional<double> kilograms;
+        std::optional<double> pounds;
     };
 }
 

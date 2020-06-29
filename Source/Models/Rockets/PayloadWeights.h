@@ -10,8 +10,8 @@ namespace Marsy::Models::Rockets
     {
         std::optional<std::string> id;
         std::optional<std::string> name;
-        std::optional<float> kilograms;
-        std::optional<float> pounds;
+        std::optional<double> kilograms;
+        std::optional<double> pounds;
     };
 }
 

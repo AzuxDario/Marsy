@@ -21,7 +21,7 @@ namespace Marsy::Models::Rockets
         std::optional<std::string> propellant2;
         std::optional<Common::ThrustInfo> thrustSeaLevel;
         std::optional<Common::ThrustInfo> thrustVacuum;
-        std::optional<float> thrustToWeight;
+        std::optional<double> thrustToWeight;
     };
 }
 

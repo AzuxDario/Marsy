@@ -9,7 +9,7 @@ namespace Marsy::Models::Dragons
     struct HeatShield
     {
         std::optional<std::string> material;
-        std::optional<float> sizeMeters;
+        std::optional<double> sizeMeters;
         std::optional<int> tempDegrees;
         std::optional<std::string> devPartner;
     };
