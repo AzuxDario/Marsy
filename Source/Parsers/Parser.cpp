@@ -126,6 +126,31 @@ namespace Marsy::Parsers
             return std::nullopt;
         }
     }
+
+    std::vector<int> Parser::parseArrayOfInt(const json &input, const std::string &name)
+    {
+        if(input.contains(name) && input[name].is_array())
+        {
+            return input[name].get<std::vector<int>>();
+        }
+        else
+        {
+            return std::vector<int>();
+        }
+    }
+
+    std::optional<std::vector<int>> Parser::parseArrayOfIntNullable(const json &input, const std::string &name)
+    {
+        if(input.contains(name) && !input[name].is_null() && input[name].is_array())
+        {
+            return input[name].get<std::vector<int>>();
+        }
+        else
+        {
+            return std::nullopt;
+        }
+    }
+
     std::vector<std::string> Parser::parseArrayOfString(const json &input, const std::string &name)
     {
         if(input.contains(name) && input[name].is_array())

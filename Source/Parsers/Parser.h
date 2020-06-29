@@ -26,6 +26,8 @@ namespace Marsy::Parsers
         std::optional<std::string> parseStringNullable(const json &input, const std::string &name);
         bool parseBool(const json &input, const std::string &name);
         std::optional<bool> parseBoolNullable(const json &input, const std::string &name);
+        std::vector<int> parseArrayOfInt(const json &input, const std::string &name);
+        std::optional<std::vector<int>> parseArrayOfIntNullable(const json &input, const std::string &name);
         std::vector<std::string> parseArrayOfString(const json &input, const std::string &name);
         std::optional<std::vector<std::string>> parseArrayOfStringNullable(const json &input, const std::string &name);
     };
