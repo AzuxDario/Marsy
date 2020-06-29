@@ -7,13 +7,13 @@
 
 namespace Marsy::Models::Launchpads
 {
-    enum class Status {active, inactive, unknown, retried, lost, underConstruction};
+    enum class LaunchpadStatus {active, inactive, unknown, retried, lost, underConstruction};
 
     struct Launchpad
     {
         std::optional<std::string> name = std::nullopt;
         std::optional<std::string> fullName = std::nullopt;
-        std::optional<Status> status;
+        std::optional<LaunchpadStatus> status;
         std::optional<std::string> locality = std::nullopt;
         std::optional<std::string> region = std::nullopt;
         std::optional<std::string> timezone = std::nullopt;
