@@ -13,7 +13,7 @@
 #include "../Common/SizeInfo.h"
 #include "../Common/MassInfo.h"
 
-namespace Marsy::Models::Rockets
+namespace Marsy::Models::RocketsModel
 {
     struct Rocket
     {

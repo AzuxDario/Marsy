@@ -6,7 +6,7 @@
 #include "Payloads.h"
 #include "../Common/ThrustInfo.h"
 
-namespace Marsy::Models::Rockets
+namespace Marsy::Models::RocketsModel
 {
     struct SecondStage
     {

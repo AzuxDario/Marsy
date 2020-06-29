@@ -4,7 +4,7 @@
 #include <string>
 #include <optional>
 
-namespace Marsy::Models::Launches
+namespace Marsy::Models::LaunchModel
 {
     struct Core
     {

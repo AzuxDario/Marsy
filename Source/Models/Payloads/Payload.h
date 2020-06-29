@@ -7,7 +7,7 @@
 
 #include "Dragon.h"
 
-namespace Marsy::Models::Payloads
+namespace Marsy::Models::PayloadModel
 {
     struct Payload
     {

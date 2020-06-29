@@ -11,7 +11,7 @@
 #include "../../Models/Company/Headquarters.h"
 
 using json = nlohmann::json;
-using Marsy::Models::Company::Headquarters;
+using Marsy::Models::CompanyModel::Headquarters;
 
 namespace Marsy::Parsers::CompanyParser
 {

@@ -9,7 +9,7 @@
 #include "Core.h"
 #include "Links.h"
 
-namespace Marsy::Models::Launches
+namespace Marsy::Models::LaunchModel
 {
     enum class DatePrecision {half, quarter, year, month, day, hour};
 

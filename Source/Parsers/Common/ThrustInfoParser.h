@@ -11,7 +11,7 @@
 #include "../../Models/Common/ThrustInfo.h"
 
 using json = nlohmann::json;
-using Marsy::Models::Common::ThrustInfo;
+using Marsy::Models::CommonModel::ThrustInfo;
 
 namespace Marsy::Parsers::Common
 {

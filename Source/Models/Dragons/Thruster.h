@@ -6,7 +6,7 @@
 
 #include "../Common/ThrustInfo.h"
 
-namespace Marsy::Models::Dragons
+namespace Marsy::Models::DragonModel
 {
     struct Thruster
     {

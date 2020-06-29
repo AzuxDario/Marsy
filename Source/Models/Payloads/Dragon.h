@@ -4,7 +4,7 @@
 #include <string>
 #include <optional>
 
-namespace Marsy::Models::Payloads
+namespace Marsy::Models::PayloadModel
 {
     struct Dragon
     {

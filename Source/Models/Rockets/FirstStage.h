@@ -5,7 +5,7 @@
 
 #include "../Common/ThrustInfo.h"
 
-namespace Marsy::Models::Rockets
+namespace Marsy::Models::RocketsModel
 {
     struct FirstStage
     {

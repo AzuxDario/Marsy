@@ -11,7 +11,7 @@
 #include "../../Models/Common/MassInfo.h"
 
 using json = nlohmann::json;
-using Marsy::Models::Common::MassInfo;
+using Marsy::Models::CommonModel::MassInfo;
 
 namespace Marsy::Parsers::Common
 {

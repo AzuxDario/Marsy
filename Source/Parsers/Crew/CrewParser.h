@@ -11,8 +11,8 @@
 #include "../../Models/Crew/Crew.h"
 
 using json = nlohmann::json;
-using Marsy::Models::Crew::Crew;
-using Marsy::Models::Crew::CrewStatus;
+using Marsy::Models::CrewModel::Crew;
+using Marsy::Models::CrewModel::CrewStatus;
 
 namespace Marsy::Parsers::CrewParser
 {

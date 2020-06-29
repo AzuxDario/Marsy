@@ -11,8 +11,8 @@
 #include "../../Models/Launchpads/Launchpad.h"
 
 using json = nlohmann::json;
-using Marsy::Models::Launchpads::Launchpad;
-using Marsy::Models::Launchpads::LaunchpadStatus;
+using Marsy::Models::LaunchpadModel::Launchpad;
+using Marsy::Models::LaunchpadModel::LaunchpadStatus;
 
 namespace Marsy::Parsers::LaunchpadParser
 {

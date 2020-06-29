@@ -5,7 +5,7 @@
 #include <vector>
 #include <optional>
 
-namespace Marsy::Models::Ships
+namespace Marsy::Models::ShipModel
 {
     struct Ship
     {

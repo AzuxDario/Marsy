@@ -15,9 +15,9 @@
 #include "../../Models/Company/Links.h"
 
 using json = nlohmann::json;
-using Marsy::Models::Company::Headquarters;
-using Marsy::Models::Company::Links;
-using Marsy::Models::Company::Company;
+using Marsy::Models::CompanyModel::Headquarters;
+using Marsy::Models::CompanyModel::Links;
+using Marsy::Models::CompanyModel::Company;
 using Marsy::Parsers::CompanyParser::HeadquartersParser;
 using Marsy::Parsers::CompanyParser::LinksParser;
 

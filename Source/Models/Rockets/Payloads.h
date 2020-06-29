@@ -6,7 +6,7 @@
 
 #include "../Common/SizeInfo.h"
 
-namespace Marsy::Models::Rockets
+namespace Marsy::Models::RocketsModel
 {
     struct Payloads
     {

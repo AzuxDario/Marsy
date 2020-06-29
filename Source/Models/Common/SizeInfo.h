@@ -3,7 +3,7 @@
 
 #include <optional>
 
-namespace Marsy::Models::Common
+namespace Marsy::Models::CommonModel
 {
     struct SizeInfo
     {

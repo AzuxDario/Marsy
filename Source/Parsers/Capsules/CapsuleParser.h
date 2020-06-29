@@ -11,8 +11,8 @@
 #include "../../Models/Capsules/Capsule.h"
 
 using json = nlohmann::json;
-using Marsy::Models::Capsules::Capsule;
-using Marsy::Models::Capsules::CapsuleStatus;
+using Marsy::Models::CapsuleModel::Capsule;
+using Marsy::Models::CapsuleModel::CapsuleStatus;
 
 namespace Marsy::Parsers::CapsuleParser
 {

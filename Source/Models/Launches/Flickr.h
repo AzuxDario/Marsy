@@ -8,7 +8,7 @@
 #include "Patch.h"
 #include "Reddit.h"
 
-namespace Marsy::Models::Launches
+namespace Marsy::Models::LaunchModel
 {
     struct Flickr
     {

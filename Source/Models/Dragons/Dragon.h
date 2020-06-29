@@ -13,7 +13,7 @@
 #include "../Common/VolumeInfo.h"
 #include "../Common/SizeInfo.h"
 
-namespace Marsy::Models::Dragons
+namespace Marsy::Models::DragonModel
 {
     struct Dragon
     {

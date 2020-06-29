@@ -11,7 +11,7 @@
 #include "../../Models/Ships/Ship.h"
 
 using json = nlohmann::json;
-using Marsy::Models::Ships::Ship;
+using Marsy::Models::ShipModel::Ship;
 
 namespace Marsy::Parsers::ShipParser
 {

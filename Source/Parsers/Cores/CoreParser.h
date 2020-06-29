@@ -11,8 +11,8 @@
 #include "../../Models/Cores/Core.h"
 
 using json = nlohmann::json;
-using Marsy::Models::Cores::Core;
-using Marsy::Models::Cores::CoreStatus;
+using Marsy::Models::CoreModel::Core;
+using Marsy::Models::CoreModel::CoreStatus;
 
 namespace Marsy::Parsers::CoreParser
 {

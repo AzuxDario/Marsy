@@ -11,7 +11,7 @@
 #include "../../Models/Common/SizeInfo.h"
 
 using json = nlohmann::json;
-using Marsy::Models::Common::SizeInfo;
+using Marsy::Models::CommonModel::SizeInfo;
 
 namespace Marsy::Parsers::Common
 {

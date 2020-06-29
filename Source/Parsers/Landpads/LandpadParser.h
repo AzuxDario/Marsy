@@ -11,7 +11,7 @@
 #include "../../Models/Landpads/Landpad.h"
 
 using json = nlohmann::json;
-using Marsy::Models::Landpads::Landpad;
+using Marsy::Models::LandpadModel::Landpad;
 
 namespace Marsy::Parsers::LandpadParser
 {

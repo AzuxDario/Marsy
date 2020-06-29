@@ -11,7 +11,7 @@
 #include "../../Models/Roadster/Roadster.h"
 
 using json = nlohmann::json;
-using Marsy::Models::Roadster::Roadster;
+using Marsy::Models::RoadsterModel::Roadster;
 
 namespace Marsy::Parsers::RoadsterParser
 {

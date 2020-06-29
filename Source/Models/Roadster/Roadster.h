@@ -5,7 +5,7 @@
 #include <vector>
 #include <optional>
 
-namespace Marsy::Models::Roadster
+namespace Marsy::Models::RoadsterModel
 {
     struct Roadster
     {

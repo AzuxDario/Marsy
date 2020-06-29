@@ -5,7 +5,7 @@
 #include <vector>
 #include <optional>
 
-namespace Marsy::Models::Launches
+namespace Marsy::Models::LaunchModel
 {
     struct Fairings
     {

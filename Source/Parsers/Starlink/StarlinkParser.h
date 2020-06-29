@@ -13,8 +13,8 @@
 #include "../../Models/Starlink/SpaceTrack.h"
 
 using json = nlohmann::json;
-using Marsy::Models::Starlink::Starlink;
-using Marsy::Models::Starlink::SpaceTrack;
+using Marsy::Models::StarlinkModel::Starlink;
+using Marsy::Models::StarlinkModel::SpaceTrack;
 using Marsy::Parsers::StarlinkParser::SpaceTrackParser;
 
 namespace Marsy::Parsers::StarlinkParser

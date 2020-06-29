@@ -4,7 +4,7 @@
 #include <string>
 #include <optional>
 
-namespace Marsy::Models::Company
+namespace Marsy::Models::CompanyModel
 {
     struct Headquarters
     {

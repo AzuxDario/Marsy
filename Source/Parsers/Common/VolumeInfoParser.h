@@ -11,7 +11,7 @@
 #include "../../Models/Common/VolumeInfo.h"
 
 using json = nlohmann::json;
-using Marsy::Models::Common::VolumeInfo;
+using Marsy::Models::CommonModel::VolumeInfo;
 
 namespace Marsy::Parsers::Common
 {

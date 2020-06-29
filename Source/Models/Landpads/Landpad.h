@@ -5,7 +5,7 @@
 #include <vector>
 #include <optional>
 
-namespace Marsy::Models::Landpads
+namespace Marsy::Models::LandpadModel
 {
     struct Landpad
     {

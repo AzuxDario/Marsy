@@ -6,7 +6,7 @@
 #include "Cargo.h"
 #include "../Common/VolumeInfo.h"
 
-namespace Marsy::Models::Dragons
+namespace Marsy::Models::DragonModel
 {
     struct Trunk
     {
