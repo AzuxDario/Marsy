@@ -7,6 +7,8 @@
 #include "Isp.h"
 #include "../Common/ThrustInfo.h"
 
+using Marsy::Models::CommonModel::ThrustInfo;
+
 namespace Marsy::Models::RocketsModel
 {
     struct Engines
@@ -19,8 +21,8 @@ namespace Marsy::Models::RocketsModel
         std::optional<int> engineLossMax;
         std::optional<std::string> propellant1;
         std::optional<std::string> propellant2;
-        std::optional<Common::ThrustInfo> thrustSeaLevel;
-        std::optional<Common::ThrustInfo> thrustVacuum;
+        std::optional<ThrustInfo> thrustSeaLevel;
+        std::optional<ThrustInfo> thrustVacuum;
         std::optional<double> thrustToWeight;
     };
 }

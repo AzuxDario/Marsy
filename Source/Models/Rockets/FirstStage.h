@@ -5,6 +5,8 @@
 
 #include "../Common/ThrustInfo.h"
 
+using Marsy::Models::CommonModel::ThrustInfo;
+
 namespace Marsy::Models::RocketsModel
 {
     struct FirstStage
@@ -13,8 +15,8 @@ namespace Marsy::Models::RocketsModel
         std::optional<int> engines;
         std::optional<int> fuelAmountTons;
         std::optional<int> burnTimeSeconds;
-        std::optional<Common::ThrustInfo> thrustSeaLevel;
-        std::optional<Common::ThrustInfo> thrustVacuum;
+        std::optional<ThrustInfo> thrustSeaLevel;
+        std::optional<ThrustInfo> thrustVacuum;
     };
 }
 

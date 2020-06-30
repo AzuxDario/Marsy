@@ -6,13 +6,15 @@
 
 #include "../Common/SizeInfo.h"
 
+using Marsy::Models::CommonModel::SizeInfo;
+
 namespace Marsy::Models::RocketsModel
 {
     struct Payloads
     {
         std::optional<std::string> option1;
-        std::optional<Common::SizeInfo> compositeFairing;
-        std::optional<Common::SizeInfo> diameter;
+        std::optional<SizeInfo> compositeFairing;
+        std::optional<SizeInfo> diameter;
     };
 }
 

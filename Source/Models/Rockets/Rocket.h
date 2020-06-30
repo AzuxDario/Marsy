@@ -13,6 +13,9 @@
 #include "../Common/SizeInfo.h"
 #include "../Common/MassInfo.h"
 
+using Marsy::Models::CommonModel::MassInfo;
+using Marsy::Models::CommonModel::SizeInfo;
+
 namespace Marsy::Models::RocketsModel
 {
     struct Rocket
@@ -27,9 +30,9 @@ namespace Marsy::Models::RocketsModel
         std::optional<std::string> firstFlight;
         std::optional<std::string> country;
         std::optional<std::string> company;
-        std::optional<Common::SizeInfo> height;
-        std::optional<Common::SizeInfo> diameter;
-        std::optional<Common::MassInfo> mass;
+        std::optional<SizeInfo> height;
+        std::optional<SizeInfo> diameter;
+        std::optional<MassInfo> mass;
         std::optional<std::vector<PayloadWeights>> payloadWeights;
         std::optional<FirstStage> firstStage;
         std::optional<SecondStage> secondStage;
