@@ -13,6 +13,10 @@
 #include "../Common/VolumeInfo.h"
 #include "../Common/SizeInfo.h"
 
+using Marsy::Models::CommonModel::MassInfo;
+using Marsy::Models::CommonModel::SizeInfo;
+using Marsy::Models::CommonModel::VolumeInfo;
+
 namespace Marsy::Models::DragonModel
 {
     struct Dragon
@@ -28,14 +32,14 @@ namespace Marsy::Models::DragonModel
         std::optional<std::string> firstFlight = std::nullopt;
         std::optional<HeatShield> heatShield;
         std::optional<std::vector<Thruster>> thrusters;
-        std::optional<Common::MassInfo> launchPayloadMass;
-        std::optional<Common::VolumeInfo> launchPayloadVolume;
-        std::optional<Common::MassInfo> returnPayloadMass;
-        std::optional<Common::VolumeInfo> returnPayloadVolume;
+        std::optional<MassInfo> launchPayloadMass;
+        std::optional<VolumeInfo> launchPayloadVolume;
+        std::optional<MassInfo> returnPayloadMass;
+        std::optional<VolumeInfo> returnPayloadVolume;
         std::optional<PressurizedCapsule> pressurizedCapsule;
         std::optional<Trunk> trunk;
-        std::optional<Common::SizeInfo> heightWTrunk;
-        std::optional<Common::SizeInfo> diameter;
+        std::optional<SizeInfo> heightWTrunk;
+        std::optional<SizeInfo> diameter;
         std::optional<std::vector<std::string>> flickrImages;
         std::optional<std::string> wikipedia;
         std::optional<std::string> description;

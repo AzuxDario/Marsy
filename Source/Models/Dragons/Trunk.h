@@ -6,11 +6,13 @@
 #include "Cargo.h"
 #include "../Common/VolumeInfo.h"
 
+using Marsy::Models::CommonModel::VolumeInfo;
+
 namespace Marsy::Models::DragonModel
 {
     struct Trunk
     {
-        std::optional<Common::VolumeInfo> trunkVolume;
+        std::optional<VolumeInfo> trunkVolume;
         std::optional<Cargo> cargo;
     };
 }

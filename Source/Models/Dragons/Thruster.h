@@ -6,6 +6,8 @@
 
 #include "../Common/ThrustInfo.h"
 
+using Marsy::Models::CommonModel::ThrustInfo;
+
 namespace Marsy::Models::DragonModel
 {
     struct Thruster
@@ -16,7 +18,7 @@ namespace Marsy::Models::DragonModel
         std::optional<std::string> fuel1;
         std::optional<std::string> fuel2;
         std::optional<int> isp;
-        std::optional<Common::ThrustInfo> thrust;
+        std::optional<ThrustInfo> thrust;
     };
 }
 

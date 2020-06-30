@@ -5,11 +5,13 @@
 
 #include "../Common/VolumeInfo.h"
 
+using Marsy::Models::CommonModel::VolumeInfo;
+
 namespace Marsy::Models::DragonModel
 {
     struct PressurizedCapsule
     {
-        std::optional<Common::VolumeInfo> payloadVolume;
+        std::optional<VolumeInfo> payloadVolume;
     };
 }
 
