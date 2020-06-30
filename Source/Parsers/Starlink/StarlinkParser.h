@@ -23,7 +23,11 @@ namespace Marsy::Parsers::StarlinkParser
     {
     private:
         const std::string strVersion = "version";
-        const std::string strlaunch = "launch";
+        const std::string strLaunch = "launch";
+        const std::string strLongitude = "longitude";
+        const std::string strLatitude = "latitude";
+        const std::string strHeightKm = "height_km";
+        const std::string strVelocityKms = "velocity_kms";
         const std::string strSpaceTrack = "spaceTrack";
         const std::string strId = "id";
     public:

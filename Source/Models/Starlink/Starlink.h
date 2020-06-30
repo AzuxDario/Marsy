@@ -12,6 +12,10 @@ namespace Marsy::Models::StarlinkModel
     {
         std::optional<std::string> version = std::nullopt;
         std::optional<std::string> launch = std::nullopt;
+        std::optional<double> longitude = std::nullopt;
+        std::optional<double> latitude = std::nullopt;
+        std::optional<double> heightKilometers = std::nullopt;
+        std::optional<double> velocityKilometersPerSecond = std::nullopt;
         std::optional<SpaceTrack> spaceTrack;
         std::optional<std::string> id;
     };

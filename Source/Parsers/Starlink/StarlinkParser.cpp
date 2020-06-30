@@ -33,7 +33,11 @@ namespace Marsy::Parsers::StarlinkParser
     {
         Starlink starlink;
         starlink.version = parseStringNullable(input, strVersion);
-        starlink.launch = parseStringNullable(input, strlaunch);
+        starlink.launch = parseStringNullable(input, strLaunch);
+        starlink.longitude = parseDoubleNullable(input, strLongitude);
+        starlink.latitude = parseDoubleNullable(input, strLatitude);
+        starlink.heightKilometers = parseDoubleNullable(input, strHeightKm);
+        starlink.velocityKilometersPerSecond = parseDoubleNullable(input, strVelocityKms);
         starlink.spaceTrack = parseSpaceTrack(input, strSpaceTrack);
         starlink.id = parseStringNullable(input, strId);
 
