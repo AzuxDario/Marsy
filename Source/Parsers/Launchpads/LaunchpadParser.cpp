@@ -64,9 +64,9 @@ namespace Marsy::Parsers::LaunchpadParser
         {
             return LaunchpadStatus::unknown;
         }
-        else if(status == strStatusRetried)
+        else if(status == strStatusRetired)
         {
-            return LaunchpadStatus::retried;
+            return LaunchpadStatus::retired;
         }
         else if(status == strStatusLost)
         {

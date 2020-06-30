@@ -7,7 +7,7 @@
 
 namespace Marsy::Models::CoreModel
 {
-    enum class CoreStatus {active, inactive, unknown, expended, lost, retried}; 
+    enum class CoreStatus {active, inactive, unknown, expended, lost, retired}; 
 
     struct Core
     {

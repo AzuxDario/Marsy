@@ -70,9 +70,9 @@ namespace Marsy::Parsers::CoreParser
         {
             return CoreStatus::lost;
         }
-        else if(status == strStatusRetried)
+        else if(status == strStatusRetired)
         {
-            return CoreStatus::retried;
+            return CoreStatus::retired;
         }
         else
         {

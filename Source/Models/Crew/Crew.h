@@ -7,7 +7,7 @@
 
 namespace Marsy::Models::CrewModel
 {
-    enum class CrewStatus {active, inactive, retried, unknown}; 
+    enum class CrewStatus {active, inactive, retired, unknown}; 
 
     struct Crew
     {

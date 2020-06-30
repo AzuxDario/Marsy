@@ -30,7 +30,7 @@ namespace Marsy::Parsers::CapsuleParser
         const std::string strId = "id";
         const std::string strStatusUnknown = "unknown";
         const std::string strStatusActive = "active";
-        const std::string strStatusRetried = "retried";
+        const std::string strStatusRetired = "retired";
         const std::string strStatusDestroyed = "destroyed";
     public:
         CapsuleParser();

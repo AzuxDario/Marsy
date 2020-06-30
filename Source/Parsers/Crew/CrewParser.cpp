@@ -54,9 +54,9 @@ namespace Marsy::Parsers::CrewParser
         {
             return CrewStatus::inactive;
         }
-        else if(status == strStatusRetried)
+        else if(status == strStatusRetired)
         {
-            return CrewStatus::retried;
+            return CrewStatus::retired;
         }
         else if(status == strStatusUnknown)
         {

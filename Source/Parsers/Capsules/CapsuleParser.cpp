@@ -59,9 +59,9 @@ namespace Marsy::Parsers::CapsuleParser
         {
             return CapsuleStatus::active;
         }
-        else if(status == strStatusRetried)
+        else if(status == strStatusRetired)
         {
-            return CapsuleStatus::retried;
+            return CapsuleStatus::retired;
         }
         else if(status == strStatusDestroyed)
         {

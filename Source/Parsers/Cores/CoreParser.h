@@ -35,7 +35,7 @@ namespace Marsy::Parsers::CoreParser
         const std::string strStatusUnknown = "unknown";    
         const std::string strStatusExpended = "expended"; 
         const std::string strStatusLost = "lost";     
-        const std::string strStatusRetried = "retried";
+        const std::string strStatusRetired = "retired";
     public:
         CoreParser();
         Core parseCore(const std::string &input);

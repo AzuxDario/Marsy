@@ -35,7 +35,7 @@ namespace Marsy::Parsers::LaunchpadParser
         const std::string strStatusActive = "active";
         const std::string strStatusInactive = "inactive";
         const std::string strStatusUnknown = "unknown";        
-        const std::string strStatusRetried = "retried";
+        const std::string strStatusRetired = "retired";
         const std::string strStatusLost = "lost";
         const std::string strStatusUnderConstuction = "under construction";
     public:

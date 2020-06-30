@@ -7,7 +7,7 @@
 
 namespace Marsy::Models::LaunchpadModel
 {
-    enum class LaunchpadStatus {active, inactive, unknown, retried, lost, underConstruction};
+    enum class LaunchpadStatus {active, inactive, unknown, retired, lost, underConstruction};
 
     struct Launchpad
     {

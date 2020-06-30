@@ -7,7 +7,7 @@
 
 namespace Marsy::Models::CapsuleModel
 {
-    enum class CapsuleStatus {unknown, active, retried, destroyed}; 
+    enum class CapsuleStatus {unknown, active, retired, destroyed}; 
 
     struct Capsule
     {

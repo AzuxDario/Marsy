@@ -28,7 +28,7 @@ namespace Marsy::Parsers::CrewParser
         const std::string strId = "id";        
         const std::string strStatusActive = "active";
         const std::string strStatusInactive = "inactive";
-        const std::string strStatusRetried = "retried";
+        const std::string strStatusRetired = "retired";
         const std::string strStatusUnknown = "unknown";
     public:
         CrewParser();
