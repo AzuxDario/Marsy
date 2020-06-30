@@ -22,7 +22,7 @@ namespace Marsy::Models::LaunchModel
         std::optional<std::string> dateLocal;
         std::optional<DatePrecision> datePrecision;
         std::optional<std::string> staticFireDateUtc = std::nullopt;
-        std::optional<std::string> staticFireDateUnix = std::nullopt;
+        std::optional<long long> staticFireDateUnix = std::nullopt;
         std::optional<bool> tdb = false;
         std::optional<bool> net = false;
         std::optional<int> window = std::nullopt;
