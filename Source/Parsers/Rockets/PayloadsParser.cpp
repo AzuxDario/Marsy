@@ -16,24 +16,12 @@ namespace Marsy::Parsers::RocketsParser
     Payloads PayloadsParser::parseObject(const json &input)
     {
         Payloads payloads;
+        CommonInfoParser commonInfoParser;
         payloads.option1 = parseStringNullable(input, strOption1);
-        payloads.compositeFairing = parseSizeInfo(input, strCompositeFairing);
-        payloads.diameter = parseSizeInfo(input, strDiameter);
+        payloads.compositeFairing = commonInfoParser.parseSizeInfo(input, strCompositeFairing);
+        payloads.diameter = commonInfoParser.parseSizeInfo(input, strDiameter);
 
         return payloads;
-    }
-
-    std::optional<SizeInfo> PayloadsParser::parseSizeInfo(const json &input, const std::string &name)
-    {
-        if(input.contains(name) && !input[name].is_null() && input[name].is_object())
-        {
-            SizeInfoParser sizeInfoParser;
-            return sizeInfoParser.parseSizeInfo(input);
-        }
-        else
-        {
-            return std::nullopt;
-        }
     }
 
 }

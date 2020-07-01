@@ -16,6 +16,7 @@ namespace Marsy::Parsers::RocketsParser
     Engines EnginesParser::parseObject(const json &input)
     {
         Engines engines;
+        CommonInfoParser commonInfoParser;
         engines.number = parseIntNullable(input, strNumber);
         engines.type = parseStringNullable(input, strType);
         engines.version = parseStringNullable(input, strVersion);
@@ -24,24 +25,11 @@ namespace Marsy::Parsers::RocketsParser
         engines.engineLossMax = parseIntNullable(input, strEngineLossMax);
         engines.propellant1 = parseStringNullable(input, strPropellant1);
         engines.propellant2 = parseStringNullable(input, strPropellant2);
-        engines.thrustSeaLevel = parseThrustInfo(input, strThrustSeaLevel);
-        engines.thrustVacuum = parseThrustInfo(input, strThrustVacuum);
+        engines.thrustSeaLevel = commonInfoParser.parseThrustInfo(input, strThrustSeaLevel);
+        engines.thrustVacuum = commonInfoParser.parseThrustInfo(input, strThrustVacuum);
         engines.thrustToWeight = parseDoubleNullable(input, strThrustToWeight);
 
         return engines;
-    }
-
-    std::optional<ThrustInfo> EnginesParser::parseThrustInfo(const json &input, const std::string &name)
-    {
-        if(input.contains(name) && !input[name].is_null() && input[name].is_object())
-        {
-            ThrustInfoParser thrustInfoParser;
-            return thrustInfoParser.parseThrustInfo(input);
-        }
-        else
-        {
-            return std::nullopt;
-        }
     }
 
     std::optional<Isp> EnginesParser::parseIsp(const json &input, const std::string &name)

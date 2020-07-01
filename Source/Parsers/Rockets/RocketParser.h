@@ -13,8 +13,7 @@
 #include "LandingLegsParser.h"
 #include "PayloadWeightsParser.h"
 #include "SecondStageParser.h"
-#include "../Common/MassInfoParser.h"
-#include "../Common/SizeInfoParser.h"
+#include "../Common/CommonInfoParser.h"
 #include "../../Models/Rockets/Rocket.h"
 #include "../../Models/Rockets/Engines.h"
 #include "../../Models/Rockets/FirstStage.h"
@@ -33,8 +32,7 @@ using Marsy::Models::RocketsModel::PayloadWeights;
 using Marsy::Models::RocketsModel::SecondStage;
 using Marsy::Models::CommonModel::MassInfo;
 using Marsy::Models::CommonModel::SizeInfo;
-using Marsy::Parsers::CommonParser::MassInfoParser;
-using Marsy::Parsers::CommonParser::SizeInfoParser;
+using Marsy::Parsers::CommonParser::CommonInfoParser;
 
 namespace Marsy::Parsers::RocketsParser
 {
@@ -69,8 +67,6 @@ namespace Marsy::Parsers::RocketsParser
         std::vector<Rocket> parseRockets(const std::string &input);
     private:
         Rocket parseObject(const json &input);
-        std::optional<MassInfo> parseMassInfo(const json &input, const std::string &name);
-        std::optional<SizeInfo> parseSizeInfo(const json &input, const std::string &name);
         std::optional<Engines> parseEngines(const json &input, const std::string &name);
         std::optional<FirstStage> parseFirstStage(const json &input, const std::string &name);
         std::optional<LandingLegs> parseLandingLegs(const json &input, const std::string &name);

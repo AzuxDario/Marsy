@@ -12,9 +12,7 @@
 #include "ThrusterParser.h"
 #include "TrunkParser.h"
 #include "PressurizedCapsuleParser.h"
-#include "../Common/MassInfoParser.h"
-#include "../Common/SizeInfoParser.h"
-#include "../Common/VolumeInfoParser.h"
+#include "../Common/CommonInfoParser.h"
 #include "../../Models/Dragons/Dragon.h"
 #include "../../Models/Dragons/HeatShield.h"
 #include "../../Models/Dragons/Thruster.h"
@@ -32,9 +30,7 @@ using Marsy::Models::DragonModel::PressurizedCapsule;
 using Marsy::Models::CommonModel::MassInfo;
 using Marsy::Models::CommonModel::SizeInfo;
 using Marsy::Models::CommonModel::VolumeInfo;
-using Marsy::Parsers::CommonParser::MassInfoParser;
-using Marsy::Parsers::CommonParser::SizeInfoParser;
-using Marsy::Parsers::CommonParser::VolumeInfoParser;
+using Marsy::Parsers::CommonParser::CommonInfoParser;
 
 namespace Marsy::Parsers::DragonParser
 {
@@ -70,9 +66,6 @@ namespace Marsy::Parsers::DragonParser
         std::vector<Dragon> parseDragons(const std::string &input);
     private:
         Dragon parseObject(const json &input);
-        std::optional<MassInfo> parseMassInfo(const json &input, const std::string &name);
-        std::optional<SizeInfo> parseSizeInfo(const json &input, const std::string &name);
-        std::optional<VolumeInfo> parseVolumeInfo(const json &input, const std::string &name);
         std::optional<HeatShield> parseHeatShield(const json &input, const std::string &name);
         std::optional<std::vector<Thruster>> parseThrusters(const json &input, const std::string &name);
         std::optional<PressurizedCapsule> parsePressurizedCapsule(const json &input, const std::string &name);

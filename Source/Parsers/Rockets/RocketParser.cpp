@@ -32,6 +32,7 @@ namespace Marsy::Parsers::RocketsParser
     Rocket RocketParser::parseObject(const json &input)
     {
         Rocket rocket;
+        CommonInfoParser commonInfoParser;
         rocket.name = parseStringNullable(input, strName);
         rocket.type = parseStringNullable(input, strType);
         rocket.active = parseBoolNullable(input, strActive);
@@ -42,9 +43,9 @@ namespace Marsy::Parsers::RocketsParser
         rocket.firstFlight = parseStringNullable(input, strFirstFlight);
         rocket.country = parseStringNullable(input, strCountry);
         rocket.company = parseStringNullable(input, strCompany);
-        rocket.height = parseSizeInfo(input, strHeight);
-        rocket.diameter = parseSizeInfo(input, strDiameter);
-        rocket.mass = parseMassInfo(input, strMass);
+        rocket.height = commonInfoParser.parseSizeInfo(input, strHeight);
+        rocket.diameter = commonInfoParser.parseSizeInfo(input, strDiameter);
+        rocket.mass = commonInfoParser.parseMassInfo(input, strMass);
         rocket.payloadWeights = parsePayloadWeights(input, strPayloadWeights);
         rocket.firstStage = parseFirstStage(input, strFirstStage);
         rocket.secondStage = parseSecondStage(input, strSecondStage);
@@ -56,32 +57,6 @@ namespace Marsy::Parsers::RocketsParser
         rocket.id = parseStringNullable(input, strId);
 
         return rocket;
-    }
-
-    std::optional<MassInfo> RocketParser::parseMassInfo(const json &input, const std::string &name)
-    {
-        if(input.contains(name) && !input[name].is_null() && input[name].is_object())
-        {
-            MassInfoParser massInfoParser;
-            return massInfoParser.parseMassInfo(input);
-        }
-        else
-        {
-            return std::nullopt;
-        }
-    }
-
-    std::optional<SizeInfo> RocketParser::parseSizeInfo(const json &input, const std::string &name)
-    {
-        if(input.contains(name) && !input[name].is_null() && input[name].is_object())
-        {
-            SizeInfoParser sizeInfoParser;
-            return sizeInfoParser.parseSizeInfo(input);
-        }
-        else
-        {
-            return std::nullopt;
-        }
     }
 
     std::optional<Engines> RocketParser::parseEngines(const json &input, const std::string &name)

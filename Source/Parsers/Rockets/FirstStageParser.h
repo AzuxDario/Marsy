@@ -7,14 +7,14 @@
 #include "../../Libraries/JSON/json.hpp"
 
 #include "../Parser.h"
-#include "../Common/ThrustInfoParser.h"
+#include "../Common/CommonInfoParser.h"
 #include "../../Models/Rockets/FirstStage.h"
 #include "../../Models/Common/ThrustInfo.h"
 
 using json = nlohmann::json;
 using Marsy::Models::RocketsModel::FirstStage;
 using Marsy::Models::CommonModel::ThrustInfo;
-using Marsy::Parsers::CommonParser::ThrustInfoParser;
+using Marsy::Parsers::CommonParser::CommonInfoParser;
 
 namespace Marsy::Parsers::RocketsParser
 {
@@ -32,7 +32,6 @@ namespace Marsy::Parsers::RocketsParser
         FirstStage parseFirstStage(const std::string &input);
     private:
         FirstStage parseObject(const json &input);
-        std::optional<ThrustInfo> parseThrustInfo(const json &input, const std::string &name);
     };
 }
 

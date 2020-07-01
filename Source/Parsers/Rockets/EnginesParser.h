@@ -8,7 +8,7 @@
 
 #include "../Parser.h"
 #include "IspParser.h"
-#include "../Common/ThrustInfoParser.h"
+#include "../Common/CommonInfoParser.h"
 #include "../../Models/Rockets/Engines.h"
 #include "../../Models/Rockets/Isp.h"
 #include "../../Models/Common/ThrustInfo.h"
@@ -17,7 +17,7 @@ using json = nlohmann::json;
 using Marsy::Models::RocketsModel::Engines;
 using Marsy::Models::RocketsModel::Isp;
 using Marsy::Models::CommonModel::ThrustInfo;
-using Marsy::Parsers::CommonParser::ThrustInfoParser;
+using Marsy::Parsers::CommonParser::CommonInfoParser;
 
 namespace Marsy::Parsers::RocketsParser
 {
@@ -40,7 +40,6 @@ namespace Marsy::Parsers::RocketsParser
         Engines parseEngines(const std::string &input);
     private:
         Engines parseObject(const json &input);
-        std::optional<ThrustInfo> parseThrustInfo(const json &input, const std::string &name);
         std::optional<Isp> parseIsp(const json &input, const std::string &name);
     };
 }

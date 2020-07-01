@@ -32,6 +32,7 @@ namespace Marsy::Parsers::DragonParser
     Dragon DragonParser::parseObject(const json &input)
     {
         Dragon dragon;
+        CommonInfoParser commonInfoParser;
         dragon.name = parseStringNullable(input, strName);
         dragon.type = parseStringNullable(input, strType);
         dragon.active = parseBoolNullable(input, strActive);
@@ -43,59 +44,20 @@ namespace Marsy::Parsers::DragonParser
         dragon.firstFlight = parseStringNullable(input, strFirstFlight);
         dragon.heatShield = parseHeatShield(input, strHeatShield);
         dragon.thrusters = parseThrusters(input, strThrusters);
-        dragon.launchPayloadMass = parseMassInfo(input, strLaunchPayloadMass);
-        dragon.launchPayloadVolume = parseVolumeInfo(input, strLaunchPayloadVol);
-        dragon.returnPayloadMass = parseMassInfo(input, strReturnPayloadMass);
-        dragon.returnPayloadVolume = parseVolumeInfo(input, strReturnPayloadVol);
+        dragon.launchPayloadMass = commonInfoParser.parseMassInfo(input, strLaunchPayloadMass);
+        dragon.launchPayloadVolume = commonInfoParser.parseVolumeInfo(input, strLaunchPayloadVol);
+        dragon.returnPayloadMass = commonInfoParser.parseMassInfo(input, strReturnPayloadMass);
+        dragon.returnPayloadVolume = commonInfoParser.parseVolumeInfo(input, strReturnPayloadVol);
         dragon.pressurizedCapsule = parsePressurizedCapsule(input, strPressurizedCapsule);
         dragon.trunk = parseTrunk(input, strTrunk);
-        dragon.heightWTrunk = parseSizeInfo(input, strHeightWTrunk);
-        dragon.diameter = parseSizeInfo(input, strDiameter);
+        dragon.heightWTrunk = commonInfoParser.parseSizeInfo(input, strHeightWTrunk);
+        dragon.diameter = commonInfoParser.parseSizeInfo(input, strDiameter);
         dragon.flickrImages = parseArrayOfStringNullable(input, strFlickrImages);
         dragon.wikipedia = parseStringNullable(input, strWikipedia);
         dragon.description = parseStringNullable(input, strDescription);
         dragon.id = parseStringNullable(input, strId);
 
         return dragon;
-    }
-
-    std::optional<MassInfo> DragonParser::parseMassInfo(const json &input, const std::string &name)
-    {
-        if(input.contains(name) && !input[name].is_null() && input[name].is_object())
-        {
-            MassInfoParser massInfoParser;
-            return massInfoParser.parseMassInfo(input);
-        }
-        else
-        {
-            return std::nullopt;
-        }
-    }
-
-    std::optional<SizeInfo> DragonParser::parseSizeInfo(const json &input, const std::string &name)
-    {
-        if(input.contains(name) && !input[name].is_null() && input[name].is_object())
-        {
-            SizeInfoParser sizeInfoParser;
-            return sizeInfoParser.parseSizeInfo(input);
-        }
-        else
-        {
-            return std::nullopt;
-        }
-    }
-
-    std::optional<VolumeInfo> DragonParser::parseVolumeInfo(const json &input, const std::string &name)
-    {
-        if(input.contains(name) && !input[name].is_null() && input[name].is_object())
-        {
-            VolumeInfoParser volumeInfoParser;
-            return volumeInfoParser.parseVolumeInfo(input);
-        }
-        else
-        {
-            return std::nullopt;
-        }
     }
 
     std::optional<HeatShield> DragonParser::parseHeatShield(const json &input, const std::string &name)

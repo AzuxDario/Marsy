@@ -16,27 +16,15 @@ namespace Marsy::Parsers::RocketsParser
     SecondStage SecondStageParser::parseObject(const json &input)
     {
         SecondStage secondStage;
+        CommonInfoParser commonInfoParser;
         secondStage.reusable = parseBoolNullable(input, strReusable);
         secondStage.engines = parseIntNullable(input, strEngines);
         secondStage.fuelAmountTons = parseIntNullable(input, strFuelAmountTons);
         secondStage.burnTimeSeconds = parseIntNullable(input, strBurnTimeSec);
-        secondStage.thrust = parseThrustInfo(input, strThrust);
+        secondStage.thrust = commonInfoParser.parseThrustInfo(input, strThrust);
         secondStage.payloads = parsePayloads(input, strPayloads);
 
         return secondStage;
-    }
-
-    std::optional<ThrustInfo> SecondStageParser::parseThrustInfo(const json &input, const std::string &name)
-    {
-        if(input.contains(name) && !input[name].is_null() && input[name].is_object())
-        {
-            ThrustInfoParser thrustInfoParser;
-            return thrustInfoParser.parseThrustInfo(input);
-        }
-        else
-        {
-            return std::nullopt;
-        }
     }
 
     std::optional<Payloads> SecondStageParser::parsePayloads(const json &input, const std::string &name)

@@ -7,14 +7,14 @@
 #include "../../Libraries/JSON/json.hpp"
 
 #include "../Parser.h"
-#include "../Common/SizeInfoParser.h"
+#include "../Common/CommonInfoParser.h"
 #include "../../Models/Rockets/Payloads.h"
 #include "../../Models/Common/SizeInfo.h"
 
 using json = nlohmann::json;
 using Marsy::Models::RocketsModel::Payloads;
 using Marsy::Models::CommonModel::SizeInfo;
-using Marsy::Parsers::CommonParser::SizeInfoParser;
+using Marsy::Parsers::CommonParser::CommonInfoParser;
 
 namespace Marsy::Parsers::RocketsParser
 {
@@ -29,7 +29,6 @@ namespace Marsy::Parsers::RocketsParser
         Payloads parsePayloads(const std::string &input);
     private:
         Payloads parseObject(const json &input);
-        std::optional<SizeInfo> parseSizeInfo(const json &input, const std::string &name);
     };
 }
 

@@ -16,22 +16,10 @@ namespace Marsy::Parsers::DragonParser
     PressurizedCapsule PressurizedCapsuleParser::parseObject(const json &input)
     {
         PressurizedCapsule pressurizedCapsule;
-        pressurizedCapsule.payloadVolume = parseVolumeInfo(input, strPayloadVolume);
+        CommonInfoParser commonInfoParser;
+        pressurizedCapsule.payloadVolume = commonInfoParser.parseVolumeInfo(input, strPayloadVolume);
 
         return pressurizedCapsule;
-    }
-
-    std::optional<VolumeInfo> PressurizedCapsuleParser::parseVolumeInfo(const json &input, const std::string &name)
-    {
-        if(input.contains(name) && !input[name].is_null() && input[name].is_object())
-        {
-            VolumeInfoParser volumeInfoParser;
-            return volumeInfoParser.parseVolumeInfo(input);
-        }
-        else
-        {
-            return std::nullopt;
-        }
     }
 
 }

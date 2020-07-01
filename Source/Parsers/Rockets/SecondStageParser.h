@@ -8,7 +8,7 @@
 
 #include "../Parser.h"
 #include "PayloadsParser.h"
-#include "../Common/ThrustInfoParser.h"
+#include "../Common/CommonInfoParser.h"
 #include "../../Models/Rockets/SecondStage.h"
 #include "../../Models/Rockets/Payloads.h"
 #include "../../Models/Common/ThrustInfo.h"
@@ -17,7 +17,7 @@ using json = nlohmann::json;
 using Marsy::Models::RocketsModel::SecondStage;
 using Marsy::Models::RocketsModel::Payloads;
 using Marsy::Models::CommonModel::ThrustInfo;
-using Marsy::Parsers::CommonParser::ThrustInfoParser;
+using Marsy::Parsers::CommonParser::CommonInfoParser;
 
 namespace Marsy::Parsers::RocketsParser
 {
@@ -35,7 +35,6 @@ namespace Marsy::Parsers::RocketsParser
         SecondStage parseSecondStage(const std::string &input);
     private:
         SecondStage parseObject(const json &input);
-        std::optional<ThrustInfo> parseThrustInfo(const json &input, const std::string &name);
         std::optional<Payloads> parsePayloads(const json &input, const std::string &name);
     };
 }

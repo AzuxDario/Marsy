@@ -16,23 +16,11 @@ namespace Marsy::Parsers::DragonParser
     Trunk TrunkParser::parseObject(const json &input)
     {
         Trunk trunk;
-        trunk.trunkVolume = parseVolumeInfo(input, strTrunkVolume);
+        CommonInfoParser commonInfoParser;
+        trunk.trunkVolume = commonInfoParser.parseVolumeInfo(input, strTrunkVolume);
         trunk.cargo = parseCargo(input, strCargo);
 
         return trunk;
-    }
-
-    std::optional<VolumeInfo> TrunkParser::parseVolumeInfo(const json &input, const std::string &name)
-    {
-        if(input.contains(name) && !input[name].is_null() && input[name].is_object())
-        {
-            VolumeInfoParser volumeInfoParser;
-            return volumeInfoParser.parseVolumeInfo(input);
-        }
-        else
-        {
-            return std::nullopt;
-        }
     }
 
     std::optional<Cargo> TrunkParser::parseCargo(const json &input, const std::string &name)
