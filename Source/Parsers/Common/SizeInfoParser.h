@@ -13,7 +13,7 @@
 using json = nlohmann::json;
 using Marsy::Models::CommonModel::SizeInfo;
 
-namespace Marsy::Parsers::Common
+namespace Marsy::Parsers::CommonParser
 {
     class SizeInfoParser : public Parser
     {

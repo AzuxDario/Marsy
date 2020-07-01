@@ -1,6 +1,6 @@
 #include "ThrustInfoParser.h"
 
-namespace Marsy::Parsers::Common
+namespace Marsy::Parsers::CommonParser
 {
     ThrustInfoParser::ThrustInfoParser()
     {

@@ -13,7 +13,7 @@
 using json = nlohmann::json;
 using Marsy::Models::CommonModel::ThrustInfo;
 
-namespace Marsy::Parsers::Common
+namespace Marsy::Parsers::CommonParser
 {
     class ThrustInfoParser : public Parser
     {

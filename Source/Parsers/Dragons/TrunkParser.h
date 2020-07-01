@@ -17,7 +17,7 @@ using json = nlohmann::json;
 using Marsy::Models::DragonModel::Trunk;
 using Marsy::Models::DragonModel::Cargo;
 using Marsy::Models::CommonModel::VolumeInfo;
-using Marsy::Parsers::Common::VolumeInfoParser;
+using Marsy::Parsers::CommonParser::VolumeInfoParser;
 
 namespace Marsy::Parsers::DragonParser
 {

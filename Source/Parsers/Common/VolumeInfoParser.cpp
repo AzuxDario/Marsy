@@ -1,6 +1,6 @@
 #include "VolumeInfoParser.h"
 
-namespace Marsy::Parsers::Common
+namespace Marsy::Parsers::CommonParser
 {
     VolumeInfoParser::VolumeInfoParser()
     {

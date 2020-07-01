@@ -14,7 +14,7 @@
 using json = nlohmann::json;
 using Marsy::Models::RocketsModel::Payloads;
 using Marsy::Models::CommonModel::SizeInfo;
-using Marsy::Parsers::Common::SizeInfoParser;
+using Marsy::Parsers::CommonParser::SizeInfoParser;
 
 namespace Marsy::Parsers::RocketsParser
 {

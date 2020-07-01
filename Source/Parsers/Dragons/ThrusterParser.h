@@ -14,7 +14,7 @@
 using json = nlohmann::json;
 using Marsy::Models::DragonModel::Thruster;
 using Marsy::Models::CommonModel::ThrustInfo;
-using Marsy::Parsers::Common::ThrustInfoParser;
+using Marsy::Parsers::CommonParser::ThrustInfoParser;
 
 namespace Marsy::Parsers::DragonParser
 {

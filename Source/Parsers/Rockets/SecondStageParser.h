@@ -17,7 +17,7 @@ using json = nlohmann::json;
 using Marsy::Models::RocketsModel::SecondStage;
 using Marsy::Models::RocketsModel::Payloads;
 using Marsy::Models::CommonModel::ThrustInfo;
-using Marsy::Parsers::Common::ThrustInfoParser;
+using Marsy::Parsers::CommonParser::ThrustInfoParser;
 
 namespace Marsy::Parsers::RocketsParser
 {

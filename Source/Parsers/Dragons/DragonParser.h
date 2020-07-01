@@ -32,9 +32,9 @@ using Marsy::Models::DragonModel::PressurizedCapsule;
 using Marsy::Models::CommonModel::MassInfo;
 using Marsy::Models::CommonModel::SizeInfo;
 using Marsy::Models::CommonModel::VolumeInfo;
-using Marsy::Parsers::Common::MassInfoParser;
-using Marsy::Parsers::Common::SizeInfoParser;
-using Marsy::Parsers::Common::VolumeInfoParser;
+using Marsy::Parsers::CommonParser::MassInfoParser;
+using Marsy::Parsers::CommonParser::SizeInfoParser;
+using Marsy::Parsers::CommonParser::VolumeInfoParser;
 
 namespace Marsy::Parsers::DragonParser
 {

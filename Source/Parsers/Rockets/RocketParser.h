@@ -33,8 +33,8 @@ using Marsy::Models::RocketsModel::PayloadWeights;
 using Marsy::Models::RocketsModel::SecondStage;
 using Marsy::Models::CommonModel::MassInfo;
 using Marsy::Models::CommonModel::SizeInfo;
-using Marsy::Parsers::Common::MassInfoParser;
-using Marsy::Parsers::Common::SizeInfoParser;
+using Marsy::Parsers::CommonParser::MassInfoParser;
+using Marsy::Parsers::CommonParser::SizeInfoParser;
 
 namespace Marsy::Parsers::RocketsParser
 {

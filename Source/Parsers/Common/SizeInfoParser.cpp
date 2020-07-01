@@ -1,6 +1,6 @@
 #include "SizeInfoParser.h"
 
-namespace Marsy::Parsers::Common
+namespace Marsy::Parsers::CommonParser
 {
     SizeInfoParser::SizeInfoParser()
     {
