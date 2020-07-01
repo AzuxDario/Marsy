@@ -13,7 +13,7 @@ namespace Marsy::Parsers::LandpadParser
         return parseObject(j);
     }
 
-    std::vector<Landpad> LandpadParser::parseLandpads(const std::string &input)
+    std::vector<Landpad> LandpadParser::parseLandpadVector(const std::string &input)
     {
         std::vector<Landpad> landpad;
         json j = json::parse(input);

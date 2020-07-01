@@ -64,13 +64,13 @@ namespace Marsy::Parsers::RocketsParser
     public:
         RocketParser();
         Rocket parseRocket(const std::string &input);
-        std::vector<Rocket> parseRockets(const std::string &input);
+        std::vector<Rocket> parseRocketVector(const std::string &input);
     private:
         Rocket parseObject(const json &input);
         std::optional<Engines> parseEngines(const json &input, const std::string &name);
         std::optional<FirstStage> parseFirstStage(const json &input, const std::string &name);
         std::optional<LandingLegs> parseLandingLegs(const json &input, const std::string &name);
-        std::optional<std::vector<PayloadWeights>> parsePayloadWeights(const json &input, const std::string &name);
+        std::optional<std::vector<PayloadWeights>> parsePayloadWeightsVector(const json &input, const std::string &name);
         std::optional<SecondStage> parseSecondStage(const json &input, const std::string &name);
     };
 }

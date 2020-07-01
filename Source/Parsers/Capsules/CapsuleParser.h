@@ -35,7 +35,7 @@ namespace Marsy::Parsers::CapsuleParser
     public:
         CapsuleParser();
         Capsule parseCapsule(const std::string &input);
-        std::vector<Capsule> parseCapsules(const std::string &input);
+        std::vector<Capsule> parseCapsuleVector(const std::string &input);
     private:
         Capsule parseObject(const json &input);
         std::optional<CapsuleStatus> parseCapsuleStatus(const json &input, const std::string &name);

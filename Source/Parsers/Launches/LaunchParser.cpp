@@ -13,7 +13,7 @@ namespace Marsy::Parsers::LaunchesParser
         return parseObject(j);
     }
 
-    std::vector<Launch> LaunchParser::parseLaunches(const std::string &input)
+    std::vector<Launch> LaunchParser::parseLaunchVector(const std::string &input)
     {
         std::vector<Launch> launches;
         json j = json::parse(input);
@@ -53,7 +53,7 @@ namespace Marsy::Parsers::LaunchesParser
         launch.capsules = parseArrayOfStringNullable(input, strCapsules);
         launch.payloads = parseArrayOfStringNullable(input, strPayloads);
         launch.launchpad = parseStringNullable(input, strLaunchpad);
-        launch.cores = parseCores(input, strCores);
+        launch.cores = parseCoresVector(input, strCores);
         launch.links = parseLinks(input, strLinks);
         launch.autoUpdate = parseBoolNullable(input, strAutoUpdate).value_or(launch.autoUpdate.value());
         launch.id = parseStringNullable(input, strId);
@@ -95,12 +95,12 @@ namespace Marsy::Parsers::LaunchesParser
         
     }
 
-    std::optional<std::vector<Core>> LaunchParser::parseCores(const json &input, const std::string &name)
+    std::optional<std::vector<Core>> LaunchParser::parseCoresVector(const json &input, const std::string &name)
     {
         if(input.contains(name) && !input[name].is_null() && input[name].is_array())
         {
             CoreParser coreParser;
-            return coreParser.parseCores(input);
+            return coreParser.parseCoresVector(input);
         }
         else
         {

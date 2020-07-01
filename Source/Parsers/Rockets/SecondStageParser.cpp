@@ -22,17 +22,17 @@ namespace Marsy::Parsers::RocketsParser
         secondStage.fuelAmountTons = parseIntNullable(input, strFuelAmountTons);
         secondStage.burnTimeSeconds = parseIntNullable(input, strBurnTimeSec);
         secondStage.thrust = commonInfoParser.parseThrustInfo(input, strThrust);
-        secondStage.payloads = parsePayloads(input, strPayloads);
+        secondStage.payloads = parsePayloadVector(input, strPayloads);
 
         return secondStage;
     }
 
-    std::optional<Payloads> SecondStageParser::parsePayloads(const json &input, const std::string &name)
+    std::optional<Payloads> SecondStageParser::parsePayloadVector(const json &input, const std::string &name)
     {
         if(input.contains(name) && !input[name].is_null() && input[name].is_object())
         {
             PayloadsParser payloadsParser;
-            return payloadsParser.parsePayloads(input);
+            return payloadsParser.parsePayloadVector(input);
         }
         else
         {

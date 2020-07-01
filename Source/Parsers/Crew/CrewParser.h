@@ -32,11 +32,11 @@ namespace Marsy::Parsers::CrewParser
         const std::string strStatusUnknown = "unknown";
     public:
         CrewParser();
-        Crew parseCrew(const std::string &input);
-        std::vector<Crew> parseCrews(const std::string &input);
+        Crew parseCrewVector(const std::string &input);
+        std::vector<Crew> parseCrewVectors(const std::string &input);
     private:
         Crew parseObject(const json &input);
-        std::optional<CrewStatus> parseCrewStatus(const json &input, const std::string &name);
+        std::optional<CrewStatus> parseCrewVectorStatus(const json &input, const std::string &name);
     };
 }
 

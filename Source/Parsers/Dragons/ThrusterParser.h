@@ -30,7 +30,7 @@ namespace Marsy::Parsers::DragonParser
         const std::string strThrust = "thrust";
     public:
         ThrusterParser();
-        std::vector<Thruster> parseThrusters(const std::string &input);
+        std::vector<Thruster> parseThrusterVector(const std::string &input);
     private:
         Thruster parseObject(const json &input);
     };

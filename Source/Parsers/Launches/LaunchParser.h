@@ -63,11 +63,11 @@ namespace Marsy::Parsers::LaunchesParser
     public:
         LaunchParser();
         Launch parseLaunch(const std::string &input);
-        std::vector<Launch> parseLaunches(const std::string &input);
+        std::vector<Launch> parseLaunchVector(const std::string &input);
     private:
         Launch parseObject(const json &input);
         std::optional<DatePrecision> parseDatePrecision(const json &input, const std::string &name);
-        std::optional<std::vector<Core>> parseCores(const json &input, const std::string &name);
+        std::optional<std::vector<Core>> parseCoresVector(const json &input, const std::string &name);
         std::optional<Fairings> parseFairings(const json &input, const std::string &name);
         std::optional<Links> parseLinks(const json &input, const std::string &name);
     };

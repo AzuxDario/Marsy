@@ -13,7 +13,7 @@ namespace Marsy::Parsers::LaunchpadParser
         return parseObject(j);
     }
 
-    std::vector<Launchpad> LaunchpadParser::parseLaunchpads(const std::string &input)
+    std::vector<Launchpad> LaunchpadParser::parseLaunchpadVector(const std::string &input)
     {
         std::vector<Launchpad> launchpad;
         json j = json::parse(input);

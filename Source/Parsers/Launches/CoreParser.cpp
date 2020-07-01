@@ -7,7 +7,7 @@ namespace Marsy::Parsers::LaunchesParser
 
     }
 
-    std::vector<Core> CoreParser::parseCores(const std::string &input)
+    std::vector<Core> CoreParser::parseCoresVector(const std::string &input)
     {
         std::vector<Core> cores;
         json j = json::parse(input);

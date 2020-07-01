@@ -13,7 +13,7 @@ namespace Marsy::Parsers::DragonParser
         return parseObject(j);
     }
 
-    std::vector<Dragon> DragonParser::parseDragons(const std::string &input)
+    std::vector<Dragon> DragonParser::parseDragonVector(const std::string &input)
     {
         std::vector<Dragon> dragons;
         json j = json::parse(input);
@@ -43,7 +43,7 @@ namespace Marsy::Parsers::DragonParser
         dragon.dryMassPounds = parseIntNullable(input, strDryMassLb);
         dragon.firstFlight = parseStringNullable(input, strFirstFlight);
         dragon.heatShield = parseHeatShield(input, strHeatShield);
-        dragon.thrusters = parseThrusters(input, strThrusters);
+        dragon.thrusters = parseThrusterVector(input, strThrusters);
         dragon.launchPayloadMass = commonInfoParser.parseMassInfo(input, strLaunchPayloadMass);
         dragon.launchPayloadVolume = commonInfoParser.parseVolumeInfo(input, strLaunchPayloadVol);
         dragon.returnPayloadMass = commonInfoParser.parseMassInfo(input, strReturnPayloadMass);
@@ -73,12 +73,12 @@ namespace Marsy::Parsers::DragonParser
         }
     }
 
-    std::optional<std::vector<Thruster>> DragonParser::parseThrusters(const json &input, const std::string &name)
+    std::optional<std::vector<Thruster>> DragonParser::parseThrusterVector(const json &input, const std::string &name)
     {
         if(input.contains(name) && !input[name].is_null() && input[name].is_array())
         {
             ThrusterParser thrusterParser;
-            return thrusterParser.parseThrusters(input);
+            return thrusterParser.parseThrusterVector(input);
         }
         else
         {

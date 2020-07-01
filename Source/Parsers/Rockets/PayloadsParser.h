@@ -26,7 +26,7 @@ namespace Marsy::Parsers::RocketsParser
         const std::string strDiameter = "diameter";
     public:
         PayloadsParser();
-        Payloads parsePayloads(const std::string &input);
+        Payloads parsePayloadVector(const std::string &input);
     private:
         Payloads parseObject(const json &input);
     };

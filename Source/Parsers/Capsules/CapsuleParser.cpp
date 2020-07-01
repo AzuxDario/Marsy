@@ -13,7 +13,7 @@ namespace Marsy::Parsers::CapsuleParser
         return parseObject(j);
     }
 
-    std::vector<Capsule> CapsuleParser::parseCapsules(const std::string &input)
+    std::vector<Capsule> CapsuleParser::parseCapsuleVector(const std::string &input)
     {
         std::vector<Capsule> capsules;
         json j = json::parse(input);

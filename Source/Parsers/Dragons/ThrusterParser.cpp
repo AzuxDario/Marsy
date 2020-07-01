@@ -7,7 +7,7 @@ namespace Marsy::Parsers::DragonParser
 
     }
 
-    std::vector<Thruster> ThrusterParser::parseThrusters(const std::string &input)
+    std::vector<Thruster> ThrusterParser::parseThrusterVector(const std::string &input)
     {
         std::vector<Thruster> thrusters;
         json j = json::parse(input);

@@ -13,7 +13,7 @@ namespace Marsy::Parsers::StarlinkParser
         return parseObject(j);
     }
 
-    std::vector<Starlink> StarlinkParser::parseStarlinks(const std::string &input)
+    std::vector<Starlink> StarlinkParser::parseStarlinkVector(const std::string &input)
     {
         std::vector<Starlink> starlinks;
         json j = json::parse(input);

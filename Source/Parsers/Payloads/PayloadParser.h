@@ -53,7 +53,7 @@ namespace Marsy::Parsers::PayloadParser
     public:
         PayloadParser();
         Payload parsePayload(const std::string &input);
-        std::vector<Payload> parsePayloads(const std::string &input);
+        std::vector<Payload> parsePayloadVector(const std::string &input);
     private:
         Payload parseObject(const json &input);
         std::optional<Dragon> parseDragon(const json &input, const std::string &name);

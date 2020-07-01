@@ -13,7 +13,7 @@ namespace Marsy::Parsers::ShipParser
         return parseObject(j);
     }
 
-    std::vector<Ship> ShipParser::parseShips(const std::string &input)
+    std::vector<Ship> ShipParser::parseShipVector(const std::string &input)
     {
         std::vector<Ship> ship;
         json j = json::parse(input);

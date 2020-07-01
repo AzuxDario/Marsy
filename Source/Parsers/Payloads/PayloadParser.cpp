@@ -13,7 +13,7 @@ namespace Marsy::Parsers::PayloadParser
         return parseObject(j);
     }
 
-    std::vector<Payload> PayloadParser::parsePayloads(const std::string &input)
+    std::vector<Payload> PayloadParser::parsePayloadVector(const std::string &input)
     {
         std::vector<Payload> payloads;
         json j = json::parse(input);

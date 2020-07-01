@@ -45,7 +45,7 @@ namespace Marsy::Parsers::ShipParser
     public:
         ShipParser();
         Ship parseShip(const std::string &input);
-        std::vector<Ship> parseShips(const std::string &input);
+        std::vector<Ship> parseShipVector(const std::string &input);
     private:
         Ship parseObject(const json &input);
     };

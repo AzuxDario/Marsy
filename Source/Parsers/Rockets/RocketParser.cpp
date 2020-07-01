@@ -13,7 +13,7 @@ namespace Marsy::Parsers::RocketsParser
         return parseObject(j);
     }
 
-    std::vector<Rocket> RocketParser::parseRockets(const std::string &input)
+    std::vector<Rocket> RocketParser::parseRocketVector(const std::string &input)
     {
         std::vector<Rocket> rockets;
         json j = json::parse(input);
@@ -46,7 +46,7 @@ namespace Marsy::Parsers::RocketsParser
         rocket.height = commonInfoParser.parseSizeInfo(input, strHeight);
         rocket.diameter = commonInfoParser.parseSizeInfo(input, strDiameter);
         rocket.mass = commonInfoParser.parseMassInfo(input, strMass);
-        rocket.payloadWeights = parsePayloadWeights(input, strPayloadWeights);
+        rocket.payloadWeights = parsePayloadWeightsVector(input, strPayloadWeights);
         rocket.firstStage = parseFirstStage(input, strFirstStage);
         rocket.secondStage = parseSecondStage(input, strSecondStage);
         rocket.engines = parseEngines(input, strEngines);
@@ -98,12 +98,12 @@ namespace Marsy::Parsers::RocketsParser
         }
     }
 
-    std::optional<std::vector<PayloadWeights>> RocketParser::parsePayloadWeights(const json &input, const std::string &name)
+    std::optional<std::vector<PayloadWeights>> RocketParser::parsePayloadWeightsVector(const json &input, const std::string &name)
     {
         if(input.contains(name) && !input[name].is_null() && input[name].is_object())
         {
             PayloadWeightsParser payloadWeightsParser;
-            return payloadWeightsParser.parsePayloadWeights(input);
+            return payloadWeightsParser.parsePayloadWeightsVector(input);
         }
         else
         {

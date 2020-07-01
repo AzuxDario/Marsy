@@ -63,11 +63,11 @@ namespace Marsy::Parsers::DragonParser
     public:
         DragonParser();
         Dragon parseDragon(const std::string &input);
-        std::vector<Dragon> parseDragons(const std::string &input);
+        std::vector<Dragon> parseDragonVector(const std::string &input);
     private:
         Dragon parseObject(const json &input);
         std::optional<HeatShield> parseHeatShield(const json &input, const std::string &name);
-        std::optional<std::vector<Thruster>> parseThrusters(const json &input, const std::string &name);
+        std::optional<std::vector<Thruster>> parseThrusterVector(const json &input, const std::string &name);
         std::optional<PressurizedCapsule> parsePressurizedCapsule(const json &input, const std::string &name);
         std::optional<Trunk> parseTrunk(const json &input, const std::string &name);
     };
