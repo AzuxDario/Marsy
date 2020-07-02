@@ -68,7 +68,7 @@ namespace Marsy::Parsers::PayloadParser
         if(input.contains(name) && !input[name].is_null() && input[name].is_object())
         {
             DragonParser dragonParser;
-            return dragonParser.parseDragon(input);
+            return dragonParser.parseDragon(input[name].dump());
         }
         else
         {

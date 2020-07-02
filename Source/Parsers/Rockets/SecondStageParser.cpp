@@ -29,10 +29,10 @@ namespace Marsy::Parsers::RocketsParser
 
     std::optional<Payloads> SecondStageParser::parsePayloadVector(const json &input, const std::string &name)
     {
-        if(input.contains(name) && !input[name].is_null() && input[name].is_object())
+        if(input.contains(name) && !input[name].is_null() && input[name].is_array())
         {
             PayloadsParser payloadsParser;
-            return payloadsParser.parsePayloadVector(input);
+            return payloadsParser.parsePayloadVector(input[name].dump());
         }
         else
         {

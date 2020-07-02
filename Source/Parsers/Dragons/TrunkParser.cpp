@@ -28,7 +28,7 @@ namespace Marsy::Parsers::DragonParser
         if(input.contains(name) && !input[name].is_null() && input[name].is_object())
         {
             CargoParser cargoParser;
-            return cargoParser.parseCargo(input);
+            return cargoParser.parseCargo(input[name].dump());
         }
         else
         {

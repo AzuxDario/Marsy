@@ -100,7 +100,7 @@ namespace Marsy::Parsers::LaunchesParser
         if(input.contains(name) && !input[name].is_null() && input[name].is_array())
         {
             CoreParser coreParser;
-            return coreParser.parseCoresVector(input);
+            return coreParser.parseCoresVector(input[name].dump());
         }
         else
         {
@@ -113,7 +113,7 @@ namespace Marsy::Parsers::LaunchesParser
         if(input.contains(name) && !input[name].is_null() && input[name].is_object())
         {
             FairingsParser fairingsParser;
-            return fairingsParser.parseFairings(input);
+            return fairingsParser.parseFairings(input[name].dump());
         }
         else
         {
@@ -126,7 +126,7 @@ namespace Marsy::Parsers::LaunchesParser
         if(input.contains(name) && !input[name].is_null() && input[name].is_object())
         {
             LinksParser linksParser;
-            return linksParser.parseLinks(input);
+            return linksParser.parseLinks(input[name].dump());
         }
         else
         {

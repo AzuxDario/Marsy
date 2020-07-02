@@ -37,7 +37,7 @@ namespace Marsy::Parsers::RocketsParser
         if(input.contains(name) && !input[name].is_null() && input[name].is_object())
         {
             IspParser ispParser;
-            return ispParser.parseIsp(input);
+            return ispParser.parseIsp(input[name].dump());
         }
         else
         {

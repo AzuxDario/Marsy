@@ -33,7 +33,7 @@ namespace Marsy::Parsers::LaunchesParser
         if(input.contains(name) && !input[name].is_null() && input[name].is_object())
         {
             FlickrParser flickrParser;
-            return flickrParser.parseFlickr(input);
+            return flickrParser.parseFlickr(input[name].dump());
         }
         else
         {
@@ -46,7 +46,7 @@ namespace Marsy::Parsers::LaunchesParser
         if(input.contains(name) && !input[name].is_null() && input[name].is_object())
         {
             PatchParser patchParser;
-            return patchParser.parsePatch(input);
+            return patchParser.parsePatch(input[name].dump());
         }
         else
         {
@@ -59,7 +59,7 @@ namespace Marsy::Parsers::LaunchesParser
         if(input.contains(name) && !input[name].is_null() && input[name].is_object())
         {
             RedditParser redditParser;
-            return redditParser.parseReddit(input);
+            return redditParser.parseReddit(input[name].dump());
         }
         else
         {

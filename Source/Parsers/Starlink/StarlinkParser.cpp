@@ -49,7 +49,7 @@ namespace Marsy::Parsers::StarlinkParser
         if(input.contains(name) && !input[name].is_null() && input[name].is_object())
         {
             SpaceTrackParser spaceTrackParser;
-            return spaceTrackParser.parseSpaceTrack(input);
+            return spaceTrackParser.parseSpaceTrack(input[name].dump());
         }
         else
         {

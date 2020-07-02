@@ -41,7 +41,7 @@ namespace Marsy::Parsers::CompanyParser
         if(input.contains(name) && !input[name].is_null() && input[name].is_object())
         {
             HeadquartersParser headquartersParser;
-            return headquartersParser.parseHeadquarters(input);
+            return headquartersParser.parseHeadquarters(input[name].dump());
         }
         else
         {
@@ -54,7 +54,7 @@ namespace Marsy::Parsers::CompanyParser
         if(input.contains(name) && !input[name].is_null() && input[name].is_object())
         {
             LinksParser linksParser;
-            return linksParser.parseLinks(input);
+            return linksParser.parseLinks(input[name].dump());
         }
         else
         {

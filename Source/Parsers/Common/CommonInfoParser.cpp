@@ -12,7 +12,7 @@ namespace Marsy::Parsers::CommonParser
         if(input.contains(name) && !input[name].is_null() && input[name].is_object())
         {
             MassInfoParser massInfoParser;
-            return massInfoParser.parseMassInfo(input);
+            return massInfoParser.parseMassInfo(input[name].dump());
         }
         else
         {
@@ -25,7 +25,7 @@ namespace Marsy::Parsers::CommonParser
         if(input.contains(name) && !input[name].is_null() && input[name].is_object())
         {
             SizeInfoParser sizeInfoParser;
-            return sizeInfoParser.parseSizeInfo(input);
+            return sizeInfoParser.parseSizeInfo(input[name].dump());
         }
         else
         {
@@ -38,7 +38,7 @@ namespace Marsy::Parsers::CommonParser
         if(input.contains(name) && !input[name].is_null() && input[name].is_object())
         {
             ThrustInfoParser thrustInfoParser;
-            return thrustInfoParser.parseThrustInfo(input);
+            return thrustInfoParser.parseThrustInfo(input[name].dump());
         }
         else
         {
@@ -51,7 +51,7 @@ namespace Marsy::Parsers::CommonParser
         if(input.contains(name) && !input[name].is_null() && input[name].is_object())
         {
             VolumeInfoParser volumeInfoParser;
-            return volumeInfoParser.parseVolumeInfo(input);
+            return volumeInfoParser.parseVolumeInfo(input[name].dump());
         }
         else
         {
