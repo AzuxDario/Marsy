@@ -7,13 +7,7 @@ namespace Marsy::Parsers::CompanyParser
 
     }
 
-    Links LinksParser::parseLinks(const std::string &input)
-    {
-        json j = json::parse(input);
-        return parseObject(j);
-    }
-
-    Links LinksParser::parseObject(const json &input)
+    Links LinksParser::parseLinks(const json &input)
     {
         Links links;
         links.website = parseStringNullable(input, strWebsite);
@@ -23,5 +17,4 @@ namespace Marsy::Parsers::CompanyParser
 
         return links;
     }
-
 }

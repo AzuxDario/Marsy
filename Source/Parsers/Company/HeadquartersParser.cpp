@@ -7,13 +7,7 @@ namespace Marsy::Parsers::CompanyParser
 
     }
 
-    Headquarters HeadquartersParser::parseHeadquarters(const std::string &input)
-    {
-        json j = json::parse(input);
-        return parseObject(j);
-    }
-
-    Headquarters HeadquartersParser::parseObject(const json &input)
+    Headquarters HeadquartersParser::parseHeadquarters(const json &input)
     {
         Headquarters headquarters;
         headquarters.address = parseStringNullable(input, strAddress);
@@ -22,5 +16,4 @@ namespace Marsy::Parsers::CompanyParser
 
         return headquarters;
     }
-
 }

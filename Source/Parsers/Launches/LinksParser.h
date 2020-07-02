@@ -36,9 +36,8 @@ namespace Marsy::Parsers::LaunchesParser
         const std::string strWikipedia = "wikipedia";
     public:
         LinksParser();
-        Links parseLinks(const std::string &input);
+        Links parseLinks(const json &input);
     private:
-        Links parseObject(const json &input);
         std::optional<Flickr> parseFlickr(const json &input, const std::string &name);
         std::optional<Patch> parsePatch(const json &input, const std::string &name);
         std::optional<Reddit> parseReddit(const json &input, const std::string &name);

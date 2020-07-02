@@ -22,9 +22,7 @@ namespace Marsy::Parsers::CommonParser
         const std::string strFeet = "feet";
     public:
         SizeInfoParser();
-        SizeInfo parseSizeInfo(const std::string &input);
-    private:
-        SizeInfo parseObject(const json &input);
+        SizeInfo parseSizeInfo(const json &input);
     };
 }
 

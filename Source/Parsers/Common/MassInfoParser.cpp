@@ -7,13 +7,7 @@ namespace Marsy::Parsers::CommonParser
 
     }
 
-    MassInfo MassInfoParser::parseMassInfo(const std::string &input)
-    {
-        json j = json::parse(input);
-        return parseObject(j);
-    }
-
-    MassInfo MassInfoParser::parseObject(const json &input)
+    MassInfo MassInfoParser::parseMassInfo(const json &input)
     {
         MassInfo massInfo;
         massInfo.kilograms = parseDoubleNullable(input, strKg);
@@ -21,5 +15,4 @@ namespace Marsy::Parsers::CommonParser
 
         return massInfo;
     }
-
 }

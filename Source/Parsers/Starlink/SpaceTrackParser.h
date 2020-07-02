@@ -60,9 +60,7 @@ namespace Marsy::Parsers::StarlinkParser
         const std::string strTleLine2 = "TLE_LINE2";
     public:
         SpaceTrackParser();
-        SpaceTrack parseSpaceTrack(const std::string &input);
-    private:
-        SpaceTrack parseObject(const json &input);
+        SpaceTrack parseSpaceTrack(const json &input);
     };
 }
 

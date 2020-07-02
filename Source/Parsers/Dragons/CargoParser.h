@@ -21,9 +21,7 @@ namespace Marsy::Parsers::DragonParser
         const std::string strUnpressurizedCargo = "unpressurized_cargo";
     public:
         CargoParser();
-        Cargo parseCargo(const std::string &input);
-    private:
-        Cargo parseObject(const json &input);
+        Cargo parseCargo(const json &input);
     };
 }
 

@@ -23,9 +23,7 @@ namespace Marsy::Parsers::CompanyParser
         const std::string strState = "state";
     public:
         HeadquartersParser();
-        Headquarters parseHeadquarters(const std::string &input);
-    private:
-        Headquarters parseObject(const json &input);
+        Headquarters parseHeadquarters(const json &input);
     };
 }
 

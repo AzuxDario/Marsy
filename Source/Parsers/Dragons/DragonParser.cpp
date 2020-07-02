@@ -65,7 +65,7 @@ namespace Marsy::Parsers::DragonParser
         if(input.contains(name) && !input[name].is_null() && input[name].is_object())
         {
             HeatShieldParser heatShieldParser;
-            return heatShieldParser.parseHeatShield(input[name].dump());
+            return heatShieldParser.parseHeatShield(input[name]);
         }
         else
         {
@@ -78,7 +78,7 @@ namespace Marsy::Parsers::DragonParser
         if(input.contains(name) && !input[name].is_null() && input[name].is_array())
         {
             ThrusterParser thrusterParser;
-            return thrusterParser.parseThrusterVector(input[name].dump());
+            return thrusterParser.parseThrusterVector(input[name]);
         }
         else
         {
@@ -91,7 +91,7 @@ namespace Marsy::Parsers::DragonParser
         if(input.contains(name) && !input[name].is_null() && input[name].is_object())
         {
             TrunkParser trunkParser;
-            return trunkParser.parseTrunk(input[name].dump());
+            return trunkParser.parseTrunk(input[name]);
         }
         else
         {
@@ -104,7 +104,7 @@ namespace Marsy::Parsers::DragonParser
         if(input.contains(name) && !input[name].is_null() && input[name].is_object())
         {
             PressurizedCapsuleParser pressurizedCapsuleParser;
-            return pressurizedCapsuleParser.parsePressurizedCapsule(input[name].dump());
+            return pressurizedCapsuleParser.parsePressurizedCapsule(input[name]);
         }
         else
         {

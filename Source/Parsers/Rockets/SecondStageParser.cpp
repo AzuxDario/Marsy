@@ -7,13 +7,7 @@ namespace Marsy::Parsers::RocketsParser
 
     }
 
-    SecondStage SecondStageParser::parseSecondStage(const std::string &input)
-    {
-        json j = json::parse(input);
-        return parseObject(j);
-    }
-
-    SecondStage SecondStageParser::parseObject(const json &input)
+    SecondStage SecondStageParser::parseSecondStage(const json &input)
     {
         SecondStage secondStage;
         CommonInfoParser commonInfoParser;
@@ -22,17 +16,17 @@ namespace Marsy::Parsers::RocketsParser
         secondStage.fuelAmountTons = parseIntNullable(input, strFuelAmountTons);
         secondStage.burnTimeSeconds = parseIntNullable(input, strBurnTimeSec);
         secondStage.thrust = commonInfoParser.parseThrustInfo(input, strThrust);
-        secondStage.payloads = parsePayloadVector(input, strPayloads);
+        secondStage.payloads = parsePayloads(input, strPayloads);
 
         return secondStage;
     }
 
-    std::optional<Payloads> SecondStageParser::parsePayloadVector(const json &input, const std::string &name)
+    std::optional<Payloads> SecondStageParser::parsePayloads(const json &input, const std::string &name)
     {
         if(input.contains(name) && !input[name].is_null() && input[name].is_array())
         {
             PayloadsParser payloadsParser;
-            return payloadsParser.parsePayloadVector(input[name].dump());
+            return payloadsParser.parsePayloads(input[name]);
         }
         else
         {

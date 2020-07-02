@@ -29,9 +29,7 @@ namespace Marsy::Parsers::RocketsParser
         const std::string strThrustVacuum = "thrust_vacuum";
     public:
         FirstStageParser();
-        FirstStage parseFirstStage(const std::string &input);
-    private:
-        FirstStage parseObject(const json &input);
+        FirstStage parseFirstStage(const json &input);
     };
 }
 

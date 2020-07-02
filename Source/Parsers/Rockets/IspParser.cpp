@@ -7,13 +7,7 @@ namespace Marsy::Parsers::RocketsParser
 
     }
 
-    Isp IspParser::parseIsp(const std::string &input)
-    {
-        json j = json::parse(input);
-        return parseObject(j);
-    }
-
-    Isp IspParser::parseObject(const json &input)
+    Isp IspParser::parseIsp(const json &input)
     {
         Isp isp;
         isp.seaLevel = parseDoubleNullable(input, strSeaLevel);

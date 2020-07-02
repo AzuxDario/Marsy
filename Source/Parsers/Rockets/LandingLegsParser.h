@@ -21,9 +21,7 @@ namespace Marsy::Parsers::RocketsParser
         const std::string strMaterial = "material";
     public:
         LandingLegsParser();
-        LandingLegs parseLandingLegs(const std::string &input);
-    private:
-        LandingLegs parseObject(const json &input);
+        LandingLegs parseLandingLegs(const json &input);
     };
 }
 

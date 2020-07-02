@@ -22,9 +22,7 @@ namespace Marsy::Parsers::LaunchesParser
         const std::string strOriginal = "original";
     public:
         FlickrParser();
-        Flickr parseFlickr(const std::string &input);
-    private:
-        Flickr parseObject(const json &input);
+        Flickr parseFlickr(const json &input);
     };
 }
 

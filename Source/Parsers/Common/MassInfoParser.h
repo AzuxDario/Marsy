@@ -22,9 +22,7 @@ namespace Marsy::Parsers::CommonParser
         const std::string strLb = "lb";
     public:
         MassInfoParser();
-        MassInfo parseMassInfo(const std::string &input);
-    private:
-        MassInfo parseObject(const json &input);
+        MassInfo parseMassInfo(const json &input);
     };
 }
 

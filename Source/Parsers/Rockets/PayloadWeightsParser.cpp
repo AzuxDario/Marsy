@@ -7,31 +7,23 @@ namespace Marsy::Parsers::RocketsParser
 
     }
 
-    std::vector<PayloadWeights> PayloadWeightsParser::parsePayloadWeightsVector(const std::string &input)
+    std::vector<PayloadWeights> PayloadWeightsParser::parsePayloadWeightsVector(const json &input)
     {
         std::vector<PayloadWeights> payloadWeights;
-        json j = json::parse(input);
 
-        if(j.is_array())
+        if(input.is_array())
         {
-            for (json::iterator it = j.begin(); it != j.end(); ++it)
+            for (auto it = input.begin(); it != input.end(); ++it)
             {
-                payloadWeights.push_back(parseObject(it.value()));
+                PayloadWeights payloadWeight;
+                payloadWeight.id = parseStringNullable(it.value(), strId);
+                payloadWeight.name = parseStringNullable(it.value(), strName);
+                payloadWeight.kilograms = parseDoubleNullable(it.value(), strKg);
+                payloadWeight.pounds = parseDoubleNullable(it.value(), strLb);
+                payloadWeights.push_back(payloadWeight);
             }
         }
 
         return payloadWeights;
     }
-
-    PayloadWeights PayloadWeightsParser::parseObject(const json &input)
-    {
-        PayloadWeights payloadWeights;
-        payloadWeights.id = parseStringNullable(input, strId);
-        payloadWeights.name = parseStringNullable(input, strName);
-        payloadWeights.kilograms = parseDoubleNullable(input, strKg);
-        payloadWeights.pounds = parseDoubleNullable(input, strLb);
-
-        return payloadWeights;
-    }
-
 }

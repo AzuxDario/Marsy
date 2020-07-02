@@ -7,36 +7,28 @@ namespace Marsy::Parsers::LaunchesParser
 
     }
 
-    std::vector<Core> CoreParser::parseCoresVector(const std::string &input)
+    std::vector<Core> CoreParser::parseCoresVector(const json &input)
     {
         std::vector<Core> cores;
-        json j = json::parse(input);
 
-        if(j.is_array())
+        if(input.is_array())
         {
-            for (json::iterator it = j.begin(); it != j.end(); ++it)
+            for (auto it = input.begin(); it != input.end(); ++it)
             {
-                cores.push_back(parseObject(it.value()));
+                Core core;
+                core.core = parseStringNullable(it.value(), strCore);
+                core.flight = parseIntNullable(it.value(), strFlight);
+                core.gridfins = parseBoolNullable(it.value(), strGridfins);
+                core.legs = parseBoolNullable(it.value(), strLegs);
+                core.reused = parseBoolNullable(it.value(), strReused);
+                core.landingAttempt = parseBoolNullable(it.value(), strLandingAttempt);
+                core.landingSuccess = parseBoolNullable(it.value(), strLandingSuccess);
+                core.landingType = parseStringNullable(it.value(), strLandingType);
+                core.landpad = parseStringNullable(it.value(), strLandpad);
+                cores.push_back(core);
             }
         }
 
         return cores;
     }
-
-    Core CoreParser::parseObject(const json &input)
-    {
-        Core core;
-        core.core = parseStringNullable(input, strCore);
-        core.flight = parseIntNullable(input, strFlight);
-        core.gridfins = parseBoolNullable(input, strGridfins);
-        core.legs = parseBoolNullable(input, strLegs);
-        core.reused = parseBoolNullable(input, strReused);
-        core.landingAttempt = parseBoolNullable(input, strLandingAttempt);
-        core.landingSuccess = parseBoolNullable(input, strLandingSuccess);
-        core.landingType = parseStringNullable(input, strLandingType);
-        core.landpad = parseStringNullable(input, strLandpad);
-
-        return core;
-    }
-
 }

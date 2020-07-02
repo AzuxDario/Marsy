@@ -23,9 +23,7 @@ namespace Marsy::Parsers::DragonParser
         const std::string strDevPartner = "dev_partner";
     public:
         HeatShieldParser();
-        HeatShield parseHeatShield(const std::string &input);
-    private:
-        HeatShield parseObject(const json &input);
+        HeatShield parseHeatShield(const json &input);
     };
 }
 

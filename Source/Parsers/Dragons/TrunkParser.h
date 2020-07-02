@@ -28,9 +28,8 @@ namespace Marsy::Parsers::DragonParser
         const std::string strCargo = "cargo";
     public:
         TrunkParser();
-        Trunk parseTrunk(const std::string &input);
+        Trunk parseTrunk(const json &input);
     private:
-        Trunk parseObject(const json &input);
         std::optional<Cargo> parseCargo(const json &input, const std::string &name);
     };
 }

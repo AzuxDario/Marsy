@@ -7,13 +7,7 @@ namespace Marsy::Parsers::LaunchesParser
 
     }
 
-    Patch PatchParser::parsePatch(const std::string &input)
-    {
-        json j = json::parse(input);
-        return parseObject(j);
-    }
-
-    Patch PatchParser::parseObject(const json &input)
+    Patch PatchParser::parsePatch(const json &input)
     {
         Patch patch;
         patch.small = parseStringNullable(input, strSmall);
@@ -21,5 +15,4 @@ namespace Marsy::Parsers::LaunchesParser
 
         return patch;
     }
-
 }

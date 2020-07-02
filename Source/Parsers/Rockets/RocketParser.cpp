@@ -64,7 +64,7 @@ namespace Marsy::Parsers::RocketsParser
         if(input.contains(name) && !input[name].is_null() && input[name].is_object())
         {
             EnginesParser enginesParser;
-            return enginesParser.parseEngines(input);
+            return enginesParser.parseEngines(input[name]);
         }
         else
         {
@@ -77,7 +77,7 @@ namespace Marsy::Parsers::RocketsParser
         if(input.contains(name) && !input[name].is_null() && input[name].is_object())
         {
             FirstStageParser firstStageParser;
-            return firstStageParser.parseFirstStage(input[name].dump());
+            return firstStageParser.parseFirstStage(input[name]);
         }
         else
         {
@@ -90,7 +90,7 @@ namespace Marsy::Parsers::RocketsParser
         if(input.contains(name) && !input[name].is_null() && input[name].is_object())
         {
             LandingLegsParser landingLegsParser;
-            return landingLegsParser.parseLandingLegs(input[name].dump());
+            return landingLegsParser.parseLandingLegs(input[name]);
         }
         else
         {
@@ -103,7 +103,7 @@ namespace Marsy::Parsers::RocketsParser
         if(input.contains(name) && !input[name].is_null() && input[name].is_array())
         {
             PayloadWeightsParser payloadWeightsParser;
-            return payloadWeightsParser.parsePayloadWeightsVector(input[name].dump());
+            return payloadWeightsParser.parsePayloadWeightsVector(input[name]);
         }
         else
         {
@@ -116,7 +116,7 @@ namespace Marsy::Parsers::RocketsParser
         if(input.contains(name) && !input[name].is_null() && input[name].is_object())
         {
             SecondStageParser secondStageParser;
-            return secondStageParser.parseSecondStage(input[name].dump());
+            return secondStageParser.parseSecondStage(input[name]);
         }
         else
         {

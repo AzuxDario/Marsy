@@ -26,9 +26,7 @@ namespace Marsy::Parsers::PayloadParser
         const std::string strLandLanding = "land_landing";
     public:
         DragonParser();
-        Dragon parseDragon(const std::string &input);
-    private:
-        Dragon parseObject(const json &input);
+        Dragon parseDragon(const json &input);
     };
 }
 

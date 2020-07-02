@@ -22,9 +22,7 @@ namespace Marsy::Parsers::CommonParser
         const std::string strCubicFeet = "cubic_feet";
     public:
         VolumeInfoParser();
-        VolumeInfo parseVolumeInfo(const std::string &input);
-    private:
-        VolumeInfo parseObject(const json &input);
+        VolumeInfo parseVolumeInfo(const json &input);
     };
 }
 

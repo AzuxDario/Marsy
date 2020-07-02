@@ -32,10 +32,9 @@ namespace Marsy::Parsers::RocketsParser
         const std::string strPayloads = "payloads";
     public:
         SecondStageParser();
-        SecondStage parseSecondStage(const std::string &input);
+        SecondStage parseSecondStage(const json &input);
     private:
-        SecondStage parseObject(const json &input);
-        std::optional<Payloads> parsePayloadVector(const json &input, const std::string &name);
+        std::optional<Payloads> parsePayloads(const json &input, const std::string &name);
     };
 }
 

@@ -29,9 +29,7 @@ namespace Marsy::Parsers::LaunchesParser
         const std::string strLandpad = "landpad";
     public:
         CoreParser();
-        std::vector<Core> parseCoresVector(const std::string &input);
-    private:
-        Core parseObject(const json &input);
+        std::vector<Core> parseCoresVector(const json &input);
     };
 }
 

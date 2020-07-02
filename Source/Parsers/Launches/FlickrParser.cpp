@@ -7,13 +7,7 @@ namespace Marsy::Parsers::LaunchesParser
 
     }
 
-    Flickr FlickrParser::parseFlickr(const std::string &input)
-    {
-        json j = json::parse(input);
-        return parseObject(j);
-    }
-
-    Flickr FlickrParser::parseObject(const json &input)
+    Flickr FlickrParser::parseFlickr(const json &input)
     {
         Flickr flickr;
         flickr.small = parseArrayOfStringNullable(input, strSmall);
@@ -21,5 +15,4 @@ namespace Marsy::Parsers::LaunchesParser
 
         return flickr;
     }
-
 }

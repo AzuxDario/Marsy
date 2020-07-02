@@ -24,9 +24,7 @@ namespace Marsy::Parsers::LaunchesParser
         const std::string strRecovery = "recovery";
     public:
         RedditParser();
-        Reddit parseReddit(const std::string &input);
-    private:
-        Reddit parseObject(const json &input);
+        Reddit parseReddit(const json &input);
     };
 }
 

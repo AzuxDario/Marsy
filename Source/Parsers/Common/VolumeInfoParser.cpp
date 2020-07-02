@@ -7,13 +7,7 @@ namespace Marsy::Parsers::CommonParser
 
     }
 
-    VolumeInfo VolumeInfoParser::parseVolumeInfo(const std::string &input)
-    {
-        json j = json::parse(input);
-        return parseObject(j);
-    }
-
-    VolumeInfo VolumeInfoParser::parseObject(const json &input)
+    VolumeInfo VolumeInfoParser::parseVolumeInfo(const json &input)
     {
         VolumeInfo volumeInfo;
         volumeInfo.cubicMeters = parseDoubleNullable(input, strCubicMeters);
@@ -21,5 +15,4 @@ namespace Marsy::Parsers::CommonParser
 
         return volumeInfo;
     }
-
 }

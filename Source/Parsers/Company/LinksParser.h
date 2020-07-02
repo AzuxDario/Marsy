@@ -24,9 +24,7 @@ namespace Marsy::Parsers::CompanyParser
         const std::string strElonTwitter = "elon_twitter";
     public:
         LinksParser();
-        Links parseLinks(const std::string &input);
-    private:
-        Links parseObject(const json &input);
+        Links parseLinks(const json &input);
     };
 }
 

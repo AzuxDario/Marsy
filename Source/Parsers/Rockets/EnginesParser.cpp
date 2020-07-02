@@ -7,13 +7,7 @@ namespace Marsy::Parsers::RocketsParser
 
     }
 
-    Engines EnginesParser::parseEngines(const std::string &input)
-    {
-        json j = json::parse(input);
-        return parseObject(j);
-    }
-
-    Engines EnginesParser::parseObject(const json &input)
+    Engines EnginesParser::parseEngines(const json &input)
     {
         Engines engines;
         CommonInfoParser commonInfoParser;
@@ -37,7 +31,7 @@ namespace Marsy::Parsers::RocketsParser
         if(input.contains(name) && !input[name].is_null() && input[name].is_object())
         {
             IspParser ispParser;
-            return ispParser.parseIsp(input[name].dump());
+            return ispParser.parseIsp(input[name]);
         }
         else
         {

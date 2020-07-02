@@ -7,13 +7,7 @@ namespace Marsy::Parsers::LaunchesParser
 
     }
 
-    Links LinksParser::parseLinks(const std::string &input)
-    {
-        json j = json::parse(input);
-        return parseObject(j);
-    }
-
-    Links LinksParser::parseObject(const json &input)
+    Links LinksParser::parseLinks(const json &input)
     {
         Links links;
         links.patch = parsePatch(input, strPatch);
@@ -33,7 +27,7 @@ namespace Marsy::Parsers::LaunchesParser
         if(input.contains(name) && !input[name].is_null() && input[name].is_object())
         {
             FlickrParser flickrParser;
-            return flickrParser.parseFlickr(input[name].dump());
+            return flickrParser.parseFlickr(input[name]);
         }
         else
         {
@@ -46,7 +40,7 @@ namespace Marsy::Parsers::LaunchesParser
         if(input.contains(name) && !input[name].is_null() && input[name].is_object())
         {
             PatchParser patchParser;
-            return patchParser.parsePatch(input[name].dump());
+            return patchParser.parsePatch(input[name]);
         }
         else
         {
@@ -59,7 +53,7 @@ namespace Marsy::Parsers::LaunchesParser
         if(input.contains(name) && !input[name].is_null() && input[name].is_object())
         {
             RedditParser redditParser;
-            return redditParser.parseReddit(input[name].dump());
+            return redditParser.parseReddit(input[name]);
         }
         else
         {

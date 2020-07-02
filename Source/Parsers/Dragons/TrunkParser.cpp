@@ -7,13 +7,7 @@ namespace Marsy::Parsers::DragonParser
 
     }
 
-    Trunk TrunkParser::parseTrunk(const std::string &input)
-    {
-        json j = json::parse(input);
-        return parseObject(j);
-    }
-
-    Trunk TrunkParser::parseObject(const json &input)
+    Trunk TrunkParser::parseTrunk(const json &input)
     {
         Trunk trunk;
         CommonInfoParser commonInfoParser;
@@ -28,7 +22,7 @@ namespace Marsy::Parsers::DragonParser
         if(input.contains(name) && !input[name].is_null() && input[name].is_object())
         {
             CargoParser cargoParser;
-            return cargoParser.parseCargo(input[name].dump());
+            return cargoParser.parseCargo(input[name]);
         }
         else
         {

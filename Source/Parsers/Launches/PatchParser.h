@@ -22,9 +22,7 @@ namespace Marsy::Parsers::LaunchesParser
         const std::string strLarge = "large";
     public:
         PatchParser();
-        Patch parsePatch(const std::string &input);
-    private:
-        Patch parseObject(const json &input);
+        Patch parsePatch(const json &input);
     };
 }
 

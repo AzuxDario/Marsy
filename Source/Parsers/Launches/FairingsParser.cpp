@@ -7,13 +7,7 @@ namespace Marsy::Parsers::LaunchesParser
 
     }
 
-    Fairings FairingsParser::parseFairings(const std::string &input)
-    {
-        json j = json::parse(input);
-        return parseObject(j);
-    }
-
-    Fairings FairingsParser::parseObject(const json &input)
+    Fairings FairingsParser::parseFairings(const json &input)
     {
         Fairings fairings;
         fairings.reused = parseBoolNullable(input, strReused);
@@ -23,5 +17,4 @@ namespace Marsy::Parsers::LaunchesParser
 
         return fairings;
     }
-
 }

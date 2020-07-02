@@ -7,13 +7,7 @@ namespace Marsy::Parsers::DragonParser
 
     }
 
-    HeatShield HeatShieldParser::parseHeatShield(const std::string &input)
-    {
-        json j = json::parse(input);
-        return parseObject(j);
-    }
-
-    HeatShield HeatShieldParser::parseObject(const json &input)
+    HeatShield HeatShieldParser::parseHeatShield(const json &input)
     {
         HeatShield heatShield;
         heatShield.material = parseStringNullable(input, strMaterial);
@@ -23,5 +17,4 @@ namespace Marsy::Parsers::DragonParser
 
         return heatShield;
     }
-
 }

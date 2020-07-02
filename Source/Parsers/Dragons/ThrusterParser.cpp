@@ -7,35 +7,27 @@ namespace Marsy::Parsers::DragonParser
 
     }
 
-    std::vector<Thruster> ThrusterParser::parseThrusterVector(const std::string &input)
+    std::vector<Thruster> ThrusterParser::parseThrusterVector(const json &input)
     {
         std::vector<Thruster> thrusters;
-        json j = json::parse(input);
 
-        if(j.is_array())
+        if(input.is_array())
         {
-            for (json::iterator it = j.begin(); it != j.end(); ++it)
+            for (auto it = input.begin(); it != input.end(); ++it)
             {
-                thrusters.push_back(parseObject(it.value()));
+                Thruster thruster;
+                CommonInfoParser commonInfoParser;
+                thruster.type = parseStringNullable(it.value(), strType);
+                thruster.amount = parseIntNullable(it.value(), strAmount);
+                thruster.pods = parseIntNullable(it.value(), strPods);
+                thruster.fuel1 = parseStringNullable(it.value(), strFuel1);
+                thruster.fuel2 = parseStringNullable(it.value(), strFuel2);
+                thruster.isp = parseIntNullable(it.value(), strIsp);
+                thruster.thrust = commonInfoParser.parseThrustInfo(it.value(), strThrust);
+                thrusters.push_back(thruster);
             }
         }
 
         return thrusters;
     }
-
-    Thruster ThrusterParser::parseObject(const json &input)
-    {
-        Thruster thruster;
-        CommonInfoParser commonInfoParser;
-        thruster.type = parseStringNullable(input, strType);
-        thruster.amount = parseIntNullable(input, strAmount);
-        thruster.pods = parseIntNullable(input, strPods);
-        thruster.fuel1 = parseStringNullable(input, strFuel1);
-        thruster.fuel2 = parseStringNullable(input, strFuel2);
-        thruster.isp = parseIntNullable(input, strIsp);
-        thruster.thrust = commonInfoParser.parseThrustInfo(input, strThrust);
-
-        return thruster;
-    }
-
 }

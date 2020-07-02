@@ -7,13 +7,7 @@ namespace Marsy::Parsers::PayloadParser
 
     }
 
-    Dragon DragonParser::parseDragon(const std::string &input)
-    {
-        json j = json::parse(input);
-        return parseObject(j);
-    }
-
-    Dragon DragonParser::parseObject(const json &input)
+    Dragon DragonParser::parseDragon(const json &input)
     {
         Dragon dragon;
         dragon.capsule = parseStringNullable(input, strCapsule);
@@ -26,5 +20,4 @@ namespace Marsy::Parsers::PayloadParser
 
         return dragon;
     }
-
 }

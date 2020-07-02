@@ -7,18 +7,6 @@ namespace Marsy::Parsers
 
     }
 
-    int Parser::parseInt(const json &input, const std::string &name)
-    {
-        if(input.contains(name) && input[name].is_number())
-        {
-            return input[name].get<int>();
-        }
-        else
-        {
-            return 0;
-        }
-    }
-
     std::optional<int> Parser::parseIntNullable(const json &input, const std::string &name)
     {
         if(input.contains(name) && !input[name].is_null() && input[name].is_number())
@@ -31,18 +19,6 @@ namespace Marsy::Parsers
         }
     }
 
-    long long Parser::parseLongLong(const json &input, const std::string &name)
-    {
-        if(input.contains(name) && input[name].is_number())
-        {
-            return input[name].get<long long>();
-        }
-        else
-        {
-            return 0;
-        }
-    }
-
     std::optional<long long> Parser::parseLongLongNullable(const json &input, const std::string &name)
     {
         if(input.contains(name) && !input[name].is_null() && input[name].is_number())
@@ -52,18 +28,6 @@ namespace Marsy::Parsers
         else
         {
             return std::nullopt;
-        }
-    }
-
-    double Parser::parseDouble(const json &input, const std::string &name)
-    {
-        if(input.contains(name) && input[name].is_number())
-        {
-            return input[name].get<double>();
-        }
-        else
-        {
-            return 0.0;
         }
     }
 
@@ -81,7 +45,7 @@ namespace Marsy::Parsers
 
     std::string Parser::parseString(const json &input, const std::string &name)
     {
-        if(input.contains(name) && input[name].is_string())
+        if(input.contains(name) && !input[name].is_null() && input[name].is_string())
         {
             return input[name].get<std::string>();
         }
@@ -103,18 +67,6 @@ namespace Marsy::Parsers
         }
     }
 
-    bool Parser::parseBool(const json &input, const std::string &name)
-    {
-        if(input.contains(name) && input[name].is_boolean())
-        {
-            return input[name].get<bool>();
-        }
-        else
-        {
-            return false;
-        }
-    }
-
     std::optional<bool> Parser::parseBoolNullable(const json &input, const std::string &name)
     {
         if(input.contains(name) && !input[name].is_null() && input[name].is_boolean())
@@ -127,18 +79,6 @@ namespace Marsy::Parsers
         }
     }
 
-    std::vector<int> Parser::parseArrayOfInt(const json &input, const std::string &name)
-    {
-        if(input.contains(name) && input[name].is_array())
-        {
-            return input[name].get<std::vector<int>>();
-        }
-        else
-        {
-            return std::vector<int>();
-        }
-    }
-
     std::optional<std::vector<int>> Parser::parseArrayOfIntNullable(const json &input, const std::string &name)
     {
         if(input.contains(name) && !input[name].is_null() && input[name].is_array())
@@ -148,18 +88,6 @@ namespace Marsy::Parsers
         else
         {
             return std::nullopt;
-        }
-    }
-
-    std::vector<std::string> Parser::parseArrayOfString(const json &input, const std::string &name)
-    {
-        if(input.contains(name) && input[name].is_array())
-        {
-            return input[name].get<std::vector<std::string>>();
-        }
-        else
-        {
-            return std::vector<std::string>();
         }
     }
 

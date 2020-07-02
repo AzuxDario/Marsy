@@ -7,13 +7,7 @@ namespace Marsy::Parsers::DragonParser
 
     }
 
-    PressurizedCapsule PressurizedCapsuleParser::parsePressurizedCapsule(const std::string &input)
-    {
-        json j = json::parse(input);
-        return parseObject(j);
-    }
-
-    PressurizedCapsule PressurizedCapsuleParser::parseObject(const json &input)
+    PressurizedCapsule PressurizedCapsuleParser::parsePressurizedCapsule(const json &input)
     {
         PressurizedCapsule pressurizedCapsule;
         CommonInfoParser commonInfoParser;
@@ -21,5 +15,4 @@ namespace Marsy::Parsers::DragonParser
 
         return pressurizedCapsule;
     }
-
 }

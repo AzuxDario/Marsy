@@ -7,13 +7,7 @@ namespace Marsy::Parsers::CommonParser
 
     }
 
-    SizeInfo SizeInfoParser::parseSizeInfo(const std::string &input)
-    {
-        json j = json::parse(input);
-        return parseObject(j);
-    }
-
-    SizeInfo SizeInfoParser::parseObject(const json &input)
+    SizeInfo SizeInfoParser::parseSizeInfo(const json &input)
     {
         SizeInfo sizeInfo;
         sizeInfo.meters = parseDoubleNullable(input, strMeters);
@@ -21,5 +15,4 @@ namespace Marsy::Parsers::CommonParser
 
         return sizeInfo;
     }
-
 }

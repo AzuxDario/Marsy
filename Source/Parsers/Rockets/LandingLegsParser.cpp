@@ -7,13 +7,7 @@ namespace Marsy::Parsers::RocketsParser
 
     }
 
-    LandingLegs LandingLegsParser::parseLandingLegs(const std::string &input)
-    {
-        json j = json::parse(input);
-        return parseObject(j);
-    }
-
-    LandingLegs LandingLegsParser::parseObject(const json &input)
+    LandingLegs LandingLegsParser::parseLandingLegs(const json &input)
     {
         LandingLegs landingLegs;
         landingLegs.number = parseIntNullable(input, strNumber);

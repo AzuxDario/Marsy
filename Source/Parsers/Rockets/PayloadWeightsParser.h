@@ -24,9 +24,7 @@ namespace Marsy::Parsers::RocketsParser
         const std::string strLb = "lb";
     public:
         PayloadWeightsParser();
-        std::vector<PayloadWeights> parsePayloadWeightsVector(const std::string &input);
-    private:
-        PayloadWeights parseObject(const json &input);
+        std::vector<PayloadWeights> parsePayloadWeightsVector(const json&input);
     };
 }
 

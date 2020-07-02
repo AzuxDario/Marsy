@@ -22,9 +22,7 @@ namespace Marsy::Parsers::CommonParser
         const std::string strLbf = "lbf";
     public:
         ThrustInfoParser();
-        ThrustInfo parseThrustInfo(const std::string &input);
-    private:
-        ThrustInfo parseObject(const json &input);
+        ThrustInfo parseThrustInfo(const json &input);
     };
 }
 

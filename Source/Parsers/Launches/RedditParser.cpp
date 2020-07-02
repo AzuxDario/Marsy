@@ -7,13 +7,7 @@ namespace Marsy::Parsers::LaunchesParser
 
     }
 
-    Reddit RedditParser::parseReddit(const std::string &input)
-    {
-        json j = json::parse(input);
-        return parseObject(j);
-    }
-
-    Reddit RedditParser::parseObject(const json &input)
+    Reddit RedditParser::parseReddit(const json &input)
     {
         Reddit reddit;
         reddit.campaign = parseStringNullable(input, strCampaign);
@@ -23,5 +17,4 @@ namespace Marsy::Parsers::LaunchesParser
 
         return reddit;
     }
-
 }

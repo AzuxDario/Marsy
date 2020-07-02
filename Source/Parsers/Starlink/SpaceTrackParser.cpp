@@ -7,13 +7,7 @@ namespace Marsy::Parsers::StarlinkParser
 
     }
 
-    SpaceTrack SpaceTrackParser::parseSpaceTrack(const std::string &input)
-    {
-        json j = json::parse(input);
-        return parseObject(j);
-    }
-
-    SpaceTrack SpaceTrackParser::parseObject(const json &input)
+    SpaceTrack SpaceTrackParser::parseSpaceTrack(const json &input)
     {
         SpaceTrack spaceTrack;
         spaceTrack.ccsdsOmmVers = parseStringNullable(input, strCcsdsOmmVers);
@@ -60,5 +54,4 @@ namespace Marsy::Parsers::StarlinkParser
 
         return spaceTrack;
     }
-
 }

@@ -7,13 +7,7 @@ namespace Marsy::Parsers::RocketsParser
 
     }
 
-    FirstStage FirstStageParser::parseFirstStage(const std::string &input)
-    {
-        json j = json::parse(input);
-        return parseObject(j);
-    }
-
-    FirstStage FirstStageParser::parseObject(const json &input)
+    FirstStage FirstStageParser::parseFirstStage(const json &input)
     {
         FirstStage firstStage;
         CommonInfoParser commonInfoParser;
@@ -26,5 +20,4 @@ namespace Marsy::Parsers::RocketsParser
 
         return firstStage;
     }
-
 }

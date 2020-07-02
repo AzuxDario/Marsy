@@ -37,9 +37,8 @@ namespace Marsy::Parsers::RocketsParser
         const std::string strThrustToWeight = "thrust_to_weight";
     public:
         EnginesParser();
-        Engines parseEngines(const std::string &input);
+        Engines parseEngines(const json &input);
     private:
-        Engines parseObject(const json &input);
         std::optional<Isp> parseIsp(const json &input, const std::string &name);
     };
 }

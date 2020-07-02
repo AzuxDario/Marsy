@@ -21,9 +21,7 @@ namespace Marsy::Parsers::RocketsParser
         const std::string strVacuum = "vacuum";
     public:
         IspParser();
-        Isp parseIsp(const std::string &input);
-    private:
-        Isp parseObject(const json &input);
+        Isp parseIsp(const json &input);
     };
 }
 

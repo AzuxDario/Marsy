@@ -24,9 +24,7 @@ namespace Marsy::Parsers::LaunchesParser
         const std::string strShips = "ships";
     public:
         FairingsParser();
-        Fairings parseFairings(const std::string &input);
-    private:
-        Fairings parseObject(const json &input);
+        Fairings parseFairings(const json &input);
     };
 }
 

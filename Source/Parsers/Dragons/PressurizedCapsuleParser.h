@@ -24,9 +24,7 @@ namespace Marsy::Parsers::DragonParser
         const std::string strPayloadVolume = "payload_volume";
     public:
         PressurizedCapsuleParser();
-        PressurizedCapsule parsePressurizedCapsule(const std::string &input);
-    private:
-        PressurizedCapsule parseObject(const json &input);
+        PressurizedCapsule parsePressurizedCapsule(const json &input);
     };
 }
 

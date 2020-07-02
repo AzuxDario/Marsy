@@ -7,13 +7,7 @@ namespace Marsy::Parsers::CommonParser
 
     }
 
-    ThrustInfo ThrustInfoParser::parseThrustInfo(const std::string &input)
-    {
-        json j = json::parse(input);
-        return parseObject(j);
-    }
-
-    ThrustInfo ThrustInfoParser::parseObject(const json &input)
+    ThrustInfo ThrustInfoParser::parseThrustInfo(const json &input)
     {
         ThrustInfo thrustInfo;
         thrustInfo.kilonewtons = parseDoubleNullable(input, strKn);
@@ -21,5 +15,4 @@ namespace Marsy::Parsers::CommonParser
 
         return thrustInfo;
     }
-
 }
