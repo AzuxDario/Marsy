@@ -4,7 +4,7 @@
 #include <string>
 #include <optional>
 
-namespace Connection
+namespace Marsy::Connection
 {
     enum class ResponseStatus {ok, badRequest, unauthorized, notFound, serverError, timeOut, otherError};
 
