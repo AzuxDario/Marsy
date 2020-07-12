@@ -3,7 +3,7 @@
 
 namespace Connection::Response
 {
-    enum class ResponseStatus {ok, badRequest, unauthorized, notFound, serverError, timeOut, otherError}
+    enum class ResponseStatus {ok, badRequest, unauthorized, notFound, serverError, timeOut, otherError};
 } 
 
 
