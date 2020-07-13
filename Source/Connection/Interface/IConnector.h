@@ -1,5 +1,5 @@
-#ifndef CONNECTION_ICONNECTOR_H
-#define CONNECTION_ICONNECTOR_H
+#ifndef MARSY_CONNECTION_ICONNECTOR_H
+#define MARSY_CONNECTION_ICONNECTOR_H
 
 #include <string>
 #include <vector>

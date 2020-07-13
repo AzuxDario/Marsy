@@ -7,8 +7,9 @@
 
 #include "../Service.h"
 #include "../../Connection/Interface/IConnector.h"
+#include "../Response/Response.h"
 
-using namespace Marsy::Connection::IConnector;
+using Marsy::Connection::IConnector;
 
 namespace Marsy::Services::CapsuleService
 {
