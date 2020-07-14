@@ -10,6 +10,13 @@ namespace Marsy::Services::CapsuleService
     ServiceResponse<Capsule> CapsuleService::getCapsule(std::string id)
     {
         ServiceResponse<Capsule> capsule;
+        ApiResponse response = conn->httpGet(apiBaseUrl + apiCapsulesUrl + "/" + id);
+        capsule.status = response.status;
+        if(response.status == ResponseStatus::ok)
+        {
+            CapsuleParser parser;
+            capsule.object = parser.parseCapsule(response.payload.value());
+        }
 
         return capsule;
     }
