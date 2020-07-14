@@ -12,7 +12,7 @@ namespace Marsy::Connection
     class IConnector
     {
     public:
-        ApiResponse httpGet(std::string url);
+        virtual ApiResponse httpGet(std::string url) = 0;
     };
 }
 
