@@ -15,7 +15,14 @@ namespace Marsy::Services::CapsuleService
         if(response.status == ResponseStatus::ok)
         {
             CapsuleParser parser;
-            capsule.object = parser.parseCapsule(response.payload.value());
+            try
+            {
+                capsule.object = parser.parseCapsule(response.payload.value());
+            }
+            catch(const nlohmann::detail::exception& exception)
+            {
+                throw JsonException(exception);
+            }
         }
 
         return capsule;
@@ -29,7 +36,14 @@ namespace Marsy::Services::CapsuleService
         if(response.status == ResponseStatus::ok)
         {
             CapsuleParser parser;
-            capsules.vector = parser.parseCapsuleVector(response.payload.value());
+            try
+            {
+                capsules.vector = parser.parseCapsuleVector(response.payload.value());
+            }
+            catch(const nlohmann::detail::exception& exception)
+            {
+                throw JsonException(exception);
+            }
         }
         return capsules;
     }

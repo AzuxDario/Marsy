@@ -11,12 +11,14 @@
 #include "../../Connection/Interface/IConnector.h"
 #include "../../Models/Capsules/Capsule.h"
 #include "../../Parsers/Capsules/CapsuleParser.h"
+#include "../../Exceptions/JsonException.h"
 
 using Marsy::Connection::IConnector;
 using Marsy::Connection::ApiResponse;
 using Marsy::Connection::ResponseStatus;
 using Marsy::Models::CapsuleModel::Capsule;
 using Marsy::Parsers::CapsuleParser::CapsuleParser;
+using Marsy::Exceptions::JsonException;
 
 namespace Marsy::Services::CapsuleService
 {
