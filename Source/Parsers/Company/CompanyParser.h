@@ -8,6 +8,7 @@
 #include "../../Libraries/JSON/json.hpp"
 
 #include "../Parser.h"
+#include "../IParser.h"
 #include "HeadquartersParser.h"
 #include "LinksParser.h"
 #include "../../Models/Company/Company.h"
@@ -23,7 +24,7 @@ using Marsy::Parsers::CompanyParser::LinksParser;
 
 namespace Marsy::Parsers::CompanyParser
 {
-    class CompanyParser : public Parser
+    class CompanyParser : public Parser, public IParser<Company>
     {
     private:
         const std::string strName = "name";
@@ -44,9 +45,10 @@ namespace Marsy::Parsers::CompanyParser
         const std::string strId = "id";
     public:
         CompanyParser();
-        Company parseCompany(const std::string &input);
+        Company parseObject(const std::string &input) override;
+        std::vector<Company> parseVector(const std::string &input) override;
     private:
-        Company parseObject(const json &input);
+        Company parseOne(const json &input);
         std::optional<Headquarters> parseHeadquarter(const json &input, const std::string &name);
         std::optional<Links> parseLinks(const json &input, const std::string &name);
     };

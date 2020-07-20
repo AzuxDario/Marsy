@@ -7,13 +7,29 @@ namespace Marsy::Parsers::CompanyParser
 
     }
 
-    Company CompanyParser::parseCompany(const std::string &input)
+    Company CompanyParser::parseObject(const std::string &input)
     {
         json j = json::parse(input);
-        return parseObject(j);
+        return parseOne(j);
     }
 
-    Company CompanyParser::parseObject(const json &input)
+    std::vector<Company> CompanyParser::parseVector(const std::string &input)
+    {
+        std::vector<Company> companies;
+        json j = json::parse(input);
+
+        if(j.is_array())
+        {
+            for (json::iterator it = j.begin(); it != j.end(); ++it)
+            {
+                companies.push_back(parseOne(it.value()));
+            }
+        }
+
+        return companies;
+    }
+
+    Company CompanyParser::parseOne(const json &input)
     {
         Company company;
         company.name = parseStringNullable(input, strName);
