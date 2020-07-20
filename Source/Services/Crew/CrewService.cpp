@@ -9,11 +9,11 @@ namespace Marsy::Services::CrewService
 
     ServiceResponse<Crew> CrewService::getCrew(std::string id)
     {
-        return getObject(apiBaseUrl + apiCrewUrl + "/" + id);
+        return getObject(apiCrewUrl + "/" + id);
     }
 
     ServiceVectorResponse<Crew> CrewService::getCrewVector()
     {
-        return getVector(apiBaseUrl + apiCrewUrl);
+        return getVector(apiCrewUrl);
     }
 }

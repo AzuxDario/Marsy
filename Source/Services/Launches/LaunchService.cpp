@@ -9,31 +9,31 @@ namespace Marsy::Services::LaunchService
 
     ServiceResponse<Launch> LaunchService::getLaunch(std::string id)
     {
-        return getObject(apiBaseUrl + apiLaunchesUrl + "/" + id);
+        return getObject(apiLaunchesUrl + "/" + id);
     }
 
     ServiceVectorResponse<Launch> LaunchService::getLaunchVector()
     {
-        return getVector(apiBaseUrl + apiLaunchesUrl);
+        return getVector(apiLaunchesUrl);
     }
 
     ServiceResponse<Launch> LaunchService::getLatestLaunch()
     {
-        return getObject(apiBaseUrl + apiLaunchesUrl +  apiLatestLaunchesUrl);
+        return getObject(apiLatestLaunchesUrl);
     }
 
     ServiceResponse<Launch> LaunchService::getNextLaunch()
     {
-        return getObject(apiBaseUrl + apiLaunchesUrl + apiNextLaunchesUrl);
+        return getObject(apiNextLaunchesUrl);
     }
 
     ServiceVectorResponse<Launch> LaunchService::getPastLaunchVector()
     {
-        return getVector(apiBaseUrl + apiLaunchesUrl + apiPastLaunchesUrl);
+        return getVector(apiPastLaunchesUrl);
     }
 
     ServiceVectorResponse<Launch> LaunchService::getUpcomingLaunchVector()
     {
-        return getVector(apiBaseUrl + apiLaunchesUrl + apiUpcomingLaunchesUrl);
+        return getVector(apiUpcomingLaunchesUrl);
     }
 }

@@ -18,7 +18,7 @@ namespace Marsy::Services::CompanyService
     class CompanyService : public Service<Company, CompanyParser>
     {
     private:
-        const std::string apiCompanyUrl = "/company";
+        const std::string apiCompanyUrl = apiBaseUrl + "/company";
     public:
         CompanyService(std::shared_ptr<IConnector> connector);
         ServiceResponse<Company> getCompany();

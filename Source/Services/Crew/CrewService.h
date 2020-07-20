@@ -18,7 +18,7 @@ namespace Marsy::Services::CrewService
     class CrewService : public Service<Crew, CrewParser>
     {
     private:
-        const std::string apiCrewUrl = "/crew";
+        const std::string apiCrewUrl = apiBaseUrl + "/crew";
     public:
         CrewService(std::shared_ptr<IConnector> connector);
         ServiceResponse<Crew> getCrew(std::string id);

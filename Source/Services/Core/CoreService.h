@@ -18,7 +18,7 @@ namespace Marsy::Services::CoreService
     class CoreService : public Service<Core, CoreParser>
     {
     private:
-        const std::string apiCoresUrl = "/cores";
+        const std::string apiCoresUrl = apiBaseUrl + "/cores";
     public:
         CoreService(std::shared_ptr<IConnector> connector);
         ServiceResponse<Core> getCore(std::string id);

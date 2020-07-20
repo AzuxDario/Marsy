@@ -18,11 +18,11 @@ namespace Marsy::Services::LaunchService
     class LaunchService : public Service<Launch, LaunchParser>
     {
     private:
-        const std::string apiLaunchesUrl = "/launches";
-        const std::string apiLatestLaunchesUrl = "/latest";
-        const std::string apiNextLaunchesUrl = "/next";
-        const std::string apiPastLaunchesUrl = "/past";
-        const std::string apiUpcomingLaunchesUrl = "/upcoming";
+        const std::string apiLaunchesUrl = apiBaseUrl + "/launches";
+        const std::string apiLatestLaunchesUrl = apiLaunchesUrl + "/latest";
+        const std::string apiNextLaunchesUrl = apiLaunchesUrl + "/next";
+        const std::string apiPastLaunchesUrl = apiLaunchesUrl + "/past";
+        const std::string apiUpcomingLaunchesUrl = apiLaunchesUrl + "/upcoming";
     public:
         LaunchService(std::shared_ptr<IConnector> connector);
         ServiceResponse<Launch> getLaunch(std::string id);

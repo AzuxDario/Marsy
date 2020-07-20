@@ -9,11 +9,11 @@ namespace Marsy::Services::DragonService
 
     ServiceResponse<Dragon> DragonService::getDragon(std::string id)
     {
-        return getObject(apiBaseUrl + apiDragonUrl + "/" + id);
+        return getObject(apiDragonUrl + "/" + id);
     }
 
     ServiceVectorResponse<Dragon> DragonService::getDragonVector()
     {
-        return getVector(apiBaseUrl + apiDragonUrl);
+        return getVector(apiDragonUrl);
     }
 }

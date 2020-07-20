@@ -9,11 +9,11 @@ namespace Marsy::Services::CapsuleService
 
     ServiceResponse<Capsule> CapsuleService::getCapsule(std::string id)
     {
-        return getObject(apiBaseUrl + apiCapsulesUrl + "/" + id);
+        return getObject(apiCapsulesUrl + "/" + id);
     }
 
     ServiceVectorResponse<Capsule> CapsuleService::getCapsuleVector()
     {
-        return getVector(apiBaseUrl + apiCapsulesUrl);
+        return getVector(apiCapsulesUrl);
     }
 }

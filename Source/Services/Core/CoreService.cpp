@@ -9,11 +9,11 @@ namespace Marsy::Services::CoreService
 
     ServiceResponse<Core> CoreService::getCore(std::string id)
     {
-        return getObject(apiBaseUrl + apiCoresUrl + "/" + id);
+        return getObject(apiCoresUrl + "/" + id);
     }
 
     ServiceVectorResponse<Core> CoreService::getCoreVector()
     {
-        return getVector(apiBaseUrl + apiCoresUrl);
+        return getVector(apiCoresUrl);
     }
 }

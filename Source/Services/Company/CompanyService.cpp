@@ -9,6 +9,6 @@ namespace Marsy::Services::CompanyService
 
     ServiceResponse<Company> CompanyService::getCompany()
     {
-        return getObject(apiBaseUrl + apiCompanyUrl);
+        return getObject(apiCompanyUrl);
     }
 }

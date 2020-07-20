@@ -9,11 +9,11 @@ namespace Marsy::Services::LandpadService
 
     ServiceResponse<Landpad> LandpadService::getLandpad(std::string id)
     {
-        return getObject(apiBaseUrl + apiLandpadsUrl + "/" + id);
+        return getObject(apiLandpadsUrl + "/" + id);
     }
 
     ServiceVectorResponse<Landpad> LandpadService::getLandpadVector()
     {
-        return getVector(apiBaseUrl + apiLandpadsUrl);
+        return getVector(apiLandpadsUrl);
     }
 }

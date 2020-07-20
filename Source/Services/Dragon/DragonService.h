@@ -18,7 +18,7 @@ namespace Marsy::Services::DragonService
     class DragonService : public Service<Dragon, DragonParser>
     {
     private:
-        const std::string apiDragonUrl = "/dragons";
+        const std::string apiDragonUrl = apiBaseUrl + "/dragons";
     public:
         DragonService(std::shared_ptr<IConnector> connector);
         ServiceResponse<Dragon> getDragon(std::string id);

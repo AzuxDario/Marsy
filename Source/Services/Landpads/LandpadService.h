@@ -18,7 +18,7 @@ namespace Marsy::Services::LandpadService
     class LandpadService : public Service<Landpad, LandpadParser>
     {
     private:
-        const std::string apiLandpadsUrl = "/landpads";
+        const std::string apiLandpadsUrl = apiBaseUrl + "/landpads";
     public:
         LandpadService(std::shared_ptr<IConnector> connector);
         ServiceResponse<Landpad> getLandpad(std::string id);
