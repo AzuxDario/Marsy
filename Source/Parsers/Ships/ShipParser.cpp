@@ -7,13 +7,13 @@ namespace Marsy::Parsers::ShipParser
 
     }
 
-    Ship ShipParser::parseShip(const std::string &input)
+    Ship ShipParser::parseObject(const std::string &input)
     {
         json j = json::parse(input);
-        return parseObject(j);
+        return parseOne(j);
     }
 
-    std::vector<Ship> ShipParser::parseShipVector(const std::string &input)
+    std::vector<Ship> ShipParser::parseVector(const std::string &input)
     {
         std::vector<Ship> ship;
         json j = json::parse(input);
@@ -22,14 +22,14 @@ namespace Marsy::Parsers::ShipParser
         {
             for (json::iterator it = j.begin(); it != j.end(); ++it)
             {
-                ship.push_back(parseObject(it.value()));
+                ship.push_back(parseOne(it.value()));
             }
         }
 
         return ship;
     }
 
-    Ship ShipParser::parseObject(const json &input)
+    Ship ShipParser::parseOne(const json &input)
     {
         Ship ship;
         ship.name = parseStringNullable(input, strName);

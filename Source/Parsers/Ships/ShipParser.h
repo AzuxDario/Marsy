@@ -8,6 +8,7 @@
 #include "../../Libraries/JSON/json.hpp"
 
 #include "../Parser.h"
+#include "../IParser.h"
 #include "../../Models/Ships/Ship.h"
 
 using json = nlohmann::json;
@@ -15,7 +16,7 @@ using Marsy::Models::ShipModel::Ship;
 
 namespace Marsy::Parsers::ShipParser
 {
-    class ShipParser : public Parser
+    class ShipParser : public Parser, public IParser<Ship>
     {
     private:
         const std::string strName = "name";
@@ -44,10 +45,10 @@ namespace Marsy::Parsers::ShipParser
         const std::string strId = "id";
     public:
         ShipParser();
-        Ship parseShip(const std::string &input);
-        std::vector<Ship> parseShipVector(const std::string &input);
+        Ship parseObject(const std::string &input);
+        std::vector<Ship> parseVector(const std::string &input);
     private:
-        Ship parseObject(const json &input);
+        Ship parseOne(const json &input);
     };
 }
 
