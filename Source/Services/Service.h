@@ -13,16 +13,15 @@ using Marsy::Exceptions::JsonException;
 
 namespace Marsy::Services
 {
+    template <class T, class U>
     class Service
     {
     protected:
         const std::string apiBaseUrl = "https://api.spacexdata.com/v4";
-    public:
-        Service(std::shared_ptr<IConnector> connector);
-    protected:
         std::shared_ptr<IConnector> conn;
-
-        template <class T, class U>
+    public:
+        Service(std::shared_ptr<IConnector> connector) : conn(connector) {}
+    protected:
         ServiceResponse<T> getObject(std::string url)
         {
             ServiceResponse<T> responseObject;
@@ -33,8 +32,7 @@ namespace Marsy::Services
                 U parser;
                 try
                 {
-                    //TODO: make one functions name
-                    //responseObject.object = parser.parseCapsule(response.payload.value());
+                    responseObject.object = parser.parseObject(response.payload.value());
                 }
                 catch(const nlohmann::detail::exception& exception)
                 {
@@ -44,8 +42,7 @@ namespace Marsy::Services
 
             return responseObject;
         }
-        
-        template <class T, class U>
+
         ServiceVectorResponse<T> getVector(std::string url)
         {
             ServiceVectorResponse<T> responseVector;
@@ -56,8 +53,7 @@ namespace Marsy::Services
                 U parser;
                 try
                 {
-                    //TODO: make one functions name
-                    //responseVector.vector = parser.parseCapsuleVector(response.payload.value());
+                    responseVector.vector = parser.parseVector(response.payload.value());
                 }
                 catch(const nlohmann::detail::exception& exception)
                 {

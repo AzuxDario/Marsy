@@ -22,7 +22,7 @@ using Marsy::Exceptions::JsonException;
 
 namespace Marsy::Services::CapsuleService
 {
-    class CapsuleService : public Service
+    class CapsuleService : public Service<Capsule, CapsuleParser>
     {
     private:
         const std::string apiCapsulesUrl = "/capsules";

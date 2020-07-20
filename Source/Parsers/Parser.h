@@ -15,6 +15,7 @@ namespace Marsy::Parsers
     {
     public:
         Parser();
+
     protected:
         std::optional<int> parseIntNullable(const json &input, const std::string &name);
         std::optional<long long> parseLongLongNullable(const json &input, const std::string &name);

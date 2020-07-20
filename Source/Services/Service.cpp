@@ -2,8 +2,8 @@
 
 namespace Marsy::Services
 {
-    Service::Service(std::shared_ptr<IConnector> connector) : conn(connector)
+    /*Service::Service(std::shared_ptr<IConnector> connector) : conn(connector)
     {
 
-    }
+    }*/
 }

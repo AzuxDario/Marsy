@@ -8,6 +8,7 @@
 #include "../../Libraries/JSON/json.hpp"
 
 #include "../Parser.h"
+#include "../IParser.h"
 #include "../../Models/Capsules/Capsule.h"
 
 using json = nlohmann::json;
@@ -16,7 +17,7 @@ using Marsy::Models::CapsuleModel::CapsuleStatus;
 
 namespace Marsy::Parsers::CapsuleParser
 {
-    class CapsuleParser : public Parser
+    class CapsuleParser : public Parser, public IParser<Capsule>
     {
     private:
         const std::string strSerial = "serial";
@@ -34,10 +35,10 @@ namespace Marsy::Parsers::CapsuleParser
         const std::string strStatusDestroyed = "destroyed";
     public:
         CapsuleParser();
-        Capsule parseCapsule(const std::string &input);
-        std::vector<Capsule> parseCapsuleVector(const std::string &input);
+        Capsule parseObject(const std::string &input) override;
+        std::vector<Capsule> parseVector(const std::string &input) override;
     private:
-        Capsule parseObject(const json &input);
+        Capsule parseOne(const json &input);
         std::optional<CapsuleStatus> parseCapsuleStatus(const json &input, const std::string &name);
     };
 }

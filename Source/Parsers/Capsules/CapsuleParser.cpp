@@ -7,13 +7,13 @@ namespace Marsy::Parsers::CapsuleParser
 
     }
 
-    Capsule CapsuleParser::parseCapsule(const std::string &input)
+    Capsule CapsuleParser::parseObject(const std::string &input)
     {
         json j = json::parse(input);
-        return parseObject(j);
+        return parseOne(j);
     }
 
-    std::vector<Capsule> CapsuleParser::parseCapsuleVector(const std::string &input)
+    std::vector<Capsule> CapsuleParser::parseVector(const std::string &input)
     {
         std::vector<Capsule> capsules;
         json j = json::parse(input);
@@ -22,14 +22,14 @@ namespace Marsy::Parsers::CapsuleParser
         {
             for (json::iterator it = j.begin(); it != j.end(); ++it)
             {
-                capsules.push_back(parseObject(it.value()));
+                capsules.push_back(parseOne(it.value()));
             }
         }
 
         return capsules;
     }
 
-    Capsule CapsuleParser::parseObject(const json &input)
+    Capsule CapsuleParser::parseOne(const json &input)
     {
         Capsule capsule;
         // serial is requiser by API
