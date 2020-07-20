@@ -8,6 +8,7 @@
 #include "../../Libraries/JSON/json.hpp"
 
 #include "../Parser.h"
+#include "../IParser.h"
 #include "../../Models/Landpads/Landpad.h"
 
 using json = nlohmann::json;
@@ -34,10 +35,10 @@ namespace Marsy::Parsers::LandpadParser
         const std::string strId = "id";
     public:
         LandpadParser();
-        Landpad parseLandpad(const std::string &input);
-        std::vector<Landpad> parseLandpadVector(const std::string &input);
+        Landpad parseObject(const std::string &input);
+        std::vector<Landpad> parseVector(const std::string &input);
     private:
-        Landpad parseObject(const json &input);
+        Landpad parseOne(const json &input);
     };
 }
 
