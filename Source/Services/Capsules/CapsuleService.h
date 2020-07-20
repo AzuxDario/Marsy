@@ -25,7 +25,6 @@ namespace Marsy::Services::CapsuleService
     class CapsuleService : public Service
     {
     private:
-        std::shared_ptr<IConnector> conn;
         const std::string apiCapsulesUrl = "/capsules";
     public:
         CapsuleService(std::shared_ptr<IConnector> connector);
