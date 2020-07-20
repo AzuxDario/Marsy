@@ -7,13 +7,13 @@ namespace Marsy::Parsers::CoreParser
 
     }
 
-    Core CoreParser::parseCore(const std::string &input)
+    Core CoreParser::parseObject(const std::string &input)
     {
         json j = json::parse(input);
-        return parseObject(j);
+        return parseOne(j);
     }
 
-    std::vector<Core> CoreParser::parseCoresVector(const std::string &input)
+    std::vector<Core> CoreParser::parseVector(const std::string &input)
     {
         std::vector<Core> cores;
         json j = json::parse(input);
@@ -22,14 +22,14 @@ namespace Marsy::Parsers::CoreParser
         {
             for (json::iterator it = j.begin(); it != j.end(); ++it)
             {
-                cores.push_back(parseObject(it.value()));
+                cores.push_back(parseOne(it.value()));
             }
         }
 
         return cores;
     }
 
-    Core CoreParser::parseObject(const json &input)
+    Core CoreParser::parseOne(const json &input)
     {
         Core core;
         core.serial = parseStringNullable(input, strSerial);

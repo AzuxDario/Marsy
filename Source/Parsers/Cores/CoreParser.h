@@ -8,6 +8,7 @@
 #include "../../Libraries/JSON/json.hpp"
 
 #include "../Parser.h"
+#include "../IParser.h"
 #include "../../Models/Cores/Core.h"
 
 using json = nlohmann::json;
@@ -16,7 +17,7 @@ using Marsy::Models::CoreModel::CoreStatus;
 
 namespace Marsy::Parsers::CoreParser
 {
-    class CoreParser : public Parser
+    class CoreParser : public Parser, public IParser<Core>
     {
     private:
         const std::string strSerial = "serial";
@@ -38,10 +39,10 @@ namespace Marsy::Parsers::CoreParser
         const std::string strStatusRetired = "retired";
     public:
         CoreParser();
-        Core parseCore(const std::string &input);
-        std::vector<Core> parseCoresVector(const std::string &input);
+        Core parseObject(const std::string &input);
+        std::vector<Core> parseVector(const std::string &input);
     private:
-        Core parseObject(const json &input);
+        Core parseOne(const json &input);
         std::optional<CoreStatus> parseCoreStatus(const json &input, const std::string &name);
     };
 }
