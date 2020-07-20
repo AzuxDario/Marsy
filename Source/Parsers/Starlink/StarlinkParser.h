@@ -8,6 +8,7 @@
 #include "../../Libraries/JSON/json.hpp"
 
 #include "../Parser.h"
+#include "../IParser.h"
 #include "SpaceTrackParser.h"
 #include "../../Models/Starlink/Starlink.h"
 #include "../../Models/Starlink/SpaceTrack.h"
@@ -19,7 +20,7 @@ using Marsy::Parsers::StarlinkParser::SpaceTrackParser;
 
 namespace Marsy::Parsers::StarlinkParser
 {
-    class StarlinkParser : public Parser
+    class StarlinkParser : public Parser, public IParser<Starlink>
     {
     private:
         const std::string strVersion = "version";
@@ -32,10 +33,10 @@ namespace Marsy::Parsers::StarlinkParser
         const std::string strId = "id";
     public:
         StarlinkParser();
-        Starlink parseStarlink(const std::string &input);
-        std::vector<Starlink> parseStarlinkVector(const std::string &input);
+        Starlink parseObject(const std::string &input);
+        std::vector<Starlink> parseVector(const std::string &input);
     private:
-        Starlink parseObject(const json &input);
+        Starlink parseOne(const json &input);
         std::optional<SpaceTrack> parseSpaceTrack(const json &input, const std::string &name);
     };
 }

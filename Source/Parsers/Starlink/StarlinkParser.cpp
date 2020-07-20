@@ -7,13 +7,13 @@ namespace Marsy::Parsers::StarlinkParser
 
     }
 
-    Starlink StarlinkParser::parseStarlink(const std::string &input)
+    Starlink StarlinkParser::parseObject(const std::string &input)
     {
         json j = json::parse(input);
-        return parseObject(j);
+        return parseOne(j);
     }
 
-    std::vector<Starlink> StarlinkParser::parseStarlinkVector(const std::string &input)
+    std::vector<Starlink> StarlinkParser::parseVector(const std::string &input)
     {
         std::vector<Starlink> starlinks;
         json j = json::parse(input);
@@ -22,14 +22,14 @@ namespace Marsy::Parsers::StarlinkParser
         {
             for (json::iterator it = j.begin(); it != j.end(); ++it)
             {
-                starlinks.push_back(parseObject(it.value()));
+                starlinks.push_back(parseOne(it.value()));
             }
         }
 
         return starlinks;
     }
 
-    Starlink StarlinkParser::parseObject(const json &input)
+    Starlink StarlinkParser::parseOne(const json &input)
     {
         Starlink starlink;
         starlink.version = parseStringNullable(input, strVersion);
