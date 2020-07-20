@@ -8,6 +8,7 @@
 #include "../../Libraries/JSON/json.hpp"
 
 #include "../Parser.h"
+#include "../IParser.h"
 #include "DragonParser.h"
 #include "../../Models/Payloads/Payload.h"
 #include "../../Models/Payloads/Dragon.h"
@@ -19,7 +20,7 @@ using Marsy::Parsers::PayloadParser::DragonParser;
 
 namespace Marsy::Parsers::PayloadParser
 {
-    class PayloadParser : public Parser
+    class PayloadParser : public Parser, public IParser<Payload>
     {
     private:
         const std::string strName = "name";
@@ -52,10 +53,10 @@ namespace Marsy::Parsers::PayloadParser
         const std::string strId = "id";
     public:
         PayloadParser();
-        Payload parsePayload(const std::string &input);
-        std::vector<Payload> parsePayloadVector(const std::string &input);
+        Payload parseObject(const std::string &input);
+        std::vector<Payload> parseVector(const std::string &input);
     private:
-        Payload parseObject(const json &input);
+        Payload parseOne(const json &input);
         std::optional<Dragon> parseDragon(const json &input, const std::string &name);
     };
 }
