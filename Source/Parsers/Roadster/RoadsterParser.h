@@ -8,6 +8,7 @@
 #include "../../Libraries/JSON/json.hpp"
 
 #include "../Parser.h"
+#include "../IParser.h"
 #include "../../Models/Roadster/Roadster.h"
 
 using json = nlohmann::json;
@@ -15,7 +16,7 @@ using Marsy::Models::RoadsterModel::Roadster;
 
 namespace Marsy::Parsers::RoadsterParser
 {
-    class RoadsterParser : public Parser
+    class RoadsterParser : public Parser, public IParser<Roadster>
     {
     private:
         const std::string strName = "name";
@@ -47,9 +48,10 @@ namespace Marsy::Parsers::RoadsterParser
         const std::string strId = "id";
     public:
         RoadsterParser();
-        Roadster parseRoadster(const std::string &input);
+        Roadster parseObject(const std::string &input);
+        std::vector<Roadster> parseVector(const std::string &input);
     private:
-        Roadster parseObject(const json &input);
+        Roadster parseOne(const json &input);
     };
 }
 
