@@ -1,6 +1,6 @@
 #include "FlickrParser.h"
 
-namespace Marsy::Parsers::LaunchesParser
+namespace Marsy::Parsers::LaunchParser
 {
     FlickrParser::FlickrParser()
     {

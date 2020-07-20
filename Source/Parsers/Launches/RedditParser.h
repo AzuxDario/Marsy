@@ -13,7 +13,7 @@
 using json = nlohmann::json;
 using Marsy::Models::LaunchModel::Reddit;
 
-namespace Marsy::Parsers::LaunchesParser
+namespace Marsy::Parsers::LaunchParser
 {
     class RedditParser : public Parser
     {

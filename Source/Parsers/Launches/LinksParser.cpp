@@ -1,6 +1,6 @@
 #include "LinksParser.h"
 
-namespace Marsy::Parsers::LaunchesParser
+namespace Marsy::Parsers::LaunchParser
 {
     LinksParser::LinksParser()
     {

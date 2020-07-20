@@ -13,7 +13,7 @@
 using json = nlohmann::json;
 using Marsy::Models::LaunchModel::Fairings;
 
-namespace Marsy::Parsers::LaunchesParser
+namespace Marsy::Parsers::LaunchParser
 {
     class FairingsParser : public Parser
     {

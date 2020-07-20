@@ -16,7 +16,7 @@ using Marsy::Models::LandpadModel::Landpad;
 
 namespace Marsy::Parsers::LandpadParser
 {
-    class LandpadParser : public Parser
+    class LandpadParser : public Parser, public IParser<Landpad>
     {
     private:
         const std::string strName = "name";

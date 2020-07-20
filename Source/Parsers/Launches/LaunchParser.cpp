@@ -1,19 +1,19 @@
 #include "LaunchParser.h"
 
-namespace Marsy::Parsers::LaunchesParser
+namespace Marsy::Parsers::LaunchParser
 {
     LaunchParser::LaunchParser()
     {
 
     }
 
-    Launch LaunchParser::parseLaunch(const std::string &input)
+    Launch LaunchParser::parseObject(const std::string &input)
     {
         json j = json::parse(input);
-        return parseObject(j);
+        return parseOne(j);
     }
 
-    std::vector<Launch> LaunchParser::parseLaunchVector(const std::string &input)
+    std::vector<Launch> LaunchParser::parseVector(const std::string &input)
     {
         std::vector<Launch> launches;
         json j = json::parse(input);
@@ -22,14 +22,14 @@ namespace Marsy::Parsers::LaunchesParser
         {
             for (json::iterator it = j.begin(); it != j.end(); ++it)
             {
-                launches.push_back(parseObject(it.value()));
+                launches.push_back(parseOne(it.value()));
             }
         }
 
         return launches;
     }
 
-    Launch LaunchParser::parseObject(const json &input)
+    Launch LaunchParser::parseOne(const json &input)
     {
         Launch launch;
         launch.flightNumber = parseIntNullable(input, strFlightNumber);

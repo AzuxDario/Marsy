@@ -8,6 +8,7 @@
 #include "../../Libraries/JSON/json.hpp"
 
 #include "../Parser.h"
+#include "../IParser.h"
 #include "CoreParser.h"
 #include "FairingsParser.h"
 #include "LinksParser.h"
@@ -23,9 +24,9 @@ using Marsy::Models::LaunchModel::Core;
 using Marsy::Models::LaunchModel::Fairings;
 using Marsy::Models::LaunchModel::Links;
 
-namespace Marsy::Parsers::LaunchesParser
+namespace Marsy::Parsers::LaunchParser
 {
-    class LaunchParser : public Parser
+    class LaunchParser : public Parser, public IParser<Launch>
     {
     private:
         const std::string strFlightNumber = "flight_number";
@@ -62,10 +63,10 @@ namespace Marsy::Parsers::LaunchesParser
         const std::string strStatusHour = "hour";
     public:
         LaunchParser();
-        Launch parseLaunch(const std::string &input);
-        std::vector<Launch> parseLaunchVector(const std::string &input);
+        Launch parseObject(const std::string &input);
+        std::vector<Launch> parseVector(const std::string &input);
     private:
-        Launch parseObject(const json &input);
+        Launch parseOne(const json &input);
         std::optional<DatePrecision> parseDatePrecision(const json &input, const std::string &name);
         std::optional<std::vector<Core>> parseCoresVector(const json &input, const std::string &name);
         std::optional<Fairings> parseFairings(const json &input, const std::string &name);

@@ -21,7 +21,7 @@ using Marsy::Models::LaunchModel::Flickr;
 using Marsy::Models::LaunchModel::Patch;
 using Marsy::Models::LaunchModel::Reddit;
 
-namespace Marsy::Parsers::LaunchesParser
+namespace Marsy::Parsers::LaunchParser
 {
     class LinksParser : public Parser
     {
