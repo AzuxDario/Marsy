@@ -8,6 +8,7 @@
 #include "../../Libraries/JSON/json.hpp"
 
 #include "../Parser.h"
+#include "../IParser.h"
 #include "EnginesParser.h"
 #include "FirstStageParser.h"
 #include "LandingLegsParser.h"
@@ -36,7 +37,7 @@ using Marsy::Parsers::CommonParser::CommonInfoParser;
 
 namespace Marsy::Parsers::RocketsParser
 {
-    class RocketParser : public Parser
+    class RocketParser : public Parser, public IParser<Rocket>
     {
     private:
         const std::string strName = "name";
@@ -63,10 +64,10 @@ namespace Marsy::Parsers::RocketsParser
         const std::string strId = "id";
     public:
         RocketParser();
-        Rocket parseRocket(const std::string &input);
-        std::vector<Rocket> parseRocketVector(const std::string &input);
+        Rocket parseObject(const std::string &input);
+        std::vector<Rocket> parseVector(const std::string &input);
     private:
-        Rocket parseObject(const json &input);
+        Rocket parseOne(const json &input);
         std::optional<Engines> parseEngines(const json &input, const std::string &name);
         std::optional<FirstStage> parseFirstStage(const json &input, const std::string &name);
         std::optional<LandingLegs> parseLandingLegs(const json &input, const std::string &name);

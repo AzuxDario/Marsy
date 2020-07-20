@@ -7,13 +7,13 @@ namespace Marsy::Parsers::RocketsParser
 
     }
 
-    Rocket RocketParser::parseRocket(const std::string &input)
+    Rocket RocketParser::parseObject(const std::string &input)
     {
         json j = json::parse(input);
-        return parseObject(j);
+        return parseOne(j);
     }
 
-    std::vector<Rocket> RocketParser::parseRocketVector(const std::string &input)
+    std::vector<Rocket> RocketParser::parseVector(const std::string &input)
     {
         std::vector<Rocket> rockets;
         json j = json::parse(input);
@@ -22,14 +22,14 @@ namespace Marsy::Parsers::RocketsParser
         {
             for (json::iterator it = j.begin(); it != j.end(); ++it)
             {
-                rockets.push_back(parseObject(it.value()));
+                rockets.push_back(parseOne(it.value()));
             }
         }
 
         return rockets;
     }
 
-    Rocket RocketParser::parseObject(const json &input)
+    Rocket RocketParser::parseOne(const json &input)
     {
         Rocket rocket;
         CommonInfoParser commonInfoParser;
