@@ -8,6 +8,7 @@
 #include "../../Libraries/JSON/json.hpp"
 
 #include "../Parser.h"
+#include "../IParser.h"
 #include "HeatShieldParser.h"
 #include "ThrusterParser.h"
 #include "TrunkParser.h"
@@ -34,7 +35,7 @@ using Marsy::Parsers::CommonParser::CommonInfoParser;
 
 namespace Marsy::Parsers::DragonParser
 {
-    class DragonParser : public Parser
+    class DragonParser : public Parser, public IParser<Dragon>
     {
     private:
         const std::string strName = "name";
@@ -62,10 +63,10 @@ namespace Marsy::Parsers::DragonParser
         const std::string strId = "id";
     public:
         DragonParser();
-        Dragon parseDragon(const std::string &input);
-        std::vector<Dragon> parseDragonVector(const std::string &input);
+        Dragon parseObject(const std::string &input);
+        std::vector<Dragon> parseVector(const std::string &input);
     private:
-        Dragon parseObject(const json &input);
+        Dragon parseOne(const json &input);
         std::optional<HeatShield> parseHeatShield(const json &input, const std::string &name);
         std::optional<std::vector<Thruster>> parseThrusterVector(const json &input, const std::string &name);
         std::optional<PressurizedCapsule> parsePressurizedCapsule(const json &input, const std::string &name);

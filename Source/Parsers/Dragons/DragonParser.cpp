@@ -7,13 +7,13 @@ namespace Marsy::Parsers::DragonParser
 
     }
 
-    Dragon DragonParser::parseDragon(const std::string &input)
+    Dragon DragonParser::parseObject(const std::string &input)
     {
         json j = json::parse(input);
-        return parseObject(j);
+        return parseOne(j);
     }
 
-    std::vector<Dragon> DragonParser::parseDragonVector(const std::string &input)
+    std::vector<Dragon> DragonParser::parseVector(const std::string &input)
     {
         std::vector<Dragon> dragons;
         json j = json::parse(input);
@@ -22,14 +22,14 @@ namespace Marsy::Parsers::DragonParser
         {
             for (json::iterator it = j.begin(); it != j.end(); ++it)
             {
-                dragons.push_back(parseObject(it.value()));
+                dragons.push_back(parseOne(it.value()));
             }
         }
 
         return dragons;
     }
 
-    Dragon DragonParser::parseObject(const json &input)
+    Dragon DragonParser::parseOne(const json &input)
     {
         Dragon dragon;
         CommonInfoParser commonInfoParser;
