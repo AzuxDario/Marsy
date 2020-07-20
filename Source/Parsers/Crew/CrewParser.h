@@ -8,6 +8,7 @@
 #include "../../Libraries/JSON/json.hpp"
 
 #include "../Parser.h"
+#include "../IParser.h"
 #include "../../Models/Crew/Crew.h"
 
 using json = nlohmann::json;
@@ -16,7 +17,7 @@ using Marsy::Models::CrewModel::CrewStatus;
 
 namespace Marsy::Parsers::CrewParser
 {
-    class CrewParser : public Parser
+    class CrewParser : public Parser, public IParser<Crew>
     {
     private:
         const std::string strName = "name";
@@ -32,11 +33,11 @@ namespace Marsy::Parsers::CrewParser
         const std::string strStatusUnknown = "unknown";
     public:
         CrewParser();
-        Crew parseCrewVector(const std::string &input);
-        std::vector<Crew> parseCrewVectors(const std::string &input);
+        Crew parseObject(const std::string &input);
+        std::vector<Crew> parseVector(const std::string &input);
     private:
-        Crew parseObject(const json &input);
-        std::optional<CrewStatus> parseCrewVectorStatus(const json &input, const std::string &name);
+        Crew parseOne(const json &input);
+        std::optional<CrewStatus> parseCrewStatus(const json &input, const std::string &name);
     };
 }
 
