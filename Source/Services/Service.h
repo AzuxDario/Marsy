@@ -2,6 +2,8 @@
 #define MARSY_SERVICE_H
 
 #include <string>
+#include <memory>
+
 #include "Response/Response.h"
 #include "../Connection/Interface/IConnector.h"
 #include "../Exceptions/JsonException.h"
