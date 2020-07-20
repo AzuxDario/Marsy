@@ -8,6 +8,7 @@
 #include "../../Libraries/JSON/json.hpp"
 
 #include "../Parser.h"
+#include "../IParser.h"
 #include "../../Models/Launchpads/Launchpad.h"
 
 using json = nlohmann::json;
@@ -16,7 +17,7 @@ using Marsy::Models::LaunchpadModel::LaunchpadStatus;
 
 namespace Marsy::Parsers::LaunchpadParser
 {
-    class LaunchpadParser : public Parser
+    class LaunchpadParser : public Parser, public IParser<Launchpad>
     {
     private:
         const std::string strName = "name";
@@ -40,10 +41,10 @@ namespace Marsy::Parsers::LaunchpadParser
         const std::string strStatusUnderConstuction = "under construction";
     public:
         LaunchpadParser();
-        Launchpad parseLaunchpad(const std::string &input);
-        std::vector<Launchpad> parseLaunchpadVector(const std::string &input);
+        Launchpad parseObject(const std::string &input);
+        std::vector<Launchpad> parseVector(const std::string &input);
     private:
-        Launchpad parseObject(const json &input);
+        Launchpad parseOne(const json &input);
         std::optional<LaunchpadStatus> parseLaunchpadStatus(const json &input, const std::string &name);
     };
 }

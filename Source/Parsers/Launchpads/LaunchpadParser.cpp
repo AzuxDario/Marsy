@@ -7,13 +7,13 @@ namespace Marsy::Parsers::LaunchpadParser
 
     }
 
-    Launchpad LaunchpadParser::parseLaunchpad(const std::string &input)
+    Launchpad LaunchpadParser::parseObject(const std::string &input)
     {
         json j = json::parse(input);
-        return parseObject(j);
+        return parseOne(j);
     }
 
-    std::vector<Launchpad> LaunchpadParser::parseLaunchpadVector(const std::string &input)
+    std::vector<Launchpad> LaunchpadParser::parseVector(const std::string &input)
     {
         std::vector<Launchpad> launchpad;
         json j = json::parse(input);
@@ -22,14 +22,14 @@ namespace Marsy::Parsers::LaunchpadParser
         {
             for (json::iterator it = j.begin(); it != j.end(); ++it)
             {
-                launchpad.push_back(parseObject(it.value()));
+                launchpad.push_back(parseOne(it.value()));
             }
         }
 
         return launchpad;
     }
 
-    Launchpad LaunchpadParser::parseObject(const json &input)
+    Launchpad LaunchpadParser::parseOne(const json &input)
     {
         Launchpad launchpad;
         launchpad.name = parseStringNullable(input, strName);
