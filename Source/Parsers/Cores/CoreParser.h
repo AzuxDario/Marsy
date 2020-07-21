@@ -41,8 +41,9 @@ namespace Marsy::Parsers::CoreParser
         CoreParser();
         Core parseObject(const std::string &input);
         std::vector<Core> parseVector(const std::string &input);
+    protected:
+        Core parseOne(const json &input) override;
     private:
-        Core parseOne(const json &input);
         std::optional<CoreStatus> parseCoreStatus(const json &input, const std::string &name);
     };
 }

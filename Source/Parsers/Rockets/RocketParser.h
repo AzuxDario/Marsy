@@ -66,8 +66,9 @@ namespace Marsy::Parsers::RocketsParser
         RocketParser();
         Rocket parseObject(const std::string &input);
         std::vector<Rocket> parseVector(const std::string &input);
+    protected:
+        Rocket parseOne(const json &input) override;
     private:
-        Rocket parseOne(const json &input);
         std::optional<Engines> parseEngines(const json &input, const std::string &name);
         std::optional<FirstStage> parseFirstStage(const json &input, const std::string &name);
         std::optional<LandingLegs> parseLandingLegs(const json &input, const std::string &name);

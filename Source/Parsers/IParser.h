@@ -17,6 +17,8 @@ namespace Marsy::Parsers
         IParser() {};
         virtual T parseObject(const std::string &input) = 0;
         virtual std::vector<T> parseVector(const std::string &input) = 0;
+    protected:
+        virtual T parseOne(const std::string &input) = 0;
     };
 }
 

@@ -37,8 +37,9 @@ namespace Marsy::Parsers::CapsuleParser
         CapsuleParser();
         Capsule parseObject(const std::string &input) override;
         std::vector<Capsule> parseVector(const std::string &input) override;
+    protected:
+        Capsule parseOne(const json &input) override;
     private:
-        Capsule parseOne(const json &input);
         std::optional<CapsuleStatus> parseCapsuleStatus(const json &input, const std::string &name);
     };
 }

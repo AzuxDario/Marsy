@@ -50,8 +50,8 @@ namespace Marsy::Parsers::RoadsterParser
         RoadsterParser();
         Roadster parseObject(const std::string &input);
         std::vector<Roadster> parseVector(const std::string &input);
-    private:
-        Roadster parseOne(const json &input);
+    protected:
+        Roadster parseOne(const json &input) override;
     };
 }
 

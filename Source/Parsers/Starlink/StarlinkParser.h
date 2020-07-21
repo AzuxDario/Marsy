@@ -35,8 +35,9 @@ namespace Marsy::Parsers::StarlinkParser
         StarlinkParser();
         Starlink parseObject(const std::string &input);
         std::vector<Starlink> parseVector(const std::string &input);
+    protected:
+        Starlink parseOne(const json &input) override;
     private:
-        Starlink parseOne(const json &input);
         std::optional<SpaceTrack> parseSpaceTrack(const json &input, const std::string &name);
     };
 }

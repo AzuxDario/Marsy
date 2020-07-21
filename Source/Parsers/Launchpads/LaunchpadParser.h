@@ -43,8 +43,9 @@ namespace Marsy::Parsers::LaunchpadParser
         LaunchpadParser();
         Launchpad parseObject(const std::string &input);
         std::vector<Launchpad> parseVector(const std::string &input);
+    protected:
+        Launchpad parseOne(const json &input) override;
     private:
-        Launchpad parseOne(const json &input);
         std::optional<LaunchpadStatus> parseLaunchpadStatus(const json &input, const std::string &name);
     };
 }

@@ -37,8 +37,8 @@ namespace Marsy::Parsers::LandpadParser
         LandpadParser();
         Landpad parseObject(const std::string &input);
         std::vector<Landpad> parseVector(const std::string &input);
-    private:
-        Landpad parseOne(const json &input);
+    protected:
+        Landpad parseOne(const json &input) override;
     };
 }
 

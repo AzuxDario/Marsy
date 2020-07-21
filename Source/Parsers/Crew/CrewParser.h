@@ -35,8 +35,9 @@ namespace Marsy::Parsers::CrewParser
         CrewParser();
         Crew parseObject(const std::string &input);
         std::vector<Crew> parseVector(const std::string &input);
+    protected:
+        Crew parseOne(const json &input) override;
     private:
-        Crew parseOne(const json &input);
         std::optional<CrewStatus> parseCrewStatus(const json &input, const std::string &name);
     };
 }

@@ -65,8 +65,9 @@ namespace Marsy::Parsers::LaunchParser
         LaunchParser();
         Launch parseObject(const std::string &input);
         std::vector<Launch> parseVector(const std::string &input);
+    protected:
+        Launch parseOne(const json &input) override;
     private:
-        Launch parseOne(const json &input);
         std::optional<DatePrecision> parseDatePrecision(const json &input, const std::string &name);
         std::optional<std::vector<Core>> parseCoresVector(const json &input, const std::string &name);
         std::optional<Fairings> parseFairings(const json &input, const std::string &name);

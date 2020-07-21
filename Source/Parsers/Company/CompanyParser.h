@@ -47,8 +47,9 @@ namespace Marsy::Parsers::CompanyParser
         CompanyParser();
         Company parseObject(const std::string &input) override;
         std::vector<Company> parseVector(const std::string &input) override;
+    protected:
+        Company parseOne(const json &input) override;
     private:
-        Company parseOne(const json &input);
         std::optional<Headquarters> parseHeadquarter(const json &input, const std::string &name);
         std::optional<Links> parseLinks(const json &input, const std::string &name);
     };

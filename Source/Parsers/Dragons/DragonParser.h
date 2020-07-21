@@ -65,8 +65,9 @@ namespace Marsy::Parsers::DragonParser
         DragonParser();
         Dragon parseObject(const std::string &input);
         std::vector<Dragon> parseVector(const std::string &input);
+    protected:
+        Dragon parseOne(const json &input) override;
     private:
-        Dragon parseOne(const json &input);
         std::optional<HeatShield> parseHeatShield(const json &input, const std::string &name);
         std::optional<std::vector<Thruster>> parseThrusterVector(const json &input, const std::string &name);
         std::optional<PressurizedCapsule> parsePressurizedCapsule(const json &input, const std::string &name);
