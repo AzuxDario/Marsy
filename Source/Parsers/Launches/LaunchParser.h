@@ -63,8 +63,6 @@ namespace Marsy::Parsers::LaunchParser
         const std::string strStatusHour = "hour";
     public:
         LaunchParser();
-        Launch parseObject(const std::string &input);
-        std::vector<Launch> parseVector(const std::string &input);
     protected:
         Launch parseOne(const json &input) override;
     private:

@@ -45,8 +45,6 @@ namespace Marsy::Parsers::ShipParser
         const std::string strId = "id";
     public:
         ShipParser();
-        Ship parseObject(const std::string &input);
-        std::vector<Ship> parseVector(const std::string &input);
     protected:
         Ship parseOne(const json &input) override;
     };

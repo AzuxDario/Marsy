@@ -7,28 +7,6 @@ namespace Marsy::Parsers::CrewParser
 
     }
 
-    Crew CrewParser::parseObject(const std::string &input)
-    {
-        json j = json::parse(input);
-        return parseOne(j);
-    }
-
-    std::vector<Crew> CrewParser::parseVector(const std::string &input)
-    {
-        std::vector<Crew> crew;
-        json j = json::parse(input);
-
-        if(j.is_array())
-        {
-            for (json::iterator it = j.begin(); it != j.end(); ++it)
-            {
-                crew.push_back(parseOne(it.value()));
-            }
-        }
-
-        return crew;
-    }
-
     Crew CrewParser::parseOne(const json &input)
     {
         Crew crew;

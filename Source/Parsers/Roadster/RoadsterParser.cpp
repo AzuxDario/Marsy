@@ -7,28 +7,6 @@ namespace Marsy::Parsers::RoadsterParser
 
     }
 
-    Roadster RoadsterParser::parseObject(const std::string &input)
-    {
-        json j = json::parse(input);
-        return parseOne(j);
-    }
-
-    std::vector<Roadster> RoadsterParser::parseVector(const std::string &input)
-    {
-        std::vector<Roadster> roadsters;
-        json j = json::parse(input);
-
-        if(j.is_array())
-        {
-            for (json::iterator it = j.begin(); it != j.end(); ++it)
-            {
-                roadsters.push_back(parseOne(it.value()));
-            }
-        }
-
-        return roadsters;
-    }
-
     Roadster RoadsterParser::parseOne(const json &input)
     {
         Roadster roadster;

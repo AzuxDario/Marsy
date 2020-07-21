@@ -45,8 +45,6 @@ namespace Marsy::Parsers::CompanyParser
         const std::string strId = "id";
     public:
         CompanyParser();
-        Company parseObject(const std::string &input) override;
-        std::vector<Company> parseVector(const std::string &input) override;
     protected:
         Company parseOne(const json &input) override;
     private:

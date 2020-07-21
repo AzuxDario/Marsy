@@ -15,10 +15,30 @@ namespace Marsy::Parsers
     {
     public:
         IParser() {};
-        virtual T parseObject(const std::string &input) = 0;
-        virtual std::vector<T> parseVector(const std::string &input) = 0;
+        T parseObject(const std::string &input)
+        {
+            json j = json::parse(input);
+            return parseOne(j);
+        }
+
+        std::vector<T> parseVector(const std::string &input)
+        {
+            std::vector<T> vec;
+            json j = json::parse(input);
+
+            if(j.is_array())
+            {
+                for (json::iterator it = j.begin(); it != j.end(); ++it)
+                {
+                    vec.push_back(parseOne(it.value()));
+                }
+            }
+
+            return vec;
+        }
+
     protected:
-        virtual T parseOne(const std::string &input) = 0;
+        virtual T parseOne(const json &input) = 0;
     };
 }
 

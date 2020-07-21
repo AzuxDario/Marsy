@@ -53,8 +53,6 @@ namespace Marsy::Parsers::PayloadParser
         const std::string strId = "id";
     public:
         PayloadParser();
-        Payload parseObject(const std::string &input);
-        std::vector<Payload> parseVector(const std::string &input);
     protected:
         Payload parseOne(const json &input) override;
     private:

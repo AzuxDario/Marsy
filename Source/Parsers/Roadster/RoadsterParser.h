@@ -48,8 +48,6 @@ namespace Marsy::Parsers::RoadsterParser
         const std::string strId = "id";
     public:
         RoadsterParser();
-        Roadster parseObject(const std::string &input);
-        std::vector<Roadster> parseVector(const std::string &input);
     protected:
         Roadster parseOne(const json &input) override;
     };

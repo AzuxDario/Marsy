@@ -7,28 +7,6 @@ namespace Marsy::Parsers::LandpadParser
 
     }
 
-    Landpad LandpadParser::parseObject(const std::string &input)
-    {
-        json j = json::parse(input);
-        return parseOne(j);
-    }
-
-    std::vector<Landpad> LandpadParser::parseVector(const std::string &input)
-    {
-        std::vector<Landpad> landpad;
-        json j = json::parse(input);
-
-        if(j.is_array())
-        {
-            for (json::iterator it = j.begin(); it != j.end(); ++it)
-            {
-                landpad.push_back(parseOne(it.value()));
-            }
-        }
-
-        return landpad;
-    }
-
     Landpad LandpadParser::parseOne(const json &input)
     {
         Landpad landpad;

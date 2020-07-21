@@ -33,8 +33,6 @@ namespace Marsy::Parsers::StarlinkParser
         const std::string strId = "id";
     public:
         StarlinkParser();
-        Starlink parseObject(const std::string &input);
-        std::vector<Starlink> parseVector(const std::string &input);
     protected:
         Starlink parseOne(const json &input) override;
     private:

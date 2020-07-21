@@ -64,8 +64,6 @@ namespace Marsy::Parsers::RocketsParser
         const std::string strId = "id";
     public:
         RocketParser();
-        Rocket parseObject(const std::string &input);
-        std::vector<Rocket> parseVector(const std::string &input);
     protected:
         Rocket parseOne(const json &input) override;
     private:

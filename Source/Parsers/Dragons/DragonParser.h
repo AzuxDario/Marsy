@@ -63,8 +63,6 @@ namespace Marsy::Parsers::DragonParser
         const std::string strId = "id";
     public:
         DragonParser();
-        Dragon parseObject(const std::string &input);
-        std::vector<Dragon> parseVector(const std::string &input);
     protected:
         Dragon parseOne(const json &input) override;
     private:

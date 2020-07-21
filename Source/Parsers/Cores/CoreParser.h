@@ -39,8 +39,6 @@ namespace Marsy::Parsers::CoreParser
         const std::string strStatusRetired = "retired";
     public:
         CoreParser();
-        Core parseObject(const std::string &input);
-        std::vector<Core> parseVector(const std::string &input);
     protected:
         Core parseOne(const json &input) override;
     private:

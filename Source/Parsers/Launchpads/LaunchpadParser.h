@@ -41,8 +41,6 @@ namespace Marsy::Parsers::LaunchpadParser
         const std::string strStatusUnderConstuction = "under construction";
     public:
         LaunchpadParser();
-        Launchpad parseObject(const std::string &input);
-        std::vector<Launchpad> parseVector(const std::string &input);
     protected:
         Launchpad parseOne(const json &input) override;
     private:

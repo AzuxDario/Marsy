@@ -7,28 +7,6 @@ namespace Marsy::Parsers::PayloadParser
 
     }
 
-    Payload PayloadParser::parseObject(const std::string &input)
-    {
-        json j = json::parse(input);
-        return parseOne(j);
-    }
-
-    std::vector<Payload> PayloadParser::parseVector(const std::string &input)
-    {
-        std::vector<Payload> payloads;
-        json j = json::parse(input);
-
-        if(j.is_array())
-        {
-            for (json::iterator it = j.begin(); it != j.end(); ++it)
-            {
-                payloads.push_back(parseOne(it.value()));
-            }
-        }
-
-        return payloads;
-    }
-
     Payload PayloadParser::parseOne(const json &input)
     {
         Payload payload;

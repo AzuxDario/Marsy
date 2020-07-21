@@ -33,8 +33,6 @@ namespace Marsy::Parsers::CrewParser
         const std::string strStatusUnknown = "unknown";
     public:
         CrewParser();
-        Crew parseObject(const std::string &input);
-        std::vector<Crew> parseVector(const std::string &input);
     protected:
         Crew parseOne(const json &input) override;
     private:

@@ -35,8 +35,6 @@ namespace Marsy::Parsers::CapsuleParser
         const std::string strStatusDestroyed = "destroyed";
     public:
         CapsuleParser();
-        Capsule parseObject(const std::string &input) override;
-        std::vector<Capsule> parseVector(const std::string &input) override;
     protected:
         Capsule parseOne(const json &input) override;
     private:

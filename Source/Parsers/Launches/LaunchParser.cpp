@@ -7,28 +7,6 @@ namespace Marsy::Parsers::LaunchParser
 
     }
 
-    Launch LaunchParser::parseObject(const std::string &input)
-    {
-        json j = json::parse(input);
-        return parseOne(j);
-    }
-
-    std::vector<Launch> LaunchParser::parseVector(const std::string &input)
-    {
-        std::vector<Launch> launches;
-        json j = json::parse(input);
-
-        if(j.is_array())
-        {
-            for (json::iterator it = j.begin(); it != j.end(); ++it)
-            {
-                launches.push_back(parseOne(it.value()));
-            }
-        }
-
-        return launches;
-    }
-
     Launch LaunchParser::parseOne(const json &input)
     {
         Launch launch;
