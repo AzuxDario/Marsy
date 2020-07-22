@@ -13,6 +13,7 @@ namespace Marsy::Connection
     {
     public:
         virtual ApiResponse httpGet(std::string url) = 0;
+        virtual ApiResponse httpPost(std::string url, std::string payload) = 0;
     };
 }
 
