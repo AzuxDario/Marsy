@@ -23,7 +23,7 @@ It's because C++ doesn't have internet connection in STL yet. I did not want to 
 Marsy doesn't parse dates returned by API. They're stored as strings.
 
 # Sample code
-```
+```cpp
 #include <iostream>
 #include <memory>
 
