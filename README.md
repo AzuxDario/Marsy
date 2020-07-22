@@ -48,7 +48,8 @@ int main()
     {
         std::cout << "launches " << i << std::endl;
     }
-    std::cout << "id " << capsule.id.value() << std::endl;*/
+    std::cout << "id " << capsule.id.value() << std::endl;
+}
 ```
 
 # What next will be done
