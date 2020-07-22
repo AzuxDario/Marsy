@@ -7,11 +7,13 @@
 
 namespace Marsy::Models::LandpadModel
 {
+    enum class LandpadStatus {active, inactive, unknown, retired, lost, underConstruction};
+
     struct Landpad
     {
         std::optional<std::string> name = std::nullopt;
         std::optional<std::string> fullName = std::nullopt;
-        std::optional<std::string> status = std::nullopt;
+        std::optional<LandpadStatus> status = std::nullopt;
         std::optional<std::string> type = std::nullopt;
         std::optional<std::string> locality = std::nullopt;
         std::optional<std::string> region = std::nullopt;

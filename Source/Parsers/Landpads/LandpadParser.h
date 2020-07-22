@@ -13,6 +13,7 @@
 
 using json = nlohmann::json;
 using Marsy::Models::LandpadModel::Landpad;
+using Marsy::Models::LandpadModel::LandpadStatus;
 
 namespace Marsy::Parsers::LandpadParser
 {
@@ -33,10 +34,18 @@ namespace Marsy::Parsers::LandpadParser
         const std::string strDetails = "details";
         const std::string strLaunches = "launches";
         const std::string strId = "id";
+        const std::string strStatusActive = "active";
+        const std::string strStatusInactive = "inactive";
+        const std::string strStatusUnknown = "unknown";        
+        const std::string strStatusRetired = "retired";
+        const std::string strStatusLost = "lost";
+        const std::string strStatusUnderConstuction = "under construction";
     public:
         LandpadParser();
     protected:
         Landpad parseOne(const json &input) override;
+    private:
+        std::optional<LandpadStatus> parseLandpadStatus(const json &input, const std::string &name);
     };
 }
 

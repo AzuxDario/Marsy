@@ -12,7 +12,7 @@ namespace Marsy::Parsers::LandpadParser
         Landpad landpad;
         landpad.name = parseStringNullable(input, strName);
         landpad.fullName = parseStringNullable(input, strFullName);
-        landpad.status = parseStringNullable(input, strStatus);
+        landpad.status = parseLandpadStatus(input, strStatus);
         landpad.type = parseStringNullable(input, strType);
         landpad.locality = parseStringNullable(input, strLocality);
         landpad.region = parseStringNullable(input, strRegion);
@@ -26,6 +26,40 @@ namespace Marsy::Parsers::LandpadParser
         landpad.id = parseStringNullable(input, strId);
 
         return landpad;
+    }
+
+    std::optional<LandpadStatus> LandpadParser::parseLandpadStatus(const json &input, const std::string &name)
+    {
+        std::string status = parseString(input, name);        
+        if(status == strStatusActive)
+        {
+            return LandpadStatus::active;
+        }
+        else if(status == strStatusInactive)
+        {
+            return LandpadStatus::inactive;
+        }
+        else if(status == strStatusUnknown)
+        {
+            return LandpadStatus::unknown;
+        }
+        else if(status == strStatusRetired)
+        {
+            return LandpadStatus::retired;
+        }
+        else if(status == strStatusLost)
+        {
+            return LandpadStatus::lost;
+        }
+        else if(status == strStatusUnderConstuction)
+        {
+            return LandpadStatus::underConstruction;
+        }
+        else
+        {
+            return std::nullopt;
+        }
+        
     }
 
 }
