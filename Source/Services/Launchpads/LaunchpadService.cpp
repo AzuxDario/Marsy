@@ -16,4 +16,9 @@ namespace Marsy::Services::Launchpad
     {
         return getVector(apiLaunchpadsUrl);
     }
+
+    ServiceQueryResponse<LaunchpadModel> LaunchpadService::getLaunchpadQuery(QueryRequest request)
+    {
+        return getQuery(apiLaunchpadsUrl + apiQueryUrl, request);
+    }
 }

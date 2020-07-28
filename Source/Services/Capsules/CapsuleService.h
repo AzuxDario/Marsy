@@ -23,6 +23,7 @@ namespace Marsy::Services::Capsule
         CapsuleService(std::shared_ptr<IConnector> connector);
         ServiceResponse<CapsuleModel> getCapsule(std::string id);
         ServiceVectorResponse<CapsuleModel> getCapsuleVector();
+        ServiceQueryResponse<CapsuleModel> getCapsuleQuery(QueryRequest request);
     };
 }
 

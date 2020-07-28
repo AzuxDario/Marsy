@@ -23,6 +23,7 @@ namespace Marsy::Services::Ship
         ShipService(std::shared_ptr<IConnector> connector);
         ServiceResponse<ShipModel> getShip(std::string id);
         ServiceVectorResponse<ShipModel> getShipVector();
+        ServiceQueryResponse<ShipModel> getShipQuery(QueryRequest request);
     };
 }
 

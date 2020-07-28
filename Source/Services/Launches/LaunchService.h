@@ -31,6 +31,7 @@ namespace Marsy::Services::Launch
         ServiceResponse<LaunchModel> getNextLaunch();
         ServiceVectorResponse<LaunchModel> getPastLaunchVector();
         ServiceVectorResponse<LaunchModel> getUpcomingLaunchVector();
+        ServiceQueryResponse<LaunchModel> getLaunchQuery(QueryRequest request);
     };
 }
 

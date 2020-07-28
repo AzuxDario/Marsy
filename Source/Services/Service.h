@@ -23,7 +23,7 @@ namespace Marsy::Services
     {
     protected:
         const std::string apiBaseUrl = "https://api.spacexdata.com/v4";
-        const std::string apiQuery = "/query";
+        const std::string apiQueryUrl = "/query";
         std::shared_ptr<IConnector> conn;
     public:
         Service(std::shared_ptr<IConnector> connector) : conn(connector) {}

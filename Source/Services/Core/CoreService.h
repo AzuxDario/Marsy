@@ -23,6 +23,7 @@ namespace Marsy::Services::Core
         CoreService(std::shared_ptr<IConnector> connector);
         ServiceResponse<CoreModel> getCore(std::string id);
         ServiceVectorResponse<CoreModel> getCoreVector();
+        ServiceQueryResponse<CoreModel> getCoreQuery(QueryRequest request);
     };
 }
 

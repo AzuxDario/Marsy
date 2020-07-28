@@ -16,4 +16,9 @@ namespace Marsy::Services::Rocket
     {
         return getVector(apiRocketsUrl);
     }
+
+    ServiceQueryResponse<RocketModel> RocketService::getRocketQuery(QueryRequest request)
+    {
+        return getQuery(apiRocketsUrl + apiQueryUrl, request);
+    }
 }

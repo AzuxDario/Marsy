@@ -16,4 +16,9 @@ namespace Marsy::Services::Dragon
     {
         return getVector(apiDragonUrl);
     }
+
+    ServiceQueryResponse<DragonModel> DragonService::getDragonQuery(QueryRequest request)
+    {
+        return getQuery(apiDragonUrl + apiQueryUrl, request);
+    }
 }

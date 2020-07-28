@@ -23,6 +23,7 @@ namespace Marsy::Services::Rocket
         RocketService(std::shared_ptr<IConnector> connector);
         ServiceResponse<RocketModel> getRocket(std::string id);
         ServiceVectorResponse<RocketModel> getRocketVector();
+        ServiceQueryResponse<RocketModel> getRocketQuery(QueryRequest request);
     };
 }
 

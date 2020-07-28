@@ -16,4 +16,9 @@ namespace Marsy::Services::Crew
     {
         return getVector(apiCrewUrl);
     }
+
+    ServiceQueryResponse<CrewModel> CrewService::getCrewQuery(QueryRequest request)
+    {
+        return getQuery(apiCrewUrl + apiQueryUrl, request);
+    }
 }

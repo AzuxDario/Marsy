@@ -16,4 +16,9 @@ namespace Marsy::Services::Capsule
     {
         return getVector(apiCapsulesUrl);
     }
+
+    ServiceQueryResponse<CapsuleModel> CapsuleService::getCapsuleQuery(QueryRequest request)
+    {
+        return getQuery(apiCapsulesUrl + apiQueryUrl, request);
+    }
 }

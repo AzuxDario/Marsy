@@ -16,4 +16,9 @@ namespace Marsy::Services::Ship
     {
         return getVector(apiShipsUrl);
     }
+
+    ServiceQueryResponse<ShipModel> ShipService::getShipQuery(QueryRequest request)
+    {
+        return getQuery(apiShipsUrl + apiQueryUrl, request);
+    }
 }

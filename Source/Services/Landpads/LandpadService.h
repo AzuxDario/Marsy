@@ -23,6 +23,7 @@ namespace Marsy::Services::Landpad
         LandpadService(std::shared_ptr<IConnector> connector);
         ServiceResponse<LandpadModel> getLandpad(std::string id);
         ServiceVectorResponse<LandpadModel> getLandpadVector();
+        ServiceQueryResponse<LandpadModel> getLandpadQuery(QueryRequest request);
     };
 }
 

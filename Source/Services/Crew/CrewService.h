@@ -23,6 +23,7 @@ namespace Marsy::Services::Crew
         CrewService(std::shared_ptr<IConnector> connector);
         ServiceResponse<CrewModel> getCrew(std::string id);
         ServiceVectorResponse<CrewModel> getCrewVector();
+        ServiceQueryResponse<CrewModel> getCrewQuery(QueryRequest request);
     };
 }
 

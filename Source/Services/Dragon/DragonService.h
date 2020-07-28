@@ -23,6 +23,7 @@ namespace Marsy::Services::Dragon
         DragonService(std::shared_ptr<IConnector> connector);
         ServiceResponse<DragonModel> getDragon(std::string id);
         ServiceVectorResponse<DragonModel> getDragonVector();
+        ServiceQueryResponse<DragonModel> getDragonQuery(QueryRequest request);
     };
 }
 

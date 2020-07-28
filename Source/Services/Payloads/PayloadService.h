@@ -23,6 +23,7 @@ namespace Marsy::Services::Payload
         PayloadService(std::shared_ptr<IConnector> connector);
         ServiceResponse<PayloadModel> getPayload(std::string id);
         ServiceVectorResponse<PayloadModel> getPayloadVector();
+        ServiceQueryResponse<PayloadModel> getPayloadQuery(QueryRequest request);
     };
 }
 

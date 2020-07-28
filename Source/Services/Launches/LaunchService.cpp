@@ -36,4 +36,9 @@ namespace Marsy::Services::Launch
     {
         return getVector(apiUpcomingLaunchesUrl);
     }
+
+    ServiceQueryResponse<LaunchModel> LaunchService::getLaunchQuery(QueryRequest request)
+    {
+        return getQuery(apiLaunchesUrl + apiQueryUrl, request);
+    }
 }

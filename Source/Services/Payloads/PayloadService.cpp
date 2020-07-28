@@ -16,4 +16,9 @@ namespace Marsy::Services::Payload
     {
         return getVector(apiPayloadsUrl);
     }
+
+    ServiceQueryResponse<PayloadModel> PayloadService::getPayloadQuery(QueryRequest request)
+    {
+        return getQuery(apiPayloadsUrl + apiQueryUrl, request);
+    }
 }

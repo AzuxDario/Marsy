@@ -16,4 +16,9 @@ namespace Marsy::Services::Landpad
     {
         return getVector(apiLandpadsUrl);
     }
+
+    ServiceQueryResponse<LandpadModel> LandpadService::getLandpadQuery(QueryRequest request)
+    {
+        return getQuery(apiLandpadsUrl + apiQueryUrl, request);
+    }
 }

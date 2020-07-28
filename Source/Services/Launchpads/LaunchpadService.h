@@ -23,6 +23,7 @@ namespace Marsy::Services::Launchpad
         LaunchpadService(std::shared_ptr<IConnector> connector);
         ServiceResponse<LaunchpadModel> getLaunchpad(std::string id);
         ServiceVectorResponse<LaunchpadModel> getLaunchpadVector();
+        ServiceQueryResponse<LaunchpadModel> getLaunchpadQuery(QueryRequest request);
     };
 }
 

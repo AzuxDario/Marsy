@@ -23,6 +23,7 @@ namespace Marsy::Services::Starlink
         StarlinkService(std::shared_ptr<IConnector> connector);
         ServiceResponse<StarlinkModel> getStarlink(std::string id);
         ServiceVectorResponse<StarlinkModel> getStarlinkVector();
+        ServiceQueryResponse<StarlinkModel> getStarlinkQuery(QueryRequest request);
     };
 }
 

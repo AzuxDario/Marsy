@@ -16,4 +16,9 @@ namespace Marsy::Services::Starlink
     {
         return getVector(apiStarlinkUrl);
     }
+
+    ServiceQueryResponse<StarlinkModel> StarlinkService::getStarlinkQuery(QueryRequest request)
+    {
+        return getQuery(apiStarlinkUrl + apiQueryUrl, request);
+    }
 }
