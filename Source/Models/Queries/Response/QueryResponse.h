@@ -10,7 +10,7 @@
 namespace Marsy::Models::QueryModel
 {
     template <class T>
-    struct QueryResponse<T>
+    struct QueryResponse
     {
         std::vector<T> docs;
         QueryParameters queryParameters;

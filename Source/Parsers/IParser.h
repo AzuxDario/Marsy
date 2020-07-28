@@ -6,13 +6,20 @@
 
 #include "../Libraries/JSON/json.hpp"
 
+#include "Queries/QueryParser.h"
+#include "../Models/Queries/Response/QueryResponse.h"
+
 using json = nlohmann::json;
+using Marsy::Parsers::QueryParser::QueryParser;
+using Marsy::Models::QueryModel::QueryResponse;
 
 namespace Marsy::Parsers
 {
     template <class T>
     class IParser
     {
+    private:
+        const std::string strDocs = "docs";
     public:
         IParser() {};
         T parseObject(const json &input)
@@ -47,6 +54,15 @@ namespace Marsy::Parsers
             return parseVector(j);
         }
 
+        QueryResponse<T> parseQuery(const std::string &input)
+        {
+            QueryResponse<T> response;
+            QueryParser::QueryParser queryParser;
+            json j = json::parse(input);            
+            response.docs = parseVector(j[strDocs]);
+            response.queryParameters = queryParser.parseObject(j);
+            return response;
+        }
     protected:
         virtual T parseOne(const json &input) = 0;
     };
