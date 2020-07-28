@@ -11,7 +11,6 @@
 using Marsy::Connection::IConnector;
 using Marsy::Connection::ApiResponse;
 using Marsy::Connection::ResponseStatus;
-using Marsy::Exceptions::JsonException;
 
 namespace Marsy::Services
 {
@@ -32,14 +31,7 @@ namespace Marsy::Services
             if(response.status == ResponseStatus::ok)
             {
                 U parser;
-                try
-                {
-                    responseObject.object = parser.parseObject(response.payload.value());
-                }
-                catch(const nlohmann::detail::exception& exception)
-                {
-                    throw JsonException(exception);
-                }
+                responseObject.object = parser.parseObject(response.payload.value());
             }
 
             return responseObject;
@@ -53,14 +45,7 @@ namespace Marsy::Services
             if(response.status == ResponseStatus::ok)
             {
                 U parser;
-                try
-                {
-                    responseVector.vector = parser.parseVector(response.payload.value());
-                }
-                catch(const nlohmann::detail::exception& exception)
-                {
-                    throw JsonException(exception);
-                }
+                responseVector.vector = parser.parseVector(response.payload.value());
             }
             return responseVector;
         }

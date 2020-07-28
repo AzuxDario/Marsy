@@ -8,10 +8,12 @@
 
 #include "Queries/QueryParser.h"
 #include "../Models/Queries/Response/QueryResponse.h"
+#include "../Exceptions/JsonException.h"
 
 using json = nlohmann::json;
 using Marsy::Parsers::Query::QueryParser;
 using Marsy::Models::Query::QueryResponse;
+using Marsy::Exceptions::JsonException;
 
 namespace Marsy::Parsers
 {
@@ -24,44 +26,78 @@ namespace Marsy::Parsers
         IParser() {};
         T parseObject(const json &input)
         {
-            return parseOne(input);
+            try
+            {
+                T obj = parseOne(input);
+                return obj;
+            }
+            catch(const nlohmann::detail::exception& exception)
+            {
+                throw JsonException(exception);
+            }
         }
 
         T parseObject(const std::string &input)
         {
-            json j = json::parse(input);
-            return parseObject(j);
+            try
+            {
+                json j = json::parse(input);
+                return parseObject(j);
+            }
+            catch(const nlohmann::detail::exception& exception)
+            {
+                throw JsonException(exception);
+            }
         }
 
         std::vector<T> parseVector(json &input)
         {
-            std::vector<T> vec;
-
-            if(input.is_array())
+            try
             {
-                for (json::iterator it = input.begin(); it != input.end(); ++it)
+                std::vector<T> vec;
+                if(input.is_array())
                 {
-                    vec.push_back(parseOne(it.value()));
+                    for (json::iterator it = input.begin(); it != input.end(); ++it)
+                    {
+                        vec.push_back(parseOne(it.value()));
+                    }
                 }
+                return vec;
             }
-
-            return vec;
+            catch(const nlohmann::detail::exception& exception)
+            {
+                throw JsonException(exception);
+            }
         }
 
         std::vector<T> parseVector(const std::string &input)
         {
-            json j = json::parse(input);
-            return parseVector(j);
+            try
+            {
+                json j = json::parse(input);
+                return parseVector(j);
+            }
+            catch(const nlohmann::detail::exception& exception)
+            {
+                throw JsonException(exception);
+            } 
         }
 
         QueryResponse<T> parseQuery(const std::string &input)
         {
-            QueryResponse<T> response;
-            QueryParser queryParser;
-            json j = json::parse(input);            
-            response.docs = parseVector(j[strDocs]);
-            response.queryParameters = queryParser.parseResponse(j);
-            return response;
+            try
+            {
+                QueryResponse<T> response;
+                QueryParser queryParser;
+                json j = json::parse(input);            
+                response.docs = parseVector(j[strDocs]);
+                response.queryParameters = queryParser.parseResponse(j);
+                return response;
+            }
+            catch(const nlohmann::detail::exception& exception)
+            {
+                throw JsonException(exception);
+            } 
         }
     protected:
         virtual T parseOne(const json &input) = 0;
