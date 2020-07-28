@@ -7,15 +7,51 @@ namespace Marsy::Parsers::Query
 
     }
 
-    QueryParameters QueryParser::parseObject(const json &input)
+    QueryParameters QueryParser::parseResponse(const json &input)
     {
         return parseOne(input);
     }
 
-    QueryParameters QueryParser::parseObject(const std::string &input)
+    QueryParameters QueryParser::parseResponse(const std::string &input)
     {
         json j = json::parse(input);
-        return parseObject(j);
+        return parseResponse(j);
+    }
+
+    std::string QueryParser::parseRequest(const QueryRequest &input)
+    {
+        json jBase, jOptions;
+        jBase[strRequestQuery] = input.query;
+        if(input.options.select.has_value() == true)
+        {
+            jOptions[strRequestSelect] = input.options.select.value();
+        }
+        if(input.options.sort.has_value() == true)
+        {
+            jOptions[strRequestSort] = input.options.sort.value();
+        }
+        if(input.options.offset.has_value() == true)
+        {
+            jOptions[strRequestOffset] = input.options.offset.value();
+        }
+        if(input.options.page.has_value() == true)
+        {
+            jOptions[strRequestPage] = input.options.page.value();
+        }
+        if(input.options.limit.has_value() == true)
+        {
+            jOptions[strRequestLimit] = input.options.limit.value();
+        }
+        if(input.options.pagination.has_value() == true)
+        {
+            jOptions[strRequestPagination] = input.options.pagination.value();
+        }
+        if(input.options.populate.has_value() == true)
+        {
+            jOptions[strRequestPopulate] = input.options.populate.value();
+        }
+        jBase[strRequestOptions] = jOptions;
+        return jBase.dump();
     }
 
     QueryParameters QueryParser::parseOne(const json &input)

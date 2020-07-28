@@ -30,10 +30,20 @@ namespace Marsy::Parsers::Query
         const std::string strHasNextPage = "hasNextPage";
         const std::string strPrevPage = "prevPage";
         const std::string strNextPage = "nextPage";
+        const std::string strRequestQuery = "query";
+        const std::string strRequestOptions = "options";
+        const std::string strRequestSelect = "select";
+        const std::string strRequestSort = "sort";
+        const std::string strRequestOffset = "offset";
+        const std::string strRequestPage = "page";
+        const std::string strRequestLimit = "limit";
+        const std::string strRequestPagination = "pagination";
+        const std::string strRequestPopulate = "populate";
     public:
         QueryParser();
-        QueryParameters parseObject(const json &input);
-        QueryParameters parseObject(const std::string &input);
+        QueryParameters parseResponse(const json &input);
+        QueryParameters parseResponse(const std::string &input);
+        std::string parseRequest(const QueryRequest &input);
     protected:
         QueryParameters parseOne(const json &input);
     };

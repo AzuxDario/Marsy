@@ -60,7 +60,7 @@ namespace Marsy::Parsers
             QueryParser queryParser;
             json j = json::parse(input);            
             response.docs = parseVector(j[strDocs]);
-            response.queryParameters = queryParser.parseObject(j);
+            response.queryParameters = queryParser.parseResponse(j);
             return response;
         }
     protected:
