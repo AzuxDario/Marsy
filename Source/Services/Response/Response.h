@@ -5,8 +5,10 @@
 #include <optional>
 
 #include "../../Connection/Response/Response.h"
+#include "../../Models/Queries/Response/QueryResponse.h"
 
 using Marsy::Connection::ResponseStatus;
+using Marsy::Models::Query::QueryResponse;
 
 namespace Marsy::Services
 {
@@ -22,6 +24,13 @@ namespace Marsy::Services
     {
         ResponseStatus status;
         std::vector<T> vector; 
+    };
+
+    template <class T>
+    struct ServiceQueryResponse
+    {
+        ResponseStatus status;
+        QueryResponse<T> query; 
     };
 }
 
