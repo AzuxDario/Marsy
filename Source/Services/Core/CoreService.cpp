@@ -1,18 +1,18 @@
 #include "CoreService.h"
 
-namespace Marsy::Services::CoreService
+namespace Marsy::Services::Core
 {
     CoreService::CoreService(std::shared_ptr<IConnector> connector) : Service(connector)
     {
         
     }
 
-    ServiceResponse<Core> CoreService::getCore(std::string id)
+    ServiceResponse<CoreModel> CoreService::getCore(std::string id)
     {
         return getObject(apiCoresUrl + "/" + id);
     }
 
-    ServiceVectorResponse<Core> CoreService::getCoreVector()
+    ServiceVectorResponse<CoreModel> CoreService::getCoreVector()
     {
         return getVector(apiCoresUrl);
     }

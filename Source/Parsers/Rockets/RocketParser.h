@@ -15,29 +15,29 @@
 #include "PayloadWeightsParser.h"
 #include "SecondStageParser.h"
 #include "../Common/CommonInfoParser.h"
-#include "../../Models/Rockets/Rocket.h"
-#include "../../Models/Rockets/Engines.h"
-#include "../../Models/Rockets/FirstStage.h"
-#include "../../Models/Rockets/LandingLegs.h"
-#include "../../Models/Rockets/PayloadWeights.h"
-#include "../../Models/Rockets/SecondStage.h"
-#include "../../Models/Common/MassInfo.h"
-#include "../../Models/Common/SizeInfo.h"
+#include "../../Models/Rockets/RocketModel.h"
+#include "../../Models/Rockets/EnginesModel.h"
+#include "../../Models/Rockets/FirstStageModel.h"
+#include "../../Models/Rockets/LandingLegsModel.h"
+#include "../../Models/Rockets/PayloadWeightsModel.h"
+#include "../../Models/Rockets/SecondStageModel.h"
+#include "../../Models/Common/MassInfoModel.h"
+#include "../../Models/Common/SizeInfoModel.h"
 
 using json = nlohmann::json;
-using Marsy::Models::RocketsModel::Rocket;
-using Marsy::Models::RocketsModel::Engines;
-using Marsy::Models::RocketsModel::FirstStage;
-using Marsy::Models::RocketsModel::LandingLegs;
-using Marsy::Models::RocketsModel::PayloadWeights;
-using Marsy::Models::RocketsModel::SecondStage;
-using Marsy::Models::CommonModel::MassInfo;
-using Marsy::Models::CommonModel::SizeInfo;
-using Marsy::Parsers::CommonParser::CommonInfoParser;
+using Marsy::Models::Rocket::RocketModel;
+using Marsy::Models::Rocket::EnginesModel;
+using Marsy::Models::Rocket::FirstStageModel;
+using Marsy::Models::Rocket::LandingLegsModel;
+using Marsy::Models::Rocket::PayloadWeightsModel;
+using Marsy::Models::Rocket::SecondStageModel;
+using Marsy::Models::Common::MassInfoModel;
+using Marsy::Models::Common::SizeInfoModel;
+using Marsy::Parsers::Common::CommonInfoParser;
 
-namespace Marsy::Parsers::RocketsParser
+namespace Marsy::Parsers::Rocket
 {
-    class RocketParser : public Parser, public IParser<Rocket>
+    class RocketParser : public Parser, public IParser<RocketModel>
     {
     private:
         const std::string strName = "name";
@@ -65,13 +65,13 @@ namespace Marsy::Parsers::RocketsParser
     public:
         RocketParser();
     protected:
-        Rocket parseOne(const json &input) override;
+        RocketModel parseOne(const json &input) override;
     private:
-        std::optional<Engines> parseEngines(const json &input, const std::string &name);
-        std::optional<FirstStage> parseFirstStage(const json &input, const std::string &name);
-        std::optional<LandingLegs> parseLandingLegs(const json &input, const std::string &name);
-        std::optional<std::vector<PayloadWeights>> parsePayloadWeightsVector(const json &input, const std::string &name);
-        std::optional<SecondStage> parseSecondStage(const json &input, const std::string &name);
+        std::optional<EnginesModel> parseEngines(const json &input, const std::string &name);
+        std::optional<FirstStageModel> parseFirstStage(const json &input, const std::string &name);
+        std::optional<LandingLegsModel> parseLandingLegs(const json &input, const std::string &name);
+        std::optional<std::vector<PayloadWeightsModel>> parsePayloadWeightsVector(const json &input, const std::string &name);
+        std::optional<SecondStageModel> parseSecondStage(const json &input, const std::string &name);
     };
 }
 

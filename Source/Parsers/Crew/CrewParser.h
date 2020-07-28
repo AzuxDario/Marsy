@@ -9,15 +9,15 @@
 
 #include "../Parser.h"
 #include "../IParser.h"
-#include "../../Models/Crew/Crew.h"
+#include "../../Models/Crew/CrewModel.h"
 
 using json = nlohmann::json;
-using Marsy::Models::CrewModel::Crew;
-using Marsy::Models::CrewModel::CrewStatus;
+using Marsy::Models::Crew::CrewModel;
+using Marsy::Models::Crew::CrewStatus;
 
-namespace Marsy::Parsers::CrewParser
+namespace Marsy::Parsers::Crew
 {
-    class CrewParser : public Parser, public IParser<Crew>
+    class CrewParser : public Parser, public IParser<CrewModel>
     {
     private:
         const std::string strName = "name";
@@ -34,7 +34,7 @@ namespace Marsy::Parsers::CrewParser
     public:
         CrewParser();
     protected:
-        Crew parseOne(const json &input) override;
+        CrewModel parseOne(const json &input) override;
     private:
         std::optional<CrewStatus> parseCrewStatus(const json &input, const std::string &name);
     };

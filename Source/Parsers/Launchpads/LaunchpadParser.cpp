@@ -1,15 +1,15 @@
 #include "LaunchpadParser.h"
 
-namespace Marsy::Parsers::LaunchpadParser
+namespace Marsy::Parsers::Launchpad
 {
     LaunchpadParser::LaunchpadParser()
     {
 
     }
 
-    Launchpad LaunchpadParser::parseOne(const json &input)
+    LaunchpadModel LaunchpadParser::parseOne(const json &input)
     {
-        Launchpad launchpad;
+        LaunchpadModel launchpad;
         launchpad.name = parseStringNullable(input, strName);
         launchpad.fullName = parseStringNullable(input, strFullName);
         launchpad.status = parseLaunchpadStatus(input, strStatus);

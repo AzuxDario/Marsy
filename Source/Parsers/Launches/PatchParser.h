@@ -8,12 +8,12 @@
 #include "../../Libraries/JSON/json.hpp"
 
 #include "../Parser.h"
-#include "../../Models/Launches/Patch.h"
+#include "../../Models/Launches/PatchModel.h"
 
 using json = nlohmann::json;
-using Marsy::Models::LaunchModel::Patch;
+using Marsy::Models::Launch::PatchModel;
 
-namespace Marsy::Parsers::LaunchParser
+namespace Marsy::Parsers::Launch
 {
     class PatchParser : public Parser
     {
@@ -22,7 +22,7 @@ namespace Marsy::Parsers::LaunchParser
         const std::string strLarge = "large";
     public:
         PatchParser();
-        Patch parsePatch(const json &input);
+        PatchModel parsePatch(const json &input);
     };
 }
 

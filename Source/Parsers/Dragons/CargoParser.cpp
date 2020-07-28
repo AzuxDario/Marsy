@@ -1,15 +1,15 @@
 #include "CargoParser.h"
 
-namespace Marsy::Parsers::DragonParser
+namespace Marsy::Parsers::Dragon
 {
     CargoParser::CargoParser()
     {
 
     }
 
-    Cargo CargoParser::parseCargo(const json &input)
+    CargoModel CargoParser::parseCargo(const json &input)
     {
-        Cargo cargo;
+        CargoModel cargo;
         cargo.solarArray = parseIntNullable(input, strSolarArray);
         cargo.unpressurizedCargo = parseBoolNullable(input, strUnpressurizedCargo);
 

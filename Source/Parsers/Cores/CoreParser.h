@@ -9,15 +9,15 @@
 
 #include "../Parser.h"
 #include "../IParser.h"
-#include "../../Models/Cores/Core.h"
+#include "../../Models/Cores/CoreModel.h"
 
 using json = nlohmann::json;
-using Marsy::Models::CoreModel::Core;
-using Marsy::Models::CoreModel::CoreStatus;
+using Marsy::Models::Core::CoreModel;
+using Marsy::Models::Core::CoreStatus;
 
-namespace Marsy::Parsers::CoreParser
+namespace Marsy::Parsers::Core
 {
-    class CoreParser : public Parser, public IParser<Core>
+    class CoreParser : public Parser, public IParser<CoreModel>
     {
     private:
         const std::string strSerial = "serial";
@@ -40,7 +40,7 @@ namespace Marsy::Parsers::CoreParser
     public:
         CoreParser();
     protected:
-        Core parseOne(const json &input) override;
+        CoreModel parseOne(const json &input) override;
     private:
         std::optional<CoreStatus> parseCoreStatus(const json &input, const std::string &name);
     };

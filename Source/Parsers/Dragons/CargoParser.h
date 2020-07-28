@@ -7,12 +7,12 @@
 #include "../../Libraries/JSON/json.hpp"
 
 #include "../Parser.h"
-#include "../../Models/Dragons/Cargo.h"
+#include "../../Models/Dragons/CargoModel.h"
 
 using json = nlohmann::json;
-using Marsy::Models::DragonModel::Cargo;
+using Marsy::Models::Dragon::CargoModel;
 
-namespace Marsy::Parsers::DragonParser
+namespace Marsy::Parsers::Dragon
 {
     class CargoParser : public Parser
     {
@@ -21,7 +21,7 @@ namespace Marsy::Parsers::DragonParser
         const std::string strUnpressurizedCargo = "unpressurized_cargo";
     public:
         CargoParser();
-        Cargo parseCargo(const json &input);
+        CargoModel parseCargo(const json &input);
     };
 }
 

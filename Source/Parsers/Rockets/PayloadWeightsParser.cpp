@@ -1,21 +1,21 @@
 #include "PayloadWeightsParser.h"
 
-namespace Marsy::Parsers::RocketsParser
+namespace Marsy::Parsers::Rocket
 {
     PayloadWeightsParser::PayloadWeightsParser()
     {
 
     }
 
-    std::vector<PayloadWeights> PayloadWeightsParser::parsePayloadWeightsVector(const json &input)
+    std::vector<PayloadWeightsModel> PayloadWeightsParser::parsePayloadWeightsVector(const json &input)
     {
-        std::vector<PayloadWeights> payloadWeights;
+        std::vector<PayloadWeightsModel> payloadWeights;
 
         if(input.is_array())
         {
             for (auto it = input.begin(); it != input.end(); ++it)
             {
-                PayloadWeights payloadWeight;
+                PayloadWeightsModel payloadWeight;
                 payloadWeight.id = parseStringNullable(it.value(), strId);
                 payloadWeight.name = parseStringNullable(it.value(), strName);
                 payloadWeight.kilograms = parseDoubleNullable(it.value(), strKg);

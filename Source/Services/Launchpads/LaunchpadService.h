@@ -6,23 +6,23 @@
 
 #include "../Service.h"
 #include "../../Connection/Interface/IConnector.h"
-#include "../../Models/Launchpads/Launchpad.h"
+#include "../../Models/Launchpads/LaunchpadModel.h"
 #include "../../Parsers/Launchpads/LaunchpadParser.h"
 
 using Marsy::Connection::IConnector;
-using Marsy::Models::LaunchpadModel::Launchpad;
-using Marsy::Parsers::LaunchpadParser::LaunchpadParser;
+using Marsy::Models::Launchpad::LaunchpadModel;
+using Marsy::Parsers::Launchpad::LaunchpadParser;
 
-namespace Marsy::Services::LaunchpadService
+namespace Marsy::Services::Launchpad
 {
-    class LaunchpadService : public Service<Launchpad, LaunchpadParser>
+    class LaunchpadService : public Service<LaunchpadModel, LaunchpadParser>
     {
     private:
         const std::string apiLaunchpadsUrl = apiBaseUrl + "/launchpads";
     public:
         LaunchpadService(std::shared_ptr<IConnector> connector);
-        ServiceResponse<Launchpad> getLaunchpad(std::string id);
-        ServiceVectorResponse<Launchpad> getLaunchpadVector();
+        ServiceResponse<LaunchpadModel> getLaunchpad(std::string id);
+        ServiceVectorResponse<LaunchpadModel> getLaunchpadVector();
     };
 }
 

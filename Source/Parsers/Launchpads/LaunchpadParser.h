@@ -9,15 +9,15 @@
 
 #include "../Parser.h"
 #include "../IParser.h"
-#include "../../Models/Launchpads/Launchpad.h"
+#include "../../Models/Launchpads/LaunchpadModel.h"
 
 using json = nlohmann::json;
-using Marsy::Models::LaunchpadModel::Launchpad;
-using Marsy::Models::LaunchpadModel::LaunchpadStatus;
+using Marsy::Models::Launchpad::LaunchpadModel;
+using Marsy::Models::Launchpad::LaunchpadStatus;
 
-namespace Marsy::Parsers::LaunchpadParser
+namespace Marsy::Parsers::Launchpad
 {
-    class LaunchpadParser : public Parser, public IParser<Launchpad>
+    class LaunchpadParser : public Parser, public IParser<LaunchpadModel>
     {
     private:
         const std::string strName = "name";
@@ -42,7 +42,7 @@ namespace Marsy::Parsers::LaunchpadParser
     public:
         LaunchpadParser();
     protected:
-        Launchpad parseOne(const json &input) override;
+        LaunchpadModel parseOne(const json &input) override;
     private:
         std::optional<LaunchpadStatus> parseLaunchpadStatus(const json &input, const std::string &name);
     };

@@ -7,12 +7,12 @@
 #include "../../Libraries/JSON/json.hpp"
 
 #include "../Parser.h"
-#include "../../Models/Starlink/SpaceTrack.h"
+#include "../../Models/Starlink/SpaceTrackModel.h"
 
 using json = nlohmann::json;
-using Marsy::Models::StarlinkModel::SpaceTrack;
+using Marsy::Models::Starlink::SpaceTrackModel;
 
-namespace Marsy::Parsers::StarlinkParser
+namespace Marsy::Parsers::Starlink
 {
     class SpaceTrackParser : public Parser
     {
@@ -60,7 +60,7 @@ namespace Marsy::Parsers::StarlinkParser
         const std::string strTleLine2 = "TLE_LINE2";
     public:
         SpaceTrackParser();
-        SpaceTrack parseSpaceTrack(const json &input);
+        SpaceTrackModel parseSpaceTrack(const json &input);
     };
 }
 

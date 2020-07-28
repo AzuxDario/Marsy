@@ -11,20 +11,20 @@
 #include "../IParser.h"
 #include "HeadquartersParser.h"
 #include "LinksParser.h"
-#include "../../Models/Company/Company.h"
-#include "../../Models/Company/Headquarters.h"
-#include "../../Models/Company/Links.h"
+#include "../../Models/Company/CompanyModel.h"
+#include "../../Models/Company/HeadquartersModel.h"
+#include "../../Models/Company/LinksModel.h"
 
 using json = nlohmann::json;
-using Marsy::Models::CompanyModel::Headquarters;
-using Marsy::Models::CompanyModel::Links;
-using Marsy::Models::CompanyModel::Company;
-using Marsy::Parsers::CompanyParser::HeadquartersParser;
-using Marsy::Parsers::CompanyParser::LinksParser;
+using Marsy::Models::Company::HeadquartersModel;
+using Marsy::Models::Company::LinksModel;
+using Marsy::Models::Company::CompanyModel;
+using Marsy::Parsers::Company::HeadquartersParser;
+using Marsy::Parsers::Company::LinksParser;
 
-namespace Marsy::Parsers::CompanyParser
+namespace Marsy::Parsers::Company
 {
-    class CompanyParser : public Parser, public IParser<Company>
+    class CompanyParser : public Parser, public IParser<CompanyModel>
     {
     private:
         const std::string strName = "name";
@@ -46,10 +46,10 @@ namespace Marsy::Parsers::CompanyParser
     public:
         CompanyParser();
     protected:
-        Company parseOne(const json &input) override;
+        CompanyModel parseOne(const json &input) override;
     private:
-        std::optional<Headquarters> parseHeadquarter(const json &input, const std::string &name);
-        std::optional<Links> parseLinks(const json &input, const std::string &name);
+        std::optional<HeadquartersModel> parseHeadquarter(const json &input, const std::string &name);
+        std::optional<LinksModel> parseLinks(const json &input, const std::string &name);
     };
 }
 

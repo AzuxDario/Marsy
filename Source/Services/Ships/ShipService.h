@@ -6,23 +6,23 @@
 
 #include "../Service.h"
 #include "../../Connection/Interface/IConnector.h"
-#include "../../Models/Ships/Ship.h"
+#include "../../Models/Ships/ShipModel.h"
 #include "../../Parsers/Ships/ShipParser.h"
 
 using Marsy::Connection::IConnector;
-using Marsy::Models::ShipModel::Ship;
-using Marsy::Parsers::ShipParser::ShipParser;
+using Marsy::Models::Ship::ShipModel;
+using Marsy::Parsers::Ship::ShipParser;
 
-namespace Marsy::Services::ShipService
+namespace Marsy::Services::Ship
 {
-    class ShipService : public Service<Ship, ShipParser>
+    class ShipService : public Service<ShipModel, ShipParser>
     {
     private:
         const std::string apiShipsUrl = apiBaseUrl + "/ships";
     public:
         ShipService(std::shared_ptr<IConnector> connector);
-        ServiceResponse<Ship> getShip(std::string id);
-        ServiceVectorResponse<Ship> getShipVector();
+        ServiceResponse<ShipModel> getShip(std::string id);
+        ServiceVectorResponse<ShipModel> getShipVector();
     };
 }
 

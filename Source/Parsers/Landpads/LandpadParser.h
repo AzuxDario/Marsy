@@ -9,15 +9,15 @@
 
 #include "../Parser.h"
 #include "../IParser.h"
-#include "../../Models/Landpads/Landpad.h"
+#include "../../Models/Landpads/LandpadModel.h"
 
 using json = nlohmann::json;
-using Marsy::Models::LandpadModel::Landpad;
-using Marsy::Models::LandpadModel::LandpadStatus;
+using Marsy::Models::Landpad::LandpadModel;
+using Marsy::Models::Landpad::LandpadStatus;
 
-namespace Marsy::Parsers::LandpadParser
+namespace Marsy::Parsers::Landpad
 {
-    class LandpadParser : public Parser, public IParser<Landpad>
+    class LandpadParser : public Parser, public IParser<LandpadModel>
     {
     private:
         const std::string strName = "name";
@@ -43,7 +43,7 @@ namespace Marsy::Parsers::LandpadParser
     public:
         LandpadParser();
     protected:
-        Landpad parseOne(const json &input) override;
+        LandpadModel parseOne(const json &input) override;
     private:
         std::optional<LandpadStatus> parseLandpadStatus(const json &input, const std::string &name);
     };

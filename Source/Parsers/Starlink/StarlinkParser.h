@@ -10,17 +10,16 @@
 #include "../Parser.h"
 #include "../IParser.h"
 #include "SpaceTrackParser.h"
-#include "../../Models/Starlink/Starlink.h"
-#include "../../Models/Starlink/SpaceTrack.h"
+#include "../../Models/Starlink/StarlinkModel.h"
+#include "../../Models/Starlink/SpaceTrackModel.h"
 
 using json = nlohmann::json;
-using Marsy::Models::StarlinkModel::Starlink;
-using Marsy::Models::StarlinkModel::SpaceTrack;
-using Marsy::Parsers::StarlinkParser::SpaceTrackParser;
+using Marsy::Models::Starlink::StarlinkModel;
+using Marsy::Models::Starlink::SpaceTrackModel;
 
-namespace Marsy::Parsers::StarlinkParser
+namespace Marsy::Parsers::Starlink
 {
-    class StarlinkParser : public Parser, public IParser<Starlink>
+    class StarlinkParser : public Parser, public IParser<StarlinkModel>
     {
     private:
         const std::string strVersion = "version";
@@ -34,9 +33,9 @@ namespace Marsy::Parsers::StarlinkParser
     public:
         StarlinkParser();
     protected:
-        Starlink parseOne(const json &input) override;
+        StarlinkModel parseOne(const json &input) override;
     private:
-        std::optional<SpaceTrack> parseSpaceTrack(const json &input, const std::string &name);
+        std::optional<SpaceTrackModel> parseSpaceTrack(const json &input, const std::string &name);
     };
 }
 

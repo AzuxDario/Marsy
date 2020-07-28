@@ -1,15 +1,15 @@
 #include "CapsuleParser.h"
 
-namespace Marsy::Parsers::CapsuleParser
+namespace Marsy::Parsers::Capsule
 {
     CapsuleParser::CapsuleParser()
     {
 
     }
 
-    Capsule CapsuleParser::parseOne(const json &input)
+    CapsuleModel CapsuleParser::parseOne(const json &input)
     {
-        Capsule capsule;
+        CapsuleModel capsule;
         // serial is requiser by API
         capsule.serial = parseStringNullable(input, strSerial);
         capsule.status = parseCapsuleStatus(input, strStatus);

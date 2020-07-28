@@ -7,12 +7,12 @@
 #include "../../Libraries/JSON/json.hpp"
 
 #include "../Parser.h"
-#include "../../Models/Rockets/LandingLegs.h"
+#include "../../Models/Rockets/LandingLegsModel.h"
 
 using json = nlohmann::json;
-using Marsy::Models::RocketsModel::LandingLegs;
+using Marsy::Models::Rocket::LandingLegsModel;
 
-namespace Marsy::Parsers::RocketsParser
+namespace Marsy::Parsers::Rocket
 {
     class LandingLegsParser : public Parser
     {
@@ -21,7 +21,7 @@ namespace Marsy::Parsers::RocketsParser
         const std::string strMaterial = "material";
     public:
         LandingLegsParser();
-        LandingLegs parseLandingLegs(const json &input);
+        LandingLegsModel parseLandingLegs(const json &input);
     };
 }
 

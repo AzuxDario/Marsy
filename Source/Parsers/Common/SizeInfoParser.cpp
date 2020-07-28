@@ -1,15 +1,15 @@
 #include "SizeInfoParser.h"
 
-namespace Marsy::Parsers::CommonParser
+namespace Marsy::Parsers::Common
 {
     SizeInfoParser::SizeInfoParser()
     {
 
     }
 
-    SizeInfo SizeInfoParser::parseSizeInfo(const json &input)
+    SizeInfoModel SizeInfoParser::parseSizeInfo(const json &input)
     {
-        SizeInfo sizeInfo;
+        SizeInfoModel sizeInfo;
         sizeInfo.meters = parseDoubleNullable(input, strMeters);
         sizeInfo.feet = parseDoubleNullable(input, strFeet);
 

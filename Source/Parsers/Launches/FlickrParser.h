@@ -8,12 +8,12 @@
 #include "../../Libraries/JSON/json.hpp"
 
 #include "../Parser.h"
-#include "../../Models/Launches/Flickr.h"
+#include "../../Models/Launches/FlickrModel.h"
 
 using json = nlohmann::json;
-using Marsy::Models::LaunchModel::Flickr;
+using Marsy::Models::Launch::FlickrModel;
 
-namespace Marsy::Parsers::LaunchParser
+namespace Marsy::Parsers::Launch
 {
     class FlickrParser : public Parser
     {
@@ -22,7 +22,7 @@ namespace Marsy::Parsers::LaunchParser
         const std::string strOriginal = "original";
     public:
         FlickrParser();
-        Flickr parseFlickr(const json &input);
+        FlickrModel parseFlickr(const json &input);
     };
 }
 

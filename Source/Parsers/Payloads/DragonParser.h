@@ -7,12 +7,12 @@
 #include "../../Libraries/JSON/json.hpp"
 
 #include "../Parser.h"
-#include "../../Models/Payloads/Dragon.h"
+#include "../../Models/Payloads/DragonModel.h"
 
 using json = nlohmann::json;
-using Marsy::Models::PayloadModel::Dragon;
+using Marsy::Models::Payload::DragonModel;
 
-namespace Marsy::Parsers::PayloadParser
+namespace Marsy::Parsers::Payload
 {
     class DragonParser : public Parser
     {
@@ -26,7 +26,7 @@ namespace Marsy::Parsers::PayloadParser
         const std::string strLandLanding = "land_landing";
     public:
         DragonParser();
-        Dragon parseDragon(const json &input);
+        DragonModel parseDragon(const json &input);
     };
 }
 

@@ -7,12 +7,12 @@
 #include "../../Libraries/JSON/json.hpp"
 
 #include "../Parser.h"
-#include "../../Models/Rockets/Isp.h"
+#include "../../Models/Rockets/IspModel.h"
 
 using json = nlohmann::json;
-using Marsy::Models::RocketsModel::Isp;
+using Marsy::Models::Rocket::IspModel;
 
-namespace Marsy::Parsers::RocketsParser
+namespace Marsy::Parsers::Rocket
 {
     class IspParser : public Parser
     {
@@ -21,7 +21,7 @@ namespace Marsy::Parsers::RocketsParser
         const std::string strVacuum = "vacuum";
     public:
         IspParser();
-        Isp parseIsp(const json &input);
+        IspModel parseIsp(const json &input);
     };
 }
 

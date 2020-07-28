@@ -8,15 +8,15 @@
 
 #include "../Parser.h"
 #include "../Common/CommonInfoParser.h"
-#include "../../Models/Rockets/Payloads.h"
-#include "../../Models/Common/SizeInfo.h"
+#include "../../Models/Rockets/PayloadsModel.h"
+#include "../../Models/Common/SizeInfoModel.h"
 
 using json = nlohmann::json;
-using Marsy::Models::RocketsModel::Payloads;
-using Marsy::Models::CommonModel::SizeInfo;
-using Marsy::Parsers::CommonParser::CommonInfoParser;
+using Marsy::Models::Rocket::PayloadsModel;
+using Marsy::Models::Common::SizeInfoModel;
+using Marsy::Parsers::Common::CommonInfoParser;
 
-namespace Marsy::Parsers::RocketsParser
+namespace Marsy::Parsers::Rocket
 {
     class PayloadsParser : public Parser
     {
@@ -26,7 +26,7 @@ namespace Marsy::Parsers::RocketsParser
         const std::string strDiameter = "diameter";
     public:
         PayloadsParser();
-        Payloads parsePayloads(const json &input);
+        PayloadsModel parsePayloads(const json &input);
     };
 }
 

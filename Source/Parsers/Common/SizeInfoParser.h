@@ -8,12 +8,12 @@
 #include "../../Libraries/JSON/json.hpp"
 
 #include "../Parser.h"
-#include "../../Models/Common/SizeInfo.h"
+#include "../../Models/Common/SizeInfoModel.h"
 
 using json = nlohmann::json;
-using Marsy::Models::CommonModel::SizeInfo;
+using Marsy::Models::Common::SizeInfoModel;
 
-namespace Marsy::Parsers::CommonParser
+namespace Marsy::Parsers::Common
 {
     class SizeInfoParser : public Parser
     {
@@ -22,7 +22,7 @@ namespace Marsy::Parsers::CommonParser
         const std::string strFeet = "feet";
     public:
         SizeInfoParser();
-        SizeInfo parseSizeInfo(const json &input);
+        SizeInfoModel parseSizeInfo(const json &input);
     };
 }
 

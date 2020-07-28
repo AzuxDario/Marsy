@@ -1,15 +1,15 @@
 #include "IspParser.h"
 
-namespace Marsy::Parsers::RocketsParser
+namespace Marsy::Parsers::Rocket
 {
     IspParser::IspParser()
     {
 
     }
 
-    Isp IspParser::parseIsp(const json &input)
+    IspModel IspParser::parseIsp(const json &input)
     {
-        Isp isp;
+        IspModel isp;
         isp.seaLevel = parseDoubleNullable(input, strSeaLevel);
         isp.vacuum = parseDoubleNullable(input, strVacuum);
 

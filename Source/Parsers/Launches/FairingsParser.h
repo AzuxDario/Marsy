@@ -8,12 +8,12 @@
 #include "../../Libraries/JSON/json.hpp"
 
 #include "../Parser.h"
-#include "../../Models/Launches/Fairings.h"
+#include "../../Models/Launches/FairingsModel.h"
 
 using json = nlohmann::json;
-using Marsy::Models::LaunchModel::Fairings;
+using Marsy::Models::Launch::FairingsModel;
 
-namespace Marsy::Parsers::LaunchParser
+namespace Marsy::Parsers::Launch
 {
     class FairingsParser : public Parser
     {
@@ -24,7 +24,7 @@ namespace Marsy::Parsers::LaunchParser
         const std::string strShips = "ships";
     public:
         FairingsParser();
-        Fairings parseFairings(const json &input);
+        FairingsModel parseFairings(const json &input);
     };
 }
 

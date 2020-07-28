@@ -1,15 +1,15 @@
 #include "EnginesParser.h"
 
-namespace Marsy::Parsers::RocketsParser
+namespace Marsy::Parsers::Rocket
 {
     EnginesParser::EnginesParser()
     {
 
     }
 
-    Engines EnginesParser::parseEngines(const json &input)
+    EnginesModel EnginesParser::parseEngines(const json &input)
     {
-        Engines engines;
+        EnginesModel engines;
         CommonInfoParser commonInfoParser;
         engines.number = parseIntNullable(input, strNumber);
         engines.type = parseStringNullable(input, strType);
@@ -26,7 +26,7 @@ namespace Marsy::Parsers::RocketsParser
         return engines;
     }
 
-    std::optional<Isp> EnginesParser::parseIsp(const json &input, const std::string &name)
+    std::optional<IspModel> EnginesParser::parseIsp(const json &input, const std::string &name)
     {
         if(input.contains(name) && !input[name].is_null() && input[name].is_object())
         {

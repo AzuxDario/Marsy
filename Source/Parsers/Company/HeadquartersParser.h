@@ -8,12 +8,12 @@
 #include "../../Libraries/JSON/json.hpp"
 
 #include "../Parser.h"
-#include "../../Models/Company/Headquarters.h"
+#include "../../Models/Company/HeadquartersModel.h"
 
 using json = nlohmann::json;
-using Marsy::Models::CompanyModel::Headquarters;
+using Marsy::Models::Company::HeadquartersModel;
 
-namespace Marsy::Parsers::CompanyParser
+namespace Marsy::Parsers::Company
 {
     class HeadquartersParser : public Parser
     {
@@ -23,7 +23,7 @@ namespace Marsy::Parsers::CompanyParser
         const std::string strState = "state";
     public:
         HeadquartersParser();
-        Headquarters parseHeadquarters(const json &input);
+        HeadquartersModel parseHeadquarters(const json &input);
     };
 }
 

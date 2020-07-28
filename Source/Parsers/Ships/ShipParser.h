@@ -9,14 +9,14 @@
 
 #include "../Parser.h"
 #include "../IParser.h"
-#include "../../Models/Ships/Ship.h"
+#include "../../Models/Ships/ShipModel.h"
 
 using json = nlohmann::json;
-using Marsy::Models::ShipModel::Ship;
+using Marsy::Models::Ship::ShipModel;
 
-namespace Marsy::Parsers::ShipParser
+namespace Marsy::Parsers::Ship
 {
-    class ShipParser : public Parser, public IParser<Ship>
+    class ShipParser : public Parser, public IParser<ShipModel>
     {
     private:
         const std::string strName = "name";
@@ -46,7 +46,7 @@ namespace Marsy::Parsers::ShipParser
     public:
         ShipParser();
     protected:
-        Ship parseOne(const json &input) override;
+        ShipModel parseOne(const json &input) override;
     };
 }
 

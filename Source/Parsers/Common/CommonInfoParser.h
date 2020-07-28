@@ -11,27 +11,27 @@
 #include "SizeInfoParser.h"
 #include "ThrustInfoParser.h"
 #include "VolumeInfoParser.h"
-#include "../../Models/Common/MassInfo.h"
-#include "../../Models/Common/SizeInfo.h"
-#include "../../Models/Common/ThrustInfo.h"
-#include "../../Models/Common/VolumeInfo.h"
+#include "../../Models/Common/MassInfoModel.h"
+#include "../../Models/Common/SizeInfoModel.h"
+#include "../../Models/Common/ThrustInfoModel.h"
+#include "../../Models/Common/VolumeInfoModel.h"
 
 using json = nlohmann::json;
-using Marsy::Models::CommonModel::MassInfo;
-using Marsy::Models::CommonModel::SizeInfo;
-using Marsy::Models::CommonModel::ThrustInfo;
-using Marsy::Models::CommonModel::VolumeInfo;
+using Marsy::Models::Common::MassInfoModel;
+using Marsy::Models::Common::SizeInfoModel;
+using Marsy::Models::Common::ThrustInfoModel;
+using Marsy::Models::Common::VolumeInfoModel;
 
-namespace Marsy::Parsers::CommonParser
+namespace Marsy::Parsers::Common
 {
     class CommonInfoParser : public Parser
     {
     public:
         CommonInfoParser();
-        std::optional<MassInfo> parseMassInfo(const json &input, const std::string &name);
-        std::optional<SizeInfo> parseSizeInfo(const json &input, const std::string &name);
-        std::optional<ThrustInfo> parseThrustInfo(const json &input, const std::string &name);
-        std::optional<VolumeInfo> parseVolumeInfo(const json &input, const std::string &name);
+        std::optional<MassInfoModel> parseMassInfo(const json &input, const std::string &name);
+        std::optional<SizeInfoModel> parseSizeInfo(const json &input, const std::string &name);
+        std::optional<ThrustInfoModel> parseThrustInfo(const json &input, const std::string &name);
+        std::optional<VolumeInfoModel> parseVolumeInfo(const json &input, const std::string &name);
     };
 }
 

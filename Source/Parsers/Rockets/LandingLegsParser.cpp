@@ -1,15 +1,15 @@
 #include "LandingLegsParser.h"
 
-namespace Marsy::Parsers::RocketsParser
+namespace Marsy::Parsers::Rocket
 {
     LandingLegsParser::LandingLegsParser()
     {
 
     }
 
-    LandingLegs LandingLegsParser::parseLandingLegs(const json &input)
+    LandingLegsModel LandingLegsParser::parseLandingLegs(const json &input)
     {
-        LandingLegs landingLegs;
+        LandingLegsModel landingLegs;
         landingLegs.number = parseIntNullable(input, strNumber);
         landingLegs.material = parseStringNullable(input, strMaterial);
 

@@ -8,12 +8,12 @@
 #include "../../Libraries/JSON/json.hpp"
 
 #include "../Parser.h"
-#include "../../Models/Launches/Reddit.h"
+#include "../../Models/Launches/RedditModel.h"
 
 using json = nlohmann::json;
-using Marsy::Models::LaunchModel::Reddit;
+using Marsy::Models::Launch::RedditModel;
 
-namespace Marsy::Parsers::LaunchParser
+namespace Marsy::Parsers::Launch
 {
     class RedditParser : public Parser
     {
@@ -24,7 +24,7 @@ namespace Marsy::Parsers::LaunchParser
         const std::string strRecovery = "recovery";
     public:
         RedditParser();
-        Reddit parseReddit(const json &input);
+        RedditModel parseReddit(const json &input);
     };
 }
 

@@ -1,38 +1,38 @@
 #include "LaunchService.h"
 
-namespace Marsy::Services::LaunchService
+namespace Marsy::Services::Launch
 {
     LaunchService::LaunchService(std::shared_ptr<IConnector> connector) : Service(connector)
     {
         
     }
 
-    ServiceResponse<Launch> LaunchService::getLaunch(std::string id)
+    ServiceResponse<LaunchModel> LaunchService::getLaunch(std::string id)
     {
         return getObject(apiLaunchesUrl + "/" + id);
     }
 
-    ServiceVectorResponse<Launch> LaunchService::getLaunchVector()
+    ServiceVectorResponse<LaunchModel> LaunchService::getLaunchVector()
     {
         return getVector(apiLaunchesUrl);
     }
 
-    ServiceResponse<Launch> LaunchService::getLatestLaunch()
+    ServiceResponse<LaunchModel> LaunchService::getLatestLaunch()
     {
         return getObject(apiLatestLaunchesUrl);
     }
 
-    ServiceResponse<Launch> LaunchService::getNextLaunch()
+    ServiceResponse<LaunchModel> LaunchService::getNextLaunch()
     {
         return getObject(apiNextLaunchesUrl);
     }
 
-    ServiceVectorResponse<Launch> LaunchService::getPastLaunchVector()
+    ServiceVectorResponse<LaunchModel> LaunchService::getPastLaunchVector()
     {
         return getVector(apiPastLaunchesUrl);
     }
 
-    ServiceVectorResponse<Launch> LaunchService::getUpcomingLaunchVector()
+    ServiceVectorResponse<LaunchModel> LaunchService::getUpcomingLaunchVector()
     {
         return getVector(apiUpcomingLaunchesUrl);
     }

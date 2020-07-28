@@ -9,14 +9,14 @@
 
 #include "../Parser.h"
 #include "../IParser.h"
-#include "../../Models/Roadster/Roadster.h"
+#include "../../Models/Roadster/RoadsterModel.h"
 
 using json = nlohmann::json;
-using Marsy::Models::RoadsterModel::Roadster;
+using Marsy::Models::Roadster::RoadsterModel;
 
-namespace Marsy::Parsers::RoadsterParser
+namespace Marsy::Parsers::Roadster
 {
-    class RoadsterParser : public Parser, public IParser<Roadster>
+    class RoadsterParser : public Parser, public IParser<RoadsterModel>
     {
     private:
         const std::string strName = "name";
@@ -49,7 +49,7 @@ namespace Marsy::Parsers::RoadsterParser
     public:
         RoadsterParser();
     protected:
-        Roadster parseOne(const json &input) override;
+        RoadsterModel parseOne(const json &input) override;
     };
 }
 

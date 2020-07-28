@@ -1,18 +1,18 @@
 #include "CrewService.h"
 
-namespace Marsy::Services::CrewService
+namespace Marsy::Services::Crew
 {
     CrewService::CrewService(std::shared_ptr<IConnector> connector) : Service(connector)
     {
         
     }
 
-    ServiceResponse<Crew> CrewService::getCrew(std::string id)
+    ServiceResponse<CrewModel> CrewService::getCrew(std::string id)
     {
         return getObject(apiCrewUrl + "/" + id);
     }
 
-    ServiceVectorResponse<Crew> CrewService::getCrewVector()
+    ServiceVectorResponse<CrewModel> CrewService::getCrewVector()
     {
         return getVector(apiCrewUrl);
     }

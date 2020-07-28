@@ -6,23 +6,23 @@
 
 #include "../Service.h"
 #include "../../Connection/Interface/IConnector.h"
-#include "../../Models/Payloads/Payload.h"
+#include "../../Models/Payloads/PayloadModel.h"
 #include "../../Parsers/Payloads/PayloadParser.h"
 
 using Marsy::Connection::IConnector;
-using Marsy::Models::PayloadModel::Payload;
-using Marsy::Parsers::PayloadParser::PayloadParser;
+using Marsy::Models::Payload::PayloadModel;
+using Marsy::Parsers::Payload::PayloadParser;
 
-namespace Marsy::Services::PayloadService
+namespace Marsy::Services::Payload
 {
-    class PayloadService : public Service<Payload, PayloadParser>
+    class PayloadService : public Service<PayloadModel, PayloadParser>
     {
     private:
         const std::string apiPayloadsUrl = apiBaseUrl + "/payloads";
     public:
         PayloadService(std::shared_ptr<IConnector> connector);
-        ServiceResponse<Payload> getPayload(std::string id);
-        ServiceVectorResponse<Payload> getPayloadVector();
+        ServiceResponse<PayloadModel> getPayload(std::string id);
+        ServiceVectorResponse<PayloadModel> getPayloadVector();
     };
 }
 

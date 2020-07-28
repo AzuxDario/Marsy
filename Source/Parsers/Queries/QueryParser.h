@@ -12,10 +12,10 @@
 #include "../../Models/Queries/Response/QueryParameters.h"
 
 using json = nlohmann::json;
-using Marsy::Models::QueryModel::QueryRequest;
-using Marsy::Models::QueryModel::QueryParameters;
+using Marsy::Models::Query::QueryRequest;
+using Marsy::Models::Query::QueryParameters;
 
-namespace Marsy::Parsers::QueryParser
+namespace Marsy::Parsers::Query
 {
     class QueryParser : public Parser
     {

@@ -1,15 +1,15 @@
 #include "StarlinkParser.h"
 
-namespace Marsy::Parsers::StarlinkParser
+namespace Marsy::Parsers::Starlink
 {
     StarlinkParser::StarlinkParser()
     {
 
     }
 
-    Starlink StarlinkParser::parseOne(const json &input)
+    StarlinkModel StarlinkParser::parseOne(const json &input)
     {
-        Starlink starlink;
+        StarlinkModel starlink;
         starlink.version = parseStringNullable(input, strVersion);
         starlink.launch = parseStringNullable(input, strLaunch);
         starlink.longitude = parseDoubleNullable(input, strLongitude);
@@ -22,7 +22,7 @@ namespace Marsy::Parsers::StarlinkParser
         return starlink;
     }
 
-    std::optional<SpaceTrack> StarlinkParser::parseSpaceTrack(const json &input, const std::string &name)
+    std::optional<SpaceTrackModel> StarlinkParser::parseSpaceTrack(const json &input, const std::string &name)
     {
         if(input.contains(name) && !input[name].is_null() && input[name].is_object())
         {

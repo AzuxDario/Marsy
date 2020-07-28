@@ -8,12 +8,12 @@
 #include "../../Libraries/JSON/json.hpp"
 
 #include "../Parser.h"
-#include "../../Models/Common/ThrustInfo.h"
+#include "../../Models/Common/ThrustInfoModel.h"
 
 using json = nlohmann::json;
-using Marsy::Models::CommonModel::ThrustInfo;
+using Marsy::Models::Common::ThrustInfoModel;
 
-namespace Marsy::Parsers::CommonParser
+namespace Marsy::Parsers::Common
 {
     class ThrustInfoParser : public Parser
     {
@@ -22,7 +22,7 @@ namespace Marsy::Parsers::CommonParser
         const std::string strLbf = "lbf";
     public:
         ThrustInfoParser();
-        ThrustInfo parseThrustInfo(const json &input);
+        ThrustInfoModel parseThrustInfo(const json &input);
     };
 }
 

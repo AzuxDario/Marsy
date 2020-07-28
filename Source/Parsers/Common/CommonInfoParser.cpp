@@ -1,13 +1,13 @@
 #include "CommonInfoParser.h"
 
-namespace Marsy::Parsers::CommonParser
+namespace Marsy::Parsers::Common
 {
     CommonInfoParser::CommonInfoParser()
     {
 
     }
 
-    std::optional<MassInfo> CommonInfoParser::parseMassInfo(const json &input, const std::string &name)
+    std::optional<MassInfoModel> CommonInfoParser::parseMassInfo(const json &input, const std::string &name)
     {
         if(input.contains(name) && !input[name].is_null() && input[name].is_object())
         {
@@ -20,7 +20,7 @@ namespace Marsy::Parsers::CommonParser
         }
     }
 
-    std::optional<SizeInfo> CommonInfoParser::parseSizeInfo(const json &input, const std::string &name)
+    std::optional<SizeInfoModel> CommonInfoParser::parseSizeInfo(const json &input, const std::string &name)
     {
         if(input.contains(name) && !input[name].is_null() && input[name].is_object())
         {
@@ -33,7 +33,7 @@ namespace Marsy::Parsers::CommonParser
         }
     }
 
-    std::optional<ThrustInfo> CommonInfoParser::parseThrustInfo(const json &input, const std::string &name)
+    std::optional<ThrustInfoModel> CommonInfoParser::parseThrustInfo(const json &input, const std::string &name)
     {
         if(input.contains(name) && !input[name].is_null() && input[name].is_object())
         {
@@ -46,7 +46,7 @@ namespace Marsy::Parsers::CommonParser
         }
     }
 
-    std::optional<VolumeInfo> CommonInfoParser::parseVolumeInfo(const json &input, const std::string &name)
+    std::optional<VolumeInfoModel> CommonInfoParser::parseVolumeInfo(const json &input, const std::string &name)
     {
         if(input.contains(name) && !input[name].is_null() && input[name].is_object())
         {

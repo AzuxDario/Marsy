@@ -1,21 +1,21 @@
 #include "ThrusterParser.h"
 
-namespace Marsy::Parsers::DragonParser
+namespace Marsy::Parsers::Dragon
 {
     ThrusterParser::ThrusterParser()
     {
 
     }
 
-    std::vector<Thruster> ThrusterParser::parseThrusterVector(const json &input)
+    std::vector<ThrusterModel> ThrusterParser::parseThrusterVector(const json &input)
     {
-        std::vector<Thruster> thrusters;
+        std::vector<ThrusterModel> thrusters;
 
         if(input.is_array())
         {
             for (auto it = input.begin(); it != input.end(); ++it)
             {
-                Thruster thruster;
+                ThrusterModel thruster;
                 CommonInfoParser commonInfoParser;
                 thruster.type = parseStringNullable(it.value(), strType);
                 thruster.amount = parseIntNullable(it.value(), strAmount);

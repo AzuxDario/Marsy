@@ -1,15 +1,15 @@
 #include "SpaceTrackParser.h"
 
-namespace Marsy::Parsers::StarlinkParser
+namespace Marsy::Parsers::Starlink
 {
     SpaceTrackParser::SpaceTrackParser()
     {
 
     }
 
-    SpaceTrack SpaceTrackParser::parseSpaceTrack(const json &input)
+    SpaceTrackModel SpaceTrackParser::parseSpaceTrack(const json &input)
     {
-        SpaceTrack spaceTrack;
+        SpaceTrackModel spaceTrack;
         spaceTrack.ccsdsOmmVers = parseStringNullable(input, strCcsdsOmmVers);
         spaceTrack.comment = parseStringNullable(input, strComment);
         spaceTrack.creationDate = parseStringNullable(input, strCreationDate);

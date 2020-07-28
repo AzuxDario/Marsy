@@ -1,15 +1,15 @@
 #include "LaunchParser.h"
 
-namespace Marsy::Parsers::LaunchParser
+namespace Marsy::Parsers::Launch
 {
     LaunchParser::LaunchParser()
     {
 
     }
 
-    Launch LaunchParser::parseOne(const json &input)
+    LaunchModel LaunchParser::parseOne(const json &input)
     {
-        Launch launch;
+        LaunchModel launch;
         launch.flightNumber = parseIntNullable(input, strFlightNumber);
         launch.name = parseStringNullable(input, strName);
         launch.dateUtc = parseStringNullable(input, strDateUtc);
@@ -73,7 +73,7 @@ namespace Marsy::Parsers::LaunchParser
         
     }
 
-    std::optional<std::vector<Core>> LaunchParser::parseCoresVector(const json &input, const std::string &name)
+    std::optional<std::vector<CoreModel>> LaunchParser::parseCoresVector(const json &input, const std::string &name)
     {
         if(input.contains(name) && !input[name].is_null() && input[name].is_array())
         {
@@ -86,7 +86,7 @@ namespace Marsy::Parsers::LaunchParser
         }
     }
 
-    std::optional<Fairings> LaunchParser::parseFairings(const json &input, const std::string &name)
+    std::optional<FairingsModel> LaunchParser::parseFairings(const json &input, const std::string &name)
     {
         if(input.contains(name) && !input[name].is_null() && input[name].is_object())
         {
@@ -99,7 +99,7 @@ namespace Marsy::Parsers::LaunchParser
         }
     }
 
-    std::optional<Links> LaunchParser::parseLinks(const json &input, const std::string &name)
+    std::optional<LinksModel> LaunchParser::parseLinks(const json &input, const std::string &name)
     {
         if(input.contains(name) && !input[name].is_null() && input[name].is_object())
         {

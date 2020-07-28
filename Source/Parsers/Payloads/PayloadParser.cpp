@@ -1,15 +1,15 @@
 #include "PayloadParser.h"
 
-namespace Marsy::Parsers::PayloadParser
+namespace Marsy::Parsers::Payload
 {
     PayloadParser::PayloadParser()
     {
 
     }
 
-    Payload PayloadParser::parseOne(const json &input)
+    PayloadModel PayloadParser::parseOne(const json &input)
     {
-        Payload payload;
+        PayloadModel payload;
         payload.name = parseStringNullable(input, strName);
         payload.type = parseStringNullable(input, strType);
         payload.reused = parseBoolNullable(input, strReused).value_or(payload.reused.value());
@@ -41,7 +41,7 @@ namespace Marsy::Parsers::PayloadParser
         return payload;
     }
 
-    std::optional<Dragon> PayloadParser::parseDragon(const json &input, const std::string &name)
+    std::optional<DragonModel> PayloadParser::parseDragon(const json &input, const std::string &name)
     {
         if(input.contains(name) && !input[name].is_null() && input[name].is_object())
         {

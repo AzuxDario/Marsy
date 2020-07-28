@@ -1,15 +1,15 @@
 #include "RedditParser.h"
 
-namespace Marsy::Parsers::LaunchParser
+namespace Marsy::Parsers::Launch
 {
     RedditParser::RedditParser()
     {
 
     }
 
-    Reddit RedditParser::parseReddit(const json &input)
+    RedditModel RedditParser::parseReddit(const json &input)
     {
-        Reddit reddit;
+        RedditModel reddit;
         reddit.campaign = parseStringNullable(input, strCampaign);
         reddit.launch = parseStringNullable(input, strLaunch);
         reddit.media = parseStringNullable(input, strMedia);

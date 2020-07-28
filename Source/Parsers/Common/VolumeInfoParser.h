@@ -8,12 +8,12 @@
 #include "../../Libraries/JSON/json.hpp"
 
 #include "../Parser.h"
-#include "../../Models/Common/VolumeInfo.h"
+#include "../../Models/Common/VolumeInfoModel.h"
 
 using json = nlohmann::json;
-using Marsy::Models::CommonModel::VolumeInfo;
+using Marsy::Models::Common::VolumeInfoModel;
 
-namespace Marsy::Parsers::CommonParser
+namespace Marsy::Parsers::Common
 {
     class VolumeInfoParser : public Parser
     {
@@ -22,7 +22,7 @@ namespace Marsy::Parsers::CommonParser
         const std::string strCubicFeet = "cubic_feet";
     public:
         VolumeInfoParser();
-        VolumeInfo parseVolumeInfo(const json &input);
+        VolumeInfoModel parseVolumeInfo(const json &input);
     };
 }
 

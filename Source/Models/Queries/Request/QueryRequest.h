@@ -7,7 +7,7 @@
 
 #include "QueryOptions.h"
 
-namespace Marsy::Models::QueryModel
+namespace Marsy::Models::Query
 {
     struct QueryRequest
     {

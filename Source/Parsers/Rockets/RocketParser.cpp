@@ -1,15 +1,15 @@
 #include "RocketParser.h"
 
-namespace Marsy::Parsers::RocketsParser
+namespace Marsy::Parsers::Rocket
 {
     RocketParser::RocketParser()
     {
 
     }
 
-    Rocket RocketParser::parseOne(const json &input)
+    RocketModel RocketParser::parseOne(const json &input)
     {
-        Rocket rocket;
+        RocketModel rocket;
         CommonInfoParser commonInfoParser;
         rocket.name = parseStringNullable(input, strName);
         rocket.type = parseStringNullable(input, strType);
@@ -37,7 +37,7 @@ namespace Marsy::Parsers::RocketsParser
         return rocket;
     }
 
-    std::optional<Engines> RocketParser::parseEngines(const json &input, const std::string &name)
+    std::optional<EnginesModel> RocketParser::parseEngines(const json &input, const std::string &name)
     {
         if(input.contains(name) && !input[name].is_null() && input[name].is_object())
         {
@@ -50,7 +50,7 @@ namespace Marsy::Parsers::RocketsParser
         }
     }
 
-    std::optional<FirstStage> RocketParser::parseFirstStage(const json &input, const std::string &name)
+    std::optional<FirstStageModel> RocketParser::parseFirstStage(const json &input, const std::string &name)
     {
         if(input.contains(name) && !input[name].is_null() && input[name].is_object())
         {
@@ -63,7 +63,7 @@ namespace Marsy::Parsers::RocketsParser
         }
     }
 
-    std::optional<LandingLegs> RocketParser::parseLandingLegs(const json &input, const std::string &name)
+    std::optional<LandingLegsModel> RocketParser::parseLandingLegs(const json &input, const std::string &name)
     {
         if(input.contains(name) && !input[name].is_null() && input[name].is_object())
         {
@@ -76,7 +76,7 @@ namespace Marsy::Parsers::RocketsParser
         }
     }
 
-    std::optional<std::vector<PayloadWeights>> RocketParser::parsePayloadWeightsVector(const json &input, const std::string &name)
+    std::optional<std::vector<PayloadWeightsModel>> RocketParser::parsePayloadWeightsVector(const json &input, const std::string &name)
     {
         if(input.contains(name) && !input[name].is_null() && input[name].is_array())
         {
@@ -89,7 +89,7 @@ namespace Marsy::Parsers::RocketsParser
         }
     }
 
-    std::optional<SecondStage> RocketParser::parseSecondStage(const json &input, const std::string &name)
+    std::optional<SecondStageModel> RocketParser::parseSecondStage(const json &input, const std::string &name)
     {
         if(input.contains(name) && !input[name].is_null() && input[name].is_object())
         {

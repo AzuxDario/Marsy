@@ -8,15 +8,15 @@
 
 #include "../Parser.h"
 #include "../Common/CommonInfoParser.h"
-#include "../../Models/Dragons/Thruster.h"
-#include "../../Models/Common/ThrustInfo.h"
+#include "../../Models/Dragons/ThrusterModel.h"
+#include "../../Models/Common/ThrustInfoModel.h"
 
 using json = nlohmann::json;
-using Marsy::Models::DragonModel::Thruster;
-using Marsy::Models::CommonModel::ThrustInfo;
-using Marsy::Parsers::CommonParser::CommonInfoParser;
+using Marsy::Models::Dragon::ThrusterModel;
+using Marsy::Models::Common::ThrustInfoModel;
+using Marsy::Parsers::Common::CommonInfoParser;
 
-namespace Marsy::Parsers::DragonParser
+namespace Marsy::Parsers::Dragon
 {
     class ThrusterParser : public Parser
     {
@@ -30,7 +30,7 @@ namespace Marsy::Parsers::DragonParser
         const std::string strThrust = "thrust";
     public:
         ThrusterParser();
-        std::vector<Thruster> parseThrusterVector(const json &input);
+        std::vector<ThrusterModel> parseThrusterVector(const json &input);
     };
 }
 

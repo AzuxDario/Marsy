@@ -1,15 +1,15 @@
 #include "HeadquartersParser.h"
 
-namespace Marsy::Parsers::CompanyParser
+namespace Marsy::Parsers::Company
 {
     HeadquartersParser::HeadquartersParser()
     {
 
     }
 
-    Headquarters HeadquartersParser::parseHeadquarters(const json &input)
+    HeadquartersModel HeadquartersParser::parseHeadquarters(const json &input)
     {
-        Headquarters headquarters;
+        HeadquartersModel headquarters;
         headquarters.address = parseStringNullable(input, strAddress);
         headquarters.city = parseStringNullable(input, strCity);
         headquarters.state = parseStringNullable(input, strState);

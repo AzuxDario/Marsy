@@ -8,12 +8,12 @@
 #include "../../Libraries/JSON/json.hpp"
 
 #include "../Parser.h"
-#include "../../Models/Company/Links.h"
+#include "../../Models/Company/LinksModel.h"
 
 using json = nlohmann::json;
-using Marsy::Models::CompanyModel::Links;
+using Marsy::Models::Company::LinksModel;
 
-namespace Marsy::Parsers::CompanyParser
+namespace Marsy::Parsers::Company
 {
     class LinksParser : public Parser
     {
@@ -24,7 +24,7 @@ namespace Marsy::Parsers::CompanyParser
         const std::string strElonTwitter = "elon_twitter";
     public:
         LinksParser();
-        Links parseLinks(const json &input);
+        LinksModel parseLinks(const json &input);
     };
 }
 

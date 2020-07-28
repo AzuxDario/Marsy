@@ -10,18 +10,18 @@
 #include "FlickrParser.h"
 #include "PatchParser.h"
 #include "RedditParser.h"
-#include "../../Models/Launches/Links.h"
-#include "../../Models/Launches/Flickr.h"
-#include "../../Models/Launches/Patch.h"
-#include "../../Models/Launches/Reddit.h"
+#include "../../Models/Launches/LinksModel.h"
+#include "../../Models/Launches/FlickrModel.h"
+#include "../../Models/Launches/PatchModel.h"
+#include "../../Models/Launches/RedditModel.h"
 
 using json = nlohmann::json;
-using Marsy::Models::LaunchModel::Links;
-using Marsy::Models::LaunchModel::Flickr;
-using Marsy::Models::LaunchModel::Patch;
-using Marsy::Models::LaunchModel::Reddit;
+using Marsy::Models::Launch::LinksModel;
+using Marsy::Models::Launch::FlickrModel;
+using Marsy::Models::Launch::PatchModel;
+using Marsy::Models::Launch::RedditModel;
 
-namespace Marsy::Parsers::LaunchParser
+namespace Marsy::Parsers::Launch
 {
     class LinksParser : public Parser
     {
@@ -36,11 +36,11 @@ namespace Marsy::Parsers::LaunchParser
         const std::string strWikipedia = "wikipedia";
     public:
         LinksParser();
-        Links parseLinks(const json &input);
+        LinksModel parseLinks(const json &input);
     private:
-        std::optional<Flickr> parseFlickr(const json &input, const std::string &name);
-        std::optional<Patch> parsePatch(const json &input, const std::string &name);
-        std::optional<Reddit> parseReddit(const json &input, const std::string &name);
+        std::optional<FlickrModel> parseFlickr(const json &input, const std::string &name);
+        std::optional<PatchModel> parsePatch(const json &input, const std::string &name);
+        std::optional<RedditModel> parseReddit(const json &input, const std::string &name);
     };
 }
 

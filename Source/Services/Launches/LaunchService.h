@@ -6,16 +6,16 @@
 
 #include "../Service.h"
 #include "../../Connection/Interface/IConnector.h"
-#include "../../Models/Launches/Launch.h"
+#include "../../Models/Launches/LaunchModel.h"
 #include "../../Parsers/Launches/LaunchParser.h"
 
 using Marsy::Connection::IConnector;
-using Marsy::Models::LaunchModel::Launch;
-using Marsy::Parsers::LaunchParser::LaunchParser;
+using Marsy::Models::Launch::LaunchModel;
+using Marsy::Parsers::Launch::LaunchParser;
 
-namespace Marsy::Services::LaunchService
+namespace Marsy::Services::Launch
 {
-    class LaunchService : public Service<Launch, LaunchParser>
+    class LaunchService : public Service<LaunchModel, LaunchParser>
     {
     private:
         const std::string apiLaunchesUrl = apiBaseUrl + "/launches";
@@ -25,12 +25,12 @@ namespace Marsy::Services::LaunchService
         const std::string apiUpcomingLaunchesUrl = apiLaunchesUrl + "/upcoming";
     public:
         LaunchService(std::shared_ptr<IConnector> connector);
-        ServiceResponse<Launch> getLaunch(std::string id);
-        ServiceVectorResponse<Launch> getLaunchVector();
-        ServiceResponse<Launch> getLatestLaunch();
-        ServiceResponse<Launch> getNextLaunch();
-        ServiceVectorResponse<Launch> getPastLaunchVector();
-        ServiceVectorResponse<Launch> getUpcomingLaunchVector();
+        ServiceResponse<LaunchModel> getLaunch(std::string id);
+        ServiceVectorResponse<LaunchModel> getLaunchVector();
+        ServiceResponse<LaunchModel> getLatestLaunch();
+        ServiceResponse<LaunchModel> getNextLaunch();
+        ServiceVectorResponse<LaunchModel> getPastLaunchVector();
+        ServiceVectorResponse<LaunchModel> getUpcomingLaunchVector();
     };
 }
 

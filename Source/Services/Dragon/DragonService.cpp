@@ -1,18 +1,18 @@
 #include "DragonService.h"
 
-namespace Marsy::Services::DragonService
+namespace Marsy::Services::Dragon
 {
     DragonService::DragonService(std::shared_ptr<IConnector> connector) : Service(connector)
     {
         
     }
 
-    ServiceResponse<Dragon> DragonService::getDragon(std::string id)
+    ServiceResponse<DragonModel> DragonService::getDragon(std::string id)
     {
         return getObject(apiDragonUrl + "/" + id);
     }
 
-    ServiceVectorResponse<Dragon> DragonService::getDragonVector()
+    ServiceVectorResponse<DragonModel> DragonService::getDragonVector()
     {
         return getVector(apiDragonUrl);
     }

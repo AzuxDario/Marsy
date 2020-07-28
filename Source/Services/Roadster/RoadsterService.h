@@ -6,22 +6,22 @@
 
 #include "../Service.h"
 #include "../../Connection/Interface/IConnector.h"
-#include "../../Models/Roadster/Roadster.h"
+#include "../../Models/Roadster/RoadsterModel.h"
 #include "../../Parsers/Roadster/RoadsterParser.h"
 
 using Marsy::Connection::IConnector;
-using Marsy::Models::RoadsterModel::Roadster;
-using Marsy::Parsers::RoadsterParser::RoadsterParser;
+using Marsy::Models::Roadster::RoadsterModel;
+using Marsy::Parsers::Roadster::RoadsterParser;
 
-namespace Marsy::Services::RoadsterService
+namespace Marsy::Services::Roadster
 {
-    class RoadsterService : public Service<Roadster, RoadsterParser>
+    class RoadsterService : public Service<RoadsterModel, RoadsterParser>
     {
     private:
         const std::string apiRoadsterUrl = apiBaseUrl + "/roadster";
     public:
         RoadsterService(std::shared_ptr<IConnector> connector);
-        ServiceResponse<Roadster> getRoadster();
+        ServiceResponse<RoadsterModel> getRoadster();
     };
 }
 

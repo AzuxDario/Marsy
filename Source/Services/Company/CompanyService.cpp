@@ -1,13 +1,13 @@
 #include "CompanyService.h"
 
-namespace Marsy::Services::CompanyService
+namespace Marsy::Services::Company
 {
     CompanyService::CompanyService(std::shared_ptr<IConnector> connector) : Service(connector)
     {
         
     }
 
-    ServiceResponse<Company> CompanyService::getCompany()
+    ServiceResponse<CompanyModel> CompanyService::getCompany()
     {
         return getObject(apiCompanyUrl);
     }

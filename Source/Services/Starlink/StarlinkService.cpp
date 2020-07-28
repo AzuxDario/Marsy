@@ -1,18 +1,18 @@
 #include "StarlinkService.h"
 
-namespace Marsy::Services::StarlinkService
+namespace Marsy::Services::Starlink
 {
     StarlinkService::StarlinkService(std::shared_ptr<IConnector> connector) : Service(connector)
     {
         
     }
 
-    ServiceResponse<Starlink> StarlinkService::getStarlink(std::string id)
+    ServiceResponse<StarlinkModel> StarlinkService::getStarlink(std::string id)
     {
         return getObject(apiStarlinkUrl + "/" + id);
     }
 
-    ServiceVectorResponse<Starlink> StarlinkService::getStarlinkVector()
+    ServiceVectorResponse<StarlinkModel> StarlinkService::getStarlinkVector()
     {
         return getVector(apiStarlinkUrl);
     }

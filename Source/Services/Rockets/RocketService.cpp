@@ -1,18 +1,18 @@
 #include "RocketService.h"
 
-namespace Marsy::Services::RocketService
+namespace Marsy::Services::Rocket
 {
     RocketService::RocketService(std::shared_ptr<IConnector> connector) : Service(connector)
     {
         
     }
 
-    ServiceResponse<Rocket> RocketService::getRocket(std::string id)
+    ServiceResponse<RocketModel> RocketService::getRocket(std::string id)
     {
         return getObject(apiRocketsUrl + "/" + id);
     }
 
-    ServiceVectorResponse<Rocket> RocketService::getRocketVector()
+    ServiceVectorResponse<RocketModel> RocketService::getRocketVector()
     {
         return getVector(apiRocketsUrl);
     }

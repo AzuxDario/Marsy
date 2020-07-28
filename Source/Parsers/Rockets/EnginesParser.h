@@ -9,17 +9,17 @@
 #include "../Parser.h"
 #include "IspParser.h"
 #include "../Common/CommonInfoParser.h"
-#include "../../Models/Rockets/Engines.h"
-#include "../../Models/Rockets/Isp.h"
-#include "../../Models/Common/ThrustInfo.h"
+#include "../../Models/Rockets/EnginesModel.h"
+#include "../../Models/Rockets/IspModel.h"
+#include "../../Models/Common/ThrustInfoModel.h"
 
 using json = nlohmann::json;
-using Marsy::Models::RocketsModel::Engines;
-using Marsy::Models::RocketsModel::Isp;
-using Marsy::Models::CommonModel::ThrustInfo;
-using Marsy::Parsers::CommonParser::CommonInfoParser;
+using Marsy::Models::Rocket::EnginesModel;
+using Marsy::Models::Rocket::IspModel;
+using Marsy::Models::Common::ThrustInfoModel;
+using Marsy::Parsers::Common::CommonInfoParser;
 
-namespace Marsy::Parsers::RocketsParser
+namespace Marsy::Parsers::Rocket
 {
     class EnginesParser : public Parser
     {
@@ -37,9 +37,9 @@ namespace Marsy::Parsers::RocketsParser
         const std::string strThrustToWeight = "thrust_to_weight";
     public:
         EnginesParser();
-        Engines parseEngines(const json &input);
+        EnginesModel parseEngines(const json &input);
     private:
-        std::optional<Isp> parseIsp(const json &input, const std::string &name);
+        std::optional<IspModel> parseIsp(const json &input, const std::string &name);
     };
 }
 

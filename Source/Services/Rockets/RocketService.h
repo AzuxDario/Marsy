@@ -6,23 +6,23 @@
 
 #include "../Service.h"
 #include "../../Connection/Interface/IConnector.h"
-#include "../../Models/Rockets/Rocket.h"
+#include "../../Models/Rockets/RocketModel.h"
 #include "../../Parsers/Rockets/RocketParser.h"
 
 using Marsy::Connection::IConnector;
-using Marsy::Models::RocketsModel::Rocket;
-using Marsy::Parsers::RocketsParser::RocketParser;
+using Marsy::Models::Rocket::RocketModel;
+using Marsy::Parsers::Rocket::RocketParser;
 
-namespace Marsy::Services::RocketService
+namespace Marsy::Services::Rocket
 {
-    class RocketService : public Service<Rocket, RocketParser>
+    class RocketService : public Service<RocketModel, RocketParser>
     {
     private:
         const std::string apiRocketsUrl = apiBaseUrl + "/rockets";
     public:
         RocketService(std::shared_ptr<IConnector> connector);
-        ServiceResponse<Rocket> getRocket(std::string id);
-        ServiceVectorResponse<Rocket> getRocketVector();
+        ServiceResponse<RocketModel> getRocket(std::string id);
+        ServiceVectorResponse<RocketModel> getRocketVector();
     };
 }
 

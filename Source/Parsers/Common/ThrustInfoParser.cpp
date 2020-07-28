@@ -1,15 +1,15 @@
 #include "ThrustInfoParser.h"
 
-namespace Marsy::Parsers::CommonParser
+namespace Marsy::Parsers::Common
 {
     ThrustInfoParser::ThrustInfoParser()
     {
 
     }
 
-    ThrustInfo ThrustInfoParser::parseThrustInfo(const json &input)
+    ThrustInfoModel ThrustInfoParser::parseThrustInfo(const json &input)
     {
-        ThrustInfo thrustInfo;
+        ThrustInfoModel thrustInfo;
         thrustInfo.kilonewtons = parseDoubleNullable(input, strKn);
         thrustInfo.poundsforce = parseDoubleNullable(input, strLbf);
 

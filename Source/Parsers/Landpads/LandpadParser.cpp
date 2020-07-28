@@ -1,15 +1,15 @@
 #include "LandpadParser.h"
 
-namespace Marsy::Parsers::LandpadParser
+namespace Marsy::Parsers::Landpad
 {
     LandpadParser::LandpadParser()
     {
 
     }
 
-    Landpad LandpadParser::parseOne(const json &input)
+    LandpadModel LandpadParser::parseOne(const json &input)
     {
-        Landpad landpad;
+        LandpadModel landpad;
         landpad.name = parseStringNullable(input, strName);
         landpad.fullName = parseStringNullable(input, strFullName);
         landpad.status = parseLandpadStatus(input, strStatus);

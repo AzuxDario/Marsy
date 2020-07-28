@@ -1,15 +1,15 @@
 #include "VolumeInfoParser.h"
 
-namespace Marsy::Parsers::CommonParser
+namespace Marsy::Parsers::Common
 {
     VolumeInfoParser::VolumeInfoParser()
     {
 
     }
 
-    VolumeInfo VolumeInfoParser::parseVolumeInfo(const json &input)
+    VolumeInfoModel VolumeInfoParser::parseVolumeInfo(const json &input)
     {
-        VolumeInfo volumeInfo;
+        VolumeInfoModel volumeInfo;
         volumeInfo.cubicMeters = parseDoubleNullable(input, strCubicMeters);
         volumeInfo.cubicFeet = parseDoubleNullable(input, strCubicFeet);
 

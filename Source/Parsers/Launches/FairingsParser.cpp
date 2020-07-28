@@ -1,15 +1,15 @@
 #include "FairingsParser.h"
 
-namespace Marsy::Parsers::LaunchParser
+namespace Marsy::Parsers::Launch
 {
     FairingsParser::FairingsParser()
     {
 
     }
 
-    Fairings FairingsParser::parseFairings(const json &input)
+    FairingsModel FairingsParser::parseFairings(const json &input)
     {
-        Fairings fairings;
+        FairingsModel fairings;
         fairings.reused = parseBoolNullable(input, strReused);
         fairings.recoveryAttempt = parseBoolNullable(input, strRecoveryAttempt);
         fairings.recovered = parseBoolNullable(input, strRecovered);

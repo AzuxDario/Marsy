@@ -8,12 +8,12 @@
 #include "../../Libraries/JSON/json.hpp"
 
 #include "../Parser.h"
-#include "../../Models/Common/MassInfo.h"
+#include "../../Models/Common/MassInfoModel.h"
 
 using json = nlohmann::json;
-using Marsy::Models::CommonModel::MassInfo;
+using Marsy::Models::Common::MassInfoModel;
 
-namespace Marsy::Parsers::CommonParser
+namespace Marsy::Parsers::Common
 {
     class MassInfoParser : public Parser
     {
@@ -22,7 +22,7 @@ namespace Marsy::Parsers::CommonParser
         const std::string strLb = "lb";
     public:
         MassInfoParser();
-        MassInfo parseMassInfo(const json &input);
+        MassInfoModel parseMassInfo(const json &input);
     };
 }
 

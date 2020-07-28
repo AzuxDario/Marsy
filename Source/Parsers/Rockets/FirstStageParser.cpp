@@ -1,15 +1,15 @@
 #include "FirstStageParser.h"
 
-namespace Marsy::Parsers::RocketsParser
+namespace Marsy::Parsers::Rocket
 {
     FirstStageParser::FirstStageParser()
     {
 
     }
 
-    FirstStage FirstStageParser::parseFirstStage(const json &input)
+    FirstStageModel FirstStageParser::parseFirstStage(const json &input)
     {
-        FirstStage firstStage;
+        FirstStageModel firstStage;
         CommonInfoParser commonInfoParser;
         firstStage.reusable = parseBoolNullable(input, strReusable);
         firstStage.engines = parseIntNullable(input, strEngines);

@@ -8,12 +8,12 @@
 #include "../../Libraries/JSON/json.hpp"
 
 #include "../Parser.h"
-#include "../../Models/Rockets/PayloadWeights.h"
+#include "../../Models/Rockets/PayloadWeightsModel.h"
 
 using json = nlohmann::json;
-using Marsy::Models::RocketsModel::PayloadWeights;
+using Marsy::Models::Rocket::PayloadWeightsModel;
 
-namespace Marsy::Parsers::RocketsParser
+namespace Marsy::Parsers::Rocket
 {
     class PayloadWeightsParser : public Parser
     {
@@ -24,7 +24,7 @@ namespace Marsy::Parsers::RocketsParser
         const std::string strLb = "lb";
     public:
         PayloadWeightsParser();
-        std::vector<PayloadWeights> parsePayloadWeightsVector(const json&input);
+        std::vector<PayloadWeightsModel> parsePayloadWeightsVector(const json&input);
     };
 }
 

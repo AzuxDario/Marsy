@@ -1,15 +1,15 @@
 #include "LinksParser.h"
 
-namespace Marsy::Parsers::CompanyParser
+namespace Marsy::Parsers::Company
 {
     LinksParser::LinksParser()
     {
 
     }
 
-    Links LinksParser::parseLinks(const json &input)
+    LinksModel LinksParser::parseLinks(const json &input)
     {
-        Links links;
+        LinksModel links;
         links.website = parseStringNullable(input, strWebsite);
         links.flickr = parseStringNullable(input, strFlickr);
         links.twitter = parseStringNullable(input, strTwitter);

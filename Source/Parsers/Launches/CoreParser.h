@@ -8,12 +8,12 @@
 #include "../../Libraries/JSON/json.hpp"
 
 #include "../Parser.h"
-#include "../../Models/Launches/Core.h"
+#include "../../Models/Launches/CoreModel.h"
 
 using json = nlohmann::json;
-using Marsy::Models::LaunchModel::Core;
+using Marsy::Models::Launch::CoreModel;
 
-namespace Marsy::Parsers::LaunchParser
+namespace Marsy::Parsers::Launch
 {
     class CoreParser : public Parser
     {
@@ -29,7 +29,7 @@ namespace Marsy::Parsers::LaunchParser
         const std::string strLandpad = "landpad";
     public:
         CoreParser();
-        std::vector<Core> parseCoresVector(const json &input);
+        std::vector<CoreModel> parseCoresVector(const json &input);
     };
 }
 

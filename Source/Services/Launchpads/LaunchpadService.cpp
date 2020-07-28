@@ -1,18 +1,18 @@
 #include "LaunchpadService.h"
 
-namespace Marsy::Services::LaunchpadService
+namespace Marsy::Services::Launchpad
 {
     LaunchpadService::LaunchpadService(std::shared_ptr<IConnector> connector) : Service(connector)
     {
         
     }
 
-    ServiceResponse<Launchpad> LaunchpadService::getLaunchpad(std::string id)
+    ServiceResponse<LaunchpadModel> LaunchpadService::getLaunchpad(std::string id)
     {
         return getObject(apiLaunchpadsUrl + "/" + id);
     }
 
-    ServiceVectorResponse<Launchpad> LaunchpadService::getLaunchpadVector()
+    ServiceVectorResponse<LaunchpadModel> LaunchpadService::getLaunchpadVector()
     {
         return getVector(apiLaunchpadsUrl);
     }

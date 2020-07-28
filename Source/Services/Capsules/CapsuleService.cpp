@@ -1,18 +1,18 @@
 #include "CapsuleService.h"
 
-namespace Marsy::Services::CapsuleService
+namespace Marsy::Services::Capsule
 {
     CapsuleService::CapsuleService(std::shared_ptr<IConnector> connector) : Service(connector)
     {
         
     }
 
-    ServiceResponse<Capsule> CapsuleService::getCapsule(std::string id)
+    ServiceResponse<CapsuleModel> CapsuleService::getCapsule(std::string id)
     {
         return getObject(apiCapsulesUrl + "/" + id);
     }
 
-    ServiceVectorResponse<Capsule> CapsuleService::getCapsuleVector()
+    ServiceVectorResponse<CapsuleModel> CapsuleService::getCapsuleVector()
     {
         return getVector(apiCapsulesUrl);
     }

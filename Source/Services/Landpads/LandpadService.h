@@ -6,23 +6,23 @@
 
 #include "../Service.h"
 #include "../../Connection/Interface/IConnector.h"
-#include "../../Models/Landpads/Landpad.h"
+#include "../../Models/Landpads/LandpadModel.h"
 #include "../../Parsers/Landpads/LandpadParser.h"
 
 using Marsy::Connection::IConnector;
-using Marsy::Models::LandpadModel::Landpad;
-using Marsy::Parsers::LandpadParser::LandpadParser;
+using Marsy::Models::Landpad::LandpadModel;
+using Marsy::Parsers::Landpad::LandpadParser;
 
-namespace Marsy::Services::LandpadService
+namespace Marsy::Services::Landpad
 {
-    class LandpadService : public Service<Landpad, LandpadParser>
+    class LandpadService : public Service<LandpadModel, LandpadParser>
     {
     private:
         const std::string apiLandpadsUrl = apiBaseUrl + "/landpads";
     public:
         LandpadService(std::shared_ptr<IConnector> connector);
-        ServiceResponse<Landpad> getLandpad(std::string id);
-        ServiceVectorResponse<Landpad> getLandpadVector();
+        ServiceResponse<LandpadModel> getLandpad(std::string id);
+        ServiceVectorResponse<LandpadModel> getLandpadVector();
     };
 }
 

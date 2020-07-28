@@ -10,8 +10,8 @@
 #include "../Models/Queries/Response/QueryResponse.h"
 
 using json = nlohmann::json;
-using Marsy::Parsers::QueryParser::QueryParser;
-using Marsy::Models::QueryModel::QueryResponse;
+using Marsy::Parsers::Query::QueryParser;
+using Marsy::Models::Query::QueryResponse;
 
 namespace Marsy::Parsers
 {
@@ -57,7 +57,7 @@ namespace Marsy::Parsers
         QueryResponse<T> parseQuery(const std::string &input)
         {
             QueryResponse<T> response;
-            QueryParser::QueryParser queryParser;
+            QueryParser queryParser;
             json j = json::parse(input);            
             response.docs = parseVector(j[strDocs]);
             response.queryParameters = queryParser.parseObject(j);

@@ -1,15 +1,15 @@
 #include "ShipParser.h"
 
-namespace Marsy::Parsers::ShipParser
+namespace Marsy::Parsers::Ship
 {
     ShipParser::ShipParser()
     {
 
     }
 
-    Ship ShipParser::parseOne(const json &input)
+    ShipModel ShipParser::parseOne(const json &input)
     {
-        Ship ship;
+        ShipModel ship;
         ship.name = parseStringNullable(input, strName);
         ship.legacyId = parseStringNullable(input, strLegacyId);
         ship.model = parseStringNullable(input, strModel);

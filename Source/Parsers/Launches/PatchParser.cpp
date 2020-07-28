@@ -1,15 +1,15 @@
 #include "PatchParser.h"
 
-namespace Marsy::Parsers::LaunchParser
+namespace Marsy::Parsers::Launch
 {
     PatchParser::PatchParser()
     {
 
     }
 
-    Patch PatchParser::parsePatch(const json &input)
+    PatchModel PatchParser::parsePatch(const json &input)
     {
-        Patch patch;
+        PatchModel patch;
         patch.small = parseStringNullable(input, strSmall);
         patch.large = parseStringNullable(input, strLarge);
 

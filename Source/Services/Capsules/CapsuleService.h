@@ -6,23 +6,23 @@
 
 #include "../Service.h"
 #include "../../Connection/Interface/IConnector.h"
-#include "../../Models/Capsules/Capsule.h"
+#include "../../Models/Capsules/CapsuleModel.h"
 #include "../../Parsers/Capsules/CapsuleParser.h"
 
 using Marsy::Connection::IConnector;
-using Marsy::Models::CapsuleModel::Capsule;
-using Marsy::Parsers::CapsuleParser::CapsuleParser;
+using Marsy::Models::Capsule::CapsuleModel;
+using Marsy::Parsers::Capsule::CapsuleParser;
 
-namespace Marsy::Services::CapsuleService
+namespace Marsy::Services::Capsule
 {
-    class CapsuleService : public Service<Capsule, CapsuleParser>
+    class CapsuleService : public Service<CapsuleModel, CapsuleParser>
     {
     private:
         const std::string apiCapsulesUrl = apiBaseUrl + "/capsules";
     public:
         CapsuleService(std::shared_ptr<IConnector> connector);
-        ServiceResponse<Capsule> getCapsule(std::string id);
-        ServiceVectorResponse<Capsule> getCapsuleVector();
+        ServiceResponse<CapsuleModel> getCapsule(std::string id);
+        ServiceVectorResponse<CapsuleModel> getCapsuleVector();
     };
 }
 

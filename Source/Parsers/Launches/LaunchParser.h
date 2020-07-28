@@ -12,21 +12,21 @@
 #include "CoreParser.h"
 #include "FairingsParser.h"
 #include "LinksParser.h"
-#include "../../Models/Launches/Launch.h"
-#include "../../Models/Launches/Core.h"
-#include "../../Models/Launches/Fairings.h"
-#include "../../Models/Launches/Links.h"
+#include "../../Models/Launches/LaunchModel.h"
+#include "../../Models/Launches/CoreModel.h"
+#include "../../Models/Launches/FairingsModel.h"
+#include "../../Models/Launches/LinksModel.h"
 
 using json = nlohmann::json;
-using Marsy::Models::LaunchModel::Launch;
-using Marsy::Models::LaunchModel::DatePrecision;
-using Marsy::Models::LaunchModel::Core;
-using Marsy::Models::LaunchModel::Fairings;
-using Marsy::Models::LaunchModel::Links;
+using Marsy::Models::Launch::LaunchModel;
+using Marsy::Models::Launch::DatePrecision;
+using Marsy::Models::Launch::CoreModel;
+using Marsy::Models::Launch::FairingsModel;
+using Marsy::Models::Launch::LinksModel;
 
-namespace Marsy::Parsers::LaunchParser
+namespace Marsy::Parsers::Launch
 {
-    class LaunchParser : public Parser, public IParser<Launch>
+    class LaunchParser : public Parser, public IParser<LaunchModel>
     {
     private:
         const std::string strFlightNumber = "flight_number";
@@ -64,12 +64,12 @@ namespace Marsy::Parsers::LaunchParser
     public:
         LaunchParser();
     protected:
-        Launch parseOne(const json &input) override;
+        LaunchModel parseOne(const json &input) override;
     private:
         std::optional<DatePrecision> parseDatePrecision(const json &input, const std::string &name);
-        std::optional<std::vector<Core>> parseCoresVector(const json &input, const std::string &name);
-        std::optional<Fairings> parseFairings(const json &input, const std::string &name);
-        std::optional<Links> parseLinks(const json &input, const std::string &name);
+        std::optional<std::vector<CoreModel>> parseCoresVector(const json &input, const std::string &name);
+        std::optional<FairingsModel> parseFairings(const json &input, const std::string &name);
+        std::optional<LinksModel> parseLinks(const json &input, const std::string &name);
     };
 }
 

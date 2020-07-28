@@ -1,15 +1,15 @@
 #include "PressurizedCapsuleParser.h"
 
-namespace Marsy::Parsers::DragonParser
+namespace Marsy::Parsers::Dragon
 {
     PressurizedCapsuleParser::PressurizedCapsuleParser()
     {
 
     }
 
-    PressurizedCapsule PressurizedCapsuleParser::parsePressurizedCapsule(const json &input)
+    PressurizedCapsuleModel PressurizedCapsuleParser::parsePressurizedCapsule(const json &input)
     {
-        PressurizedCapsule pressurizedCapsule;
+        PressurizedCapsuleModel pressurizedCapsule;
         CommonInfoParser commonInfoParser;
         pressurizedCapsule.payloadVolume = commonInfoParser.parseVolumeInfo(input, strPayloadVolume);
 

@@ -9,17 +9,17 @@
 #include "../Parser.h"
 #include "CargoParser.h"
 #include "../Common/CommonInfoParser.h"
-#include "../../Models/Dragons/Trunk.h"
-#include "../../Models/Dragons/Cargo.h"
-#include "../../Models/Common/VolumeInfo.h"
+#include "../../Models/Dragons/TrunkModel.h"
+#include "../../Models/Dragons/CargoModel.h"
+#include "../../Models/Common/VolumeInfoModel.h"
 
 using json = nlohmann::json;
-using Marsy::Models::DragonModel::Trunk;
-using Marsy::Models::DragonModel::Cargo;
-using Marsy::Models::CommonModel::VolumeInfo;
-using Marsy::Parsers::CommonParser::CommonInfoParser;
+using Marsy::Models::Dragon::TrunkModel;
+using Marsy::Models::Dragon::CargoModel;
+using Marsy::Models::Common::VolumeInfoModel;
+using Marsy::Parsers::Common::CommonInfoParser;
 
-namespace Marsy::Parsers::DragonParser
+namespace Marsy::Parsers::Dragon
 {
     class TrunkParser : public Parser
     {
@@ -28,9 +28,9 @@ namespace Marsy::Parsers::DragonParser
         const std::string strCargo = "cargo";
     public:
         TrunkParser();
-        Trunk parseTrunk(const json &input);
+        TrunkModel parseTrunk(const json &input);
     private:
-        std::optional<Cargo> parseCargo(const json &input, const std::string &name);
+        std::optional<CargoModel> parseCargo(const json &input, const std::string &name);
     };
 }
 

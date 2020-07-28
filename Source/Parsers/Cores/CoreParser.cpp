@@ -1,15 +1,15 @@
 #include "CoreParser.h"
 
-namespace Marsy::Parsers::CoreParser
+namespace Marsy::Parsers::Core
 {
     CoreParser::CoreParser()
     {
 
     }
 
-    Core CoreParser::parseOne(const json &input)
+    CoreModel CoreParser::parseOne(const json &input)
     {
-        Core core;
+        CoreModel core;
         core.serial = parseStringNullable(input, strSerial);
         core.block = parseIntNullable(input, strBlock);
         core.status = parseCoreStatus(input, strStatus);

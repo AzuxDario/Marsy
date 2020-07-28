@@ -6,23 +6,23 @@
 
 #include "../Service.h"
 #include "../../Connection/Interface/IConnector.h"
-#include "../../Models/Cores/Core.h"
+#include "../../Models/Cores/CoreModel.h"
 #include "../../Parsers/Cores/CoreParser.h"
 
 using Marsy::Connection::IConnector;
-using Marsy::Models::CoreModel::Core;
-using Marsy::Parsers::CoreParser::CoreParser;
+using Marsy::Models::Core::CoreModel;
+using Marsy::Parsers::Core::CoreParser;
 
-namespace Marsy::Services::CoreService
+namespace Marsy::Services::Core
 {
-    class CoreService : public Service<Core, CoreParser>
+    class CoreService : public Service<CoreModel, CoreParser>
     {
     private:
         const std::string apiCoresUrl = apiBaseUrl + "/cores";
     public:
         CoreService(std::shared_ptr<IConnector> connector);
-        ServiceResponse<Core> getCore(std::string id);
-        ServiceVectorResponse<Core> getCoreVector();
+        ServiceResponse<CoreModel> getCore(std::string id);
+        ServiceVectorResponse<CoreModel> getCoreVector();
     };
 }
 

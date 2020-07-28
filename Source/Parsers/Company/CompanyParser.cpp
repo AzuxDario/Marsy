@@ -1,15 +1,15 @@
 #include "CompanyParser.h"
 
-namespace Marsy::Parsers::CompanyParser
+namespace Marsy::Parsers::Company
 {
     CompanyParser::CompanyParser()
     {
 
     }
 
-    Company CompanyParser::parseOne(const json &input)
+    CompanyModel CompanyParser::parseOne(const json &input)
     {
-        Company company;
+        CompanyModel company;
         company.name = parseStringNullable(input, strName);
         company.founder = parseStringNullable(input, strFounder);
         company.founded = parseIntNullable(input, strFounded);
@@ -30,7 +30,7 @@ namespace Marsy::Parsers::CompanyParser
         return company;
     }
 
-    std::optional<Headquarters> CompanyParser::parseHeadquarter(const json &input, const std::string &name)
+    std::optional<HeadquartersModel> CompanyParser::parseHeadquarter(const json &input, const std::string &name)
     {
         if(input.contains(name) && !input[name].is_null() && input[name].is_object())
         {
@@ -43,7 +43,7 @@ namespace Marsy::Parsers::CompanyParser
         }
     }
 
-    std::optional<Links> CompanyParser::parseLinks(const json &input, const std::string &name)
+    std::optional<LinksModel> CompanyParser::parseLinks(const json &input, const std::string &name)
     {
         if(input.contains(name) && !input[name].is_null() && input[name].is_object())
         {

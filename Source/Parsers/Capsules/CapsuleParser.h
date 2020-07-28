@@ -9,15 +9,15 @@
 
 #include "../Parser.h"
 #include "../IParser.h"
-#include "../../Models/Capsules/Capsule.h"
+#include "../../Models/Capsules/CapsuleModel.h"
 
 using json = nlohmann::json;
-using Marsy::Models::CapsuleModel::Capsule;
-using Marsy::Models::CapsuleModel::CapsuleStatus;
+using Marsy::Models::Capsule::CapsuleModel;
+using Marsy::Models::Capsule::CapsuleStatus;
 
-namespace Marsy::Parsers::CapsuleParser
+namespace Marsy::Parsers::Capsule
 {
-    class CapsuleParser : public Parser, public IParser<Capsule>
+    class CapsuleParser : public Parser, public IParser<CapsuleModel>
     {
     private:
         const std::string strSerial = "serial";
@@ -36,7 +36,7 @@ namespace Marsy::Parsers::CapsuleParser
     public:
         CapsuleParser();
     protected:
-        Capsule parseOne(const json &input) override;
+        CapsuleModel parseOne(const json &input) override;
     private:
         std::optional<CapsuleStatus> parseCapsuleStatus(const json &input, const std::string &name);
     };

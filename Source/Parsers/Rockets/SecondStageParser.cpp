@@ -1,15 +1,15 @@
 #include "SecondStageParser.h"
 
-namespace Marsy::Parsers::RocketsParser
+namespace Marsy::Parsers::Rocket
 {
     SecondStageParser::SecondStageParser()
     {
 
     }
 
-    SecondStage SecondStageParser::parseSecondStage(const json &input)
+    SecondStageModel SecondStageParser::parseSecondStage(const json &input)
     {
-        SecondStage secondStage;
+        SecondStageModel secondStage;
         CommonInfoParser commonInfoParser;
         secondStage.reusable = parseBoolNullable(input, strReusable);
         secondStage.engines = parseIntNullable(input, strEngines);
@@ -21,7 +21,7 @@ namespace Marsy::Parsers::RocketsParser
         return secondStage;
     }
 
-    std::optional<Payloads> SecondStageParser::parsePayloads(const json &input, const std::string &name)
+    std::optional<PayloadsModel> SecondStageParser::parsePayloads(const json &input, const std::string &name)
     {
         if(input.contains(name) && !input[name].is_null() && input[name].is_array())
         {

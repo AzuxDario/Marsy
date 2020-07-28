@@ -1,15 +1,15 @@
 #include "CrewParser.h"
 
-namespace Marsy::Parsers::CrewParser
+namespace Marsy::Parsers::Crew
 {
     CrewParser::CrewParser()
     {
 
     }
 
-    Crew CrewParser::parseOne(const json &input)
+    CrewModel CrewParser::parseOne(const json &input)
     {
-        Crew crew;
+        CrewModel crew;
         crew.name = parseStringNullable(input, strName);
         crew.status = parseCrewStatus(input, strStatus);
         crew.agency = parseStringNullable(input, strAgency);

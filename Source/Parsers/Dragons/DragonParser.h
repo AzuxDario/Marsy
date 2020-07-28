@@ -14,28 +14,28 @@
 #include "TrunkParser.h"
 #include "PressurizedCapsuleParser.h"
 #include "../Common/CommonInfoParser.h"
-#include "../../Models/Dragons/Dragon.h"
-#include "../../Models/Dragons/HeatShield.h"
-#include "../../Models/Dragons/Thruster.h"
-#include "../../Models/Dragons/Trunk.h"
-#include "../../Models/Dragons/PressurizedCapsule.h"
-#include "../../Models/Common/MassInfo.h"
-#include "../../Models/Common/SizeInfo.h"
-#include "../../Models/Common/VolumeInfo.h"
+#include "../../Models/Dragons/DragonModel.h"
+#include "../../Models/Dragons/HeatShieldModel.h"
+#include "../../Models/Dragons/ThrusterModel.h"
+#include "../../Models/Dragons/TrunkModel.h"
+#include "../../Models/Dragons/PressurizedCapsuleModel.h"
+#include "../../Models/Common/MassInfoModel.h"
+#include "../../Models/Common/SizeInfoModel.h"
+#include "../../Models/Common/VolumeInfoModel.h"
 
 using json = nlohmann::json;
-using Marsy::Models::DragonModel::Dragon;
-using Marsy::Models::DragonModel::HeatShield;
-using Marsy::Models::DragonModel::Thruster;
-using Marsy::Models::DragonModel::PressurizedCapsule;
-using Marsy::Models::CommonModel::MassInfo;
-using Marsy::Models::CommonModel::SizeInfo;
-using Marsy::Models::CommonModel::VolumeInfo;
-using Marsy::Parsers::CommonParser::CommonInfoParser;
+using Marsy::Models::Dragon::DragonModel;
+using Marsy::Models::Dragon::HeatShieldModel;
+using Marsy::Models::Dragon::ThrusterModel;
+using Marsy::Models::Dragon::PressurizedCapsuleModel;
+using Marsy::Models::Common::MassInfoModel;
+using Marsy::Models::Common::SizeInfoModel;
+using Marsy::Models::Common::VolumeInfoModel;
+using Marsy::Parsers::Common::CommonInfoParser;
 
-namespace Marsy::Parsers::DragonParser
+namespace Marsy::Parsers::Dragon
 {
-    class DragonParser : public Parser, public IParser<Dragon>
+    class DragonParser : public Parser, public IParser<DragonModel>
     {
     private:
         const std::string strName = "name";
@@ -64,12 +64,12 @@ namespace Marsy::Parsers::DragonParser
     public:
         DragonParser();
     protected:
-        Dragon parseOne(const json &input) override;
+        DragonModel parseOne(const json &input) override;
     private:
-        std::optional<HeatShield> parseHeatShield(const json &input, const std::string &name);
-        std::optional<std::vector<Thruster>> parseThrusterVector(const json &input, const std::string &name);
-        std::optional<PressurizedCapsule> parsePressurizedCapsule(const json &input, const std::string &name);
-        std::optional<Trunk> parseTrunk(const json &input, const std::string &name);
+        std::optional<HeatShieldModel> parseHeatShield(const json &input, const std::string &name);
+        std::optional<std::vector<ThrusterModel>> parseThrusterVector(const json &input, const std::string &name);
+        std::optional<PressurizedCapsuleModel> parsePressurizedCapsule(const json &input, const std::string &name);
+        std::optional<TrunkModel> parseTrunk(const json &input, const std::string &name);
     };
 }
 

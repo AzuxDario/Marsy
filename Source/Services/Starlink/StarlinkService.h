@@ -6,23 +6,23 @@
 
 #include "../Service.h"
 #include "../../Connection/Interface/IConnector.h"
-#include "../../Models/Starlink/Starlink.h"
+#include "../../Models/Starlink/StarlinkModel.h"
 #include "../../Parsers/Starlink/StarlinkParser.h"
 
 using Marsy::Connection::IConnector;
-using Marsy::Models::StarlinkModel::Starlink;
-using Marsy::Parsers::StarlinkParser::StarlinkParser;
+using Marsy::Models::Starlink::StarlinkModel;
+using Marsy::Parsers::Starlink::StarlinkParser;
 
-namespace Marsy::Services::StarlinkService
+namespace Marsy::Services::Starlink
 {
-    class StarlinkService : public Service<Starlink, StarlinkParser>
+    class StarlinkService : public Service<StarlinkModel, StarlinkParser>
     {
     private:
         const std::string apiStarlinkUrl = apiBaseUrl + "/starlink";
     public:
         StarlinkService(std::shared_ptr<IConnector> connector);
-        ServiceResponse<Starlink> getStarlink(std::string id);
-        ServiceVectorResponse<Starlink> getStarlinkVector();
+        ServiceResponse<StarlinkModel> getStarlink(std::string id);
+        ServiceVectorResponse<StarlinkModel> getStarlinkVector();
     };
 }
 

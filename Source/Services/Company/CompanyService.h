@@ -6,22 +6,22 @@
 
 #include "../Service.h"
 #include "../../Connection/Interface/IConnector.h"
-#include "../../Models/Company/Company.h"
+#include "../../Models/Company/CompanyModel.h"
 #include "../../Parsers/Company/CompanyParser.h"
 
 using Marsy::Connection::IConnector;
-using Marsy::Models::CompanyModel::Company;
-using Marsy::Parsers::CompanyParser::CompanyParser;
+using Marsy::Models::Company::CompanyModel;
+using Marsy::Parsers::Company::CompanyParser;
 
-namespace Marsy::Services::CompanyService
+namespace Marsy::Services::Company
 {
-    class CompanyService : public Service<Company, CompanyParser>
+    class CompanyService : public Service<CompanyModel, CompanyParser>
     {
     private:
         const std::string apiCompanyUrl = apiBaseUrl + "/company";
     public:
         CompanyService(std::shared_ptr<IConnector> connector);
-        ServiceResponse<Company> getCompany();
+        ServiceResponse<CompanyModel> getCompany();
     };
 }
 

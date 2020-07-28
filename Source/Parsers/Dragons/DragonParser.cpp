@@ -1,15 +1,15 @@
 #include "DragonParser.h"
 
-namespace Marsy::Parsers::DragonParser
+namespace Marsy::Parsers::Dragon
 {
     DragonParser::DragonParser()
     {
 
     }
 
-    Dragon DragonParser::parseOne(const json &input)
+    DragonModel DragonParser::parseOne(const json &input)
     {
-        Dragon dragon;
+        DragonModel dragon;
         CommonInfoParser commonInfoParser;
         dragon.name = parseStringNullable(input, strName);
         dragon.type = parseStringNullable(input, strType);
@@ -38,7 +38,7 @@ namespace Marsy::Parsers::DragonParser
         return dragon;
     }
 
-    std::optional<HeatShield> DragonParser::parseHeatShield(const json &input, const std::string &name)
+    std::optional<HeatShieldModel> DragonParser::parseHeatShield(const json &input, const std::string &name)
     {
         if(input.contains(name) && !input[name].is_null() && input[name].is_object())
         {
@@ -51,7 +51,7 @@ namespace Marsy::Parsers::DragonParser
         }
     }
 
-    std::optional<std::vector<Thruster>> DragonParser::parseThrusterVector(const json &input, const std::string &name)
+    std::optional<std::vector<ThrusterModel>> DragonParser::parseThrusterVector(const json &input, const std::string &name)
     {
         if(input.contains(name) && !input[name].is_null() && input[name].is_array())
         {
@@ -64,7 +64,7 @@ namespace Marsy::Parsers::DragonParser
         }
     }
 
-    std::optional<Trunk> DragonParser::parseTrunk(const json &input, const std::string &name)
+    std::optional<TrunkModel> DragonParser::parseTrunk(const json &input, const std::string &name)
     {
         if(input.contains(name) && !input[name].is_null() && input[name].is_object())
         {
@@ -77,7 +77,7 @@ namespace Marsy::Parsers::DragonParser
         }
     }
 
-    std::optional<PressurizedCapsule> DragonParser::parsePressurizedCapsule(const json &input, const std::string &name)
+    std::optional<PressurizedCapsuleModel> DragonParser::parsePressurizedCapsule(const json &input, const std::string &name)
     {
         if(input.contains(name) && !input[name].is_null() && input[name].is_object())
         {

@@ -1,15 +1,15 @@
 #include "RoadsterParser.h"
 
-namespace Marsy::Parsers::RoadsterParser
+namespace Marsy::Parsers::Roadster
 {
     RoadsterParser::RoadsterParser()
     {
 
     }
 
-    Roadster RoadsterParser::parseOne(const json &input)
+    RoadsterModel RoadsterParser::parseOne(const json &input)
     {
-        Roadster roadster;
+        RoadsterModel roadster;
         roadster.name = parseStringNullable(input, strName);
         roadster.launchDateUtc = parseStringNullable(input, strLaunchDateUtc);
         roadster.launchDateUnix = parseStringNullable(input, strLaunchDateUnix);

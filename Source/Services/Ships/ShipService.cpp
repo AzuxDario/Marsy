@@ -1,18 +1,18 @@
 #include "ShipService.h"
 
-namespace Marsy::Services::ShipService
+namespace Marsy::Services::Ship
 {
     ShipService::ShipService(std::shared_ptr<IConnector> connector) : Service(connector)
     {
         
     }
 
-    ServiceResponse<Ship> ShipService::getShip(std::string id)
+    ServiceResponse<ShipModel> ShipService::getShip(std::string id)
     {
         return getObject(apiShipsUrl + "/" + id);
     }
 
-    ServiceVectorResponse<Ship> ShipService::getShipVector()
+    ServiceVectorResponse<ShipModel> ShipService::getShipVector()
     {
         return getVector(apiShipsUrl);
     }

@@ -1,15 +1,15 @@
 #include "FlickrParser.h"
 
-namespace Marsy::Parsers::LaunchParser
+namespace Marsy::Parsers::Launch
 {
     FlickrParser::FlickrParser()
     {
 
     }
 
-    Flickr FlickrParser::parseFlickr(const json &input)
+    FlickrModel FlickrParser::parseFlickr(const json &input)
     {
-        Flickr flickr;
+        FlickrModel flickr;
         flickr.small = parseArrayOfStringNullable(input, strSmall);
         flickr.original = parseArrayOfStringNullable(input, strOriginal);
 

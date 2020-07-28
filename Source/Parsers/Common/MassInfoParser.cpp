@@ -1,15 +1,15 @@
 #include "MassInfoParser.h"
 
-namespace Marsy::Parsers::CommonParser
+namespace Marsy::Parsers::Common
 {
     MassInfoParser::MassInfoParser()
     {
 
     }
 
-    MassInfo MassInfoParser::parseMassInfo(const json &input)
+    MassInfoModel MassInfoParser::parseMassInfo(const json &input)
     {
-        MassInfo massInfo;
+        MassInfoModel massInfo;
         massInfo.kilograms = parseDoubleNullable(input, strKg);
         massInfo.pounds = parseDoubleNullable(input, strLb);
 

@@ -8,15 +8,15 @@
 
 #include "../Parser.h"
 #include "../Common/CommonInfoParser.h"
-#include "../../Models/Rockets/FirstStage.h"
-#include "../../Models/Common/ThrustInfo.h"
+#include "../../Models/Rockets/FirstStageModel.h"
+#include "../../Models/Common/ThrustInfoModel.h"
 
 using json = nlohmann::json;
-using Marsy::Models::RocketsModel::FirstStage;
-using Marsy::Models::CommonModel::ThrustInfo;
-using Marsy::Parsers::CommonParser::CommonInfoParser;
+using Marsy::Models::Rocket::FirstStageModel;
+using Marsy::Models::Common::ThrustInfoModel;
+using Marsy::Parsers::Common::CommonInfoParser;
 
-namespace Marsy::Parsers::RocketsParser
+namespace Marsy::Parsers::Rocket
 {
     class FirstStageParser : public Parser
     {
@@ -29,7 +29,7 @@ namespace Marsy::Parsers::RocketsParser
         const std::string strThrustVacuum = "thrust_vacuum";
     public:
         FirstStageParser();
-        FirstStage parseFirstStage(const json &input);
+        FirstStageModel parseFirstStage(const json &input);
     };
 }
 

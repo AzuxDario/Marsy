@@ -5,7 +5,7 @@
 #include <vector>
 #include <optional>
 
-namespace Marsy::Models::QueryModel
+namespace Marsy::Models::Query
 {
     struct QueryParameters
     {

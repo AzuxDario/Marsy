@@ -7,12 +7,12 @@
 #include "../../Libraries/JSON/json.hpp"
 
 #include "../Parser.h"
-#include "../../Models/Dragons/HeatShield.h"
+#include "../../Models/Dragons/HeatShieldModel.h"
 
 using json = nlohmann::json;
-using Marsy::Models::DragonModel::HeatShield;
+using Marsy::Models::Dragon::HeatShieldModel;
 
-namespace Marsy::Parsers::DragonParser
+namespace Marsy::Parsers::Dragon
 {
     class HeatShieldParser : public Parser
     {
@@ -23,7 +23,7 @@ namespace Marsy::Parsers::DragonParser
         const std::string strDevPartner = "dev_partner";
     public:
         HeatShieldParser();
-        HeatShield parseHeatShield(const json &input);
+        HeatShieldModel parseHeatShield(const json &input);
     };
 }
 
