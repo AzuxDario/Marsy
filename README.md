@@ -33,7 +33,7 @@ SpaceX API uses [queries](https://github.com/r-spacex/SpaceX-API/blob/master/doc
 Currently Marsy doesn't provide query builder, so you need to write `query`, `options -> select`, `options -> sort` and `options -> populate` on your own.
 
 | Field | Type  | Docs |
-|---|---|---|---|---|
+|---|---|---|
 | `query` | `std::string` working on it | [link](https://docs.mongodb.com/manual/tutorial/query-documents/) |
 | `options -> select` | `std::string` | [link](https://mongoosejs.com/docs/api.html#query_Query-select) |
 | `options -> sort` | `std::string` | [link](https://mongoosejs.com/docs/api.html#query_Query-sort) |
