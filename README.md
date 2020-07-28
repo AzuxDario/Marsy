@@ -83,7 +83,7 @@ int main()
 
 # What next will be done
 
-Still working on queries [queries](https://github.com/r-spacex/SpaceX-API/blob/master/docs/v4/queries.md), because `query` param must be object in JSON data. 
+Still working on [queries](https://github.com/r-spacex/SpaceX-API/blob/master/docs/v4/queries.md), because `query` param must be object in JSON data. 
 
 # External libraries
  * [JSON](https://github.com/nlohmann/json)
