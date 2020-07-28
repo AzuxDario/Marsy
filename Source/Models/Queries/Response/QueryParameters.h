@@ -17,8 +17,8 @@ namespace Marsy::Models::QueryModel
         int pagingCounter;
         bool hasPrevPage;
         bool hasNextPage;
-        std::optional<bool> prevPage;
-        std::optional<bool> nextPage;
+        std::optional<int> prevPage;
+        std::optional<int> nextPage;
     };
 }
 

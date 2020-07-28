@@ -16,6 +16,7 @@ namespace Marsy::Models::QueryModel
         std::optional<int> limit;
         std::optional<bool> pagination;
         std::optional<std::vector<std::string>> populate;
+    };
 }
 
 #endif

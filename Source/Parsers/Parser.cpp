@@ -7,6 +7,18 @@ namespace Marsy::Parsers
 
     }
 
+    int Parser::parseInt(const json &input, const std::string &name)
+    {
+        if(input.contains(name) && input[name].is_number())
+        {
+            return input[name].get<int>();
+        }
+        else
+        {
+            return 0;
+        }
+    }
+
     std::optional<int> Parser::parseIntNullable(const json &input, const std::string &name)
     {
         if(input.contains(name) && !input[name].is_null() && input[name].is_number())
@@ -64,6 +76,18 @@ namespace Marsy::Parsers
         else
         {
             return std::nullopt;
+        }
+    }
+
+    bool Parser::parseBool(const json &input, const std::string &name)
+    {
+        if(input.contains(name) && input[name].is_boolean())
+        {
+            return input[name].get<bool>();
+        }
+        else
+        {
+            return false;
         }
     }
 
