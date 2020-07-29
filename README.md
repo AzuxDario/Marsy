@@ -48,7 +48,7 @@ Marsy doesn't handle internet connection, so you need to provide implementation 
 
 There are 2 reasons why I made is as it is:
  * C++ doesn't have internet connection in STL yet. I did not want to include big library or use different system APIs to provide support for more than one platform e.g. (WinAPI, POSIX etc.),
- * maybe you already have library with interent connection in your project or you want to use one that you like the most.
+ * maybe you already have library with internet connection in your project or you want to use one that you like the most.
 
 ## Dates parsing
 Marsy doesn't parse dates returned by API. They're stored as strings.
