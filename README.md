@@ -46,7 +46,9 @@ Since Marsy includes [JSON](https://github.com/nlohmann/json) in several classes
 ## Internet connection
 Marsy doesn't handle internet connection, so you need to provide implementation of `IConnection` interface.  Enum `ResponseStatus` is to help you handle different statuses returned by API. Service will parse returned JSON only when status is `ResponseStatus::ok`.
 
-It's because C++ doesn't have internet connection in STL yet. I did not want to include big library or use different system APIs to provide support for more than one platform e.g. (WinAPI, POSIX etc.)
+There are 2 reasons why I made is as it is:
+ * C++ doesn't have internet connection in STL yet. I did not want to include big library or use different system APIs to provide support for more than one platform e.g. (WinAPI, POSIX etc.),
+ * maybe you already have library with interent connection in your project or you want to use one that you like the most.
 
 ## Dates parsing
 Marsy doesn't parse dates returned by API. They're stored as strings.
