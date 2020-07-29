@@ -5,13 +5,17 @@
 #include <vector>
 #include <optional>
 
+#include "../../../Libraries/JSON/json.hpp"
+
 #include "QueryOptions.h"
+
+using json = nlohmann::json;
 
 namespace Marsy::Models::Query
 {
     struct QueryRequest
     {
-        std::string query;
+        json query = json::object();
         QueryOptions options;
     };
 }
