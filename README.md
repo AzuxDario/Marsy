@@ -30,7 +30,7 @@ SpaceX API uses [queries](https://github.com/r-spacex/SpaceX-API/blob/master/doc
 
 You can build simple `query` with `QueryBuilder` class or make one on your own based on `nlohmann::json` [documentation](https://github.com/nlohmann/json).
 
-Currently Marsy doesn't provide query builder for these: `options -> select`, `options -> sort` and `options -> populate` on your own.
+Currently Marsy doesn't provide query builder for these: `options -> select`, `options -> sort`, `options -> populate`  You need to write them on your own.
 
 | Field | Type  | Docs |
 |---|---|---|
