@@ -1,10 +1,8 @@
 # Marsy
-<p align="center">
-<a href="https://github.com/AzuxDario/Marsy/pulls?q=is%3Apr+is%3Aclosed"><img src="https://img.shields.io/github/issues-pr-closed-raw/AzuxDario/Marsy" alt="Closed pull requests"></img></a>
-<a href="https://github.com/AzuxDario/Marsy/blob/master/LICENSE"><img src="https://img.shields.io/github/license/AzuxDario/Marsy" alt="License"></img></a>
-</p>
 
-Here will be C++ wrapper for [SpaceX API](https://github.com/r-spacex/SpaceX-API).
+[![License](https://img.shields.io/github/license/AzuxDario/Marsy.svg)](https://github.com/AzuxDario/Marsy/blob/master/LICENSE)
+[![Stars](https://img.shields.io/github/stars/AzuxDario/Marsy.svg)](https://github.com/AzuxDario/Marsy/stargazers)
+[![Issues](https://img.shields.io/github/issues/AzuxDario/Marsy.svg)](https://github.com/AzuxDario/Marsy/issues)
 
 Marsy is a library that allow you to deserialize and manage data returned by [SpaceX API](https://github.com/r-spacex/SpaceX-API). Marsy currently support V4 of API.
 
