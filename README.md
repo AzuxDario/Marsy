@@ -30,11 +30,13 @@ Library uses C++17 features. You need to remember it, when you compile your prog
 ## Queries
 SpaceX API uses [queries](https://github.com/r-spacex/SpaceX-API/blob/master/docs/v4/queries.md) to filter data. They're based on [mongoose-paginate](https://github.com/aravindnc/mongoose-paginate-v2).
 
-Currently Marsy doesn't provide query builder, so you need to write `query`, `options -> select`, `options -> sort` and `options -> populate` on your own.
+You can build simple `query` with `QueryBuilder` class or make one on your own based on `nlohmann::json` [documentation](https://github.com/nlohmann/json).
+
+Currently Marsy doesn't provide query builder for these: `options -> select`, `options -> sort` and `options -> populate` on your own.
 
 | Field | Type  | Docs |
 |---|---|---|
-| `query` | `std::string` working on it | [link](https://docs.mongodb.com/manual/tutorial/query-documents/) |
+| `query` | `nlohmann::json` | [link](https://docs.mongodb.com/manual/tutorial/query-documents/) |
 | `options -> select` | `std::string` | [link](https://mongoosejs.com/docs/api.html#query_Query-select) |
 | `options -> sort` | `std::string` | [link](https://mongoosejs.com/docs/api.html#query_Query-sort) |
 | `options -> populate` | `std::vector<std::string>` | [link](https://mongoosejs.com/docs/api.html#query_Query-populate) |
@@ -83,7 +85,7 @@ int main()
 
 # What next will be done
 
-Still working on [queries](https://github.com/r-spacex/SpaceX-API/blob/master/docs/v4/queries.md), because `query` param must be object in JSON data. 
+Still working on [queries](https://github.com/r-spacex/SpaceX-API/blob/master/docs/v4/queries.md), to make them easier to use.
 
 # External libraries
  * [JSON](https://github.com/nlohmann/json)
