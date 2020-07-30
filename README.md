@@ -28,16 +28,18 @@ Library uses C++17 features. You need to remember it, when you compile your prog
 ## Queries
 SpaceX API uses [queries](https://github.com/r-spacex/SpaceX-API/blob/master/docs/v4/queries.md) to filter data. They're based on [mongoose-paginate](https://github.com/aravindnc/mongoose-paginate-v2).
 
-You can build simple `query` with `QueryBuilder` class or make one on your own based on `nlohmann::json` [documentation](https://github.com/nlohmann/json).
+You can build simple `query` with `QueryBuilder` or make one on your own based on `nlohmann::json` [documentation](https://github.com/nlohmann/json).
 
-Currently Marsy doesn't provide query builder for these: `options -> select`, `options -> sort`, `options -> populate`  You need to write them on your own.
+You can build simple `options -> select` with `SortBuilder` or make one on your own based on `nlohmann::json` [documentation](https://github.com/nlohmann/json).
+
+Currently Marsy doesn't provide query builder for these: `options -> select`, `options -> populate`  You need to write them based on `nlohmann::json` [documentation](https://github.com/nlohmann/json).
 
 | Field | Type  | Docs |
 |---|---|---|
 | `query` | `nlohmann::json` | [link](https://docs.mongodb.com/manual/tutorial/query-documents/) |
-| `options -> select` | `std::string` | [link](https://mongoosejs.com/docs/api.html#query_Query-select) |
-| `options -> sort` | `std::string` | [link](https://mongoosejs.com/docs/api.html#query_Query-sort) |
-| `options -> populate` | `std::vector<std::string>` | [link](https://mongoosejs.com/docs/api.html#query_Query-populate) |
+| `options -> select` | `nlohmann::json` | [link](https://mongoosejs.com/docs/api.html#query_Query-select) |
+| `options -> sort` | `nlohmann::json` | [link](https://mongoosejs.com/docs/api.html#query_Query-sort) |
+| `options -> populate` | `nlohmann::json` | [link](https://mongoosejs.com/docs/api.html#query_Query-populate) |
 
 ## Size of binary in debug mode
 Since Marsy includes [JSON](https://github.com/nlohmann/json) in several classes, output program can be huge when compiled in debug mode (I achieved 60MB binaries). Remember to roll it out as release, when you done with testing.

@@ -5,17 +5,21 @@
 #include <vector>
 #include <optional>
 
+#include "../../../Libraries/JSON/json.hpp"
+
+using json = nlohmann::json;
+
 namespace Marsy::Models::Query
 {
     struct QueryOptions
     {
-        std::optional<std::string> select;
-        std::optional<std::string> sort;
+        std::optional<json> select;
+        std::optional<json> sort;
         std::optional<int> offset;
         std::optional<int> page;
         std::optional<int> limit;
         std::optional<bool> pagination;
-        std::optional<std::vector<std::string>> populate;
+        std::optional<json> populate;
     };
 }
 
