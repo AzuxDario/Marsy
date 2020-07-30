@@ -87,7 +87,7 @@ int main()
 
 # What next will be done
 
-Still working on [queries](https://github.com/r-spacex/SpaceX-API/blob/master/docs/v4/queries.md), to make them easier to use.
+Library testing and optimization. Also I want to make IConnector implementation based on curl in different repo.
 
 # External libraries
  * [JSON](https://github.com/nlohmann/json)
