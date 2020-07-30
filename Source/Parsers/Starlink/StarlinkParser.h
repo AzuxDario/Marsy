@@ -23,6 +23,7 @@ namespace Marsy::Parsers::Starlink
 {
     class StarlinkParser : public Parser, public IParser<StarlinkModel>, private StarlinkConst
     {
+    public:
         StarlinkParser();
     protected:
         StarlinkModel parseOne(const json &input) override;
