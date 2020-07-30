@@ -9,17 +9,16 @@
 
 #include "../Parser.h"
 #include "../../Models/Launches/FlickrModel.h"
+#include "../../Const/Launches/FlickrConst.h"
 
 using json = nlohmann::json;
 using Marsy::Models::Launch::FlickrModel;
+using Marsy::Const::Launch::FlickrConst;
 
 namespace Marsy::Parsers::Launch
 {
-    class FlickrParser : public Parser
+    class FlickrParser : public Parser, private FlickrConst
     {
-    private:
-        const std::string strSmall = "small";
-        const std::string strOriginal = "original";
     public:
         FlickrParser();
         FlickrModel parseFlickr(const json &input);

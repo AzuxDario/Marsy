@@ -9,17 +9,16 @@
 
 #include "../Parser.h"
 #include "../../Models/Common/MassInfoModel.h"
+#include "../../Const/Common/MassInfoConst.h"
 
 using json = nlohmann::json;
 using Marsy::Models::Common::MassInfoModel;
+using Marsy::Const::Common::MassInfoConst;
 
 namespace Marsy::Parsers::Common
 {
-    class MassInfoParser : public Parser
+    class MassInfoParser : public Parser, private MassInfoConst
     {
-    private:
-        const std::string strKg = "kg";
-        const std::string strLb = "lb";
     public:
         MassInfoParser();
         MassInfoModel parseMassInfo(const json &input);

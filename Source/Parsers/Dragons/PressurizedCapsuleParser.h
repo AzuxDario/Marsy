@@ -10,15 +10,17 @@
 #include "../Common/CommonInfoParser.h"
 #include "../../Models/Dragons/PressurizedCapsuleModel.h"
 #include "../../Models/Common/VolumeInfoModel.h"
+#include "../../Const/Dragons/PressurizedCapsuleConst.h"
 
 using json = nlohmann::json;
 using Marsy::Models::Dragon::PressurizedCapsuleModel;
 using Marsy::Models::Common::VolumeInfoModel;
 using Marsy::Parsers::Common::CommonInfoParser;
+using Marsy::Const::Dragon::PressurizedCapsuleConst;
 
 namespace Marsy::Parsers::Dragon
 {
-    class PressurizedCapsuleParser : public Parser
+    class PressurizedCapsuleParser : public Parser, private PressurizedCapsuleConst
     {
     private:
         const std::string strPayloadVolume = "payload_volume";

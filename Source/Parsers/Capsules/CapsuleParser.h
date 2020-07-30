@@ -10,29 +10,17 @@
 #include "../Parser.h"
 #include "../IParser.h"
 #include "../../Models/Capsules/CapsuleModel.h"
+#include "../../Const/Capsules/CapsuleConst.h"
 
 using json = nlohmann::json;
 using Marsy::Models::Capsule::CapsuleModel;
 using Marsy::Models::Capsule::CapsuleStatus;
+using Marsy::Const::Capsule::CapsuleConst;
 
 namespace Marsy::Parsers::Capsule
 {
-    class CapsuleParser : public Parser, public IParser<CapsuleModel>
+    class CapsuleParser : public Parser, public IParser<CapsuleModel>, private CapsuleConst
     {
-    private:
-        const std::string strSerial = "serial";
-        const std::string strStatus = "status";
-        const std::string strDragon = "dragon";
-        const std::string strReuseCount = "reuse_count";
-        const std::string strWaterLanding = "water_landings";
-        const std::string strLandLanding = "land_landings";
-        const std::string strLastUpdate = "last_update";
-        const std::string strLaunches = "launches";
-        const std::string strId = "id";
-        const std::string strStatusUnknown = "unknown";
-        const std::string strStatusActive = "active";
-        const std::string strStatusRetired = "retired";
-        const std::string strStatusDestroyed = "destroyed";
     public:
         CapsuleParser();
     protected:

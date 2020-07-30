@@ -8,22 +8,16 @@
 
 #include "../Parser.h"
 #include "../../Models/Payloads/DragonModel.h"
+#include "../../Const/Payloads/DragonConst.h"
 
 using json = nlohmann::json;
 using Marsy::Models::Payload::DragonModel;
+using Marsy::Const::Payload::DragonConst;
 
 namespace Marsy::Parsers::Payload
 {
-    class DragonParser : public Parser
+    class DragonParser : public Parser, private DragonConst
     {
-    private:
-        const std::string strCapsule = "capsule";
-        const std::string strMassReturnedKg = "mass_returned_kg";
-        const std::string strMassReturnedLbs = "mass_returned_lbs";
-        const std::string strFlightTimeSec = "flight_time_sec";
-        const std::string strManifest = "manifest";
-        const std::string strWaterLanding = "water_landing";
-        const std::string strLandLanding = "land_landing";
     public:
         DragonParser();
         DragonModel parseDragon(const json &input);

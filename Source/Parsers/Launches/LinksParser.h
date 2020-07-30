@@ -14,26 +14,19 @@
 #include "../../Models/Launches/FlickrModel.h"
 #include "../../Models/Launches/PatchModel.h"
 #include "../../Models/Launches/RedditModel.h"
+#include "../../Const/Launches/LinksConst.h"
 
 using json = nlohmann::json;
 using Marsy::Models::Launch::LinksModel;
 using Marsy::Models::Launch::FlickrModel;
 using Marsy::Models::Launch::PatchModel;
 using Marsy::Models::Launch::RedditModel;
+using Marsy::Const::Launch::LinksConst;
 
 namespace Marsy::Parsers::Launch
 {
-    class LinksParser : public Parser
+    class LinksParser : public Parser, private LinksConst
     {
-    private:
-        const std::string strPatch = "patch";
-        const std::string strReddit = "reddit";
-        const std::string strFlickr = "flickr";
-        const std::string strPresskit = "presskit";
-        const std::string strWebcast = "webcast";
-        const std::string strYoutubeId = "youtube_id";
-        const std::string strArticle = "article";
-        const std::string strWikipedia = "wikipedia";
     public:
         LinksParser();
         LinksModel parseLinks(const json &input);

@@ -8,13 +8,15 @@
 
 #include "../Parser.h"
 #include "../../Models/Rockets/IspModel.h"
+#include "../../Const/Rockets/IspConst.h"
 
 using json = nlohmann::json;
 using Marsy::Models::Rocket::IspModel;
+using Marsy::Const::Rocket::IspConst;
 
 namespace Marsy::Parsers::Rocket
 {
-    class IspParser : public Parser
+    class IspParser : public Parser, private IspConst
     {
     private:
         const std::string strSeaLevel = "sea_level";

@@ -10,27 +10,17 @@
 #include "../Parser.h"
 #include "../IParser.h"
 #include "../../Models/Crew/CrewModel.h"
+#include "../../Const/Crew/CrewConst.h"
 
 using json = nlohmann::json;
 using Marsy::Models::Crew::CrewModel;
 using Marsy::Models::Crew::CrewStatus;
+using Marsy::Const::Crew::CrewConst;
 
 namespace Marsy::Parsers::Crew
 {
-    class CrewParser : public Parser, public IParser<CrewModel>
+    class CrewParser : public Parser, public IParser<CrewModel>, private CrewConst
     {
-    private:
-        const std::string strName = "name";
-        const std::string strStatus = "status";
-        const std::string strAgency = "agency";
-        const std::string strImage = "image";
-        const std::string strWikipedia = "wikipedia";
-        const std::string strLaunches = "launches";
-        const std::string strId = "id";        
-        const std::string strStatusActive = "active";
-        const std::string strStatusInactive = "inactive";
-        const std::string strStatusRetired = "retired";
-        const std::string strStatusUnknown = "unknown";
     public:
         CrewParser();
     protected:

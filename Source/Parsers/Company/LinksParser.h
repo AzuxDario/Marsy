@@ -9,19 +9,16 @@
 
 #include "../Parser.h"
 #include "../../Models/Company/LinksModel.h"
+#include "../../Const/Company/LinksConst.h"
 
 using json = nlohmann::json;
 using Marsy::Models::Company::LinksModel;
+using Marsy::Const::Company::LinksConst;
 
 namespace Marsy::Parsers::Company
 {
-    class LinksParser : public Parser
+    class LinksParser : public Parser, private LinksConst
     {
-    private:
-        const std::string strWebsite = "website";
-        const std::string strFlickr = "flickr";
-        const std::string strTwitter = "twitter";
-        const std::string strElonTwitter = "elon_twitter";
     public:
         LinksParser();
         LinksModel parseLinks(const json &input);

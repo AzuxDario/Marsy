@@ -12,20 +12,19 @@
 #include "../../Models/Dragons/TrunkModel.h"
 #include "../../Models/Dragons/CargoModel.h"
 #include "../../Models/Common/VolumeInfoModel.h"
+#include "../../Const/Dragons/TrunkConst.h"
 
 using json = nlohmann::json;
 using Marsy::Models::Dragon::TrunkModel;
 using Marsy::Models::Dragon::CargoModel;
 using Marsy::Models::Common::VolumeInfoModel;
 using Marsy::Parsers::Common::CommonInfoParser;
+using Marsy::Const::Dragon::TrunkConst;
 
 namespace Marsy::Parsers::Dragon
 {
-    class TrunkParser : public Parser
+    class TrunkParser : public Parser, private TrunkConst
     {
-    private:
-        const std::string strTrunkVolume = "trunk_volume";
-        const std::string strCargo = "cargo";
     public:
         TrunkParser();
         TrunkModel parseTrunk(const json &input);

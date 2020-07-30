@@ -9,24 +9,16 @@
 
 #include "../Parser.h"
 #include "../../Models/Launches/CoreModel.h"
+#include "../../Const/Launches/CoreConst.h"
 
 using json = nlohmann::json;
 using Marsy::Models::Launch::CoreModel;
+using Marsy::Const::Launch::CoreConst;
 
 namespace Marsy::Parsers::Launch
 {
-    class CoreParser : public Parser
+    class CoreParser : public Parser, private CoreConst
     {
-    private:
-        const std::string strCore = "core";
-        const std::string strFlight = "flight";
-        const std::string strGridfins = "gridfins";
-        const std::string strLegs = "legs";
-        const std::string strReused = "reused";
-        const std::string strLandingAttempt = "landing_attempt";
-        const std::string strLandingSuccess = "landing_success";
-        const std::string strLandingType = "landing_type";
-        const std::string strLandpad = "landpad";
     public:
         CoreParser();
         std::vector<CoreModel> parseCoresVector(const json &input);

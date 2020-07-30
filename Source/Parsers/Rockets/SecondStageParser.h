@@ -12,24 +12,19 @@
 #include "../../Models/Rockets/SecondStageModel.h"
 #include "../../Models/Rockets/PayloadsModel.h"
 #include "../../Models/Common/ThrustInfoModel.h"
+#include "../../Const/Rockets/SecondStageConst.h"
 
 using json = nlohmann::json;
 using Marsy::Models::Rocket::SecondStageModel;
 using Marsy::Models::Rocket::PayloadsModel;
 using Marsy::Models::Common::ThrustInfoModel;
 using Marsy::Parsers::Common::CommonInfoParser;
+using Marsy::Const::Rocket::SecondStageConst;
 
 namespace Marsy::Parsers::Rocket
 {
-    class SecondStageParser : public Parser
+    class SecondStageParser : public Parser, private SecondStageConst
     {
-    private:
-        const std::string strReusable = "reusable";
-        const std::string strEngines = "engines";
-        const std::string strFuelAmountTons = "fuel_amount_tons";
-        const std::string strBurnTimeSec = "burn_time_sec";
-        const std::string strThrust = "thrust";
-        const std::string strPayloads = "payloads";
     public:
         SecondStageParser();
         SecondStageModel parseSecondStage(const json &input);

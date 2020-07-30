@@ -9,19 +9,16 @@
 
 #include "../Parser.h"
 #include "../../Models/Launches/FairingsModel.h"
+#include "../../Const/Launches/FairingsConst.h"
 
 using json = nlohmann::json;
 using Marsy::Models::Launch::FairingsModel;
+using Marsy::Const::Launch::FairingsConst;
 
 namespace Marsy::Parsers::Launch
 {
-    class FairingsParser : public Parser
+    class FairingsParser : public Parser, private FairingsConst
     {
-    private:
-        const std::string strReused = "reused";
-        const std::string strRecoveryAttempt = "recovery_attempt";
-        const std::string strRecovered = "recovered";
-        const std::string strShips = "ships";
     public:
         FairingsParser();
         FairingsModel parseFairings(const json &input);

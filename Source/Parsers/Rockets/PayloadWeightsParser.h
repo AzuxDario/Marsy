@@ -9,19 +9,16 @@
 
 #include "../Parser.h"
 #include "../../Models/Rockets/PayloadWeightsModel.h"
+#include "../../Const/Rockets/PayloadWeightsConst.h"
 
 using json = nlohmann::json;
 using Marsy::Models::Rocket::PayloadWeightsModel;
+using Marsy::Const::Rocket::PayloadWeightsConst;
 
 namespace Marsy::Parsers::Rocket
 {
-    class PayloadWeightsParser : public Parser
+    class PayloadWeightsParser : public Parser, private PayloadWeightsConst
     {
-    private:
-        const std::string strId = "id";
-        const std::string strName = "name";
-        const std::string strKg = "kg";
-        const std::string strLb = "lb";
     public:
         PayloadWeightsParser();
         std::vector<PayloadWeightsModel> parsePayloadWeightsVector(const json&input);

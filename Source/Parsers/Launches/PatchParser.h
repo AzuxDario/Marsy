@@ -9,17 +9,16 @@
 
 #include "../Parser.h"
 #include "../../Models/Launches/PatchModel.h"
+#include "../../Const/Launches/PatchConst.h"
 
 using json = nlohmann::json;
 using Marsy::Models::Launch::PatchModel;
+using Marsy::Const::Launch::PatchConst;
 
 namespace Marsy::Parsers::Launch
 {
-    class PatchParser : public Parser
+    class PatchParser : public Parser, private PatchConst
     {
-    private:
-        const std::string strSmall = "small";
-        const std::string strLarge = "large";
     public:
         PatchParser();
         PatchModel parsePatch(const json &input);

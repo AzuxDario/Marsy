@@ -9,17 +9,16 @@
 
 #include "../Parser.h"
 #include "../../Models/Common/VolumeInfoModel.h"
+#include "../../Const/Common/VolumeInfoConst.h"
 
 using json = nlohmann::json;
 using Marsy::Models::Common::VolumeInfoModel;
+using Marsy::Const::Common::VolumeInfoConst;
 
 namespace Marsy::Parsers::Common
 {
-    class VolumeInfoParser : public Parser
+    class VolumeInfoParser : public Parser, private VolumeInfoConst
     {
-    private:
-        const std::string strCubicMeters = "cubic_meters";
-        const std::string strCubicFeet = "cubic_feet";
     public:
         VolumeInfoParser();
         VolumeInfoModel parseVolumeInfo(const json &input);

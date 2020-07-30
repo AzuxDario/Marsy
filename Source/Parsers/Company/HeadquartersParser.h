@@ -9,18 +9,16 @@
 
 #include "../Parser.h"
 #include "../../Models/Company/HeadquartersModel.h"
+#include "../../Const/Company/HeadquartersConst.h"
 
 using json = nlohmann::json;
 using Marsy::Models::Company::HeadquartersModel;
+using Marsy::Const::Company::HeadquartersConst;
 
 namespace Marsy::Parsers::Company
 {
-    class HeadquartersParser : public Parser
+    class HeadquartersParser : public Parser, private HeadquartersConst
     {
-    private:
-        const std::string strAddress = "address";
-        const std::string strCity = "city";
-        const std::string strState = "state";
     public:
         HeadquartersParser();
         HeadquartersModel parseHeadquarters(const json &input);

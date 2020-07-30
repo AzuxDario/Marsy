@@ -9,17 +9,16 @@
 
 #include "../Parser.h"
 #include "../../Models/Common/SizeInfoModel.h"
+#include "../../Const/Common/SizeInfoConst.h"
 
 using json = nlohmann::json;
 using Marsy::Models::Common::SizeInfoModel;
+using Marsy::Const::Common::SizeInfoConst;
 
 namespace Marsy::Parsers::Common
 {
-    class SizeInfoParser : public Parser
+    class SizeInfoParser : public Parser, private SizeInfoConst
     {
-    private:
-        const std::string strMeters = "meters";
-        const std::string strFeet = "feet";
     public:
         SizeInfoParser();
         SizeInfoModel parseSizeInfo(const json &input);

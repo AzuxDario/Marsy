@@ -8,17 +8,16 @@
 
 #include "../Parser.h"
 #include "../../Models/Rockets/LandingLegsModel.h"
+#include "../../Const/Rockets/LandingLegsConst.h"
 
 using json = nlohmann::json;
 using Marsy::Models::Rocket::LandingLegsModel;
+using Marsy::Const::Rocket::LandingLegsConst;
 
 namespace Marsy::Parsers::Rocket
 {
-    class LandingLegsParser : public Parser
+    class LandingLegsParser : public Parser, private LandingLegsConst
     {
-    private:
-        const std::string strNumber = "number";
-        const std::string strMaterial = "material";
     public:
         LandingLegsParser();
         LandingLegsModel parseLandingLegs(const json &input);

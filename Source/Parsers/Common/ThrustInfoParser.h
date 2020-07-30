@@ -9,17 +9,16 @@
 
 #include "../Parser.h"
 #include "../../Models/Common/ThrustInfoModel.h"
+#include "../../Const/Common/ThrustInfoConst.h"
 
 using json = nlohmann::json;
 using Marsy::Models::Common::ThrustInfoModel;
+using Marsy::Const::Common::ThrustInfoConst;
 
 namespace Marsy::Parsers::Common
 {
-    class ThrustInfoParser : public Parser
+    class ThrustInfoParser : public Parser, private ThrustInfoConst
     {
-    private:
-        const std::string strKn = "kN";
-        const std::string strLbf = "lbf";
     public:
         ThrustInfoParser();
         ThrustInfoModel parseThrustInfo(const json &input);

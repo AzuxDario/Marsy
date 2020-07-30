@@ -9,19 +9,16 @@
 
 #include "../Parser.h"
 #include "../../Models/Launches/RedditModel.h"
+#include "../../Const/Launches/RedditConst.h"
 
 using json = nlohmann::json;
 using Marsy::Models::Launch::RedditModel;
+using Marsy::Const::Launch::RedditConst;
 
 namespace Marsy::Parsers::Launch
 {
-    class RedditParser : public Parser
+    class RedditParser : public Parser, private RedditConst
     {
-    private:
-        const std::string strCampaign = "campaign";
-        const std::string strLaunch = "launch";
-        const std::string strMedia = "media";
-        const std::string strRecovery = "recovery";
     public:
         RedditParser();
         RedditModel parseReddit(const json &input);

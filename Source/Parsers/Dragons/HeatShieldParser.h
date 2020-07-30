@@ -8,19 +8,16 @@
 
 #include "../Parser.h"
 #include "../../Models/Dragons/HeatShieldModel.h"
+#include "../../Const/Dragons/HeatShieldConst.h"
 
 using json = nlohmann::json;
 using Marsy::Models::Dragon::HeatShieldModel;
+using Marsy::Const::Dragon::HeatShieldConst;
 
 namespace Marsy::Parsers::Dragon
 {
-    class HeatShieldParser : public Parser
+    class HeatShieldParser : public Parser, private HeatShieldConst
     {
-    private:
-        const std::string strMaterial = "material";
-        const std::string strSizeMeters = "size_meters";
-        const std::string strTempDegrees = "temp_degrees";
-        const std::string strDevPartner = "dev_partner";
     public:
         HeatShieldParser();
         HeatShieldModel parseHeatShield(const json &input);

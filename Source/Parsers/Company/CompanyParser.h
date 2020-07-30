@@ -14,6 +14,7 @@
 #include "../../Models/Company/CompanyModel.h"
 #include "../../Models/Company/HeadquartersModel.h"
 #include "../../Models/Company/LinksModel.h"
+#include "../../Const/Company/CompanyConst.h"
 
 using json = nlohmann::json;
 using Marsy::Models::Company::HeadquartersModel;
@@ -21,28 +22,12 @@ using Marsy::Models::Company::LinksModel;
 using Marsy::Models::Company::CompanyModel;
 using Marsy::Parsers::Company::HeadquartersParser;
 using Marsy::Parsers::Company::LinksParser;
+using Marsy::Const::Company::CompanyConst;
 
 namespace Marsy::Parsers::Company
 {
-    class CompanyParser : public Parser, public IParser<CompanyModel>
+    class CompanyParser : public Parser, public IParser<CompanyModel>, private CompanyConst
     {
-    private:
-        const std::string strName = "name";
-        const std::string strFounder = "founder";
-        const std::string strFounded = "founded";
-        const std::string strEmployees = "employees";
-        const std::string strVehicles = "vehicles";
-        const std::string strLaunchSites = "launch_sites";
-        const std::string strTestSites = "test_sites";
-        const std::string strCeo = "ceo";
-        const std::string strCto = "cto";
-        const std::string strCoo = "coo";
-        const std::string strCtoPropulsion = "cto_propulsion";
-        const std::string strValuation = "valuation";
-        const std::string strHeadquarters = "headquarters";
-        const std::string strLinks = "links";
-        const std::string strSummary = "summary";
-        const std::string strId = "id";
     public:
         CompanyParser();
     protected:

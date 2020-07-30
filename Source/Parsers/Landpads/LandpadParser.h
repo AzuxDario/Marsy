@@ -10,36 +10,17 @@
 #include "../Parser.h"
 #include "../IParser.h"
 #include "../../Models/Landpads/LandpadModel.h"
+#include "../../Const/Landpads/LandpadConst.h"
 
 using json = nlohmann::json;
 using Marsy::Models::Landpad::LandpadModel;
 using Marsy::Models::Landpad::LandpadStatus;
+using Marsy::Const::Landpad::LandpadConst;
 
 namespace Marsy::Parsers::Landpad
 {
-    class LandpadParser : public Parser, public IParser<LandpadModel>
+    class LandpadParser : public Parser, public IParser<LandpadModel>, private LandpadConst
     {
-    private:
-        const std::string strName = "name";
-        const std::string strFullName = "full_name";
-        const std::string strStatus = "status";
-        const std::string strType = "type";
-        const std::string strLocality = "locality";
-        const std::string strRegion = "region";
-        const std::string strLatitude = "latitude";
-        const std::string strLongitude = "longitude";
-        const std::string strLandingAttempts = "landing_attempts";
-        const std::string strLandingSuccesses = "landing_successes";
-        const std::string strWikipedia = "wikipedia";
-        const std::string strDetails = "details";
-        const std::string strLaunches = "launches";
-        const std::string strId = "id";
-        const std::string strStatusActive = "active";
-        const std::string strStatusInactive = "inactive";
-        const std::string strStatusUnknown = "unknown";        
-        const std::string strStatusRetired = "retired";
-        const std::string strStatusLost = "lost";
-        const std::string strStatusUnderConstuction = "under construction";
     public:
         LandpadParser();
     protected:
