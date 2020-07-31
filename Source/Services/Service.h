@@ -61,6 +61,7 @@ namespace Marsy::Services
             QueryParser queryParser;
             std::string payload = queryParser.parseRequest(request);
             ApiResponse response = conn->httpPost(url, payload);
+            responseQuery.status = response.status;
             if(response.status == ResponseStatus::ok)
             {
                 U parser;
