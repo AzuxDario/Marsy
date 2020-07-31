@@ -71,7 +71,7 @@ int main()
 {
     std::shared_ptr<IConnector> conn = std::make_shared<MyConnector>();
     CapsuleService capsuleService(conn);
-    Capsule capsule = capsuleService.getCapsule("5e9e2c5bf35918ed873b2664");
+    CapsuleModel capsule = capsuleService.getCapsule("5e9e2c5bf35918ed873b2664");
     std::cout << "serial " << capsule.serial.value() << std::endl;
     std::cout << "reuseCount " << capsule.reuseCount.value() << std::endl;
     std::cout << "waterLandings " << capsule.waterLandings.value() << std::endl;
