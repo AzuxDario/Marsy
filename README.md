@@ -64,14 +64,17 @@ Marsy doesn't parse dates returned by API. They're stored as strings.
 #include "Connection/Implementation/MyConnector.h"
 #include "Services/Capsules/CapsuleService.h"
 
-using Marsy::Models::CapsuleModel::Capsule;
+using Marsy::Connection::IConnector;
+using Marsy::Models::CapsuleModel::CapsuleModel;
 using Marsy::Services::CapsuleService::CapsuleService;
+using Marsy::Services::ServiceResponse;
 
 int main()
 {
     std::shared_ptr<IConnector> conn = std::make_shared<MyConnector>();
     CapsuleService capsuleService(conn);
-    CapsuleModel capsule = capsuleService.getCapsule("5e9e2c5bf35918ed873b2664");
+    ServiceResponse<CapsuleModel> capsuleResponse = capsuleService.getCapsule("5e9e2c5bf35918ed873b2664");
+    CapsuleModel capsule = capsuleResponse.object;
     std::cout << "serial " << capsule.serial.value() << std::endl;
     std::cout << "reuseCount " << capsule.reuseCount.value() << std::endl;
     std::cout << "waterLandings " << capsule.waterLandings.value() << std::endl;
