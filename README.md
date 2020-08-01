@@ -10,7 +10,7 @@ Marsy is a library that allow you to deserialize and manage data returned by [Sp
     - [Start](#start)
     - [Queries](#queries)
     - [Size of binary in debug mode](#size-of-binary-in-debug-mode)
-- [There's few things that Marsy doesn't provide](#theres-few-things-that-marsy-doesnt-provide)
+- [Things you should be aware of](#things-you-should-be-aware-of)
     - [Internet connection](#internet-connection)
     - [Dates parsing](#dates-parsing)
 - [Sample code](#sample-code)
@@ -21,7 +21,7 @@ Marsy is a library that allow you to deserialize and manage data returned by [Sp
 ## Start
 To use it just add source files to your project.
 
-You can use functions provided by services or write your own services on top of provided parsers. Remember to look [here](#theres-few-things-that-marsy-doesnt-provide) before start.
+You can use functions provided by services or write your own services on top of provided parsers. Remember to look [here](#things-you-should-be-aware-of) before start.
 
 Library uses C++17 features. You need to remember it, when you compile your program.
 
@@ -44,13 +44,16 @@ Currently Marsy doesn't provide query builder for these: `options -> select`, `o
 ## Size of binary in debug mode
 Since Marsy includes [JSON](https://github.com/nlohmann/json) in several classes, output program can be huge when compiled in debug mode (I achieved 60MB binaries). Remember to roll it out as release, when you done with testing.
 
-# There's few things that Marsy doesn't provide
+# Things you should be aware of
 ## Internet connection
 Marsy doesn't handle internet connection, so you need to provide implementation of `IConnection` interface.  Enum `ResponseStatus` is to help you handle different statuses returned by API. Service will parse returned JSON only when status is `ResponseStatus::ok`.
 
 There are 2 reasons why I made is as it is:
  * C++ doesn't have internet connection in STL yet. I did not want to include big library or use different system APIs to provide support for more than one platform e.g. (WinAPI, POSIX etc.),
  * maybe you already have library with internet connection in your project or you want to use one that you like the most.
+
+**However**
+I made `IConnector` implementation based on curl and curlcpp. You can find it [here](https://github.com/AzuxDario/Marsy-CurlConnector).
 
 ## Dates parsing
 Marsy doesn't parse dates returned by API. They're stored as strings.
@@ -60,18 +63,14 @@ Marsy doesn't parse dates returned by API. They're stored as strings.
 #include <iostream>
 #include <memory>
 
-// Implementation isn't provided by Marsy.
-#include "Connection/Implementation/MyConnector.h"
+#include "Connection/Implementation/CurlConnector.h"
 #include "Services/Capsules/CapsuleService.h"
 
-using Marsy::Connection::IConnector;
-using Marsy::Models::CapsuleModel::CapsuleModel;
-using Marsy::Services::CapsuleService::CapsuleService;
-using Marsy::Services::ServiceResponse;
+using namespace Marsy;
 
 int main()
 {
-    std::shared_ptr<IConnector> conn = std::make_shared<MyConnector>();
+    std::shared_ptr<IConnector> conn = std::make_shared<CurlConnector>();
     CapsuleService capsuleService(conn);
     ServiceResponse<CapsuleModel> capsuleResponse = capsuleService.getCapsule("5e9e2c5bf35918ed873b2664");
     CapsuleModel capsule = capsuleResponse.object;
