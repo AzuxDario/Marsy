@@ -6,7 +6,8 @@
 
 namespace Marsy
 {
-    enum class ResponseStatus {ok = 200, badRequest = 400, unauthorized = 401, notFound = 404, serverError = 500, timeOut = 600, otherError = 700};
+    enum class ResponseStatus {ok = 200, badRequest = 400, unauthorized = 401, notFound = 404, internalServerError = 500,
+                               badGateway = 502, serviceUnavailable = 503, gatewayTimeout = 504, timeOut = 600, otherError = 700};
 
     struct ApiResponse
     {
