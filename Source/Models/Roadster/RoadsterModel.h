@@ -11,7 +11,7 @@ namespace Marsy
     {
         std::optional<std::string> name;
         std::optional<std::string> launchDateUtc;
-        std::optional<std::string> launchDateUnix;
+        std::optional<long long> launchDateUnix;
         std::optional<double> launchMassKilograms;
         std::optional<double> launchMassPounds;
         std::optional<int> noradId;

@@ -12,7 +12,7 @@ namespace Marsy
         RoadsterModel roadster;
         roadster.name = parseStringNullable(input, strName);
         roadster.launchDateUtc = parseStringNullable(input, strLaunchDateUtc);
-        roadster.launchDateUnix = parseStringNullable(input, strLaunchDateUnix);
+        roadster.launchDateUnix = parseLongLongNullable(input, strLaunchDateUnix);
         roadster.launchMassKilograms = parseDoubleNullable(input, strLaunchMassKg);
         roadster.launchMassPounds = parseDoubleNullable(input, strLaunchMassLbs);
         roadster.noradId = parseIntNullable(input, strNoradId);
