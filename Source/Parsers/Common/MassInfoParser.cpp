@@ -1,6 +1,6 @@
 #include "MassInfoParser.h"
 
-namespace Marsy::Parsers::Common
+namespace Marsy
 {
     MassInfoParser::MassInfoParser()
     {

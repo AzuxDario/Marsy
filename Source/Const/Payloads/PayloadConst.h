@@ -3,7 +3,7 @@
 
 #include <string>
 
-namespace Marsy::Const::Payload
+namespace Marsy
 {
     struct PayloadConst
     {

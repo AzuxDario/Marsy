@@ -7,21 +7,21 @@
 #include "../../Libraries/JSON/json.hpp"
 
 #include "../Parser.h"
-#include "PayloadsParser.h"
+#include "RocketPayloadParser.h"
 #include "../Common/CommonInfoParser.h"
 #include "../../Models/Rockets/SecondStageModel.h"
-#include "../../Models/Rockets/PayloadsModel.h"
+#include "../../Models/Rockets/RocketPayloadModel.h"
 #include "../../Models/Common/ThrustInfoModel.h"
 #include "../../Const/Rockets/SecondStageConst.h"
 
 using json = nlohmann::json;
-using Marsy::Models::Rocket::SecondStageModel;
-using Marsy::Models::Rocket::PayloadsModel;
-using Marsy::Models::Common::ThrustInfoModel;
-using Marsy::Parsers::Common::CommonInfoParser;
-using Marsy::Const::Rocket::SecondStageConst;
+using Marsy::SecondStageModel;
+using Marsy::RocketPayloadModel;
+using Marsy::ThrustInfoModel;
+using Marsy::CommonInfoParser;
+using Marsy::SecondStageConst;
 
-namespace Marsy::Parsers::Rocket
+namespace Marsy
 {
     class SecondStageParser : public Parser, private SecondStageConst
     {
@@ -29,7 +29,7 @@ namespace Marsy::Parsers::Rocket
         SecondStageParser();
         SecondStageModel parseSecondStage(const json &input);
     private:
-        std::optional<PayloadsModel> parsePayloads(const json &input, const std::string &name);
+        std::optional<RocketPayloadModel> parsePayloads(const json &input, const std::string &name);
     };
 }
 

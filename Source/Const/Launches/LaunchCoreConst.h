@@ -1,11 +1,11 @@
-#ifndef MARSY_LAUNCHES_CORECONST_H
-#define MARSY_LAUNCHES_CORECONST_H
+#ifndef MARSY_LAUNCHES_LAUNCHCORECONST_H
+#define MARSY_LAUNCHES_LAUNCHCORECONST_H
 
 #include <string>
 
-namespace Marsy::Const::Launch
+namespace Marsy
 {
-    struct CoreConst
+    struct LaunchCoreConst
     {
         const std::string strCore = "core";
         const std::string strFlight = "flight";

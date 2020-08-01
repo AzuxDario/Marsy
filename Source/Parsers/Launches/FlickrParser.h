@@ -12,10 +12,10 @@
 #include "../../Const/Launches/FlickrConst.h"
 
 using json = nlohmann::json;
-using Marsy::Models::Launch::FlickrModel;
-using Marsy::Const::Launch::FlickrConst;
+using Marsy::FlickrModel;
+using Marsy::FlickrConst;
 
-namespace Marsy::Parsers::Launch
+namespace Marsy
 {
     class FlickrParser : public Parser, private FlickrConst
     {

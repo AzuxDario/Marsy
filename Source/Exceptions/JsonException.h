@@ -6,7 +6,7 @@
 
 #include "../Libraries/JSON/json.hpp"
 
-namespace Marsy::Exceptions
+namespace Marsy
 {
     class JsonException : public std::exception
     {

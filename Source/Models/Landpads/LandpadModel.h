@@ -5,7 +5,7 @@
 #include <vector>
 #include <optional>
 
-namespace Marsy::Models::Landpad
+namespace Marsy
 {
     enum class LandpadStatus {active, inactive, unknown, retired, lost, underConstruction};
 

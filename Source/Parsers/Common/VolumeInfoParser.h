@@ -12,10 +12,10 @@
 #include "../../Const/Common/VolumeInfoConst.h"
 
 using json = nlohmann::json;
-using Marsy::Models::Common::VolumeInfoModel;
-using Marsy::Const::Common::VolumeInfoConst;
+using Marsy::VolumeInfoModel;
+using Marsy::VolumeInfoConst;
 
-namespace Marsy::Parsers::Common
+namespace Marsy
 {
     class VolumeInfoParser : public Parser, private VolumeInfoConst
     {

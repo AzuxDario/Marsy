@@ -13,11 +13,11 @@
 #include "../../Const/Queries/QueryConst.h"
 
 using json = nlohmann::json;
-using Marsy::Models::Query::QueryRequest;
-using Marsy::Models::Query::QueryParameters;
-using Marsy::Const::Query::QueryConst;
+using Marsy::QueryRequest;
+using Marsy::QueryParameters;
+using Marsy::QueryConst;
 
-namespace Marsy::Parsers::Query
+namespace Marsy
 {
     class QueryParser : public Parser, private QueryConst
     {

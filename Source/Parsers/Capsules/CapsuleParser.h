@@ -13,11 +13,11 @@
 #include "../../Const/Capsules/CapsuleConst.h"
 
 using json = nlohmann::json;
-using Marsy::Models::Capsule::CapsuleModel;
-using Marsy::Models::Capsule::CapsuleStatus;
-using Marsy::Const::Capsule::CapsuleConst;
+using Marsy::CapsuleModel;
+using Marsy::CapsuleStatus;
+using Marsy::CapsuleConst;
 
-namespace Marsy::Parsers::Capsule
+namespace Marsy
 {
     class CapsuleParser : public Parser, public IParser<CapsuleModel>, private CapsuleConst
     {

@@ -13,10 +13,10 @@
 #include "../../Const/Ships/ShipConst.h"
 
 using json = nlohmann::json;
-using Marsy::Models::Ship::ShipModel;
-using Marsy::Const::Ship::ShipConst;
+using Marsy::ShipModel;
+using Marsy::ShipConst;
 
-namespace Marsy::Parsers::Ship
+namespace Marsy
 {
     class ShipParser : public Parser, public IParser<ShipModel>, private ShipConst
     {

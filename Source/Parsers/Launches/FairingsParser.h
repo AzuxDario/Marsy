@@ -12,10 +12,10 @@
 #include "../../Const/Launches/FairingsConst.h"
 
 using json = nlohmann::json;
-using Marsy::Models::Launch::FairingsModel;
-using Marsy::Const::Launch::FairingsConst;
+using Marsy::FairingsModel;
+using Marsy::FairingsConst;
 
-namespace Marsy::Parsers::Launch
+namespace Marsy
 {
     class FairingsParser : public Parser, private FairingsConst
     {

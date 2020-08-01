@@ -13,11 +13,11 @@
 #include "../Common/VolumeInfoModel.h"
 #include "../Common/SizeInfoModel.h"
 
-using Marsy::Models::Common::MassInfoModel;
-using Marsy::Models::Common::SizeInfoModel;
-using Marsy::Models::Common::VolumeInfoModel;
+using Marsy::MassInfoModel;
+using Marsy::SizeInfoModel;
+using Marsy::VolumeInfoModel;
 
-namespace Marsy::Models::Dragon
+namespace Marsy
 {
     struct DragonModel
     {

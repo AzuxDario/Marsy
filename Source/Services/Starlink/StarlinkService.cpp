@@ -1,6 +1,6 @@
 #include "StarlinkService.h"
 
-namespace Marsy::Services::Starlink
+namespace Marsy
 {
     StarlinkService::StarlinkService(std::shared_ptr<IConnector> connector) : Service(connector)
     {

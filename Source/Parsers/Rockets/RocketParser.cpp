@@ -1,6 +1,6 @@
 #include "RocketParser.h"
 
-namespace Marsy::Parsers::Rocket
+namespace Marsy
 {
     RocketParser::RocketParser()
     {

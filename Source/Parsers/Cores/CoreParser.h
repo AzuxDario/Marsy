@@ -13,11 +13,11 @@
 #include "../../Const/Cores/CoreConst.h"
 
 using json = nlohmann::json;
-using Marsy::Models::Core::CoreModel;
-using Marsy::Models::Core::CoreStatus;
-using Marsy::Const::Core::CoreConst;
+using Marsy::CoreModel;
+using Marsy::CoreStatus;
+using Marsy::CoreConst;
 
-namespace Marsy::Parsers::Core
+namespace Marsy
 {
     class CoreParser : public Parser, public IParser<CoreModel>, private CoreConst
     {

@@ -1,6 +1,6 @@
 #include "LandingLegsParser.h"
 
-namespace Marsy::Parsers::Rocket
+namespace Marsy
 {
     LandingLegsParser::LandingLegsParser()
     {

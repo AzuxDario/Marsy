@@ -17,12 +17,12 @@
 #include "../../Models/Common/VolumeInfoModel.h"
 
 using json = nlohmann::json;
-using Marsy::Models::Common::MassInfoModel;
-using Marsy::Models::Common::SizeInfoModel;
-using Marsy::Models::Common::ThrustInfoModel;
-using Marsy::Models::Common::VolumeInfoModel;
+using Marsy::MassInfoModel;
+using Marsy::SizeInfoModel;
+using Marsy::ThrustInfoModel;
+using Marsy::VolumeInfoModel;
 
-namespace Marsy::Parsers::Common
+namespace Marsy
 {
     class CommonInfoParser : public Parser
     {

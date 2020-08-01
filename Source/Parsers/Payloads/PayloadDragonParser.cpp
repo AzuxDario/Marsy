@@ -1,15 +1,15 @@
-#include "DragonParser.h"
+#include "PayloadDragonParser.h"
 
-namespace Marsy::Parsers::Payload
+namespace Marsy
 {
-    DragonParser::DragonParser()
+    PayloadDragonParser::PayloadDragonParser()
     {
 
     }
 
-    DragonModel DragonParser::parseDragon(const json &input)
+    PayloadDragonModel PayloadDragonParser::parseDragon(const json &input)
     {
-        DragonModel dragon;
+        PayloadDragonModel dragon;
         dragon.capsule = parseStringNullable(input, strCapsule);
         dragon.massReturnedKilograms = parseDoubleNullable(input, strMassReturnedKg);
         dragon.massReturnedPounds = parseDoubleNullable(input, strMassReturnedLbs);

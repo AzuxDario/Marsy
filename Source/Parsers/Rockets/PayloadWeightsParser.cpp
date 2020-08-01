@@ -1,6 +1,6 @@
 #include "PayloadWeightsParser.h"
 
-namespace Marsy::Parsers::Rocket
+namespace Marsy
 {
     PayloadWeightsParser::PayloadWeightsParser()
     {

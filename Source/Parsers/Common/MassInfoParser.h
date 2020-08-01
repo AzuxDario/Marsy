@@ -12,10 +12,10 @@
 #include "../../Const/Common/MassInfoConst.h"
 
 using json = nlohmann::json;
-using Marsy::Models::Common::MassInfoModel;
-using Marsy::Const::Common::MassInfoConst;
+using Marsy::MassInfoModel;
+using Marsy::MassInfoConst;
 
-namespace Marsy::Parsers::Common
+namespace Marsy
 {
     class MassInfoParser : public Parser, private MassInfoConst
     {

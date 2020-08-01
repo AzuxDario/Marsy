@@ -10,13 +10,13 @@
 #include "../Models/Queries/Request/QueryRequest.h"
 #include "../Parsers/Queries/QueryParser.h"
 
-using Marsy::Connection::IConnector;
-using Marsy::Connection::ApiResponse;
-using Marsy::Connection::ResponseStatus;
-using Marsy::Models::Query::QueryRequest;
-using Marsy::Parsers::Query::QueryParser;
+using Marsy::IConnector;
+using Marsy::ApiResponse;
+using Marsy::ResponseStatus;
+using Marsy::QueryRequest;
+using Marsy::QueryParser;
 
-namespace Marsy::Services
+namespace Marsy
 {
     template <class T, class U>
     class Service

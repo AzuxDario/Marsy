@@ -6,7 +6,7 @@
 
 #include "SpaceTrackModel.h"
 
-namespace Marsy::Models::Starlink
+namespace Marsy
 {
     struct StarlinkModel
     {

@@ -1,6 +1,6 @@
 #include "Parser.h"
 
-namespace Marsy::Parsers
+namespace Marsy
 {
     Parser::Parser()
     {

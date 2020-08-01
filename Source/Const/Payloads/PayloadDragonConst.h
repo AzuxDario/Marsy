@@ -1,11 +1,11 @@
-#ifndef MARSY_PAYLOADS_DRAGONCONST_H
-#define MARSY_PAYLOADS_DRAGONCONST_H
+#ifndef MARSY_PAYLOADS_PAYLOADDRAGONCONST_H
+#define MARSY_PAYLOADS_PAYLOADDRAGONCONST_H
 
 #include <string>
 
-namespace Marsy::Const::Payload
+namespace Marsy
 {
-    struct DragonConst
+    struct PayloadDragonConst
     {
         const std::string strCapsule = "capsule";
         const std::string strMassReturnedKg = "mass_returned_kg";

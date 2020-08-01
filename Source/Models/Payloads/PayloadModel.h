@@ -5,9 +5,9 @@
 #include <vector>
 #include <optional>
 
-#include "DragonModel.h"
+#include "PayloadDragonModel.h"
 
-namespace Marsy::Models::Payload
+namespace Marsy
 {
     struct PayloadModel
     {
@@ -37,7 +37,7 @@ namespace Marsy::Models::Payload
         std::optional<double> raan = std::nullopt;
         std::optional<double> argOfPercenter = std::nullopt;
         std::optional<double> meanAnomaly = std::nullopt;
-        std::optional<DragonModel> dragon;
+        std::optional<PayloadDragonModel> dragon;
         std::optional<std::string> id;
     };
 }

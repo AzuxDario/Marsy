@@ -3,7 +3,7 @@
 
 #include <string>
 
-namespace Marsy::Const::Landpad
+namespace Marsy
 {
     struct LandpadConst
     {

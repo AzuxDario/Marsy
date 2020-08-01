@@ -3,7 +3,7 @@
 
 #include <string>
 
-namespace Marsy::Const::Rocket
+namespace Marsy
 {
     struct LandingLegsConst
     {

@@ -1,6 +1,6 @@
 #include "ShipParser.h"
 
-namespace Marsy::Parsers::Ship
+namespace Marsy
 {
     ShipParser::ShipParser()
     {

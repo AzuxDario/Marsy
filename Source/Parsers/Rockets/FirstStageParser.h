@@ -13,12 +13,12 @@
 #include "../../Const/Rockets/FirstStageConst.h"
 
 using json = nlohmann::json;
-using Marsy::Models::Rocket::FirstStageModel;
-using Marsy::Models::Common::ThrustInfoModel;
-using Marsy::Parsers::Common::CommonInfoParser;
-using Marsy::Const::Rocket::FirstStageConst;
+using Marsy::FirstStageModel;
+using Marsy::ThrustInfoModel;
+using Marsy::CommonInfoParser;
+using Marsy::FirstStageConst;
 
-namespace Marsy::Parsers::Rocket
+namespace Marsy
 {
     class FirstStageParser : public Parser, private FirstStageConst
     {

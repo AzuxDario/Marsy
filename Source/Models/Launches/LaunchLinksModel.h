@@ -1,5 +1,5 @@
-#ifndef MARSY_LAUNCHES_LINKS_H
-#define MARSY_LAUNCHES_LINKS_H
+#ifndef MARSY_LAUNCHES_LAUNCHLINKS_H
+#define MARSY_LAUNCHES_LAUNCHLINKS_H
 
 #include <string>
 #include <optional>
@@ -8,9 +8,9 @@
 #include "RedditModel.h"
 #include "FlickrModel.h"
 
-namespace Marsy::Models::Launch
+namespace Marsy
 {
-    struct LinksModel
+    struct LaunchLinksModel
     {
         std::optional<PatchModel> patch;
         std::optional<RedditModel> reddit;

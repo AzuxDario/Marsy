@@ -15,11 +15,11 @@
 #include "../../Const/Starlink/StarlinkConst.h"
 
 using json = nlohmann::json;
-using Marsy::Models::Starlink::StarlinkModel;
-using Marsy::Models::Starlink::SpaceTrackModel;
-using Marsy::Const::Starlink::StarlinkConst;
+using Marsy::StarlinkModel;
+using Marsy::SpaceTrackModel;
+using Marsy::StarlinkConst;
 
-namespace Marsy::Parsers::Starlink
+namespace Marsy
 {
     class StarlinkParser : public Parser, public IParser<StarlinkModel>, private StarlinkConst
     {

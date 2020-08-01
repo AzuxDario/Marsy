@@ -13,10 +13,10 @@
 #include "../../Const/Roadster/RoadsterConst.h"
 
 using json = nlohmann::json;
-using Marsy::Models::Roadster::RoadsterModel;
-using Marsy::Const::Roadster::RoadsterConst;
+using Marsy::RoadsterModel;
+using Marsy::RoadsterConst;
 
-namespace Marsy::Parsers::Roadster
+namespace Marsy
 {
     class RoadsterParser : public Parser, public IParser<RoadsterModel>, private RoadsterConst
     {

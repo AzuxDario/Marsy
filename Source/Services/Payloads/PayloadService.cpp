@@ -1,6 +1,6 @@
 #include "PayloadService.h"
 
-namespace Marsy::Services::Payload
+namespace Marsy
 {
     PayloadService::PayloadService(std::shared_ptr<IConnector> connector) : Service(connector)
     {

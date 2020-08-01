@@ -1,16 +1,16 @@
-#ifndef MARSY_ROCKETS_PAYLOADS_H
-#define MARSY_ROCKETS_PAYLOADS_H
+#ifndef MARSY_ROCKETS_ROCKETPAYLOAD_H
+#define MARSY_ROCKETS_ROCKETPAYLOAD_H
 
 #include <string>
 #include <optional>
 
 #include "../Common/SizeInfoModel.h"
 
-using Marsy::Models::Common::SizeInfoModel;
+using Marsy::SizeInfoModel;
 
-namespace Marsy::Models::Rocket
+namespace Marsy
 {
-    struct PayloadsModel
+    struct RocketPayloadModel
     {
         std::optional<std::string> option1;
         std::optional<SizeInfoModel> compositeFairing;

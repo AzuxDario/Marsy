@@ -1,6 +1,6 @@
 #include "HeadquartersParser.h"
 
-namespace Marsy::Parsers::Company
+namespace Marsy
 {
     HeadquartersParser::HeadquartersParser()
     {

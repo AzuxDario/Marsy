@@ -1,6 +1,6 @@
 #include "ThrusterParser.h"
 
-namespace Marsy::Parsers::Dragon
+namespace Marsy
 {
     ThrusterParser::ThrusterParser()
     {

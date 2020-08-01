@@ -1,11 +1,11 @@
-#ifndef MARSY_LAUNCHES_LINKSCONST_H
-#define MARSY_LAUNCHES_LINKSCONST_H
+#ifndef MARSY_LAUNCHES_LAUNCHLINKSCONST_H
+#define MARSY_LAUNCHES_LAUNCHLINKSCONST_H
 
 #include <string>
 
-namespace Marsy::Const::Launch
+namespace Marsy
 {
-    struct LinksConst
+    struct LaunchLinksConst
     {
         const std::string strPatch = "patch";
         const std::string strReddit = "reddit";

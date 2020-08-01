@@ -9,7 +9,7 @@
 
 using json = nlohmann::json;
 
-namespace Marsy::Parsers
+namespace Marsy
 {
     class Parser
     {

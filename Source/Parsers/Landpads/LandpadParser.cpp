@@ -1,6 +1,6 @@
 #include "LandpadParser.h"
 
-namespace Marsy::Parsers::Landpad
+namespace Marsy
 {
     LandpadParser::LandpadParser()
     {

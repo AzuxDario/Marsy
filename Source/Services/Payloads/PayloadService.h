@@ -9,11 +9,11 @@
 #include "../../Models/Payloads/PayloadModel.h"
 #include "../../Parsers/Payloads/PayloadParser.h"
 
-using Marsy::Connection::IConnector;
-using Marsy::Models::Payload::PayloadModel;
-using Marsy::Parsers::Payload::PayloadParser;
+using Marsy::IConnector;
+using Marsy::PayloadModel;
+using Marsy::PayloadParser;
 
-namespace Marsy::Services::Payload
+namespace Marsy
 {
     class PayloadService : public Service<PayloadModel, PayloadParser>
     {

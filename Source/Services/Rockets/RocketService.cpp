@@ -1,6 +1,6 @@
 #include "RocketService.h"
 
-namespace Marsy::Services::Rocket
+namespace Marsy
 {
     RocketService::RocketService(std::shared_ptr<IConnector> connector) : Service(connector)
     {

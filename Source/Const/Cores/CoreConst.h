@@ -3,7 +3,7 @@
 
 #include <string>
 
-namespace Marsy::Const::Core
+namespace Marsy
 {
     struct CoreConst
     {

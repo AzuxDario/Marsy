@@ -1,6 +1,6 @@
 #include "CapsuleService.h"
 
-namespace Marsy::Services::Capsule
+namespace Marsy
 {
     CapsuleService::CapsuleService(std::shared_ptr<IConnector> connector) : Service(connector)
     {

@@ -11,10 +11,10 @@
 #include "../../Const/Rockets/LandingLegsConst.h"
 
 using json = nlohmann::json;
-using Marsy::Models::Rocket::LandingLegsModel;
-using Marsy::Const::Rocket::LandingLegsConst;
+using Marsy::LandingLegsModel;
+using Marsy::LandingLegsConst;
 
-namespace Marsy::Parsers::Rocket
+namespace Marsy
 {
     class LandingLegsParser : public Parser, private LandingLegsConst
     {

@@ -9,11 +9,11 @@
 #include "../../Models/Landpads/LandpadModel.h"
 #include "../../Parsers/Landpads/LandpadParser.h"
 
-using Marsy::Connection::IConnector;
-using Marsy::Models::Landpad::LandpadModel;
-using Marsy::Parsers::Landpad::LandpadParser;
+using Marsy::IConnector;
+using Marsy::LandpadModel;
+using Marsy::LandpadParser;
 
-namespace Marsy::Services::Landpad
+namespace Marsy
 {
     class LandpadService : public Service<LandpadModel, LandpadParser>
     {

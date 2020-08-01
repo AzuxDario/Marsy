@@ -6,10 +6,10 @@
 #include <optional>
 
 #include "FairingsModel.h"
-#include "CoreModel.h"
-#include "LinksModel.h"
+#include "LaunchCoreModel.h"
+#include "LaunchLinksModel.h"
 
-namespace Marsy::Models::Launch
+namespace Marsy
 {
     enum class DatePrecision {half, quarter, year, month, day, hour};
 
@@ -37,8 +37,8 @@ namespace Marsy::Models::Launch
         std::optional<std::vector<std::string>> capsules;
         std::optional<std::vector<std::string>> payloads;
         std::optional<std::string> launchpad = std::nullopt;
-        std::optional<std::vector<CoreModel>> cores;
-        std::optional<LinksModel> links;
+        std::optional<std::vector<LaunchCoreModel>> cores;
+        std::optional<LaunchLinksModel> links;
         std::optional<bool> autoUpdate = true;
         std::optional<std::string> id;
     };

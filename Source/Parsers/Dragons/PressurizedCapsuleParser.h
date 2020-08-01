@@ -13,12 +13,12 @@
 #include "../../Const/Dragons/PressurizedCapsuleConst.h"
 
 using json = nlohmann::json;
-using Marsy::Models::Dragon::PressurizedCapsuleModel;
-using Marsy::Models::Common::VolumeInfoModel;
-using Marsy::Parsers::Common::CommonInfoParser;
-using Marsy::Const::Dragon::PressurizedCapsuleConst;
+using Marsy::PressurizedCapsuleModel;
+using Marsy::VolumeInfoModel;
+using Marsy::CommonInfoParser;
+using Marsy::PressurizedCapsuleConst;
 
-namespace Marsy::Parsers::Dragon
+namespace Marsy
 {
     class PressurizedCapsuleParser : public Parser, private PressurizedCapsuleConst
     {

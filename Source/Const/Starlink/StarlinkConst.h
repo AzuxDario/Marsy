@@ -3,7 +3,7 @@
 
 #include <string>
 
-namespace Marsy::Const::Starlink
+namespace Marsy
 {
     struct StarlinkConst
     {

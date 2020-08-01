@@ -3,7 +3,7 @@
 
 #include <string>
 
-namespace Marsy::Const::Launch
+namespace Marsy
 {
     struct LaunchConst
     {

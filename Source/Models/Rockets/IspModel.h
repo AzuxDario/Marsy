@@ -3,7 +3,7 @@
 
 #include <optional>
 
-namespace Marsy::Models::Rocket
+namespace Marsy
 {
     struct IspModel
     {

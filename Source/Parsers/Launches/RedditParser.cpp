@@ -1,6 +1,6 @@
 #include "RedditParser.h"
 
-namespace Marsy::Parsers::Launch
+namespace Marsy
 {
     RedditParser::RedditParser()
     {

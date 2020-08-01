@@ -1,15 +1,15 @@
-#include "LinksParser.h"
+#include "LaunchLinksParser.h"
 
-namespace Marsy::Parsers::Launch
+namespace Marsy
 {
-    LinksParser::LinksParser()
+    LaunchLinksParser::LaunchLinksParser()
     {
 
     }
 
-    LinksModel LinksParser::parseLinks(const json &input)
+    LaunchLinksModel LaunchLinksParser::parseLinks(const json &input)
     {
-        LinksModel links;
+        LaunchLinksModel links;
         links.patch = parsePatch(input, strPatch);
         links.reddit = parseReddit(input, strReddit);
         links.flickr = parseFlickr(input, strFlickr);
@@ -22,7 +22,7 @@ namespace Marsy::Parsers::Launch
         return links;
     }
 
-    std::optional<FlickrModel> LinksParser::parseFlickr(const json &input, const std::string &name)
+    std::optional<FlickrModel> LaunchLinksParser::parseFlickr(const json &input, const std::string &name)
     {
         if(input.contains(name) && !input[name].is_null() && input[name].is_object())
         {
@@ -35,7 +35,7 @@ namespace Marsy::Parsers::Launch
         }
     }
 
-    std::optional<PatchModel> LinksParser::parsePatch(const json &input, const std::string &name)
+    std::optional<PatchModel> LaunchLinksParser::parsePatch(const json &input, const std::string &name)
     {
         if(input.contains(name) && !input[name].is_null() && input[name].is_object())
         {
@@ -48,7 +48,7 @@ namespace Marsy::Parsers::Launch
         }
     }
 
-    std::optional<RedditModel> LinksParser::parseReddit(const json &input, const std::string &name)
+    std::optional<RedditModel> LaunchLinksParser::parseReddit(const json &input, const std::string &name)
     {
         if(input.contains(name) && !input[name].is_null() && input[name].is_object())
         {

@@ -1,6 +1,6 @@
 #include "PayloadParser.h"
 
-namespace Marsy::Parsers::Payload
+namespace Marsy
 {
     PayloadParser::PayloadParser()
     {
@@ -41,11 +41,11 @@ namespace Marsy::Parsers::Payload
         return payload;
     }
 
-    std::optional<DragonModel> PayloadParser::parseDragon(const json &input, const std::string &name)
+    std::optional<PayloadDragonModel> PayloadParser::parseDragon(const json &input, const std::string &name)
     {
         if(input.contains(name) && !input[name].is_null() && input[name].is_object())
         {
-            DragonParser dragonParser;
+            PayloadDragonParser dragonParser;
             return dragonParser.parseDragon(input[name]);
         }
         else

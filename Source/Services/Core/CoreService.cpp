@@ -1,6 +1,6 @@
 #include "CoreService.h"
 
-namespace Marsy::Services::Core
+namespace Marsy
 {
     CoreService::CoreService(std::shared_ptr<IConnector> connector) : Service(connector)
     {

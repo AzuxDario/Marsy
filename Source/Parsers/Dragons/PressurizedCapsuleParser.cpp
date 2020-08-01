@@ -1,6 +1,6 @@
 #include "PressurizedCapsuleParser.h"
 
-namespace Marsy::Parsers::Dragon
+namespace Marsy
 {
     PressurizedCapsuleParser::PressurizedCapsuleParser()
     {

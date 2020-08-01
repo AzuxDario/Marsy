@@ -11,10 +11,10 @@
 #include "../../Const/Dragons/HeatShieldConst.h"
 
 using json = nlohmann::json;
-using Marsy::Models::Dragon::HeatShieldModel;
-using Marsy::Const::Dragon::HeatShieldConst;
+using Marsy::HeatShieldModel;
+using Marsy::HeatShieldConst;
 
-namespace Marsy::Parsers::Dragon
+namespace Marsy
 {
     class HeatShieldParser : public Parser, private HeatShieldConst
     {

@@ -1,6 +1,6 @@
 #include "FirstStageParser.h"
 
-namespace Marsy::Parsers::Rocket
+namespace Marsy
 {
     FirstStageParser::FirstStageParser()
     {

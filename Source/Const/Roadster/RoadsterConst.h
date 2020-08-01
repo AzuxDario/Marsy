@@ -3,7 +3,7 @@
 
 #include <string>
 
-namespace Marsy::Const::Roadster
+namespace Marsy
 {
     struct RoadsterConst
     {

@@ -1,6 +1,6 @@
 #include "LaunchService.h"
 
-namespace Marsy::Services::Launch
+namespace Marsy
 {
     LaunchService::LaunchService(std::shared_ptr<IConnector> connector) : Service(connector)
     {

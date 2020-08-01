@@ -1,21 +1,21 @@
-#include "CoreParser.h"
+#include "LaunchCoreParser.h"
 
-namespace Marsy::Parsers::Launch
+namespace Marsy
 {
-    CoreParser::CoreParser()
+    LaunchCoreParser::LaunchCoreParser()
     {
 
     }
 
-    std::vector<CoreModel> CoreParser::parseCoresVector(const json &input)
+    std::vector<LaunchCoreModel> LaunchCoreParser::parseCoresVector(const json &input)
     {
-        std::vector<CoreModel> cores;
+        std::vector<LaunchCoreModel> cores;
 
         if(input.is_array())
         {
             for (auto it = input.begin(); it != input.end(); ++it)
             {
-                CoreModel core;
+                LaunchCoreModel core;
                 core.core = parseStringNullable(it.value(), strCore);
                 core.flight = parseIntNullable(it.value(), strFlight);
                 core.gridfins = parseBoolNullable(it.value(), strGridfins);

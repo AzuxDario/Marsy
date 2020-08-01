@@ -12,10 +12,10 @@
 #include "../../Const/Launches/PatchConst.h"
 
 using json = nlohmann::json;
-using Marsy::Models::Launch::PatchModel;
-using Marsy::Const::Launch::PatchConst;
+using Marsy::PatchModel;
+using Marsy::PatchConst;
 
-namespace Marsy::Parsers::Launch
+namespace Marsy
 {
     class PatchParser : public Parser, private PatchConst
     {

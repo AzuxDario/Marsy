@@ -13,11 +13,11 @@
 #include "../../Const/Launchpads/LaunchpadConst.h"
 
 using json = nlohmann::json;
-using Marsy::Models::Launchpad::LaunchpadModel;
-using Marsy::Models::Launchpad::LaunchpadStatus;
-using Marsy::Const::Launchpad::LaunchpadConst;
+using Marsy::LaunchpadModel;
+using Marsy::LaunchpadStatus;
+using Marsy::LaunchpadConst;
 
-namespace Marsy::Parsers::Launchpad
+namespace Marsy
 {
     class LaunchpadParser : public Parser, public IParser<LaunchpadModel>, private LaunchpadConst
     {

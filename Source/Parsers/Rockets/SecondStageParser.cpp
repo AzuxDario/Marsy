@@ -1,6 +1,6 @@
 #include "SecondStageParser.h"
 
-namespace Marsy::Parsers::Rocket
+namespace Marsy
 {
     SecondStageParser::SecondStageParser()
     {
@@ -21,11 +21,11 @@ namespace Marsy::Parsers::Rocket
         return secondStage;
     }
 
-    std::optional<PayloadsModel> SecondStageParser::parsePayloads(const json &input, const std::string &name)
+    std::optional<RocketPayloadModel> SecondStageParser::parsePayloads(const json &input, const std::string &name)
     {
         if(input.contains(name) && !input[name].is_null() && input[name].is_array())
         {
-            PayloadsParser payloadsParser;
+            RocketPayloadParser payloadsParser;
             return payloadsParser.parsePayloads(input[name]);
         }
         else

@@ -15,13 +15,13 @@
 #include "../../Const/Dragons/TrunkConst.h"
 
 using json = nlohmann::json;
-using Marsy::Models::Dragon::TrunkModel;
-using Marsy::Models::Dragon::CargoModel;
-using Marsy::Models::Common::VolumeInfoModel;
-using Marsy::Parsers::Common::CommonInfoParser;
-using Marsy::Const::Dragon::TrunkConst;
+using Marsy::TrunkModel;
+using Marsy::CargoModel;
+using Marsy::VolumeInfoModel;
+using Marsy::CommonInfoParser;
+using Marsy::TrunkConst;
 
-namespace Marsy::Parsers::Dragon
+namespace Marsy
 {
     class TrunkParser : public Parser, private TrunkConst
     {

@@ -1,6 +1,6 @@
 #include "CompanyParser.h"
 
-namespace Marsy::Parsers::Company
+namespace Marsy
 {
     CompanyParser::CompanyParser()
     {
@@ -43,11 +43,11 @@ namespace Marsy::Parsers::Company
         }
     }
 
-    std::optional<LinksModel> CompanyParser::parseLinks(const json &input, const std::string &name)
+    std::optional<CompanyLinksModel> CompanyParser::parseLinks(const json &input, const std::string &name)
     {
         if(input.contains(name) && !input[name].is_null() && input[name].is_object())
         {
-            LinksParser linksParser;
+            CompanyLinksParser linksParser;
             return linksParser.parseLinks(input[name]);
         }
         else

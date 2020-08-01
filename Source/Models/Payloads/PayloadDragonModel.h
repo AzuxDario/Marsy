@@ -1,12 +1,12 @@
-#ifndef MARSY_PAYLOADS_DRAGON_H
-#define MARSY_PAYLOADS_DRAGON_H
+#ifndef MARSY_PAYLOADS_PAYLOADDRAGON_H
+#define MARSY_PAYLOADS_PAYLOADDRAGON_H
 
 #include <string>
 #include <optional>
 
-namespace Marsy::Models::Payload
+namespace Marsy
 {
-    struct DragonModel
+    struct PayloadDragonModel
     {
         std::optional<std::string> capsule = std::nullopt;
         std::optional<double> massReturnedKilograms = std::nullopt;

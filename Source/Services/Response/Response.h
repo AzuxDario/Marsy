@@ -7,10 +7,10 @@
 #include "../../Connection/Response/Response.h"
 #include "../../Models/Queries/Response/QueryResponse.h"
 
-using Marsy::Connection::ResponseStatus;
-using Marsy::Models::Query::QueryResponse;
+using Marsy::ResponseStatus;
+using Marsy::QueryResponse;
 
-namespace Marsy::Services
+namespace Marsy
 {
     template <class T>
     struct ServiceResponse

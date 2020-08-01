@@ -9,11 +9,11 @@
 #include "../../Models/Capsules/CapsuleModel.h"
 #include "../../Parsers/Capsules/CapsuleParser.h"
 
-using Marsy::Connection::IConnector;
-using Marsy::Models::Capsule::CapsuleModel;
-using Marsy::Parsers::Capsule::CapsuleParser;
+using Marsy::IConnector;
+using Marsy::CapsuleModel;
+using Marsy::CapsuleParser;
 
-namespace Marsy::Services::Capsule
+namespace Marsy
 {
     class CapsuleService : public Service<CapsuleModel, CapsuleParser>
     {

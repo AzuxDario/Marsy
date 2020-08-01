@@ -1,6 +1,6 @@
 #include "LaunchParser.h"
 
-namespace Marsy::Parsers::Launch
+namespace Marsy
 {
     LaunchParser::LaunchParser()
     {
@@ -73,11 +73,11 @@ namespace Marsy::Parsers::Launch
         
     }
 
-    std::optional<std::vector<CoreModel>> LaunchParser::parseCoresVector(const json &input, const std::string &name)
+    std::optional<std::vector<LaunchCoreModel>> LaunchParser::parseCoresVector(const json &input, const std::string &name)
     {
         if(input.contains(name) && !input[name].is_null() && input[name].is_array())
         {
-            CoreParser coreParser;
+            LaunchCoreParser coreParser;
             return coreParser.parseCoresVector(input[name]);
         }
         else
@@ -99,11 +99,11 @@ namespace Marsy::Parsers::Launch
         }
     }
 
-    std::optional<LinksModel> LaunchParser::parseLinks(const json &input, const std::string &name)
+    std::optional<LaunchLinksModel> LaunchParser::parseLinks(const json &input, const std::string &name)
     {
         if(input.contains(name) && !input[name].is_null() && input[name].is_object())
         {
-            LinksParser linksParser;
+            LaunchLinksParser linksParser;
             return linksParser.parseLinks(input[name]);
         }
         else

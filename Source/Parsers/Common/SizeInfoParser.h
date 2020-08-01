@@ -12,10 +12,10 @@
 #include "../../Const/Common/SizeInfoConst.h"
 
 using json = nlohmann::json;
-using Marsy::Models::Common::SizeInfoModel;
-using Marsy::Const::Common::SizeInfoConst;
+using Marsy::SizeInfoModel;
+using Marsy::SizeInfoConst;
 
-namespace Marsy::Parsers::Common
+namespace Marsy
 {
     class SizeInfoParser : public Parser, private SizeInfoConst
     {

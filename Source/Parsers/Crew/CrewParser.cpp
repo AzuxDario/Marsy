@@ -1,6 +1,6 @@
 #include "CrewParser.h"
 
-namespace Marsy::Parsers::Crew
+namespace Marsy
 {
     CrewParser::CrewParser()
     {

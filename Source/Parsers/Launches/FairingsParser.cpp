@@ -1,6 +1,6 @@
 #include "FairingsParser.h"
 
-namespace Marsy::Parsers::Launch
+namespace Marsy
 {
     FairingsParser::FairingsParser()
     {

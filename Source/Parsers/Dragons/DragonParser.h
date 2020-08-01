@@ -25,17 +25,17 @@
 #include "../../Const/Dragons/DragonConst.h"
 
 using json = nlohmann::json;
-using Marsy::Models::Dragon::DragonModel;
-using Marsy::Models::Dragon::HeatShieldModel;
-using Marsy::Models::Dragon::ThrusterModel;
-using Marsy::Models::Dragon::PressurizedCapsuleModel;
-using Marsy::Models::Common::MassInfoModel;
-using Marsy::Models::Common::SizeInfoModel;
-using Marsy::Models::Common::VolumeInfoModel;
-using Marsy::Parsers::Common::CommonInfoParser;
-using Marsy::Const::Dragon::DragonConst;
+using Marsy::DragonModel;
+using Marsy::HeatShieldModel;
+using Marsy::ThrusterModel;
+using Marsy::PressurizedCapsuleModel;
+using Marsy::MassInfoModel;
+using Marsy::SizeInfoModel;
+using Marsy::VolumeInfoModel;
+using Marsy::CommonInfoParser;
+using Marsy::DragonConst;
 
-namespace Marsy::Parsers::Dragon
+namespace Marsy
 {
     class DragonParser : public Parser, public IParser<DragonModel>, private DragonConst
     {

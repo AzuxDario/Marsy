@@ -1,6 +1,6 @@
 #include "StarlinkParser.h"
 
-namespace Marsy::Parsers::Starlink
+namespace Marsy
 {
     StarlinkParser::StarlinkParser()
     {

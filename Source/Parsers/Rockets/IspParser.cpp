@@ -1,6 +1,6 @@
 #include "IspParser.h"
 
-namespace Marsy::Parsers::Rocket
+namespace Marsy
 {
     IspParser::IspParser()
     {

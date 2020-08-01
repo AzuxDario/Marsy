@@ -1,6 +1,6 @@
 #include "ShipService.h"
 
-namespace Marsy::Services::Ship
+namespace Marsy
 {
     ShipService::ShipService(std::shared_ptr<IConnector> connector) : Service(connector)
     {

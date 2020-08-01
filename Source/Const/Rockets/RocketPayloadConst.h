@@ -1,11 +1,11 @@
-#ifndef MARSY_ROCKETS_PAYLOADCONST_H
-#define MARSY_ROCKETS_PAYLOADCONST_H
+#ifndef MARSY_ROCKETS_ROCKETPAYLOADCONST_H
+#define MARSY_ROCKETS_ROCKETPAYLOADCONST_H
 
 #include <string>
 
-namespace Marsy::Const::Rocket
+namespace Marsy
 {
-    struct PayloadConst
+    struct RocketPayloadConst
     {
         const std::string strOption1 = "option1";
         const std::string strCompositeFairing = "composite_fairing";

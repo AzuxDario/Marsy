@@ -1,6 +1,6 @@
 #include "EnginesParser.h"
 
-namespace Marsy::Parsers::Rocket
+namespace Marsy
 {
     EnginesParser::EnginesParser()
     {

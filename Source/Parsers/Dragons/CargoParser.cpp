@@ -1,6 +1,6 @@
 #include "CargoParser.h"
 
-namespace Marsy::Parsers::Dragon
+namespace Marsy
 {
     CargoParser::CargoParser()
     {

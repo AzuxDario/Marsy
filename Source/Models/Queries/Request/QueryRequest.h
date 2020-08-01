@@ -11,7 +11,7 @@
 
 using json = nlohmann::json;
 
-namespace Marsy::Models::Query
+namespace Marsy
 {
     struct QueryRequest
     {

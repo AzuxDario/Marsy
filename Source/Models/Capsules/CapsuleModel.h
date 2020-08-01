@@ -5,7 +5,7 @@
 #include <vector>
 #include <optional>
 
-namespace Marsy::Models::Capsule
+namespace Marsy
 {
     enum class CapsuleStatus {unknown, active, retired, destroyed}; 
 

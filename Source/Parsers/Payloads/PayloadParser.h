@@ -9,17 +9,17 @@
 
 #include "../Parser.h"
 #include "../IParser.h"
-#include "DragonParser.h"
+#include "PayloadDragonParser.h"
 #include "../../Models/Payloads/PayloadModel.h"
-#include "../../Models/Payloads/DragonModel.h"
+#include "../../Models/Payloads/PayloadDragonModel.h"
 #include "../../Const/Payloads/PayloadConst.h"
 
 using json = nlohmann::json;
-using Marsy::Models::Payload::PayloadModel;
-using Marsy::Models::Payload::DragonModel;
-using Marsy::Const::Payload::PayloadConst;
+using Marsy::PayloadModel;
+using Marsy::PayloadDragonModel;
+using Marsy::PayloadConst;
 
-namespace Marsy::Parsers::Payload
+namespace Marsy
 {
     class PayloadParser : public Parser, public IParser<PayloadModel>, private PayloadConst
     {
@@ -28,7 +28,7 @@ namespace Marsy::Parsers::Payload
     protected:
         PayloadModel parseOne(const json &input) override;
     private:
-        std::optional<DragonModel> parseDragon(const json &input, const std::string &name);
+        std::optional<PayloadDragonModel> parseDragon(const json &input, const std::string &name);
     };
 }
 

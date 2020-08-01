@@ -9,24 +9,24 @@
 
 #include "../Parser.h"
 #include "../IParser.h"
-#include "CoreParser.h"
+#include "LaunchCoreParser.h"
 #include "FairingsParser.h"
-#include "LinksParser.h"
+#include "LaunchLinksParser.h"
 #include "../../Models/Launches/LaunchModel.h"
-#include "../../Models/Launches/CoreModel.h"
+#include "../../Models/Launches/LaunchCoreModel.h"
 #include "../../Models/Launches/FairingsModel.h"
-#include "../../Models/Launches/LinksModel.h"
+#include "../../Models/Launches/LaunchLinksModel.h"
 #include "../../Const/Launches/LaunchConst.h"
 
 using json = nlohmann::json;
-using Marsy::Models::Launch::LaunchModel;
-using Marsy::Models::Launch::DatePrecision;
-using Marsy::Models::Launch::CoreModel;
-using Marsy::Models::Launch::FairingsModel;
-using Marsy::Models::Launch::LinksModel;
-using Marsy::Const::Launch::LaunchConst;
+using Marsy::LaunchModel;
+using Marsy::DatePrecision;
+using Marsy::LaunchCoreModel;
+using Marsy::FairingsModel;
+using Marsy::LaunchLinksModel;
+using Marsy::LaunchConst;
 
-namespace Marsy::Parsers::Launch
+namespace Marsy
 {
     class LaunchParser : public Parser, public IParser<LaunchModel>, private LaunchConst
     {
@@ -36,9 +36,9 @@ namespace Marsy::Parsers::Launch
         LaunchModel parseOne(const json &input) override;
     private:
         std::optional<DatePrecision> parseDatePrecision(const json &input, const std::string &name);
-        std::optional<std::vector<CoreModel>> parseCoresVector(const json &input, const std::string &name);
+        std::optional<std::vector<LaunchCoreModel>> parseCoresVector(const json &input, const std::string &name);
         std::optional<FairingsModel> parseFairings(const json &input, const std::string &name);
-        std::optional<LinksModel> parseLinks(const json &input, const std::string &name);
+        std::optional<LaunchLinksModel> parseLinks(const json &input, const std::string &name);
     };
 }
 

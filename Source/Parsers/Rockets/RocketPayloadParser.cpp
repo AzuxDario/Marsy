@@ -1,15 +1,15 @@
-#include "PayloadsParser.h"
+#include "RocketPayloadParser.h"
 
-namespace Marsy::Parsers::Rocket
+namespace Marsy
 {
-    PayloadsParser::PayloadsParser()
+    RocketPayloadParser::RocketPayloadParser()
     {
 
     }
 
-    PayloadsModel PayloadsParser::parsePayloads(const json &input)
+    RocketPayloadModel RocketPayloadParser::parsePayloads(const json &input)
     {
-        PayloadsModel payloads;
+        RocketPayloadModel payloads;
         CommonInfoParser commonInfoParser;
         payloads.option1 = parseStringNullable(input, strOption1);
         payloads.compositeFairing = commonInfoParser.parseSizeInfo(input, strCompositeFairing);

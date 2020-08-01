@@ -1,5 +1,5 @@
-#ifndef MARSY_DARGONS_TRUNKPARSER_H
-#define MARSY_DARGONS_TRUNKPARSER_H
+#ifndef MARSY_LAUNCHES_LAUNCHLINKSPARSER_H
+#define MARSY_LAUNCHES_LAUNCHLINKSPARSER_H
 
 #include <string>
 #include <optional>
@@ -10,26 +10,26 @@
 #include "FlickrParser.h"
 #include "PatchParser.h"
 #include "RedditParser.h"
-#include "../../Models/Launches/LinksModel.h"
+#include "../../Models/Launches/LaunchLinksModel.h"
 #include "../../Models/Launches/FlickrModel.h"
 #include "../../Models/Launches/PatchModel.h"
 #include "../../Models/Launches/RedditModel.h"
-#include "../../Const/Launches/LinksConst.h"
+#include "../../Const/Launches/LaunchLinksConst.h"
 
 using json = nlohmann::json;
-using Marsy::Models::Launch::LinksModel;
-using Marsy::Models::Launch::FlickrModel;
-using Marsy::Models::Launch::PatchModel;
-using Marsy::Models::Launch::RedditModel;
-using Marsy::Const::Launch::LinksConst;
+using Marsy::LaunchLinksModel;
+using Marsy::FlickrModel;
+using Marsy::PatchModel;
+using Marsy::RedditModel;
+using Marsy::LaunchLinksConst;
 
-namespace Marsy::Parsers::Launch
+namespace Marsy
 {
-    class LinksParser : public Parser, private LinksConst
+    class LaunchLinksParser : public Parser, private LaunchLinksConst
     {
     public:
-        LinksParser();
-        LinksModel parseLinks(const json &input);
+        LaunchLinksParser();
+        LaunchLinksModel parseLinks(const json &input);
     private:
         std::optional<FlickrModel> parseFlickr(const json &input, const std::string &name);
         std::optional<PatchModel> parsePatch(const json &input, const std::string &name);

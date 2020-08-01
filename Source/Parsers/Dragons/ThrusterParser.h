@@ -13,12 +13,12 @@
 #include "../../Const/Dragons/ThrusterConst.h"
 
 using json = nlohmann::json;
-using Marsy::Models::Dragon::ThrusterModel;
-using Marsy::Models::Common::ThrustInfoModel;
-using Marsy::Parsers::Common::CommonInfoParser;
-using Marsy::Const::Dragon::ThrusterConst;
+using Marsy::ThrusterModel;
+using Marsy::ThrustInfoModel;
+using Marsy::CommonInfoParser;
+using Marsy::ThrusterConst;
 
-namespace Marsy::Parsers::Dragon
+namespace Marsy
 {
     class ThrusterParser : public Parser, private ThrusterConst
     {

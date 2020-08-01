@@ -1,12 +1,12 @@
-#ifndef MARSY_COMPANY_LINKS_H
-#define MARSY_COMPANY_LINKS_H
+#ifndef MARSY_COMPANY_COMPANYLINKS_H
+#define MARSY_COMPANY_COMPANYLINKS_H
 
 #include <string>
 #include <optional>
 
-namespace Marsy::Models::Company
+namespace Marsy
 {
-    struct LinksModel
+    struct CompanyLinksModel
     {
         std::optional<std::string> website;
         std::optional<std::string> flickr;

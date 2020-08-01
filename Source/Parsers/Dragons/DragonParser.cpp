@@ -1,6 +1,6 @@
 #include "DragonParser.h"
 
-namespace Marsy::Parsers::Dragon
+namespace Marsy
 {
     DragonParser::DragonParser()
     {

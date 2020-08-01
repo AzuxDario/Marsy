@@ -7,7 +7,7 @@
 
 #include "QueryParameters.h"
 
-namespace Marsy::Models::Query
+namespace Marsy
 {
     template <class T>
     struct QueryResponse

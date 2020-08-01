@@ -12,10 +12,10 @@
 #include "../../Const/Company/HeadquartersConst.h"
 
 using json = nlohmann::json;
-using Marsy::Models::Company::HeadquartersModel;
-using Marsy::Const::Company::HeadquartersConst;
+using Marsy::HeadquartersModel;
+using Marsy::HeadquartersConst;
 
-namespace Marsy::Parsers::Company
+namespace Marsy
 {
     class HeadquartersParser : public Parser, private HeadquartersConst
     {

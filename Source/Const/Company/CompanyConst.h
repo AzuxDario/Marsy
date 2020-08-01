@@ -3,7 +3,7 @@
 
 #include <string>
 
-namespace Marsy::Const::Company
+namespace Marsy
 {
     struct CompanyConst
     {

@@ -12,10 +12,10 @@
 #include "../../Const/Launches/RedditConst.h"
 
 using json = nlohmann::json;
-using Marsy::Models::Launch::RedditModel;
-using Marsy::Const::Launch::RedditConst;
+using Marsy::RedditModel;
+using Marsy::RedditConst;
 
-namespace Marsy::Parsers::Launch
+namespace Marsy
 {
     class RedditParser : public Parser, private RedditConst
     {

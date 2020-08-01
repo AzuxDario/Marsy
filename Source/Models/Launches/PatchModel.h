@@ -4,7 +4,7 @@
 #include <string>
 #include <optional>
 
-namespace Marsy::Models::Launch
+namespace Marsy
 {
     struct PatchModel
     {

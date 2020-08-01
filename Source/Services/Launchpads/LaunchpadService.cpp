@@ -1,6 +1,6 @@
 #include "LaunchpadService.h"
 
-namespace Marsy::Services::Launchpad
+namespace Marsy
 {
     LaunchpadService::LaunchpadService(std::shared_ptr<IConnector> connector) : Service(connector)
     {

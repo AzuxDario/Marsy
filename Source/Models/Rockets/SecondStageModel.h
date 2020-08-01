@@ -3,12 +3,12 @@
 
 #include <optional>
 
-#include "PayloadsModel.h"
+#include "RocketPayloadModel.h"
 #include "../Common/ThrustInfoModel.h"
 
-using Marsy::Models::Common::ThrustInfoModel;
+using Marsy::ThrustInfoModel;
 
-namespace Marsy::Models::Rocket
+namespace Marsy
 {
     struct SecondStageModel
     {
@@ -17,7 +17,7 @@ namespace Marsy::Models::Rocket
         std::optional<int> fuelAmountTons;
         std::optional<int> burnTimeSeconds;
         std::optional<ThrustInfoModel> thrust;
-        std::optional<PayloadsModel> payloads;
+        std::optional<RocketPayloadModel> payloads;
     };
 }
 

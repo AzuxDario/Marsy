@@ -1,6 +1,6 @@
 #include "CoreParser.h"
 
-namespace Marsy::Parsers::Core
+namespace Marsy
 {
     CoreParser::CoreParser()
     {

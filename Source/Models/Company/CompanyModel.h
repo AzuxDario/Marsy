@@ -5,9 +5,9 @@
 #include <optional>
 
 #include "HeadquartersModel.h"
-#include "LinksModel.h"
+#include "CompanyLinksModel.h"
 
-namespace Marsy::Models::Company
+namespace Marsy
 {
     struct CompanyModel
     {
@@ -24,7 +24,7 @@ namespace Marsy::Models::Company
         std::optional<std::string> ctoPropulsion;
         std::optional<long long> valuation;
         std::optional<HeadquartersModel> headquarters;
-        std::optional<LinksModel> links;
+        std::optional<CompanyLinksModel> links;
         std::optional<std::string> summary;
         std::optional<std::string> id;
     };

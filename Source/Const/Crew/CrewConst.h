@@ -3,7 +3,7 @@
 
 #include <string>
 
-namespace Marsy::Const::Crew
+namespace Marsy
 {
     struct CrewConst
     {

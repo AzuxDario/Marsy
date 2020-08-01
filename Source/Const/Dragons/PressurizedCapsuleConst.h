@@ -3,7 +3,7 @@
 
 #include <string>
 
-namespace Marsy::Const::Dragon
+namespace Marsy
 {
     struct PressurizedCapsuleConst
     {

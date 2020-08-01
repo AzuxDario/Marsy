@@ -13,10 +13,10 @@
 #include "../Common/SizeInfoModel.h"
 #include "../Common/MassInfoModel.h"
 
-using Marsy::Models::Common::MassInfoModel;
-using Marsy::Models::Common::SizeInfoModel;
+using Marsy::MassInfoModel;
+using Marsy::SizeInfoModel;
 
-namespace Marsy::Models::Rocket
+namespace Marsy
 {
     struct RocketModel
     {

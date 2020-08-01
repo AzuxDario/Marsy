@@ -1,6 +1,6 @@
 #include "QueryParser.h"
 
-namespace Marsy::Parsers::Query
+namespace Marsy
 {
     QueryParser::QueryParser()
     {

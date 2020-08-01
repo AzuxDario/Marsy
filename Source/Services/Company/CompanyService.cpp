@@ -1,6 +1,6 @@
 #include "CompanyService.h"
 
-namespace Marsy::Services::Company
+namespace Marsy
 {
     CompanyService::CompanyService(std::shared_ptr<IConnector> connector) : Service(connector)
     {

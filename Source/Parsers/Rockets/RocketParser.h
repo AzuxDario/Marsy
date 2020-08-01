@@ -26,18 +26,18 @@
 #include "../../Const/Rockets/RocketConst.h"
 
 using json = nlohmann::json;
-using Marsy::Models::Rocket::RocketModel;
-using Marsy::Models::Rocket::EnginesModel;
-using Marsy::Models::Rocket::FirstStageModel;
-using Marsy::Models::Rocket::LandingLegsModel;
-using Marsy::Models::Rocket::PayloadWeightsModel;
-using Marsy::Models::Rocket::SecondStageModel;
-using Marsy::Models::Common::MassInfoModel;
-using Marsy::Models::Common::SizeInfoModel;
-using Marsy::Parsers::Common::CommonInfoParser;
-using Marsy::Const::Rocket::RocketConst;
+using Marsy::RocketModel;
+using Marsy::EnginesModel;
+using Marsy::FirstStageModel;
+using Marsy::LandingLegsModel;
+using Marsy::PayloadWeightsModel;
+using Marsy::SecondStageModel;
+using Marsy::MassInfoModel;
+using Marsy::SizeInfoModel;
+using Marsy::CommonInfoParser;
+using Marsy::RocketConst;
 
-namespace Marsy::Parsers::Rocket
+namespace Marsy
 {
     class RocketParser : public Parser, public IParser<RocketModel>, private RocketConst
     {

@@ -1,6 +1,6 @@
 #include "SpaceTrackParser.h"
 
-namespace Marsy::Parsers::Starlink
+namespace Marsy
 {
     SpaceTrackParser::SpaceTrackParser()
     {

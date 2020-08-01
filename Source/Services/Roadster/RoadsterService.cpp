@@ -1,6 +1,6 @@
 #include "RoadsterService.h"
 
-namespace Marsy::Services::Roadster
+namespace Marsy
 {
     RoadsterService::RoadsterService(std::shared_ptr<IConnector> connector) : Service(connector)
     {

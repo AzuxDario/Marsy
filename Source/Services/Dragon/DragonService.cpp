@@ -1,6 +1,6 @@
 #include "DragonService.h"
 
-namespace Marsy::Services::Dragon
+namespace Marsy
 {
     DragonService::DragonService(std::shared_ptr<IConnector> connector) : Service(connector)
     {

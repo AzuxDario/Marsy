@@ -1,6 +1,6 @@
 #include "LandpadService.h"
 
-namespace Marsy::Services::Landpad
+namespace Marsy
 {
     LandpadService::LandpadService(std::shared_ptr<IConnector> connector) : Service(connector)
     {

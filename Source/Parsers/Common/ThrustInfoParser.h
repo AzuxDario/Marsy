@@ -12,10 +12,10 @@
 #include "../../Const/Common/ThrustInfoConst.h"
 
 using json = nlohmann::json;
-using Marsy::Models::Common::ThrustInfoModel;
-using Marsy::Const::Common::ThrustInfoConst;
+using Marsy::ThrustInfoModel;
+using Marsy::ThrustInfoConst;
 
-namespace Marsy::Parsers::Common
+namespace Marsy
 {
     class ThrustInfoParser : public Parser, private ThrustInfoConst
     {

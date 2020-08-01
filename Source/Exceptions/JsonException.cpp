@@ -1,6 +1,6 @@
 #include "JsonException.h"
 
-namespace Marsy::Exceptions
+namespace Marsy
 {
     JsonException::JsonException(nlohmann::detail::exception jsonException)
     {

@@ -1,6 +1,6 @@
 #include "CapsuleParser.h"
 
-namespace Marsy::Parsers::Capsule
+namespace Marsy
 {
     CapsuleParser::CapsuleParser()
     {

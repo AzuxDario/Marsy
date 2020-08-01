@@ -11,10 +11,10 @@
 #include "../../Const/Dragons/CargoConst.h"
 
 using json = nlohmann::json;
-using Marsy::Models::Dragon::CargoModel;
-using Marsy::Const::Dragon::CargoConst;
+using Marsy::CargoModel;
+using Marsy::CargoConst;
 
-namespace Marsy::Parsers::Dragon
+namespace Marsy
 {
     class CargoParser : public Parser, private CargoConst
     {

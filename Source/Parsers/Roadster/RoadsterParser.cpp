@@ -1,6 +1,6 @@
 #include "RoadsterParser.h"
 
-namespace Marsy::Parsers::Roadster
+namespace Marsy
 {
     RoadsterParser::RoadsterParser()
     {

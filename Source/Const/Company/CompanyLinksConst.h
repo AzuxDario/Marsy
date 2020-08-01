@@ -1,11 +1,11 @@
-#ifndef MARSY_COMPANY_LINKSCONST_H
-#define MARSY_COMPANY_LINKSCONST_H
+#ifndef MARSY_COMPANY_COMPANYLINKSCONST_H
+#define MARSY_COMPANY_COMPANYLINKSCONST_H
 
 #include <string>
 
-namespace Marsy::Const::Company
+namespace Marsy
 {
-    struct LinksConst
+    struct CompanyLinksConst
     {
         const std::string strWebsite = "website";
         const std::string strFlickr = "flickr";

@@ -15,13 +15,13 @@
 #include "../../Const/Rockets/EnginesConst.h"
 
 using json = nlohmann::json;
-using Marsy::Models::Rocket::EnginesModel;
-using Marsy::Models::Rocket::IspModel;
-using Marsy::Models::Common::ThrustInfoModel;
-using Marsy::Parsers::Common::CommonInfoParser;
-using Marsy::Const::Rocket::EnginesConst;
+using Marsy::EnginesModel;
+using Marsy::IspModel;
+using Marsy::ThrustInfoModel;
+using Marsy::CommonInfoParser;
+using Marsy::EnginesConst;
 
-namespace Marsy::Parsers::Rocket
+namespace Marsy
 {
     class EnginesParser : public Parser, private EnginesConst
     {

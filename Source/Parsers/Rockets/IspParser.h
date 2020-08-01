@@ -11,10 +11,10 @@
 #include "../../Const/Rockets/IspConst.h"
 
 using json = nlohmann::json;
-using Marsy::Models::Rocket::IspModel;
-using Marsy::Const::Rocket::IspConst;
+using Marsy::IspModel;
+using Marsy::IspConst;
 
-namespace Marsy::Parsers::Rocket
+namespace Marsy
 {
     class IspParser : public Parser, private IspConst
     {

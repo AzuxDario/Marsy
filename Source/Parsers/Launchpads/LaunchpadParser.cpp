@@ -1,6 +1,6 @@
 #include "LaunchpadParser.h"
 
-namespace Marsy::Parsers::Launchpad
+namespace Marsy
 {
     LaunchpadParser::LaunchpadParser()
     {

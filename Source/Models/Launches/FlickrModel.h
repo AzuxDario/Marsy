@@ -5,7 +5,7 @@
 #include <vector>
 #include <optional>
 
-namespace Marsy::Models::Launch
+namespace Marsy
 {
     struct FlickrModel
     {

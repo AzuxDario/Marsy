@@ -3,7 +3,7 @@
 
 #include <string>
 
-namespace Marsy::Const::Ship
+namespace Marsy
 {
     struct ShipConst
     {

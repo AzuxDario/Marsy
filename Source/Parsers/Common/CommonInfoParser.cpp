@@ -1,6 +1,6 @@
 #include "CommonInfoParser.h"
 
-namespace Marsy::Parsers::Common
+namespace Marsy
 {
     CommonInfoParser::CommonInfoParser()
     {

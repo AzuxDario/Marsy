@@ -4,7 +4,7 @@
 #include <string>
 #include <optional>
 
-namespace Marsy::Models::Dragon
+namespace Marsy
 {
     struct HeatShieldModel
     {

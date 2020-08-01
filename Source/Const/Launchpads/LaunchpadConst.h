@@ -3,7 +3,7 @@
 
 #include <string>
 
-namespace Marsy::Const::Launchpad
+namespace Marsy
 {
     struct LaunchpadConst
     {

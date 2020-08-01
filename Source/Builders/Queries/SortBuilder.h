@@ -10,9 +10,9 @@
 #include "../../Models/Queries/Request/QueryRequest.h"
 
 using json = nlohmann::json;
-using Marsy::Models::Query::QueryRequest;
+using Marsy::QueryRequest;
 
-namespace Marsy::Builders::Query
+namespace Marsy
 {
     enum class SortDirection {ASC, DESC};
 

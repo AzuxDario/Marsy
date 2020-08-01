@@ -12,10 +12,10 @@
 #include "../../Const/Rockets/PayloadWeightsConst.h"
 
 using json = nlohmann::json;
-using Marsy::Models::Rocket::PayloadWeightsModel;
-using Marsy::Const::Rocket::PayloadWeightsConst;
+using Marsy::PayloadWeightsModel;
+using Marsy::PayloadWeightsConst;
 
-namespace Marsy::Parsers::Rocket
+namespace Marsy
 {
     class PayloadWeightsParser : public Parser, private PayloadWeightsConst
     {

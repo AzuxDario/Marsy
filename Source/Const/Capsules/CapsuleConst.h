@@ -3,7 +3,7 @@
 
 #include <string>
 
-namespace Marsy::Const::Capsule
+namespace Marsy
 {
     struct CapsuleConst
     {

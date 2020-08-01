@@ -1,6 +1,6 @@
 #include "HeatShieldParser.h"
 
-namespace Marsy::Parsers::Dragon
+namespace Marsy
 {
     HeatShieldParser::HeatShieldParser()
     {

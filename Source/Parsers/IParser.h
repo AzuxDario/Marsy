@@ -11,11 +11,11 @@
 #include "../Exceptions/JsonException.h"
 
 using json = nlohmann::json;
-using Marsy::Parsers::Query::QueryParser;
-using Marsy::Models::Query::QueryResponse;
-using Marsy::Exceptions::JsonException;
+using Marsy::QueryParser;
+using Marsy::QueryResponse;
+using Marsy::JsonException;
 
-namespace Marsy::Parsers
+namespace Marsy
 {
     template <class T>
     class IParser

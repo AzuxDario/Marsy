@@ -1,12 +1,12 @@
-#ifndef MARSY_LAUNCHES_CORE_H
-#define MARSY_LAUNCHES_CORE_H
+#ifndef MARSY_LAUNCHES_LAUNCHCORE_H
+#define MARSY_LAUNCHES_LAUNCHCORE_H
 
 #include <string>
 #include <optional>
 
-namespace Marsy::Models::Launch
+namespace Marsy
 {
-    struct CoreModel
+    struct LaunchCoreModel
     {
         std::optional<std::string> core = std::nullopt;
         std::optional<int> flight = std::nullopt;

@@ -1,6 +1,6 @@
 #include "CrewService.h"
 
-namespace Marsy::Services::Crew
+namespace Marsy
 {
     CrewService::CrewService(std::shared_ptr<IConnector> connector) : Service(connector)
     {

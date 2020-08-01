@@ -7,7 +7,7 @@
 
 #include "../Response/Response.h"
 
-namespace Marsy::Connection
+namespace Marsy
 {
     class IConnector
     {

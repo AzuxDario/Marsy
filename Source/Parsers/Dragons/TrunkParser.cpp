@@ -1,6 +1,6 @@
 #include "TrunkParser.h"
 
-namespace Marsy::Parsers::Dragon
+namespace Marsy
 {
     TrunkParser::TrunkParser()
     {

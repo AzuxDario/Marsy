@@ -1,6 +1,6 @@
 #include "PatchParser.h"
 
-namespace Marsy::Parsers::Launch
+namespace Marsy
 {
     PatchParser::PatchParser()
     {
