@@ -9,10 +9,6 @@
 #include "../../Models/Crew/CrewModel.h"
 #include "../../Parsers/Crew/CrewParser.h"
 
-using Marsy::IConnector;
-using Marsy::CrewModel;
-using Marsy::CrewParser;
-
 namespace Marsy
 {
     class CrewService : public Service<CrewModel, CrewParser>

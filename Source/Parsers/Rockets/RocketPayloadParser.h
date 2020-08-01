@@ -13,10 +13,6 @@
 #include "../../Const/Rockets/RocketPayloadConst.h"
 
 using json = nlohmann::json;
-using Marsy::RocketPayloadModel;
-using Marsy::SizeInfoModel;
-using Marsy::CommonInfoParser;
-using Marsy::RocketPayloadConst;
 
 namespace Marsy
 {

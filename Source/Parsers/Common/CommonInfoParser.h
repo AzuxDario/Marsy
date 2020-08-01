@@ -17,10 +17,6 @@
 #include "../../Models/Common/VolumeInfoModel.h"
 
 using json = nlohmann::json;
-using Marsy::MassInfoModel;
-using Marsy::SizeInfoModel;
-using Marsy::ThrustInfoModel;
-using Marsy::VolumeInfoModel;
 
 namespace Marsy
 {

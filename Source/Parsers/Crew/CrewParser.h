@@ -13,10 +13,6 @@
 #include "../../Const/Crew/CrewConst.h"
 
 using json = nlohmann::json;
-using Marsy::CrewModel;
-using Marsy::CrewStatus;
-using Marsy::CrewConst;
-
 namespace Marsy
 {
     class CrewParser : public Parser, public IParser<CrewModel>, private CrewConst

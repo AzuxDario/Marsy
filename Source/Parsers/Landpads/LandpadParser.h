@@ -13,9 +13,6 @@
 #include "../../Const/Landpads/LandpadConst.h"
 
 using json = nlohmann::json;
-using Marsy::LandpadModel;
-using Marsy::LandpadStatus;
-using Marsy::LandpadConst;
 
 namespace Marsy
 {

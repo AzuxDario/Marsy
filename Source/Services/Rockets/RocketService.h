@@ -9,10 +9,6 @@
 #include "../../Models/Rockets/RocketModel.h"
 #include "../../Parsers/Rockets/RocketParser.h"
 
-using Marsy::IConnector;
-using Marsy::RocketModel;
-using Marsy::RocketParser;
-
 namespace Marsy
 {
     class RocketService : public Service<RocketModel, RocketParser>

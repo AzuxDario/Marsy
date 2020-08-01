@@ -12,8 +12,6 @@
 #include "../../Const/Rockets/PayloadWeightsConst.h"
 
 using json = nlohmann::json;
-using Marsy::PayloadWeightsModel;
-using Marsy::PayloadWeightsConst;
 
 namespace Marsy
 {

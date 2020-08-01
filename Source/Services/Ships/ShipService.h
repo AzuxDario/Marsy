@@ -9,10 +9,6 @@
 #include "../../Models/Ships/ShipModel.h"
 #include "../../Parsers/Ships/ShipParser.h"
 
-using Marsy::IConnector;
-using Marsy::ShipModel;
-using Marsy::ShipParser;
-
 namespace Marsy
 {
     class ShipService : public Service<ShipModel, ShipParser>

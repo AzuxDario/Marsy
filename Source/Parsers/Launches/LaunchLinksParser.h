@@ -17,12 +17,6 @@
 #include "../../Const/Launches/LaunchLinksConst.h"
 
 using json = nlohmann::json;
-using Marsy::LaunchLinksModel;
-using Marsy::FlickrModel;
-using Marsy::PatchModel;
-using Marsy::RedditModel;
-using Marsy::LaunchLinksConst;
-
 namespace Marsy
 {
     class LaunchLinksParser : public Parser, private LaunchLinksConst

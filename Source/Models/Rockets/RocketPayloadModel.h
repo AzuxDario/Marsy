@@ -6,8 +6,6 @@
 
 #include "../Common/SizeInfoModel.h"
 
-using Marsy::SizeInfoModel;
-
 namespace Marsy
 {
     struct RocketPayloadModel

@@ -5,8 +5,6 @@
 
 #include "../Common/ThrustInfoModel.h"
 
-using Marsy::ThrustInfoModel;
-
 namespace Marsy
 {
     struct FirstStageModel

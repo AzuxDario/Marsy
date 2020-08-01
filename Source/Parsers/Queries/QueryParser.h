@@ -13,9 +13,6 @@
 #include "../../Const/Queries/QueryConst.h"
 
 using json = nlohmann::json;
-using Marsy::QueryRequest;
-using Marsy::QueryParameters;
-using Marsy::QueryConst;
 
 namespace Marsy
 {

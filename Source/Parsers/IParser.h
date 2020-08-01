@@ -11,9 +11,6 @@
 #include "../Exceptions/JsonException.h"
 
 using json = nlohmann::json;
-using Marsy::QueryParser;
-using Marsy::QueryResponse;
-using Marsy::JsonException;
 
 namespace Marsy
 {

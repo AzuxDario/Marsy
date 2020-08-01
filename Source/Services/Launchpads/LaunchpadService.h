@@ -9,10 +9,6 @@
 #include "../../Models/Launchpads/LaunchpadModel.h"
 #include "../../Parsers/Launchpads/LaunchpadParser.h"
 
-using Marsy::IConnector;
-using Marsy::LaunchpadModel;
-using Marsy::LaunchpadParser;
-
 namespace Marsy
 {
     class LaunchpadService : public Service<LaunchpadModel, LaunchpadParser>

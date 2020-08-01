@@ -13,9 +13,6 @@
 #include "../../Const/Cores/CoreConst.h"
 
 using json = nlohmann::json;
-using Marsy::CoreModel;
-using Marsy::CoreStatus;
-using Marsy::CoreConst;
 
 namespace Marsy
 {

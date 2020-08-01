@@ -12,8 +12,6 @@
 #include "../../Const/Company/HeadquartersConst.h"
 
 using json = nlohmann::json;
-using Marsy::HeadquartersModel;
-using Marsy::HeadquartersConst;
 
 namespace Marsy
 {

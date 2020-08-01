@@ -9,10 +9,6 @@
 #include "../../Models/Starlink/StarlinkModel.h"
 #include "../../Parsers/Starlink/StarlinkParser.h"
 
-using Marsy::IConnector;
-using Marsy::StarlinkModel;
-using Marsy::StarlinkParser;
-
 namespace Marsy
 {
     class StarlinkService : public Service<StarlinkModel, StarlinkParser>

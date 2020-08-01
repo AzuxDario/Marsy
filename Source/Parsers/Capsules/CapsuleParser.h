@@ -13,9 +13,6 @@
 #include "../../Const/Capsules/CapsuleConst.h"
 
 using json = nlohmann::json;
-using Marsy::CapsuleModel;
-using Marsy::CapsuleStatus;
-using Marsy::CapsuleConst;
 
 namespace Marsy
 {

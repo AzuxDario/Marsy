@@ -13,8 +13,6 @@
 #include "../../Const/Ships/ShipConst.h"
 
 using json = nlohmann::json;
-using Marsy::ShipModel;
-using Marsy::ShipConst;
 
 namespace Marsy
 {

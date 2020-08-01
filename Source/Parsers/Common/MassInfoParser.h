@@ -12,8 +12,6 @@
 #include "../../Const/Common/MassInfoConst.h"
 
 using json = nlohmann::json;
-using Marsy::MassInfoModel;
-using Marsy::MassInfoConst;
 
 namespace Marsy
 {

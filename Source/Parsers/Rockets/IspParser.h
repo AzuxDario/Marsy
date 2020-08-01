@@ -11,8 +11,6 @@
 #include "../../Const/Rockets/IspConst.h"
 
 using json = nlohmann::json;
-using Marsy::IspModel;
-using Marsy::IspConst;
 
 namespace Marsy
 {

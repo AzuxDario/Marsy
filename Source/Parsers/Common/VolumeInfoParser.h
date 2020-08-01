@@ -12,8 +12,6 @@
 #include "../../Const/Common/VolumeInfoConst.h"
 
 using json = nlohmann::json;
-using Marsy::VolumeInfoModel;
-using Marsy::VolumeInfoConst;
 
 namespace Marsy
 {

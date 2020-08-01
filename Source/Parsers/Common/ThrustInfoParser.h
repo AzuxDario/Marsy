@@ -12,8 +12,6 @@
 #include "../../Const/Common/ThrustInfoConst.h"
 
 using json = nlohmann::json;
-using Marsy::ThrustInfoModel;
-using Marsy::ThrustInfoConst;
 
 namespace Marsy
 {

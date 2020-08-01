@@ -9,10 +9,6 @@
 #include "../../Models/Dragons/DragonModel.h"
 #include "../../Parsers/Dragons/DragonParser.h"
 
-using Marsy::IConnector;
-using Marsy::DragonModel;
-using Marsy::DragonParser;
-
 namespace Marsy
 {
     class DragonService : public Service<DragonModel, DragonParser>

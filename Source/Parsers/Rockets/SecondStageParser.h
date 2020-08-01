@@ -15,11 +15,6 @@
 #include "../../Const/Rockets/SecondStageConst.h"
 
 using json = nlohmann::json;
-using Marsy::SecondStageModel;
-using Marsy::RocketPayloadModel;
-using Marsy::ThrustInfoModel;
-using Marsy::CommonInfoParser;
-using Marsy::SecondStageConst;
 
 namespace Marsy
 {

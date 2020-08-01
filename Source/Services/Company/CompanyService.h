@@ -9,10 +9,6 @@
 #include "../../Models/Company/CompanyModel.h"
 #include "../../Parsers/Company/CompanyParser.h"
 
-using Marsy::IConnector;
-using Marsy::CompanyModel;
-using Marsy::CompanyParser;
-
 namespace Marsy
 {
     class CompanyService : public Service<CompanyModel, CompanyParser>

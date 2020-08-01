@@ -10,7 +10,6 @@
 #include "../../Models/Queries/Request/QueryRequest.h"
 
 using json = nlohmann::json;
-using Marsy::QueryRequest;
 
 namespace Marsy
 {

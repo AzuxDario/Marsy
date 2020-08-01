@@ -11,8 +11,6 @@
 #include "../../Const/Dragons/HeatShieldConst.h"
 
 using json = nlohmann::json;
-using Marsy::HeatShieldModel;
-using Marsy::HeatShieldConst;
 
 namespace Marsy
 {

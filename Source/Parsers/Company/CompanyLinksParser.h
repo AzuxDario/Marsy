@@ -12,8 +12,6 @@
 #include "../../Const/Company/CompanyLinksConst.h"
 
 using json = nlohmann::json;
-using Marsy::CompanyLinksModel;
-using Marsy::CompanyLinksConst;
 
 namespace Marsy
 {

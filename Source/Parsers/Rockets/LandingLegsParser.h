@@ -11,8 +11,6 @@
 #include "../../Const/Rockets/LandingLegsConst.h"
 
 using json = nlohmann::json;
-using Marsy::LandingLegsModel;
-using Marsy::LandingLegsConst;
 
 namespace Marsy
 {

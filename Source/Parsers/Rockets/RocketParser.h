@@ -26,16 +26,6 @@
 #include "../../Const/Rockets/RocketConst.h"
 
 using json = nlohmann::json;
-using Marsy::RocketModel;
-using Marsy::EnginesModel;
-using Marsy::FirstStageModel;
-using Marsy::LandingLegsModel;
-using Marsy::PayloadWeightsModel;
-using Marsy::SecondStageModel;
-using Marsy::MassInfoModel;
-using Marsy::SizeInfoModel;
-using Marsy::CommonInfoParser;
-using Marsy::RocketConst;
 
 namespace Marsy
 {

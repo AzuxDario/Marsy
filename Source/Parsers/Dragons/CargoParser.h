@@ -11,8 +11,6 @@
 #include "../../Const/Dragons/CargoConst.h"
 
 using json = nlohmann::json;
-using Marsy::CargoModel;
-using Marsy::CargoConst;
 
 namespace Marsy
 {

@@ -9,10 +9,6 @@
 #include "../../Models/Roadster/RoadsterModel.h"
 #include "../../Parsers/Roadster/RoadsterParser.h"
 
-using Marsy::IConnector;
-using Marsy::RoadsterModel;
-using Marsy::RoadsterParser;
-
 namespace Marsy
 {
     class RoadsterService : public Service<RoadsterModel, RoadsterParser>

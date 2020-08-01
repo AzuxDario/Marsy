@@ -15,9 +15,6 @@
 #include "../../Const/Payloads/PayloadConst.h"
 
 using json = nlohmann::json;
-using Marsy::PayloadModel;
-using Marsy::PayloadDragonModel;
-using Marsy::PayloadConst;
 
 namespace Marsy
 {

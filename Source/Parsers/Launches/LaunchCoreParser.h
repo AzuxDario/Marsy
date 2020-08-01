@@ -12,8 +12,6 @@
 #include "../../Const/Launches/LaunchCoreConst.h"
 
 using json = nlohmann::json;
-using Marsy::LaunchCoreModel;
-using Marsy::LaunchCoreConst;
 
 namespace Marsy
 {

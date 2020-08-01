@@ -6,8 +6,6 @@
 #include "RocketPayloadModel.h"
 #include "../Common/ThrustInfoModel.h"
 
-using Marsy::ThrustInfoModel;
-
 namespace Marsy
 {
     struct SecondStageModel

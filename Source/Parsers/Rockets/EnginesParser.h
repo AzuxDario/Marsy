@@ -15,11 +15,6 @@
 #include "../../Const/Rockets/EnginesConst.h"
 
 using json = nlohmann::json;
-using Marsy::EnginesModel;
-using Marsy::IspModel;
-using Marsy::ThrustInfoModel;
-using Marsy::CommonInfoParser;
-using Marsy::EnginesConst;
 
 namespace Marsy
 {

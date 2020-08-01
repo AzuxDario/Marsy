@@ -15,11 +15,6 @@
 #include "../../Const/Dragons/TrunkConst.h"
 
 using json = nlohmann::json;
-using Marsy::TrunkModel;
-using Marsy::CargoModel;
-using Marsy::VolumeInfoModel;
-using Marsy::CommonInfoParser;
-using Marsy::TrunkConst;
 
 namespace Marsy
 {

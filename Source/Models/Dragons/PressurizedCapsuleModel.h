@@ -5,8 +5,6 @@
 
 #include "../Common/VolumeInfoModel.h"
 
-using Marsy::VolumeInfoModel;
-
 namespace Marsy
 {
     struct PressurizedCapsuleModel

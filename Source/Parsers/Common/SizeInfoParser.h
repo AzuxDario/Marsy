@@ -12,8 +12,6 @@
 #include "../../Const/Common/SizeInfoConst.h"
 
 using json = nlohmann::json;
-using Marsy::SizeInfoModel;
-using Marsy::SizeInfoConst;
 
 namespace Marsy
 {

@@ -19,12 +19,6 @@
 #include "../../Const/Launches/LaunchConst.h"
 
 using json = nlohmann::json;
-using Marsy::LaunchModel;
-using Marsy::DatePrecision;
-using Marsy::LaunchCoreModel;
-using Marsy::FairingsModel;
-using Marsy::LaunchLinksModel;
-using Marsy::LaunchConst;
 
 namespace Marsy
 {

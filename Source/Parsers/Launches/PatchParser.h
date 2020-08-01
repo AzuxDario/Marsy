@@ -12,8 +12,6 @@
 #include "../../Const/Launches/PatchConst.h"
 
 using json = nlohmann::json;
-using Marsy::PatchModel;
-using Marsy::PatchConst;
 
 namespace Marsy
 {

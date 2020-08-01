@@ -7,9 +7,6 @@
 #include "../../Connection/Response/Response.h"
 #include "../../Models/Queries/Response/QueryResponse.h"
 
-using Marsy::ResponseStatus;
-using Marsy::QueryResponse;
-
 namespace Marsy
 {
     template <class T>

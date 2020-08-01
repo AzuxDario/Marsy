@@ -15,9 +15,6 @@
 #include "../../Const/Starlink/StarlinkConst.h"
 
 using json = nlohmann::json;
-using Marsy::StarlinkModel;
-using Marsy::SpaceTrackModel;
-using Marsy::StarlinkConst;
 
 namespace Marsy
 {

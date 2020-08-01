@@ -12,8 +12,6 @@
 #include "../../Const/Launches/FairingsConst.h"
 
 using json = nlohmann::json;
-using Marsy::FairingsModel;
-using Marsy::FairingsConst;
 
 namespace Marsy
 {

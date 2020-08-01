@@ -12,8 +12,6 @@
 #include "../../Const/Launches/RedditConst.h"
 
 using json = nlohmann::json;
-using Marsy::RedditModel;
-using Marsy::RedditConst;
 
 namespace Marsy
 {

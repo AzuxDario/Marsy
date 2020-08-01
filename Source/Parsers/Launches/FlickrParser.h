@@ -12,8 +12,6 @@
 #include "../../Const/Launches/FlickrConst.h"
 
 using json = nlohmann::json;
-using Marsy::FlickrModel;
-using Marsy::FlickrConst;
 
 namespace Marsy
 {

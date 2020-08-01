@@ -25,15 +25,6 @@
 #include "../../Const/Dragons/DragonConst.h"
 
 using json = nlohmann::json;
-using Marsy::DragonModel;
-using Marsy::HeatShieldModel;
-using Marsy::ThrusterModel;
-using Marsy::PressurizedCapsuleModel;
-using Marsy::MassInfoModel;
-using Marsy::SizeInfoModel;
-using Marsy::VolumeInfoModel;
-using Marsy::CommonInfoParser;
-using Marsy::DragonConst;
 
 namespace Marsy
 {

@@ -9,10 +9,6 @@
 #include "../../Models/Launches/LaunchModel.h"
 #include "../../Parsers/Launches/LaunchParser.h"
 
-using Marsy::IConnector;
-using Marsy::LaunchModel;
-using Marsy::LaunchParser;
-
 namespace Marsy
 {
     class LaunchService : public Service<LaunchModel, LaunchParser>

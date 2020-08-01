@@ -13,8 +13,6 @@
 #include "../../Const/Roadster/RoadsterConst.h"
 
 using json = nlohmann::json;
-using Marsy::RoadsterModel;
-using Marsy::RoadsterConst;
 
 namespace Marsy
 {

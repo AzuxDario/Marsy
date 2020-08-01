@@ -9,10 +9,6 @@
 #include "../../Models/Cores/CoreModel.h"
 #include "../../Parsers/Cores/CoreParser.h"
 
-using Marsy::IConnector;
-using Marsy::CoreModel;
-using Marsy::CoreParser;
-
 namespace Marsy
 {
     class CoreService : public Service<CoreModel, CoreParser>
