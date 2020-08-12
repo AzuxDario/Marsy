@@ -11,6 +11,7 @@ Marsy is a library that allow you to deserialize and manage data returned by [Sp
     - [Queries](#queries)
     - [Size of binary in debug mode](#size-of-binary-in-debug-mode)
 - [Things you should be aware of](#things-you-should-be-aware-of)
+    - [Asynchronous](#asynchronous)   
     - [Internet connection](#internet-connection)
     - [Dates parsing](#dates-parsing)
 - [Sample code](#sample-code)
@@ -45,6 +46,9 @@ Currently Marsy doesn't provide query builder for these: `options -> select`, `o
 Since Marsy includes [JSON](https://github.com/nlohmann/json) in several classes, output program can be huge when compiled in debug mode (I achieved 60MB binaries). Remember to roll it out as release, when you done with testing.
 
 # Things you should be aware of
+## Asynchronous
+Currently functions are synchronous. Don't call them from UI thread. Use second thread or features like `std::future`.
+
 ## Internet connection
 Marsy doesn't handle internet connection, so you need to provide implementation of `IConnection` interface.  Enum `ResponseStatus` is to help you handle different statuses returned by API. Service will parse returned JSON only when status is `ResponseStatus::ok`.
 
