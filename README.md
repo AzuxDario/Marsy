@@ -15,7 +15,6 @@ Marsy is a library that allow you to deserialize and manage data returned by [Sp
     - [Internet connection](#internet-connection)
     - [Dates parsing](#dates-parsing)
 - [Sample code](#sample-code)
-- [What next will be done](#what-next-will-be-done)
 - [External libraries](#external-libraries)
 
 # Usage
@@ -90,10 +89,6 @@ int main()
     std::cout << "id " << capsule.id.value() << std::endl;
 }
 ```
-
-# What next will be done
-
-Library testing and optimization. Also I want to make IConnector implementation based on curl in different repo.
 
 # External libraries
  * [JSON](https://github.com/nlohmann/json)
