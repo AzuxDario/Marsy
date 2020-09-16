@@ -22,7 +22,7 @@ namespace Marsy
         launch.net = parseBoolNullable(input, strNet).value_or(launch.net.value());
         launch.window = parseIntNullable(input, strWindow);
         launch.success = parseBoolNullable(input, strSuccess);
-        launch.failures = parseArrayOfStringNullable(input, strFailures);
+        launch.failures = parseFailuresVector(input, strFailures);
         launch.upcoming = parseBoolNullable(input, strUpcoming);
         launch.details = parseStringNullable(input, strDetails);
         launch.fairings = parseFairings(input, strFairings);
@@ -105,6 +105,19 @@ namespace Marsy
         {
             LaunchLinksParser linksParser;
             return linksParser.parseLinks(input[name]);
+        }
+        else
+        {
+            return std::nullopt;
+        }
+    }
+
+    std::optional<std::vector<FailureModel>> LaunchParser::parseFailuresVector(const json &input, const std::string &name)
+    {
+        if(input.contains(name) && !input[name].is_null() && input[name].is_object())
+        {
+            FailureParser failureParser;
+            return failureParser.parseFailureVector(input[name]);
         }
         else
         {

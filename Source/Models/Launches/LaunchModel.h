@@ -8,6 +8,7 @@
 #include "FairingsModel.h"
 #include "LaunchCoreModel.h"
 #include "LaunchLinksModel.h"
+#include "FailureModel.h"
 
 namespace Marsy
 {
@@ -28,7 +29,7 @@ namespace Marsy
         std::optional<int> window = std::nullopt;
         std::optional<std::string> rocket = std::nullopt;
         std::optional<bool> success = std::nullopt;
-        std::optional<std::vector<std::string>> failures;
+        std::optional<std::vector<FailureModel>> failures;
         std::optional<bool> upcoming;
         std::optional<std::string> details = std::nullopt;
         std::optional<FairingsModel> fairings;
