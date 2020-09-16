@@ -19,6 +19,7 @@ namespace Marsy
         const std::string strLaunchSuccesses = "launch_successes";
         const std::string strRockets = "rockets";
         const std::string strLaunches = "launches";
+        const std::string strDetails = "details";
         const std::string strId = "id";
         const std::string strStatusActive = "active";
         const std::string strStatusInactive = "inactive";

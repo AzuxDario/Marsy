@@ -21,6 +21,7 @@ namespace Marsy
         std::optional<double> longitude = std::nullopt;
         std::optional<int> launchAttempts = 0;
         std::optional<int> launchSuccess = 0;
+        std::optional<std::string> details;
         std::optional<std::vector<std::string>> rockets;
         std::optional<std::vector<std::string>> launches;
         std::optional<std::string> id;

@@ -20,6 +20,7 @@ namespace Marsy
         launchpad.longitude = parseDoubleNullable(input, strLongitude);
         launchpad.launchAttempts = parseIntNullable(input, strLaunchAttempts).value_or(launchpad.launchAttempts.value());
         launchpad.launchSuccess = parseIntNullable(input, strLaunchSuccesses).value_or(launchpad.launchSuccess.value());
+        launchpad.details = parseStringNullable(input, strDetails);
         launchpad.rockets = parseArrayOfStringNullable(input, strRockets);
         launchpad.launches = parseArrayOfStringNullable(input, strLaunches);
         launchpad.id = parseStringNullable(input, strId);
